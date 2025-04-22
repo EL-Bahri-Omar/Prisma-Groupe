@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import TeamLeft from './TeamLeft';
 import TeamRight from './TeamRight';
 import './App.css';
+import './styles/team.css';
 import Sidebar from './Sidebar';
 import TeamRightSidebar from './TeamRightSidebar';
 
