@@ -36,9 +36,7 @@ export const blogsReducer = (state = { blogs: [] }, action) => {
             return {
                 loading: false,
                 blogs: action.payload.blogs,
-                blogsCount: action.payload.blogsCount,
-                resPerPage: action.payload.resPerPage,
-                filteredBlogsCount: action.payload.filteredBlogsCount
+                blogsCount: action.payload.blogsCount
             }
         case ADMIN_BLOGS_SUCCESS:
             return {
@@ -127,7 +125,7 @@ export const blogReducer = (state = {}, action) => {
         case UPDATE_BLOG_REQUEST:
             return {
                 ...state,
-                loading: true,
+                loading: true
             }
         case DELETE_BLOG_SUCCESS:
             return {

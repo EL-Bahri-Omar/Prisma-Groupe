@@ -87,6 +87,7 @@ export const newProjectReducer = (state = { project: {} }, action) => {
         case NEW_PROJECT_FAIL:
             return {
                 ...state,
+                loading: false,
                 error: action.payload
             };
         case NEW_PROJECT_RESET:

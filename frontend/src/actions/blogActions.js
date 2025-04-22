@@ -50,8 +50,6 @@ export const newBlog = (blogData) => async (dispatch) => {
     try {
         dispatch({ type: NEW_BLOG_REQUEST })
 
-        
-
         const { data } = await axios.post(`/api/v1/admin/blog/new`, blogData, {
             withCredentials: true
         });
@@ -102,7 +100,7 @@ export const updateBlog = (id, blogData) => async (dispatch) => {
 
         dispatch({
             type: UPDATE_BLOG_SUCCESS,
-            payload: data.success
+            payload: data
         })
     } catch (error) {
         dispatch({

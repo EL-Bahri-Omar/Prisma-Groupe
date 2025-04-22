@@ -1,98 +1,757 @@
 [
   {
-    "title": "Modern Residential Villa Design",
-    "subtitle": "A blend of elegance and sustainability",
-    "description": "This project showcases a luxurious residential villa with energy-efficient design, spacious interiors, and green landscaping. Smart technologies have been integrated throughout the house.",
-    "date": "2024-07-20T00:00:00.000Z",
+    "title": "University Website",
+    "subtitle": "Modern digital platform for higher education",
+    "description": "A comprehensive university website with student portals, course management, and virtual campus features. Designed for optimal user experience across all devices.",
+    "date": "2024-03-15T00:00:00.000Z",
     "ratings": 4.5,
     "image": {
-      "public_id": "projects/image/villa_modern_design",
-      "url": "https://res.cloudinary.com/example/image/upload/v1234567/projects/image/villa_modern_design.jpg"
+      "public_id": "projects/image/university_website",
+      "url": "src/assets/references/10_min.jpg"
+    },
+    "video": {
+      "public_id": "projects/video/university_website",
+      "url": "https://res.cloudinary.com/prisma-groupe/video/upload/v1745143592/Enregistrement_2025-04-20_110247_sqsbat.mp4"
     },
     "photos": [
       {
-        "public_id": "projects/gallery/villa_living_room",
-        "url": "https://res.cloudinary.com/example/image/upload/v1234567/projects/gallery/villa_living_room.jpg"
+        "public_id": "projects/gallery/university_homepage",
+        "url": "src/assets/references/10_min.jpg"
       },
       {
-        "public_id": "projects/gallery/villa_exterior",
-        "url": "https://res.cloudinary.com/example/image/upload/v1234567/projects/gallery/villa_exterior.jpg"
+        "public_id": "projects/gallery/university_portal",
+        "url": "src/assets/references/2_min.jpg"
       }
     ],
-    "category": "Residential",
-    "place": "Los Angeles, USA",
+    "category": "Education",
+    "place": "Paris, France",
     "numOfReviews": 2,
     "reviews": [
       {
         "user": "507f1f77bcf86cd799439011",
-        "name": "Jane Doe",
+        "name": "Marie Dubois",
         "rating": 5,
-        "comment": "Absolutely stunning work!"
+        "comment": "Excellent platform for our students and faculty"
       },
       {
         "user": "507f1f77bcf86cd799439012",
-        "name": "John Smith",
+        "name": "Jean Martin",
         "rating": 4,
-        "comment": "Modern and sleek design, well executed."
+        "comment": "Very intuitive interface"
       }
     ],
     "user": "507f1f77bcf86cd799439099"
   },
   {
-    "title": "Downtown Commercial Complex",
-    "subtitle": "Innovative architecture for urban businesses",
-    "description": "A commercial complex designed to accommodate multiple businesses with shared facilities, open spaces, and sustainable materials. Completed on budget and ahead of schedule.",
-    "date": "2024-06-05T00:00:00.000Z",
+    "title": "Client Extranet System",
+    "subtitle": "Secure portal for business clients",
+    "description": "Custom extranet solution providing clients with 24/7 access to project documents, billing, and communication tools.",
+    "date": "2024-02-10T00:00:00.000Z",
     "ratings": 5,
     "image": {
-      "public_id": "projects/image/commercial_complex",
-      "url": "https://res.cloudinary.com/example/image/upload/v1234567/projects/image/commercial_complex.jpg"
+      "public_id": "projects/image/extranet_system",
+      "url": "src/assets/references/2_min.jpg"
+    },
+    "video": {
+      "public_id": "projects/video/university_website",
+      "url": "https://res.cloudinary.com/prisma-groupe/video/upload/v1745143592/Enregistrement_2025-04-20_110247_sqsbat.mp4"
     },
     "photos": [],
-    "category": "Commercial",
-    "place": "New York, USA",
+    "category": "Web",
+    "place": "Lyon, France",
     "numOfReviews": 1,
     "reviews": [
       {
         "user": "507f1f77bcf86cd799439013",
-        "name": "Alice White",
+        "name": "Sophie Lambert",
         "rating": 5,
-        "comment": "Perfectly suits the fast-paced downtown life!"
+        "comment": "Game changer for our client relations"
       }
     ],
     "user": "507f1f77bcf86cd799439099"
   },
   {
-    "title": "Urban Park Revitalization",
-    "subtitle": "A green escape in the heart of the city",
-    "description": "Transforming an old unused plot into a vibrant community park featuring walkways, playgrounds, water features, and native vegetation.",
-    "date": "2024-08-15T00:00:00.000Z",
+    "title": "Mobile Banking App",
+    "subtitle": "Next-gen financial services in your pocket",
+    "description": "Feature-rich mobile application offering secure banking, investment tracking, and financial planning tools.",
+    "date": "2024-04-22T00:00:00.000Z",
     "ratings": 4.5,
     "image": {
-      "public_id": "projects/image/urban_park",
-      "url": "https://res.cloudinary.com/example/image/upload/v1234567/projects/image/urban_park.jpg"
+      "public_id": "projects/image/banking_app",
+      "url": "src/assets/references/3_min.jpg"
+    },
+    "video": {
+      "public_id": "projects/video/university_website",
+      "url": "https://res.cloudinary.com/prisma-groupe/video/upload/v1745143592/Enregistrement_2025-04-20_110247_sqsbat.mp4"
     },
     "photos": [
       {
-        "public_id": "projects/gallery/park_aerial",
-        "url": "https://res.cloudinary.com/example/image/upload/v1234567/projects/gallery/park_aerial.jpg"
+        "public_id": "projects/gallery/app_screens",
+        "url": "src/assets/references/3_min.jpg"
       }
     ],
-    "category": "Urban Planning",
-    "place": "Toronto, Canada",
+    "category": "Finance",
+    "place": "Zurich, Switzerland",
     "numOfReviews": 2,
     "reviews": [
       {
         "user": "507f1f77bcf86cd799439014",
-        "name": "Carlos Green",
+        "name": "Thomas Müller",
         "rating": 5,
-        "comment": "Beautiful and eco-friendly. A win for the city!"
+        "comment": "Our customers love the new features"
       },
       {
         "user": "507f1f77bcf86cd799439015",
-        "name": "Mina Lee",
+        "name": "Anna Schmidt",
         "rating": 4,
-        "comment": "A refreshing space with a thoughtful layout."
+        "comment": "Great UX design"
+      }
+    ],
+    "user": "507f1f77bcf86cd799439099"
+  },
+  {
+    "title": "E-commerce Platform",
+    "subtitle": "Scalable online shopping solution",
+    "description": "Complete e-commerce ecosystem with inventory management, payment processing, and AI-powered recommendations.",
+    "date": "2024-01-18T00:00:00.000Z",
+    "ratings": 5,
+    "image": {
+      "public_id": "projects/image/ecommerce_platform",
+      "url": "src/assets/references/4_min.jpg"
+    },
+    "video": {
+      "public_id": "projects/video/university_website",
+      "url": "https://res.cloudinary.com/prisma-groupe/video/upload/v1745143592/Enregistrement_2025-04-20_110247_sqsbat.mp4"
+    },
+    "photos": [
+      {
+        "public_id": "projects/gallery/storefront",
+        "url": "src/assets/references/4_min.jpg"
+      },
+      {
+        "public_id": "projects/gallery/admin_panel",
+        "url": "src/assets/references/5_min.jpg"
+      }
+    ],
+    "category": "Commerce",
+    "place": "Berlin, Germany",
+    "numOfReviews": 1,
+    "reviews": [
+      {
+        "user": "507f1f77bcf86cd799439016",
+        "name": "Lukas Weber",
+        "rating": 5,
+        "comment": "Increased our online sales by 300%"
+      }
+    ],
+    "user": "507f1f77bcf86cd799439099"
+  },
+  {
+    "title": "Hotel Booking System",
+    "subtitle": "Streamlined reservation management",
+    "description": "Comprehensive booking system for hotels with real-time availability, payment processing, and guest management.",
+    "date": "2024-05-30T00:00:00.000Z",
+    "ratings": 5,
+    "image": {
+      "public_id": "projects/image/booking_system",
+      "url": "src/assets/references/5_min.jpg"
+    },
+    "video": {
+      "public_id": "projects/video/university_website",
+      "url": "https://res.cloudinary.com/prisma-groupe/video/upload/v1745143592/Enregistrement_2025-04-20_110247_sqsbat.mp4"
+    },
+    "photos": [],
+    "category": "Tourism",
+    "place": "Barcelona, Spain",
+    "numOfReviews": 1,
+    "reviews": [
+      {
+        "user": "507f1f77bcf86cd799439017",
+        "name": "Carlos Ruiz",
+        "rating": 5,
+        "comment": "Revolutionized our booking process"
+      }
+    ],
+    "user": "507f1f77bcf86cd799439099"
+  },
+  {
+    "title": "Banking Portal",
+    "subtitle": "Secure online banking interface",
+    "description": "Enterprise-level banking portal with multi-factor authentication, transaction management, and financial analytics.",
+    "date": "2023-12-05T00:00:00.000Z",
+    "ratings": 5,
+    "image": {
+      "public_id": "projects/image/banking_portal",
+      "url": "src/assets/references/1_min.jpg"
+    },
+    "video": {
+      "public_id": "projects/video/university_website",
+      "url": "https://res.cloudinary.com/prisma-groupe/video/upload/v1745143592/Enregistrement_2025-04-20_110247_sqsbat.mp4"
+    },
+    "photos": [
+      {
+        "public_id": "projects/gallery/portal_dashboard",
+        "url": "src/assets/references/1_min.jpg"
+      }
+    ],
+    "category": "Finance",
+    "place": "London, UK",
+    "numOfReviews": 1,
+    "reviews": [
+      {
+        "user": "507f1f77bcf86cd799439018",
+        "name": "Emma Johnson",
+        "rating": 5,
+        "comment": "Extremely secure and reliable"
+      }
+    ],
+    "user": "507f1f77bcf86cd799439099"
+  },
+  {
+    "title": "CRM Solution",
+    "subtitle": "Customer relationship management redefined",
+    "description": "Custom CRM platform integrating sales, marketing, and customer service functions with AI-powered insights.",
+    "date": "2024-06-12T00:00:00.000Z",
+    "ratings": 5,
+    "image": {
+      "public_id": "projects/image/crm_solution",
+      "url": "src/assets/references/11_min.jpg"
+    },
+    "video": {
+      "public_id": "projects/video/university_website",
+      "url": "https://res.cloudinary.com/prisma-groupe/video/upload/v1745143592/Enregistrement_2025-04-20_110247_sqsbat.mp4"
+    },
+    "photos": [],
+    "category": "IT",
+    "place": "Amsterdam, Netherlands",
+    "numOfReviews": 1,
+    "reviews": [
+      {
+        "user": "507f1f77bcf86cd799439019",
+        "name": "Pieter van Dijk",
+        "rating": 5,
+        "comment": "Transformed our customer interactions"
+      }
+    ],
+    "user": "507f1f77bcf86cd799439099"
+  },
+  {
+    "title": "Hotel Management System",
+    "subtitle": "Complete property management solution",
+    "description": "End-to-end system for hotel operations including reservations, housekeeping, billing, and reporting.",
+    "date": "2024-07-08T00:00:00.000Z",
+    "ratings": 5,
+    "image": {
+      "public_id": "projects/image/hotel_system",
+      "url": "src/assets/references/12_min.jpg"
+    },
+    "video": {
+      "public_id": "projects/video/university_website",
+      "url": "https://res.cloudinary.com/prisma-groupe/video/upload/v1745143592/Enregistrement_2025-04-20_110247_sqsbat.mp4"
+    },
+    "photos": [
+      {
+        "public_id": "projects/gallery/hotel_interface",
+        "url": "src/assets/references/12_min.jpg"
+      }
+    ],
+    "category": "Hotels",
+    "place": "Rome, Italy",
+    "numOfReviews": 1,
+    "reviews": [
+      {
+        "user": "507f1f77bcf86cd799439020",
+        "name": "Marco Rossi",
+        "rating": 5,
+        "comment": "Essential tool for our hotel chain"
+      }
+    ],
+    "user": "507f1f77bcf86cd799439099"
+  },
+  {
+    "title": "Real Estate Portal",
+    "subtitle": "Digital marketplace for properties",
+    "description": "Comprehensive platform connecting buyers, sellers, and agents with advanced search and virtual tour capabilities.",
+    "date": "2024-08-20T00:00:00.000Z",
+    "ratings": 4,
+    "image": {
+      "public_id": "projects/image/real_estate_portal",
+      "url": "src/assets/references/13_min.jpg"
+    },
+    "video": {
+      "public_id": "projects/video/university_website",
+      "url": "https://res.cloudinary.com/prisma-groupe/video/upload/v1745143592/Enregistrement_2025-04-20_110247_sqsbat.mp4"
+    },
+    "photos": [],
+    "category": "Immobilier",
+    "place": "Madrid, Spain",
+    "numOfReviews": 1,
+    "reviews": [
+      {
+        "user": "507f1f77bcf86cd799439021",
+        "name": "Isabella Garcia",
+        "rating": 4,
+        "comment": "Great exposure for our listings"
+      }
+    ],
+    "user": "507f1f77bcf86cd799439099"
+  },
+  {
+    "title": "Progressive Web App",
+    "subtitle": "Next-generation web experience",
+    "description": "High-performance PWA with offline capabilities, push notifications, and native app-like experience.",
+    "date": "2024-09-05T00:00:00.000Z",
+    "ratings": 5,
+    "image": {
+      "public_id": "projects/image/pwa",
+      "url": "src/assets/references/14_min.jpg"
+    },
+    "video": {
+      "public_id": "projects/video/university_website",
+      "url": "https://res.cloudinary.com/prisma-groupe/video/upload/v1745143592/Enregistrement_2025-04-20_110247_sqsbat.mp4"
+    },
+    "photos": [
+      {
+        "public_id": "projects/gallery/pwa_screens",
+        "url": "src/assets/references/14_min.jpg"
+      }
+    ],
+    "category": "Web",
+    "place": "Stockholm, Sweden",
+    "numOfReviews": 1,
+    "reviews": [
+      {
+        "user": "507f1f77bcf86cd799439022",
+        "name": "Erik Johansson",
+        "rating": 5,
+        "comment": "Blazing fast and reliable"
+      }
+    ],
+    "user": "507f1f77bcf86cd799439099"
+  },
+  {
+    "title": "E-learning Platform",
+    "subtitle": "Interactive online education",
+    "description": "Feature-rich learning management system with courses, assessments, and certification tracking.",
+    "date": "2024-10-15T00:00:00.000Z",
+    "ratings": 5,
+    "image": {
+      "public_id": "projects/image/elearning_platform",
+      "url": "src/assets/references/15_min.jpg"
+    },
+    "video": {
+      "public_id": "projects/video/university_website",
+      "url": "https://res.cloudinary.com/prisma-groupe/video/upload/v1745143592/Enregistrement_2025-04-20_110247_sqsbat.mp4"
+    },
+    "photos": [],
+    "category": "Education",
+    "place": "Brussels, Belgium",
+    "numOfReviews": 1,
+    "reviews": [
+      {
+        "user": "507f1f77bcf86cd799439023",
+        "name": "Sophie Dubois",
+        "rating": 5,
+        "comment": "Perfect for our training programs"
+      }
+    ],
+    "user": "507f1f77bcf86cd799439099"
+  },
+  {
+    "title": "Corporate Website",
+    "subtitle": "Digital showcase for your business",
+    "description": "Modern, responsive website design with content management, lead generation, and analytics integration.",
+    "date": "2024-11-02T00:00:00.000Z",
+    "ratings": 4,
+    "image": {
+      "public_id": "projects/image/corporate_website",
+      "url": "src/assets/references/16_min.jpg"
+    },
+    "video": {
+      "public_id": "projects/video/university_website",
+      "url": "https://res.cloudinary.com/prisma-groupe/video/upload/v1745143592/Enregistrement_2025-04-20_110247_sqsbat.mp4"
+    },
+    "photos": [
+      {
+        "public_id": "projects/gallery/website_design",
+        "url": "src/assets/references/16_min.jpg"
+      }
+    ],
+    "category": "Web",
+    "place": "Vienna, Austria",
+    "numOfReviews": 1,
+    "reviews": [
+      {
+        "user": "507f1f77bcf86cd799439024",
+        "name": "Michael Bauer",
+        "rating": 4,
+        "comment": "Excellent representation of our brand"
+      }
+    ],
+    "user": "507f1f77bcf86cd799439099"
+  },
+  {
+    "title": "Insurance Extranet",
+    "subtitle": "Secure portal for policy management",
+    "description": "Custom solution for insurance providers with policy administration, claims processing, and client communication tools.",
+    "date": "2024-12-10T00:00:00.000Z",
+    "ratings": 5,
+    "image": {
+      "public_id": "projects/image/insurance_extranet",
+      "url": "src/assets/references/17_min.jpg"
+    },
+    "video": {
+      "public_id": "projects/video/university_website",
+      "url": "https://res.cloudinary.com/prisma-groupe/video/upload/v1745143592/Enregistrement_2025-04-20_110247_sqsbat.mp4"
+    },
+    "photos": [],
+    "category": "Assurance",
+    "place": "Dublin, Ireland",
+    "numOfReviews": 1,
+    "reviews": [
+      {
+        "user": "507f1f77bcf86cd799439025",
+        "name": "Sean O'Connor",
+        "rating": 5,
+        "comment": "Streamlined our entire operation"
+      }
+    ],
+    "user": "507f1f77bcf86cd799439099"
+  },
+  {
+    "title": "Cultural Portal",
+    "subtitle": "Celebrating arts and heritage",
+    "description": "Digital platform showcasing cultural events, exhibitions, and educational resources with multilingual support.",
+    "date": "2025-01-18T00:00:00.000Z",
+    "ratings": 5,
+    "image": {
+      "public_id": "projects/image/cultural_portal",
+      "url": "src/assets/references/18_min.jpg"
+    },
+    "video": {
+      "public_id": "projects/video/university_website",
+      "url": "https://res.cloudinary.com/prisma-groupe/video/upload/v1745143592/Enregistrement_2025-04-20_110247_sqsbat.mp4"
+    },
+    "photos": [
+      {
+        "public_id": "projects/gallery/cultural_homepage",
+        "url": "src/assets/references/18_min.jpg"
+      }
+    ],
+    "category": "Culture",
+    "place": "Athens, Greece",
+    "numOfReviews": 1,
+    "reviews": [
+      {
+        "user": "507f1f77bcf86cd799439026",
+        "name": "Elena Papadopoulos",
+        "rating": 5,
+        "comment": "Beautiful showcase of our cultural heritage"
+      }
+    ],
+    "user": "507f1f77bcf86cd799439099"
+  },
+  {
+    "title": "Management Application",
+    "subtitle": "Business operations simplified",
+    "description": "Custom business management software integrating project tracking, resource allocation, and financial reporting.",
+    "date": "2025-02-22T00:00:00.000Z",
+    "ratings": 4,
+    "image": {
+      "public_id": "projects/image/management_app",
+      "url": "src/assets/references/19_min.jpg"
+    },
+    "video": {
+      "public_id": "projects/video/university_website",
+      "url": "https://res.cloudinary.com/prisma-groupe/video/upload/v1745143592/Enregistrement_2025-04-20_110247_sqsbat.mp4"
+    },
+    "photos": [],
+    "category": "IT",
+    "place": "Lisbon, Portugal",
+    "numOfReviews": 1,
+    "reviews": [
+      {
+        "user": "507f1f77bcf86cd799439027",
+        "name": "Miguel Silva",
+        "rating": 4,
+        "comment": "Great tool for our growing business"
+      }
+    ],
+    "user": "507f1f77bcf86cd799439099"
+  },
+  {
+    "title": "Online Store",
+    "subtitle": "E-commerce made easy",
+    "description": "Complete online shopping solution with product catalog, shopping cart, and secure checkout.",
+    "date": "2025-03-15T00:00:00.000Z",
+    "ratings": 5,
+    "image": {
+      "public_id": "projects/image/online_store",
+      "url": "src/assets/references/21_min.jpg"
+    },
+    "video": {
+      "public_id": "projects/video/university_website",
+      "url": "https://res.cloudinary.com/prisma-groupe/video/upload/v1745143592/Enregistrement_2025-04-20_110247_sqsbat.mp4"
+    },
+    "photos": [
+      {
+        "public_id": "projects/gallery/store_design",
+        "url": "src/assets/references/21_min.jpg"
+      }
+    ],
+    "category": "Commerce",
+    "place": "Warsaw, Poland",
+    "numOfReviews": 1,
+    "reviews": [
+      {
+        "user": "507f1f77bcf86cd799439028",
+        "name": "Anna Kowalska",
+        "rating": 5,
+        "comment": "Our sales have doubled since launch"
+      }
+    ],
+    "user": "507f1f77bcf86cd799439099"
+  },
+  {
+    "title": "Organization Portal",
+    "subtitle": "Central hub for your members",
+    "description": "Member management system with directory, event calendar, and communication tools for organizations.",
+    "date": "2025-04-10T00:00:00.000Z",
+    "ratings": 4,
+    "image": {
+      "public_id": "projects/image/organization_portal",
+      "url": "src/assets/references/20_min.jpg"
+    },
+    "video": {
+      "public_id": "projects/video/university_website",
+      "url": "https://res.cloudinary.com/prisma-groupe/video/upload/v1745143592/Enregistrement_2025-04-20_110247_sqsbat.mp4"
+    },
+    "photos": [],
+    "category": "Organizations",
+    "place": "Budapest, Hungary",
+    "numOfReviews": 1,
+    "reviews": [
+      {
+        "user": "507f1f77bcf86cd799439029",
+        "name": "István Nagy",
+        "rating": 4,
+        "comment": "Great way to connect our members"
+      }
+    ],
+    "user": "507f1f77bcf86cd799439099"
+  },
+  {
+    "title": "Ticketing System",
+    "subtitle": "Event management reimagined",
+    "description": "Complete solution for event organizers with ticket sales, attendee management, and access control.",
+    "date": "2025-05-20T00:00:00.000Z",
+    "ratings": 5,
+    "image": {
+      "public_id": "projects/image/ticketing_system",
+      "url": "src/assets/references/22_min.jpg"
+    },
+    "video": {
+      "public_id": "projects/video/university_website",
+      "url": "https://res.cloudinary.com/prisma-groupe/video/upload/v1745143592/Enregistrement_2025-04-20_110247_sqsbat.mp4"
+    },
+    "photos": [
+      {
+        "public_id": "projects/gallery/ticketing_interface",
+        "url": "src/assets/references/22_min.jpg"
+      }
+    ],
+    "category": "Events",
+    "place": "Prague, Czech Republic",
+    "numOfReviews": 1,
+    "reviews": [
+      {
+        "user": "507f1f77bcf86cd799439030",
+        "name": "Jan Novak",
+        "rating": 5,
+        "comment": "Made our festival organization so much easier"
+      }
+    ],
+    "user": "507f1f77bcf86cd799439099"
+  },
+  {
+    "title": "Event Platform",
+    "subtitle": "Virtual and hybrid event solutions",
+    "description": "Comprehensive platform for hosting, managing, and monetizing virtual and hybrid events with engagement tools.",
+    "date": "2025-06-08T00:00:00.000Z",
+    "ratings": 5,
+    "image": {
+      "public_id": "projects/image/event_platform",
+      "url": "src/assets/references/23_min.jpg"
+    },
+    "video": {
+      "public_id": "projects/video/university_website",
+      "url": "https://res.cloudinary.com/prisma-groupe/video/upload/v1745143592/Enregistrement_2025-04-20_110247_sqsbat.mp4"
+    },
+    "photos": [],
+    "category": "Events",
+    "place": "Copenhagen, Denmark",
+    "numOfReviews": 1,
+    "reviews": [
+      {
+        "user": "507f1f77bcf86cd799439031",
+        "name": "Lars Jensen",
+        "rating": 5,
+        "comment": "Perfect for our international conferences"
+      }
+    ],
+    "user": "507f1f77bcf86cd799439099"
+  },
+  {
+    "title": "Tourism Website",
+    "subtitle": "Showcasing destinations beautifully",
+    "description": "Immersive website promoting tourism destinations with interactive maps, itineraries, and booking capabilities.",
+    "date": "2025-07-12T00:00:00.000Z",
+    "ratings": 5,
+    "image": {
+      "public_id": "projects/image/tourism_website",
+      "url": "src/assets/references/24_min.jpg"
+    },
+    "video": {
+      "public_id": "projects/video/university_website",
+      "url": "https://res.cloudinary.com/prisma-groupe/video/upload/v1745143592/Enregistrement_2025-04-20_110247_sqsbat.mp4"
+    },
+    "photos": [
+      {
+        "public_id": "projects/gallery/destination_showcase",
+        "url": "src/assets/references/24_min.jpg"
+      }
+    ],
+    "category": "Tourism",
+    "place": "Oslo, Norway",
+    "numOfReviews": 1,
+    "reviews": [
+      {
+        "user": "507f1f77bcf86cd799439032",
+        "name": "Ingrid Olsen",
+        "rating": 5,
+        "comment": "Beautifully presents our region"
+      }
+    ],
+    "user": "507f1f77bcf86cd799439099"
+  },
+  {
+    "title": "Restaurant App",
+    "subtitle": "Dining experience enhanced",
+    "description": "Mobile application for restaurants with menu browsing, reservations, loyalty programs, and payment.",
+    "date": "2025-08-25T00:00:00.000Z",
+    "ratings": 4,
+    "image": {
+      "public_id": "projects/image/restaurant_app",
+      "url": "src/assets/references/25_min.jpg"
+    },
+    "video": {
+      "public_id": "projects/video/university_website",
+      "url": "https://res.cloudinary.com/prisma-groupe/video/upload/v1745143592/Enregistrement_2025-04-20_110247_sqsbat.mp4"
+    },
+    "photos": [],
+    "category": "Restauration",
+    "place": "Helsinki, Finland",
+    "numOfReviews": 1,
+    "reviews": [
+      {
+        "user": "507f1f77bcf86cd799439033",
+        "name": "Mika Virtanen",
+        "rating": 4,
+        "comment": "Our customers love the convenience"
+      }
+    ],
+    "user": "507f1f77bcf86cd799439099"
+  },
+  {
+    "title": "Magazine Portal",
+    "subtitle": "Digital publishing platform",
+    "description": "Modern content management system for publishers with subscription management and multimedia support.",
+    "date": "2025-09-30T00:00:00.000Z",
+    "ratings": 5,
+    "image": {
+      "public_id": "projects/image/magazine_portal",
+      "url": "src/assets/references/26_min.jpg"
+    },
+    "video": {
+      "public_id": "projects/video/university_website",
+      "url": "https://res.cloudinary.com/prisma-groupe/video/upload/v1745143592/Enregistrement_2025-04-20_110247_sqsbat.mp4"
+    },
+    "photos": [
+      {
+        "public_id": "projects/gallery/magazine_layouts",
+        "url": "src/assets/references/26_min.jpg"
+      }
+    ],
+    "category": "Magazine",
+    "place": "Reykjavik, Iceland",
+    "numOfReviews": 1,
+    "reviews": [
+      {
+        "user": "507f1f77bcf86cd799439034",
+        "name": "Eva Jónsdóttir",
+        "rating": 5,
+        "comment": "Perfect for our digital transformation"
+      }
+    ],
+    "user": "507f1f77bcf86cd799439099"
+  },
+  {
+    "title": "Automotive Solution",
+    "subtitle": "Digital tools for car industry",
+    "description": "Comprehensive software suite for automotive dealers with inventory management, CRM, and sales tools.",
+    "date": "2025-10-15T00:00:00.000Z",
+    "ratings": 5,
+    "image": {
+      "public_id": "projects/image/automotive_solution",
+      "url": "src/assets/references/41_min.jpg"
+    },
+    "video": {
+      "public_id": "projects/video/university_website",
+      "url": "https://res.cloudinary.com/prisma-groupe/video/upload/v1745143592/Enregistrement_2025-04-20_110247_sqsbat.mp4"
+    },
+    "photos": [],
+    "category": "Automobile",
+    "place": "Munich, Germany",
+    "numOfReviews": 1,
+    "reviews": [
+      {
+        "user": "507f1f77bcf86cd799439035",
+        "name": "Hans Schmidt",
+        "rating": 5,
+        "comment": "Revolutionized our dealership operations"
+      }
+    ],
+    "user": "507f1f77bcf86cd799439099"
+  },
+  {
+    "title": "Construction Platform",
+    "subtitle": "Digital transformation for builders",
+    "description": "Integrated platform for construction companies with project management, resource tracking, and compliance tools.",
+    "date": "2025-11-20T00:00:00.000Z",
+    "ratings": 4,
+    "image": {
+      "public_id": "projects/image/construction_platform",
+      "url": "src/assets/references/28_min.jpg"
+    },
+    "video": {
+      "public_id": "projects/video/university_website",
+      "url": "https://res.cloudinary.com/prisma-groupe/video/upload/v1745143592/Enregistrement_2025-04-20_110247_sqsbat.mp4"
+    },
+    "photos": [
+      {
+        "public_id": "projects/gallery/construction_dashboard",
+        "url": "src/assets/references/28_min.jpg"
+      }
+    ],
+    "category": "BTP",
+    "place": "Marseille, France",
+    "numOfReviews": 1,
+    "reviews": [
+      {
+        "user": "507f1f77bcf86cd799439036",
+        "name": "Pierre Lefèvre",
+        "rating": 4,
+        "comment": "Essential for modern construction management"
       }
     ],
     "user": "507f1f77bcf86cd799439099"

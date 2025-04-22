@@ -1,10 +1,28 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+import React from 'react';
+import ReactDOM from 'react-dom/client'; // React 18 import
+import store from './store';
+import { Provider } from 'react-redux';
+import { Provider as AlertProvider } from 'react-alert'; 
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
+import { positions, transitions } from 'react-alert';
+import AlertTemplate from 'react-alert-template-basic';
+
+const options = {
+  timeout: 5000,
+  position: positions.BOTTOM_CENTER,
+  transition: transitions.SCALE
+};
+
+// Create root and render the app
+const root = ReactDOM.createRoot(document.getElementById('root')); 
+root.render(
+  <Provider store={store}>
+    <AlertProvider template={AlertTemplate} {...options}>
+      <App />
+    </AlertProvider>
+  </Provider>
+);

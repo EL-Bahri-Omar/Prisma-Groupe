@@ -7,35 +7,35 @@ const cloudinary = require('cloudinary');
 // Create new project => /api/v1/admin/project/new
 exports.newProject = catchAsyncErrors(async (req, res, next) => {
     // Upload featured image
-    const imageResult = await cloudinary.v2.uploader.upload(req.body.image, {
-        folder: 'projects/image'
-    });
-
-    // Upload gallery photos
-    let photos = [];
-    if (req.body.photos && req.body.photos.length > 0) {
-        photos = typeof req.body.photos === 'string' 
-            ? [req.body.photos] 
-            : req.body.photos;
-
-        let photosLinks = [];
-        for (let i = 0; i < photos.length; i++) {
-            const result = await cloudinary.v2.uploader.upload(photos[i], {
-                folder: 'projects/gallery'
-            });
-            photosLinks.push({
-                public_id: result.public_id,
-                url: result.secure_url
-            });
+        const imageResult = await cloudinary.v2.uploader.upload(req.body.image, {
+            folder: 'projects/image'
+        });
+    
+        // Upload gallery photos
+        let photos = [];
+        if (req.body.photos && req.body.photos.length > 0) {
+            photos = typeof req.body.photos === 'string' 
+                ? [req.body.photos] 
+                : req.body.photos;
+    
+            let photosLinks = [];
+            for (let i = 0; i < photos.length; i++) {
+                const result = await cloudinary.v2.uploader.upload(photos[i], {
+                    folder: 'projects/gallery'
+                });
+                photosLinks.push({
+                    public_id: result.public_id,
+                    url: result.secure_url
+                });
+            }
+            req.body.photos = photosLinks;
         }
-        req.body.photos = photosLinks;
-    }
-
-    req.body.image = {
-        public_id: imageResult.public_id,
-        url: imageResult.secure_url
-    };
-    req.body.user = req.user.id;
+    
+        req.body.image = {
+            public_id: imageResult.public_id,
+            url: imageResult.secure_url
+        };
+        req.body.user = req.user.id;
 
     const project = await Project.create(req.body);
 

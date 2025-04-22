@@ -91,7 +91,7 @@ export const newProject = (projectData) => async (dispatch) => {
     } catch (error) {
         dispatch({
             type: NEW_PROJECT_FAIL,
-            payload: error.response.data.message
+            payload: error.response?.data?.message
         });
     }
 };

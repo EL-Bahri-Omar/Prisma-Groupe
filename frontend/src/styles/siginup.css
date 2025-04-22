@@ -40,7 +40,34 @@
   box-shadow: var(--shadow);
   display: flex;
   margin: 2rem auto;
+
+  /* updates */
+  transition: all 0.6s cubic-bezier(0.65, 0, 0.35, 1);
 }
+
+/* For route transitions */
+.page-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.page-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.page-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
+}
+
 
 .signup-form-container {
   position: absolute;
@@ -181,6 +208,7 @@
 /* Input Fields */
 .signup-form-container input {
   background: #f8f8f8;
+  color: black;
   border: 2px solid var(--medium-gray);
   padding: 15px;
   margin: 8px 0;
@@ -194,6 +222,47 @@
   outline: none;
   border-color: var(--secondary);
   box-shadow: 0 0 0 3px rgba(36, 59, 85, 0.1);
+}
+
+
+/* avatar styles */
+.avatar-upload {
+  margin: 15px 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.avatar-preview {
+  flex-shrink: 0;
+}
+
+.avatar-preview img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--medium-gray);
+}
+
+.avatar-upload-label {
+  flex-grow: 1;
+  display: block;
+  background: #f8f8f8;
+  border: 2px solid var(--medium-gray);
+  padding: 12px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+  color: var(--dark-gray);
+}
+
+.avatar-upload-label:hover {
+  border-color: var(--secondary);
+  background: var(--light-gray);
 }
 
 /* Links */

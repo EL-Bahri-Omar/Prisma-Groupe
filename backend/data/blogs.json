@@ -1,70 +1,298 @@
 [
   {
-    "title": "Getting Started with React in 2024",
-    "subtitle": "A beginner-friendly guide to modern React development",
-    "slug": "getting-started-with-react-2024",
-    "paragraph": "React continues to dominate frontend development in 2024. In this guide, we'll cover the latest features including hooks, server components, and the React compiler...",
+    "title": "Sponsoring Événementiel : Comment Maximiser le ROI",
+    "subtitle": "Les stratégies éprouvées pour transformer vos investissements en résultats concrets",
+    "slug": "sponsoring-evenementiel-roi",
+    "paragraph": "Le sponsoring événementiel représente un investissement significatif pour les marques. Comment s'assurer que chaque euro dépensé génère un réel retour sur investissement ? Notre travail avec Viatbike, leader du vélo électrique urbain, offre des enseignements précieux sur la transformation d'une visibilité événementielle en ventes concrètes. Pour Viatbike, le sponsoring du Tour de France Urbain représentait une opportunité unique de toucher leur cœur de cible. L'enjeu était double : créer une association forte avec la mobilité urbaine durable tout en convertissant l'enthousiasme généré en essais produit puis en ventes. Plutôt que de limiter l'activation à un logo sur des supports événementiels, nous avons développé une stratégie en trois temps : pré-événement avec campagne de qualification des prospects, expérience immersive pendant l'événement, et nurturing personnalisé post-événement. Cette approche intégrée a généré des résultats exceptionnels : +420% de ROI, 3200 essais qualifiés, et un taux de conversion de 18% des essais en achats. Les enseignements clés incluent l'intégration parfaite entre digital et physique, la collecte de données qualifiées, et le suivi post-événement optimisé.",
     "image": {
-      "public_id": "blogs/image/react_guide_2024",
-      "url": "https://res.cloudinary.com/example/image/upload/v1234567/blogs/image/react_guide_2024.jpg"
+      "public_id": "blogs/image/sponsoring-evenementiel",
+      "url": "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
     },
     "photos": [
       {
-        "public_id": "blogs/gallery/react_code_sample",
-        "url": "https://res.cloudinary.com/example/image/upload/v1234567/blogs/gallery/react_code_sample.jpg"
+        "public_id": "blogs/gallery/sponsoring1",
+        "url": "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
       },
       {
-        "public_id": "blogs/gallery/react_ui_example",
-        "url": "https://res.cloudinary.com/example/image/upload/v1234567/blogs/gallery/react_ui_example.jpg"
+        "public_id": "blogs/gallery/sponsoring2",
+        "url": "https://images.unsplash.com/photo-1471967183320-ee018f6e114a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "public_id": "blogs/gallery/sponsoring3",
+        "url": "https://images.unsplash.com/photo-1540317580384-e5d43616b9aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
       }
     ],
-    "pdf": {
-      "public_id": "blogs/pdfs/react_cheatsheet",
-      "url": "https://res.cloudinary.com/example/raw/upload/v1234567/blogs/pdfs/react_cheatsheet.pdf"
+    "author": "67f7e6d58ff139bb944c2eed",
+    "category": "Marketing",
+    "tags": ["sponsoring", "retail", "ROI"],
+    "readTime": "8 min read",
+    "featured": true,
+    "publisher": "Marie Dupont",
+    "publisherRole": "Directrice Stratégie Marketing",
+    "publisherImage": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Marketing Direct 2.0 : Personnalisation grâce à l'IA",
+    "subtitle": "Comment nos algorithmes boostent les taux d'ouverture de 40%",
+    "slug": "marketing-direct-ia-personnalisation",
+    "paragraph": "Le marketing direct traditionnel peine à maintenir son efficacité dans un monde saturé de messages publicitaires. Notre solution est une plateforme d'IA propriétaire qui redéfinit la personnalisation à grande échelle. Les méthodes classiques de segmentation (âge, sexe, localisation) montrent leurs limites avec des taux d'ouverture stagnants autour de 15-20%. Notre algorithme MARS (Marketing AI Real-time System) analyse en temps réel les micro-comportements sur les sites clients, les tendances émotionnelles via l'analyse sémantique, les schémas d'interaction multi-canal, et les facteurs contextuels. Pour une maison de joaillerie, nous avons implémenté l'optimisation dynamique des heures d'envoi (+31% d'ouvertures), l'adaptation du vocabulaire selon l'humeur détectée (+27% de CTR), et des suggestions de produits basées sur les interactions non-achevées (+43% de conversion). L'IA ne remplace pas la créativité humaine mais l'amplifie, redonnant au marketing direct sa pertinence et son impact.",
+    "image": {
+      "public_id": "blogs/image/marketing-ia",
+      "url": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
     },
-    "author": "507f1f77bcf86cd799439011",
-    "category": "Web Development",
-    "tags": ["react", "frontend", "javascript"],
+    "photos": [
+      {
+        "public_id": "blogs/gallery/marketing1",
+        "url": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "public_id": "blogs/gallery/marketing2",
+        "url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "public_id": "blogs/gallery/marketing3",
+        "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "author": "67f7e6d58ff139bb944c2eed",
+    "category": "Artificial Intelligence",
+    "tags": ["IA", "marketing direct", "personnalisation"],
+    "readTime": "10 min read",
+    "publisher": "Jean Martin",
+    "publisherRole": "Responsable Data Science",
+    "publisherImage": "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Promotions Digitale vs Physique : Le Match",
+    "subtitle": "Analyse comparative sur 6 mois avec une marque de cosmétiques",
+    "slug": "promotions-digitale-physique-comparaison",
+    "paragraph": "Le grand débat des marketeurs : les promotions digitales surpassent-elles les traditionnelles promotions en magasin ? Notre étude avec une marque leader de cosmétiques apporte des réponses surprenantes. Pendant 6 mois, nous avons testé 4 scénarios sur 120 points de vente. Contrairement aux attentes, les promotions purement digitales n'ont pas dominé : les 18-25 ans ont montré +22% d'efficacité avec le phygital synchronisé, les 26-40 ans aucune différence significative, et les 41-60 ans +35% de réponse aux promotions physiques. Le panier moyen était +28% avec notre solution phygital. Notre technologie de synchronisation utilise la géolocalisation précise en magasin, l'activation digitale au moment de l'approche physique du produit, et l'unification des données en temps réel. La guerre des canaux est terminée - l'avenir appartient aux expériences synchronisées qui respectent les préférences générationnelles tout en créant des parcours sans friction.",
+    "image": {
+      "public_id": "blogs/image/promotions-phygital",
+      "url": "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+    },
+    "photos": [
+      {
+        "public_id": "blogs/gallery/promotion1",
+        "url": "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "public_id": "blogs/gallery/promotion2",
+        "url": "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "public_id": "blogs/gallery/promotion3",
+        "url": "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "author": "67f7e6d58ff139bb944c2eed",
+    "category": "Marketing",
+    "tags": ["promotion", "innovation", "phygital"],
+    "readTime": "12 min read",
+    "publisher": "Sophie Lambert",
+    "publisherRole": "Directrice Innovation Retail",
+    "publisherImage": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Relations Presse Créatives : 5 Campagnes Qui Ont Marqué 2023",
+    "subtitle": "Exemples concrets dont notre opération 'Art dans la Rue' pour une marque de luxe",
+    "slug": "relations-presse-creatives-campagnes",
+    "paragraph": "Dans un monde saturé de messages, les relations presse traditionnelles ne suffisent plus. Voici 5 campagnes qui ont redéfini les règles du jeu en 2023. 'Art dans la Rue' pour une marque de joaillerie : transformation de 5 quartiers parisiens en galeries d'art éphémères avec œuvres street art intégrant discrètement les créations. 'Le Test Aveugle' pour une marque auto électrique : des journalistes ont testé des véhicules sans connaître les marques. 'Les Archives Vivantes' pour une maison de couture : recréation de looks iconiques des années 50 avec des influenceurs contemporains. 'Le Dîner Silencieux' pour un restaurant étoilé : expérience immersive avec casques reproduisant différentes ambiances sonores. 'L'Échappée Belle' pour une marque de montres : voyage en train luxueux à travers l'Europe avec surprises. Ces campagnes partagent 3 points communs : expériences mémorables, engagement émotionnel et angles médiatiques multiples.",
+    "image": {
+      "public_id": "blogs/image/rp-creatives",
+      "url": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+    },
+    "photos": [
+      {
+        "public_id": "blogs/gallery/rp1",
+        "url": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "public_id": "blogs/gallery/rp2",
+        "url": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "public_id": "blogs/gallery/rp3",
+        "url": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "author": "67f7e6d58ff139bb944c2eed",
+    "category": "Marketing",
+    "tags": ["RP", "créativité", "luxe"],
+    "readTime": "9 min read",
+    "publisher": "Élodie Rousseau",
+    "publisherRole": "Directrice Communication Créative",
+    "publisherImage": "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Événements Durables : Notre Charte Zéro Carbone",
+    "subtitle": "Comment nous avons réduit de 65% l'impact environnemental de nos opérations",
+    "slug": "evenements-durables-charte-zero-carbone",
+    "paragraph": "L'événementiel représente un défi majeur en termes d'impact environnemental. Notre charte Zéro Carbone, développée avec le WWF, offre un cadre concret pour concilier impact marketing et responsabilité écologique. Les 5 piliers : 1) Logistique décarbonée avec flotte de véhicules électriques et optimisation des transports via IA (réduction de 40% des km parcourus), 2) Alimentation responsable 100% végétarienne avec approvisionnement local, 3) Digitalisation intelligente avec badges digitaux et streaming éco-conçu, 4) Supports éco-conçus avec encres végétales et PLV réutilisable, 5) Mesure et transparence avec bilan carbone détaillé. Depuis l'implémentation : 65% de réduction d'émissions, 92% des participants trouvent l'approche valorisante, et 37% des clients ont adopté tout ou partie de la charte. La durabilité n'est plus une contrainte mais un levier de différenciation et d'engagement.",
+    "image": {
+      "public_id": "blogs/image/evenements-durables",
+      "url": "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+    },
+    "photos": [
+      {
+        "public_id": "blogs/gallery/durable1",
+        "url": "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "public_id": "blogs/gallery/durable2",
+        "url": "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "public_id": "blogs/gallery/durable3",
+        "url": "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "author": "67f7e6d58ff139bb944c2eed",
+    "category": "Business",
+    "tags": ["RSE", "événementiel", "durabilité"],
+    "readTime": "7 min read",
+    "publisher": "Thomas Leroy",
+    "publisherRole": "Responsable RSE",
+    "publisherImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "title": "Sponsoring Sportif 2.0 : Intégrer le Digital aux Expériences Fans",
+    "subtitle": "Cas pratique avec un club de football et ses NFTs exclusifs",
+    "slug": "sponsoring-sportif-digital-nft",
+    "paragraph": "Le paysage du sponsoring sportif connaît une révolution digitale. Notre partenariat avec l'AS Monaco a permis de tester des innovations concrètes qui redéfinissent l'engagement fan. Nous avons créé une collection NFT offrant accès à des zones VIP virtuelles pendant les matchs, rencontres exclusives avec les joueurs, contenu behind-the-scenes, et voting sur des décisions symboliques du club. En 6 mois : 12,000 NFTs vendus, taux d'engagement 3x supérieur aux fans traditionnels, nouvelle source de revenus pour le club, et communauté digitale internationale créée. Cette approche démontre comment les technologies web3 peuvent créer de nouvelles opportunités de monétisation et d'engagement dans le sport professionnel, tout en offrant aux sponsors des moyens innovants pour connecter avec les fans.",
+    "image": {
+      "public_id": "blogs/image/sponsoring-sportif",
+      "url": "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+    },
+    "photos": [
+      {
+        "public_id": "blogs/gallery/sport1",
+        "url": "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "public_id": "blogs/gallery/sport2",
+        "url": "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "public_id": "blogs/gallery/sport3",
+        "url": "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "author": "67f7e6d58ff139bb944c2eed",
+    "category": "Blockchain",
+    "tags": ["sponsoring", "web3", "sport"],
+    "readTime": "11 min read"
+  },
+  {
+    "title": "Goodies Connectés : Le Retour en Force du Print Intelligent",
+    "subtitle": "Comment les QR codes dynamiques ont boosté nos campagnes de 30%",
+    "slug": "goodies-connectes-print-intelligent",
+    "paragraph": "Contre toute attente, le print connaît un renouveau grâce à l'intégration de technologies connectées. Nos QR codes dynamiques transforment les supports physiques en véritables interfaces interactives. Fonctionnalités clés : contenu adaptable selon le contexte (localisation, météo), tracking individualisé des interactions, mises à jour sans changement de support physique, et intégration avec les CRM clients. Pour une enseigne alimentaire, nous avons transformé les tickets de caisse en guide de recettes personnalisé selon les achats, coupons de réduction dynamiques, et programme de fidélité interactif. Résultats : augmentation de 30% de l'engagement client, durée d'interaction multipliée par 4, et traçabilité complète du parcours client offline-to-online. Cette approche hybride prouve que le print intelligent a toujours sa place dans une stratégie marketing digitale.",
+    "image": {
+      "public_id": "blogs/image/goodies-connectes",
+      "url": "https://images.unsplash.com/photo-1636051028886-0059ad2383c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+    },
+    "photos": [
+      {
+        "public_id": "blogs/gallery/goodies1",
+        "url": "https://images.unsplash.com/photo-1636051028886-0059ad2383c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "public_id": "blogs/gallery/goodies2",
+        "url": "https://images.unsplash.com/photo-1636051028886-0059ad2383c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "public_id": "blogs/gallery/goodies3",
+        "url": "https://images.unsplash.com/photo-1636051028886-0059ad2383c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "author": "67f7e6d58ff139bb944c2eed",
+    "category": "Marketing",
+    "tags": ["promotion", "print", "tech"],
+    "readTime": "6 min read"
+  },
+  {
+    "title": "Marketing Direct dans la Santé : Le Pari de l'Hyper-Personnalisation",
+    "subtitle": "Notre approche RGPD-friendly pour un groupe hospitalier",
+    "slug": "marketing-direct-sante-personnalisation",
+    "paragraph": "Le marketing santé doit concilier personnalisation pertinente et protection absolue des données. Notre framework breveté résout ce paradoxe avec : pseudonymisation systématique des données, algorithmes fonctionnant sur données chiffrées, consentement granularisé et révocable, et audit continu de conformité. Pour un groupe hospitalier, cette approche a permis d'atteindre un taux d'ouverture des emails à 38% (vs 12% avant), une réduction de 75% des désinscriptions, et une amélioration notable de l'observance thérapeutique. Les communications hyper-personnalisées incluent des rappels de rendez-vous adaptés aux habitudes du patient, des contenus éducatifs ciblés selon le parcours de soin, et des suggestions de services pertinentes basées sur l'historique médical (toujours avec consentement explicite). Cette approche démontre qu'il est possible de concilier performance marketing et éthique dans le secteur sensible de la santé.",
+    "image": {
+      "public_id": "blogs/image/marketing-sante",
+      "url": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+    },
+    "photos": [
+      {
+        "public_id": "blogs/gallery/sante1",
+        "url": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "public_id": "blogs/gallery/sante2",
+        "url": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "public_id": "blogs/gallery/sante3",
+        "url": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "author": "67f7e6d58ff139bb944c2eed",
+    "category": "Health & Fitness",
+    "tags": ["santé", "RGPD", "personnalisation"],
     "readTime": "8 min read"
   },
   {
-    "title": "The Future of AI in Healthcare",
-    "subtitle": "How machine learning is transforming patient care",
-    "slug": "ai-healthcare-future",
-    "paragraph": "Artificial intelligence is revolutionizing healthcare with applications in diagnostics, drug discovery, and personalized medicine. This article explores...",
+    "title": "Influenceurs Micro-Nichés : Pourquoi Nous Y Croyons",
+    "subtitle": "Analyse d'une campagne avec 15 nano-influenceurs (+32% d'engagement)",
+    "slug": "influenceurs-micro-niches-engagement",
+    "paragraph": "Dans un marché saturé de mega-influenceurs, les nano-créateurs (1K-10K followers) offrent une authenticité inégalable. Notre étude avec une marque horlogère le prouve avec une campagne générant +32% d'engagement par rapport aux influenceurs traditionnels. Notre approche : recrutement basé sur l'engagement réel (pas le reach), brief créatif minimal pour préserver l'authenticité, collaborations long terme plutôt que one-shot, et mesure d'impact qualitative et quantitative. Comparaison sur 3 mois : engagement 32% supérieur, coût par interaction divisé par 4, sentiment positif 2x supérieur, et effet de réseau avec recrutement organique. Ces nano-influenceurs, souvent experts dans leur niche, génèrent un taux de conversion exceptionnel grâce à la confiance qu'ils inspirent à leur communauté. Pour les marques, cela signifie un ROI plus élevé et un alignement plus naturel avec les valeurs de la marque.",
     "image": {
-      "public_id": "blogs/image/ai_healthcare",
-      "url": "https://res.cloudinary.com/example/image/upload/v1234567/blogs/image/ai_healthcare.jpg"
+      "public_id": "blogs/image/influenceurs-micro",
+      "url": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
     },
     "photos": [
       {
-        "public_id": "blogs/gallery/ai_diagnostics",
-        "url": "https://res.cloudinary.com/example/image/upload/v1234567/blogs/gallery/ai_diagnostics.jpg"
+        "public_id": "blogs/gallery/influence1",
+        "url": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "public_id": "blogs/gallery/influence2",
+        "url": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "public_id": "blogs/gallery/influence3",
+        "url": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
       }
     ],
-    "pdf": null,
-    "author": "507f1f77bcf86cd799439012",
-    "category": "Artificial Intelligence",
-    "tags": ["ai", "machine learning", "healthtech"],
-    "readTime": "12 min read"
+    "author": "67f7e6d58ff139bb944c2eed",
+    "category": "Marketing",
+    "tags": ["influence", "luxe", "réseaux sociaux"],
+    "readTime": "7 min read"
   },
   {
-    "title": "Building Scalable Microservices with Node.js",
-    "subtitle": "Architecture patterns for high-performance applications",
-    "slug": "nodejs-microservices-guide",
-    "paragraph": "In this deep dive, we'll explore best practices for designing microservices architectures using Node.js, Docker, and Kubernetes...",
+    "title": "Data et Sponsoring : Mesurer l'Impact au-delà des Vues",
+    "subtitle": "Nos KPI émotionnels brevetés pour évaluer les partenariats",
+    "slug": "data-sponsoring-kpi-emotionnels",
+    "paragraph": "Les impressions et reach ne racontent qu'une partie de l'histoire. Notre technologie d'analyse émotionnelle révèle l'impact profond du sponsoring avec des métriques révolutionnaires : Indice de Connection Emotionnelle (ICE), Taux de Mémorisation Contextuelle, Score d'Association de Valeurs, et Potentiel de Parole (WOM predictif). Pour un sponsor olympique, cette approche a permis de détecter les moments clés d'engagement, optimiser les investissements en temps réel, prédire le ROI à 6 mois avec 89% de précision, et mesurer l'alignement entre valeurs marque et événement. Contrairement aux mesures traditionnelles, nos KPI capturent l'impact émotionnel et cognitif réel du sponsoring, permettant d'optimiser les stratégies d'activation et de maximiser le retour sur investissement. Cette approche data-driven révolutionne la façon dont les marques évaluent et optimisent leurs investissements en sponsoring.",
     "image": {
-      "public_id": "blogs/image/node_microservices",
-      "url": "https://res.cloudinary.com/example/image/upload/v1234567/blogs/image/node_microservices.jpg"
+      "public_id": "blogs/image/data-sponsoring",
+      "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
     },
-    "photos": [],
-    "pdf": {
-      "public_id": "blogs/pdfs/microservices_whitepaper",
-      "url": "https://res.cloudinary.com/example/raw/upload/v1234567/blogs/pdfs/microservices_whitepaper.pdf"
-    },
-    "author": "507f1f77bcf86cd799439013",
-    "category": "Programming",
-    "tags": ["nodejs", "backend", "devops"],
-    "readTime": "15 min read"
+    "photos": [
+      {
+        "public_id": "blogs/gallery/data1",
+        "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "public_id": "blogs/gallery/data2",
+        "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "public_id": "blogs/gallery/data3",
+        "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "author": "67f7e6d58ff139bb944c2eed",
+    "category": "Data Science",
+    "tags": ["data", "sponsoring", "KPI"],
+    "readTime": "10 min read"
   }
 ]

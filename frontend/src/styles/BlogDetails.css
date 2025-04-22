@@ -279,28 +279,6 @@
     margin-bottom: 20px;
 }
 
-.blogdetail-article-list {
-    margin-left: 20px;
-    margin-bottom: 20px;
-}
-
-.blogdetail-article-list li {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #444;
-    margin-bottom: 10px;
-}
-
-.blogdetail-article-conclusion {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #042f38;
-    font-style: italic;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-left: 4px solid #042f38;
-    margin: 30px 0;
-}
 
 /* Gallery Section */
 .blogdetail-gallery {
@@ -335,7 +313,8 @@
 }
 
 .gallery-pair {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 10px;
 }
 
@@ -379,6 +358,12 @@
 .blogdetail-related-articles h3 {
     color: #042f38;
     font-size: 1.5rem;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+.blogdetail-related-articles p {
+    color: #000000;
     margin-bottom: 20px;
     position: relative;
     padding-bottom: 10px;
@@ -448,87 +433,45 @@
 .blogdetail-related-article-content h4 {
     margin-top: 0;
     margin-bottom: 15px;
-    color: #042f38;
+    color: #266774;
     font-size: 1.2rem;
 }
-
-.blogdetail-read-more-btn {
-    background: none;
-    border: none;
-    color: #042f38;
-    font-weight: bold;
-    padding: 0;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: all 0.3s ease;
-}
-
-.blogdetail-read-more-btn:hover {
-    color: #000;
-}
-
-.blogdetail-read-more-btn:hover i {
-    transform: translateX(5px);
-}
-
-.blogdetail-read-more-btn i {
-    transition: transform 0.3s ease;
-}
-
-/* Newsletter Section */
-.blogdetail-newsletter-section {
-    margin-top: 60px;
-    margin-bottom: 40px;
-    background-color: #87abb7;
-    padding: 40px;
-    border-radius: 8px;
-    text-align: center;
-}
-
-.blogdetail-newsletter-content h2 {
-    color: #042f38;
+.blogdetail-related-article-content p {
+    margin-top: 0;
     margin-bottom: 15px;
+    color: #000000;
+}
+.blogdetail-related-article-content span {
+    margin-right: 15px;
+    padding: 5px;
+    border-radius: 4px;
+    color: #505050;
+    background-color: antiquewhite;
 }
 
-.blogdetail-newsletter-content p {
-    max-width: 600px;
-    margin: 0 auto 25px;
-    color: #444;
+/* No Results Message */
+.blogdetail-no-results {
+    text-align: center;
+    padding: 30px;
+    color: #666;
+    font-style: italic;
+    background-color: #f9f9f9;
+    border-radius: 8px;
 }
 
-.blogdetail-newsletter-form {
-    display: flex;
-    max-width: 500px;
-    margin: 0 auto;
+/* Loading State for Related Articles */
+.blogdetail-loading {
+    text-align: center;
+    padding: 30px;
+    color: #042f38;
 }
 
-.blogdetail-newsletter-form input {
-    flex: 1;
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px 0 0 4px;
-    font-size: 1rem;
+/* Author Section Enhancements */
+
+.blogdetail-author-name {
+    font-size: 1.4rem;
 }
 
-.blogdetail-newsletter-form button {
-    padding: 12px 20px;
-    background-color: #042f38;
-    color: white;
-    border: none;
-    border-radius: 0 4px 4px 0;
-    font-weight: bold;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: all 0.3s ease;
-}
-
-.blogdetail-newsletter-form button:hover {
-    background-color: #021a1f;
-}
 
 /* Responsive Styles */
 @media (max-width: 768px) {
@@ -566,20 +509,6 @@
     .blogdetail-related-articles-grid {
         grid-template-columns: 1fr;
     }
-    
-    .blogdetail-newsletter-form {
-        flex-direction: column;
-    }
-    
-    .blogdetail-newsletter-form input {
-        border-radius: 4px;
-        margin-bottom: 10px;
-    }
-    
-    .blogdetail-newsletter-form button {
-        border-radius: 4px;
-        justify-content: center;
-    }
 }
 
 @media (max-width: 480px) {
@@ -614,20 +543,11 @@
         font-size: 1.3rem;
     }
     
-    .blogdetail-article-paragraph,
-    .blogdetail-article-list li {
-        font-size: 1rem;
-    }
-    
     .gallery-item.tall .gallery-image {
         height: 250px;
     }
     
     .gallery-item.short .gallery-image {
         height: 150px;
-    }
-    
-    .blogdetail-newsletter-section {
-        padding: 20px;
     }
 }

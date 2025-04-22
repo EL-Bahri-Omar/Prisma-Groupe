@@ -75,13 +75,11 @@ exports.newBlog = catchAsyncErrors(async (req, res, next) => {
 
 // Get all blogs => /api/v1/blogs?keyword=react
 exports.getBlogs = catchAsyncErrors(async (req, res, next) => {
-    const resPerPage = 4
     const blogsCount = await Blog.countDocuments()
 
     const apiFeatures = new APIFeatures(Blog.find(), req.query)
         .search()
         .filter()
-        .pagination(resPerPage)
 
     let blogs = await apiFeatures.query
     let filteredBlogsCount = blogs.length
@@ -89,7 +87,6 @@ exports.getBlogs = catchAsyncErrors(async (req, res, next) => {
     res.status(200).json({
         success: true,
         blogsCount,
-        resPerPage,
         filteredBlogsCount,
         blogs
     })
@@ -107,7 +104,7 @@ exports.getAdminBlogs = catchAsyncErrors(async (req, res, next) => {
 
 // Get single blog details => /api/v1/blog/:id
 exports.getSingleBlog = catchAsyncErrors(async (req, res, next) => {
-    const blog = await Blog.findById(req.params.id)
+    const blog = await Blog.findById(req.params.id).populate('author', 'name avatar')
 
     if (!blog) {
         return next(new ErrorHandler('Blog not found', 404))
@@ -127,32 +124,28 @@ exports.updateBlog = catchAsyncErrors(async (req, res, next) => {
         return next(new ErrorHandler('Blog not found', 404))
     }
 
-    let photos = []
-    if (typeof req.body.photos === 'string') {
-        photos.push(req.body.photos)
-    } else {
-        photos = req.body.photos
-    }
-
-    if (photos !== undefined) {
-        // Deleting photos associated with the blog
-        for (let i = 0; i < blog.photos.length; i++) {
-            await cloudinary.v2.uploader.destroy(blog.photos[i].public_id)
+    // Handle photos update
+    if (req.body.photos && req.body.photos.length > 0) {
+        // Delete existing photos
+        for (let i = 0; i < project.photos.length; i++) {
+            await cloudinary.v2.uploader.destroy(project.photos[i].public_id);
         }
 
-        let photosLinks = []
+        let photosLinks = [];
+        const photos = typeof req.body.photos === 'string' 
+            ? [req.body.photos] 
+            : req.body.photos;
+
         for (let i = 0; i < photos.length; i++) {
             const result = await cloudinary.v2.uploader.upload(photos[i], {
-                folder: 'blogs/gallery'
-            })
-
+                folder: 'projects/gallery'
+            });
             photosLinks.push({
                 public_id: result.public_id,
                 url: result.secure_url
-            })
+            });
         }
-
-        req.body.photos = photosLinks
+        req.body.photos = photosLinks;
     }
 
     // Handle image update

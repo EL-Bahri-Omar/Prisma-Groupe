@@ -34,6 +34,16 @@ const projectSchema = new mongoose.Schema({
             required: true
         }
     },
+    video: {
+        public_id: {
+            type: String,
+            required: true
+        },
+        url: {
+            type: String,
+            required: true
+        }
+    },
     photos: [
         {
             public_id: {
@@ -51,15 +61,22 @@ const projectSchema = new mongoose.Schema({
         required: [true, 'Please select category for this project'],
         enum: {
             values: [
-                'Architecture',
-                'Interior Design',
-                'Construction',
-                'Renovation',
-                'Landscaping',
-                'Commercial',
-                'Residential',
-                'Hospitality',
-                'Urban Planning'
+                "Education",
+                "Web",
+                "Finance",
+                "Commerce",
+                "Tourism",
+                "Hotels",
+                "IT",
+                "Immobilier",
+                "Culture",
+                "Organizations",
+                "Events",
+                "Restauration",
+                "Magazine",
+                "Automobile",
+                "BTP",
+                "Assurance"
             ],
             message: 'Please select correct category for project'
         }
