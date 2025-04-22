@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Sidebar from '../Sidebar';
-import ScrollToTop from '../ScrollToTop';
+import GoBack from '../GoBack';
 import './contact.css';
 
 const ContactPage = () => {
@@ -228,7 +228,7 @@ const ContactPage = () => {
         </div>
       )}
 
-      <ScrollToTop />
+      <GoBack />
     </div>
   );
 };

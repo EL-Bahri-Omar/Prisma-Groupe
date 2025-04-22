@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Sidebar from './Sidebar';
-import ScrollToTop from './ScrollToTop';
+import GoBack from './GoBack';
 import './siginup.css';
 
 const SignUp = () => {
@@ -250,8 +250,8 @@ const SignUp = () => {
         </div>
       </div>
 
-      {/* Ajoutez le composant ScrollToTop ici */}
-      <ScrollToTop />
+      {/* Ajoutez le composant GoBack ici */}
+      <GoBack />
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Sidebar from './Sidebar';
-import ScrollToTop from './ScrollToTop';
+import GoBack from './GoBack';
 import './App.css';
 
 const ReferencesPage = () => {
@@ -128,7 +128,7 @@ const ReferencesPage = () => {
           </div>
         </div>
       </div>
-      <ScrollToTop />
+      <GoBack />
     </div>
   );
 };

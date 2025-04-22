@@ -1,19 +1,16 @@
 import React, { useState } from 'react';
 import Sidebar from './Sidebar';
-import ScrollToTop from './ScrollToTop';
+import GoBack from './GoBack';
 import './philosophie.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight, faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import ScrollTop from "./ScrollTop";
 
 const Philosophie = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
-  };
-    
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -137,12 +134,10 @@ const Philosophie = () => {
             </div>
           </section>
 
-          <button className="philosophie-scroll-to-top-button" onClick={scrollToTop}>
-            <FontAwesomeIcon icon={faArrowUp} className="philosophie-arrow-icon" />
-          </button>
+          <ScrollTop/>
         </div>
         
-        <ScrollToTop />
+        <GoBack />
       </div>
     </div>
   );

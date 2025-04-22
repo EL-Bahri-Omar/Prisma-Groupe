@@ -12,6 +12,7 @@ import PrismaGroupe from './components/PrismaGroupe';
 import PrismaEvents from './components/PrismaEvents';
 import PrismaLogestique from './components/PrismaLogestique';
 import PrismaLab from './components/PrismaLab';
+import News from './components/News';
 
 
 import AboutUs from "./components/AboutUs"
@@ -48,7 +49,8 @@ const App = () => {
         <Route path="/PrismaStudio" element={<PrismaStudio />} />
         <Route path="/PrismaLogestique" element={<PrismaLogestique />} />
         <Route path="/PrismaEspaceDeco" element={<PrismaEspaceDeco/>}/>
-        <Route path="/PrismaLab" element={<PrismaLab/>}/>
+        <Route path="/PrismaLab" element={<PrismaLab />} />
+        <Route path="/news" element={<News/>}/>
 
 
 

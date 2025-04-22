@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Sidebar from './Sidebar';
-import ScrollToTop from './ScrollToTop';
+import GoBack from './GoBack';
 import './BlogPage.css';
+import ScrollTop from "./ScrollTop";
 
 const BlogPage = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -146,7 +147,7 @@ const BlogPage = () => {
   const categories = ['Tous', ...new Set(allArticles.map(article => article.category))];
 
   return (
-    <div className={`app-container-blog ${sidebarOpen ? 'sidebar-open' : ''}`}>
+    <div className={`app-container ${sidebarOpen ? 'sidebar-open' : ''}`}>
       <Sidebar isOpen={sidebarOpen} onToggle={() => setSidebarOpen(!sidebarOpen)} />
       
       
@@ -281,7 +282,8 @@ const BlogPage = () => {
         </div>
       </div>
 
-      <ScrollToTop />
+      <ScrollTop/>
+      <GoBack />
     </div>
   );
 };

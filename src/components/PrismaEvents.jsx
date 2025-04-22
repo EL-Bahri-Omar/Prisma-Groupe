@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import Sidebar from '../Sidebar'; // Importez le composant Sidebar
-import ScrollToTop from '../ScrollToTop'; // Importez le composant ScrollToTop
+import GoBack from '../GoBack'; // Importez le composant GoBack
 import '../App.css'; // Assurez-vous d'importer App.css
 import { useNavigate } from 'react-router-dom'; // Pour la redirection
+import Footer from "../Footer";
 
 const PrismaEvents = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false); // État pour gérer l'ouverture/fermeture de la sidebar
@@ -75,6 +76,7 @@ const PrismaEvents = () => {
           
             </div>
           </div>
+          <Footer/>
 
           {/* Section avec une seule image et description */}
           <div className="text-section-too">
@@ -88,8 +90,8 @@ const PrismaEvents = () => {
         </div>
       </div>
 
-      {/* Ajoutez le composant ScrollToTop ici */}
-      <ScrollToTop />
+      {/* Ajoutez le composant GoBack ici */}
+      <GoBack />
     </div>
   );
 };

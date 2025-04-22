@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import Sidebar from "./Sidebar";
-import ScrollToTop from './ScrollToTop';
+import GoBack from './GoBack';
 import "./Expertise.css";
+import ScrollTop from "./ScrollTop";
 
 const ExpertisePage = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -12,10 +11,6 @@ const ExpertisePage = () => {
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
-  };
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const handleContactClick = () => {
@@ -112,11 +107,9 @@ const ExpertisePage = () => {
       </div>
 
       {/* Flèche de retour en haut */}
-      <button className="scroll-to-top-button" onClick={scrollToTop}>
-        <FontAwesomeIcon icon={faArrowUp} className="arrow-icon" />
-      </button>
+      <ScrollTop/>
 
-      <ScrollToTop />
+      <GoBack />
     </div>
   );
 };

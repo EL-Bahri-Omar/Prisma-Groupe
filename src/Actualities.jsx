@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Sidebar from './Sidebar';
-import ScrollToTop from './ScrollToTop';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import GoBack from './GoBack';
 import "./actualities.css"
+import ScrollTop from "./ScrollTop";
 
 const Actualities = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const navigate = useNavigate();
 
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
-  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   const newsItems = [
     {
@@ -112,12 +110,10 @@ const Actualities = () => {
           ))}
         </div>
 
-        <button className="scroll-to-top-button" onClick={scrollToTop}>
-          <FontAwesomeIcon icon={faArrowUp} className="arrow-icon" />
-        </button>
+        <ScrollTop/>
       </main>
       
-      <ScrollToTop />
+      <GoBack />
     </div>
   );
 };

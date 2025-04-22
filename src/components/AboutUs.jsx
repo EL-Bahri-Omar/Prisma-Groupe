@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Sidebar from '../Sidebar'; // Importez le composant Sidebar
-import ScrollToTop from '../ScrollToTop'; // Importez le composant ScrollToTop
+import Footer from '../Footer';
+import GoBack from '../GoBack'; // Importez le composant GoBack
 import '../App.css'; // Assurez-vous d'importer App.css
 import { useNavigate } from 'react-router-dom'; // Pour la redirection
 
@@ -75,6 +76,8 @@ const AboutUs = () => {
           
             </div>
           </div>
+          
+          <Footer/>
 
           {/* Section avec une seule image et description */}
           <div className="text-section-too">
@@ -88,8 +91,8 @@ const AboutUs = () => {
         </div>
       </div>
 
-      {/* Ajoutez le composant ScrollToTop ici */}
-      <ScrollToTop />
+      {/* Ajoutez le composant GoBack ici */}
+      <GoBack />
     </div>
   );
 };

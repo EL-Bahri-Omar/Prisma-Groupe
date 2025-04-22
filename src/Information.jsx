@@ -1,21 +1,18 @@
 import React, { useState } from 'react';
 import Sidebar from './Sidebar';
-import ScrollToTop from './ScrollToTop';
+import GoBack from './GoBack';
 import './information.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowUp, faCalendarAlt, faDesktop, faUsers } from "@fortawesome/free-solid-svg-icons";
+import { faCalendarAlt, faDesktop, faUsers } from "@fortawesome/free-solid-svg-icons";
 import sameTeamImage from './assets/info1.png';
 import teamImage from './assets/info2.png';
+import ScrollTop from "./ScrollTop";
 
 const Informations = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
-  };
-    
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -128,12 +125,10 @@ const Informations = () => {
           </div>
         </section>
 
-        <button className="information-scroll-to-top-button" onClick={scrollToTop}>
-          <FontAwesomeIcon icon={faArrowUp} className="information-arrow-icon" />
-        </button>
+        <ScrollTop/>
       </div>
       
-        <ScrollToTop />
+        <GoBack />
     </div>
     </div>
   );

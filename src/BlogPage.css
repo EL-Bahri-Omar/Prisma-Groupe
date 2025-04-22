@@ -11,13 +11,6 @@
     --transition: all 0.3s ease;
   }
   
-  /* Structure de base */
-  .app-container-blog {
-    display: flex;
-    min-height: 100vh;
-    position: relative;
-  }
-  
   .back-button:hover {
     background: var(--secondary);
     transform: scale(1.1);
