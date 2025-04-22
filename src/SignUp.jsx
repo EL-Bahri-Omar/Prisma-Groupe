@@ -55,15 +55,6 @@ const SignUp = () => {
             >
               <h2>Bienvenue à nouveau</h2>
               
-              <div className="signup-social-auth">
-                <button type="button" className="signup-social-btn signup-google">
-                  <i className="fab fa-google"></i> Continuer avec Google
-                </button>
-                <button type="button" className="signup-social-btn signup-facebook">
-                  <i className="fab fa-facebook-f"></i> Continuer avec Facebook
-                </button>
-              </div>
-              
               <div className="signup-divider">
                 <span>ou connectez-vous avec votre email</span>
               </div>
@@ -149,15 +140,7 @@ const SignUp = () => {
                 onChange={handleChange}
                 required
               />
-
-              <input
-                type="password"
-                name="confirmerMotDePasse"
-                placeholder="Confirmez votre mot de passe"
-                value={formData.confirmerMotDePasse}
-                onChange={handleChange}
-                required
-              />
+              
               <button type="submit" className="signup-submit-btn">
                 S'inscrire
               </button>

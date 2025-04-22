@@ -174,16 +174,16 @@ const LeftColumn = () => {
   return (
     <div className="col col-l">
       
-      <div id="page1" className="full-page left-page" style={{ backgroundColor: '#dee2e6'}}>
+      <div id="page1" className="full-page left-page" style={{ backgroundColor: '#014351'}}>
         <div className="left-content">
             <div id="top-navigation-arrow" className="top-nav-arrow page-top-nav-arrow" onClick={navigateUp}>
               <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               </svg>
             </div>
 
-          <img src="/src/assets/prisma-groupe1.png"/>
+          <img src="/src/assets/home/prisma-groupe.png"/>
           <p>Recherche et développement technologique.</p>
-          <Link to="/about" className="cta-button" style={{ backgroundColor: '#286987', color: 'black'}}>Découvrir</Link>
+          <Link to="/about" className="cta-button" style={{ backgroundColor: '#dfe3e8', color: 'black'}}>Découvrir</Link>
 
           <div id="bottom-navigation-arrow" className="bottom-nav-arrow page-bottom-nav-arrow">
             <div className="page-counter">
@@ -202,7 +202,13 @@ const LeftColumn = () => {
           </div>
         </div>
       </div>
-      <div id="page3" className="full-page left-page" style={{ backgroundColor: '#bfd8b5'}}>
+      <div id="page3" className="full-page left-page" style={{ 
+        backgroundImage: 'url("/src/assets/home/digital0.png")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        width: '655px'
+      }}>
         <div className="left-content">
           {currentPage > 1 && (
             <div id="top-navigation-arrow" className="top-nav-arrow page-top-nav-arrow" onClick={navigateUp}>
@@ -212,7 +218,7 @@ const LeftColumn = () => {
             </div>
           )}
 
-          <img src="/src/assets/home/prisma-event.png"/>
+          <img src="/src/assets/home/prisma-digital.png"/>
           <p>Recherche et développement technologique.</p>
           <Link to="/PrismaEvents" className="cta-button" style={{ backgroundColor: '#98a389', color: 'black'}}>En savoir plus</Link>
 
@@ -233,7 +239,13 @@ const LeftColumn = () => {
           </div>
         </div>
       </div>
-      <div id="page5" className="full-page left-page" style={{ backgroundColor: '#d7edf7'}}>
+      <div id="page5" className="full-page left-page" style={{ 
+        backgroundImage: 'url("/src/assets/home/espace-deco0.png")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        width: '655px'
+      }}>
         <div className="left-content">
           {currentPage > 1 && (
             <div id="top-navigation-arrow" className="top-nav-arrow page-top-nav-arrow" onClick={navigateUp}>
@@ -243,7 +255,7 @@ const LeftColumn = () => {
             </div>
           )}
 
-          <img src="/src/assets/home/prisma-logistique.png"/>
+          <img src="/src/assets/home/prisma-espacedeco.png"/>
           <p>Recherche et développement technologique.</p>
           <Link to="/PrismaLogestique" className="cta-button" style={{ backgroundColor: '#7aa4bd', color: 'black'}}>En savoir plus</Link>
 
@@ -268,11 +280,11 @@ const LeftColumn = () => {
 
 
       <div id="page7" className="full-page left-page" style={{ 
-  backgroundImage: 'url("/src/assets/home/space1.png")',
-  backgroundSize: 'cover',
-  backgroundPosition: 'center',
-  backgroundRepeat: 'no-repeat'
-}}>
+        backgroundImage: 'url("/src/assets/home/event0.png")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}>
   <div className="left-content">
     {currentPage > 1 && (
       <div id="top-navigation-arrow" className="top-nav-arrow page-top-nav-arrow" onClick={navigateUp}>
@@ -282,9 +294,9 @@ const LeftColumn = () => {
       </div>
     )}
 
-    <img src="/src/assets/home/prisma-space.png"/>
+    <img src="/src/assets/home/prisma-event.png"/>
     <p>Recherche et développement technologique.</p>
-    <Link to="/PrismaLab" className="cta-button" style={{ backgroundColor: '#a1b5d9', color: 'black'}}>En savoir plus</Link>
+    <Link to="/PrismaLab" className="cta-button" style={{ backgroundColor: '#ddaab3', color: 'black'}}>En savoir plus</Link>
 
     <div id="bottom-navigation-arrow" className="bottom-nav-arrow page-bottom-nav-arrow">
       <div className="page-counter">
@@ -304,7 +316,12 @@ const LeftColumn = () => {
 </div>
 
 
-      <div id="page9" className="full-page left-page" style={{ backgroundColor: '#f7a072'}}>
+      <div id="page9" className="full-page left-page" style={{ 
+        backgroundImage: 'url("/src/assets/home/studio0.png")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}>
         <div className="left-content">
           {currentPage > 1 && (
             <div id="top-navigation-arrow" className="top-nav-arrow page-top-nav-arrow" onClick={navigateUp}>
@@ -314,9 +331,9 @@ const LeftColumn = () => {
             </div>
           )}
 
-          <img src="/src/assets/home/prisma-digital.png"/>
+          <img src="/src/assets/home/prisma-studio.png"/>
           <p>Recherche et développement technologique.</p>
-          <Link to="/PrismaEspaceDeco" className="cta-button" style={{ backgroundColor: '#dc4926', color: 'black'}}>En savoir plus</Link>
+          <Link to="/PrismaEspaceDeco" className="cta-button" style={{ backgroundColor: '#003f5d', color: 'black'}}>En savoir plus</Link>
 
           <div id="bottom-navigation-arrow" className="bottom-nav-arrow page-bottom-nav-arrow">
             <div className="page-counter">
@@ -335,14 +352,14 @@ const LeftColumn = () => {
           </div>
         </div>
       </div>
-      <div id="page11" className="full-page left-page" style={{ backgroundImage: 'url("/src/assets/home/studio1.png")'}}>
+      <div id="page11" className="full-page left-page" style={{ backgroundColor: '#c1272d'}}>
         <div className="left-content">
             <div id="top-navigation-arrow" className="top-nav-arrow page-top-nav-arrow" onClick={navigateUp}>
               <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M5 14L12 7L19 14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </div>
-          <img src="/src/assets/home/prisma-studio.png"/>
+          <img src="/src/assets/home/prisma-logistique.png"/>
           <p>Recherche et développement technologique.</p>
           <Link to="/PrismaStudio" className="cta-button" style={{ backgroundColor: '#0530475', color: 'black'}}>En savoir plus</Link>
           <div id="bottom-navigation-arrow" className="bottom-nav-arrow page-bottom-nav-arrow">
@@ -362,7 +379,7 @@ const LeftColumn = () => {
           </div>
         </div>
       </div>
-      <div id="page13" className="full-page left-page" style={{ backgroundColor: '#ffe377'}}>
+      <div id="page13" className="full-page left-page" style={{ backgroundColor: '#0533a6'}}>
         <div className="left-content">
           {currentPage > 1 && (
             <div id="top-navigation-arrow" className="top-nav-arrow page-top-nav-arrow" onClick={navigateUp}>
@@ -372,9 +389,9 @@ const LeftColumn = () => {
             </div>
           )}
 
-          <img src="/src/assets/home/prisma-travel.png"/>
+          <img src="/src/assets/home/prisma-distribution.png"/>
           <p>Recherche et développement technologique.</p>
-          <Link to="/PrismaLab" className="cta-button" style={{ backgroundColor: '#faa526', color: 'black'}}>En savoir plus</Link>
+          <Link to="/PrismaLab" className="cta-button" style={{ backgroundColor: '#9198aa', color: 'black'}}>En savoir plus</Link>
 
           <div id="bottom-navigation-arrow" className="bottom-nav-arrow page-bottom-nav-arrow">
             <div className="page-counter">

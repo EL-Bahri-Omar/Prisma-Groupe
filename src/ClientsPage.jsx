@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom"
 import Sidebar from './Sidebar';
-import './App.css';
-import './styles/clients.css'
+import './styles/clients.css';
 
 const ClientsPage = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -131,7 +130,7 @@ const ClientsPage = () => {
                   </div>
                   <div className="client-cell">
                     <div className="client-card">
-                      <img src="src/assets/clients/client17.jpg" alt="Africinvest" />
+                      <img src="src/assets/clients/client17.png" alt="Africinvest" />
                     </div>
                   </div>
                   <div className="client-cell">
@@ -170,7 +169,7 @@ const ClientsPage = () => {
                   </div>
                   <div className="client-cell">
                     <div className="client-card">
-                      <img src="src/assets/clients/client24.jpg" alt="Tunisie Leasing" />
+                      <img src="src/assets/clients/client24.png" alt="Tunisie Leasing" />
                     </div>
                   </div>
 
@@ -178,12 +177,12 @@ const ClientsPage = () => {
                   {/* Row 9 (will require scrolling) */}
                   <div className="client-cell">
                     <div className="client-card">
-                      <img src="src/assets/clients/client25.jpg" alt="TAEF" />
+                      <img src="src/assets/clients/client25.png" alt="TAEF" />
                     </div>
                   </div>
                   <div className="client-cell">
                     <div className="client-card">
-                      <img src="src/assets/clients/client26.jpg" alt="Africinvest" />
+                      <img src="src/assets/clients/client26.png" alt="Africinvest" />
                     </div>
                   </div>
                   <div className="client-cell">
@@ -249,11 +248,81 @@ const ClientsPage = () => {
 
 
 
-
-
-
-
-
+                  <div className="client-cell">
+                    <div className="client-card">
+                      <img src="src/assets/clients/client37.png" alt="Tunisie Leasing" />
+                    </div>
+                  </div>
+                  <div className="client-cell">
+                    <div className="client-card">
+                      <img src="src/assets/clients/client38.png" alt="Tunisie Leasing" />
+                    </div>
+                  </div>
+                  <div className="client-cell">
+                    <div className="client-card">
+                      <img src="src/assets/clients/client39.png" alt="Tunisie Leasing" />
+                    </div>
+                  </div>
+                  <div className="client-cell">
+                    <div className="client-card">
+                      <img src="src/assets/clients/client40.png" alt="Tunisie Leasing" />
+                    </div>
+                  </div>
+                  <div className="client-cell">
+                    <div className="client-card">
+                      <img src="src/assets/clients/client40.png" alt="Tunisie Leasing" />
+                    </div>
+                  </div>
+                  <div className="client-cell">
+                    <div className="client-card">
+                      <img src="src/assets/clients/client41.png" alt="Tunisie Leasing" />
+                    </div>
+                  </div>
+                  <div className="client-cell">
+                    <div className="client-card">
+                      <img src="src/assets/clients/client42.png" alt="Tunisie Leasing" />
+                    </div>
+                  </div>
+                  <div className="client-cell">
+                    <div className="client-card">
+                      <img src="src/assets/clients/client43.png" alt="Tunisie Leasing" />
+                    </div>
+                  </div>
+                  <div className="client-cell">
+                    <div className="client-card">
+                      <img src="src/assets/clients/client44.png" alt="Tunisie Leasing" />
+                    </div>
+                  </div>
+                  <div className="client-cell">
+                    <div className="client-card">
+                      <img src="src/assets/clients/client45.png" alt="Tunisie Leasing" />
+                    </div>
+                  </div>
+                  <div className="client-cell">
+                    <div className="client-card">
+                      <img src="src/assets/clients/client46.png" alt="Tunisie Leasing" />
+                    </div>
+                  </div>
+                  <div className="client-cell">
+                    <div className="client-card">
+                      <img src="src/assets/clients/client47.png" alt="Tunisie Leasing" />
+                    </div>
+                  </div>
+                  <div className="client-cell">
+                    <div className="client-card">
+                      <img src="src/assets/clients/client48.png" alt="Tunisie Leasing" />
+                    </div>
+                  </div>
+                  <div className="client-cell">
+                    <div className="client-card">
+                      <img src="src/assets/clients/client49.png" alt="Tunisie Leasing" />
+                    </div>
+                  </div>
+                  <div className="client-cell">
+                    <div className="client-card">
+                      <img src="src/assets/clients/client50.png" alt="" />
+                    </div>
+                  </div>
 
                 </div>
               </div>
