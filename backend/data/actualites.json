@@ -1,125 +1,5 @@
 [
   {
-      "title": "MUSIQAT",
-      "subtitle": "Un nouveau site Internet pour la 11ème édition de Musiqât",
-      "date": "2016-08-30T00:00:00.000Z",
-      "category": "Events",
-      "paragraph": "Comme chaque année, Musiqât revient pour une 11ème édition du 7 au 22 octobre 2016 au palais Ennejma Ezzahra à Sidi Bou Said.",
-      "image": {
-      "public_id": "actualites/image/musiqat_g6ezzj",
-      "url": "https://res.cloudinary.com/prisma-groupe/image/upload/v1744982302/musiqat_g6ezzj.jpg"
-    },
-    "photos": [
-      {
-        "public_id": "actualites/gallery/musiqat_g6ezzj",
-        "url": "https://res.cloudinary.com/prisma-groupe/image/upload/v1744982302/musiqat_g6ezzj.jpg"
-      },
-      {
-        "public_id": "actualites/gallery/musiqat_g6ezzj",
-        "url": "https://res.cloudinary.com/prisma-groupe/image/upload/v1744982302/musiqat_g6ezzj.jpg"
-      },
-      {
-        "public_id": "actualites/gallery/musiqat_g6ezzj",
-        "url": "https://res.cloudinary.com/prisma-groupe/image/upload/v1744982302/musiqat_g6ezzj.jpg"
-      },
-      {
-        "public_id": "actualites/gallery/musiqat_g6ezzj",
-        "url": "https://res.cloudinary.com/prisma-groupe/image/upload/v1744982302/musiqat_g6ezzj.jpg"
-      }
-    ],
-    "user": "507f1f77bcf86cd799439013"
-    },
-    {
-      "title": "WEEK END JAZZ IN TABARKA",
-      "subtitle": "Tabarka Jazz Festival : Un come-back tout en digital",
-      "date": "2016-08-30T00:00:00.000Z",
-      "category": "Events",
-      "paragraph": "Le Tabarka Jazz Festival annonce son grand come-back et renaîtra du 1 au 3 septembre 2016 avec un week-end qui s'annonce riche et animé avec au programme des concerts IN",
-      "image": {
-      "public_id": "actualites/image/musiqat_g6ezzj",
-      "url": "https://res.cloudinary.com/prisma-groupe/image/upload/v1744982302/musiqat_g6ezzj.jpg"
-    },
-    "photos": [
-      {
-        "public_id": "actualites/gallery/musiqat_g6ezzj",
-        "url": "https://res.cloudinary.com/prisma-groupe/image/upload/v1744982302/musiqat_g6ezzj.jpg"
-      },
-      {
-        "public_id": "actualites/gallery/musiqat_g6ezzj",
-        "url": "https://res.cloudinary.com/prisma-groupe/image/upload/v1744982302/musiqat_g6ezzj.jpg"
-      },
-      {
-        "public_id": "actualites/gallery/musiqat_g6ezzj",
-        "url": "https://res.cloudinary.com/prisma-groupe/image/upload/v1744982302/musiqat_g6ezzj.jpg"
-      },
-      {
-        "public_id": "actualites/gallery/musiqat_g6ezzj",
-        "url": "https://res.cloudinary.com/prisma-groupe/image/upload/v1744982302/musiqat_g6ezzj.jpg"
-      }
-    ],
-    "user": "507f1f77bcf86cd799439013"
-    },
-    {
-      "title": "AUTOMOBILE.TN",
-      "subtitle": "Automobile.tn se met au responsive design !",
-      "date": "2016-08-30T00:00:00.000Z",
-      "category": "Events",
-      "paragraph": "C'est en 2011 que Same Team a conçu la première version du site automobile.tn. Aujourd'hui, ce portail est devenu la référence incontournable du secteur automobile en Tunisie.",
-      "image": {
-      "public_id": "actualites/image/musiqat_g6ezzj",
-      "url": "https://res.cloudinary.com/prisma-groupe/image/upload/v1744982302/musiqat_g6ezzj.jpg"
-    },
-    "photos": [
-      {
-        "public_id": "actualites/gallery/musiqat_g6ezzj",
-        "url": "https://res.cloudinary.com/prisma-groupe/image/upload/v1744982302/musiqat_g6ezzj.jpg"
-      },
-      {
-        "public_id": "actualites/gallery/musiqat_g6ezzj",
-        "url": "https://res.cloudinary.com/prisma-groupe/image/upload/v1744982302/musiqat_g6ezzj.jpg"
-      },
-      {
-        "public_id": "actualites/gallery/musiqat_g6ezzj",
-        "url": "https://res.cloudinary.com/prisma-groupe/image/upload/v1744982302/musiqat_g6ezzj.jpg"
-      },
-      {
-        "public_id": "actualites/gallery/musiqat_g6ezzj",
-        "url": "https://res.cloudinary.com/prisma-groupe/image/upload/v1744982302/musiqat_g6ezzj.jpg"
-      }
-    ],
-    "user": "507f1f77bcf86cd799439013"
-    },
-    {
-      "title": "JAZZ À CARTHAGE",
-      "subtitle": "SAME TEAM partenaire digital de Jazz à Carthage 2016",
-      "date": "2016-08-30T00:00:00.000Z",
-      "category": "Events",
-      "paragraph": "Depuis son lancement en 2005, « Jazz à Carthage » s'est vu rapidement gravir les échelons pour devenir l'événement phare par excellence réunissant tous les amateurs acharnés de ce genre musical émergé du sud des Etats-Unis.",
-      "image": {
-      "public_id": "actualites/image/musiqat_g6ezzj",
-      "url": "https://res.cloudinary.com/prisma-groupe/image/upload/v1744982302/musiqat_g6ezzj.jpg"
-    },
-    "photos": [
-      {
-        "public_id": "actualites/gallery/musiqat_g6ezzj",
-        "url": "https://res.cloudinary.com/prisma-groupe/image/upload/v1744982302/musiqat_g6ezzj.jpg"
-      },
-      {
-        "public_id": "actualites/gallery/musiqat_g6ezzj",
-        "url": "https://res.cloudinary.com/prisma-groupe/image/upload/v1744982302/musiqat_g6ezzj.jpg"
-      },
-      {
-        "public_id": "actualites/gallery/musiqat_g6ezzj",
-        "url": "https://res.cloudinary.com/prisma-groupe/image/upload/v1744982302/musiqat_g6ezzj.jpg"
-      },
-      {
-        "public_id": "actualites/gallery/musiqat_g6ezzj",
-        "url": "https://res.cloudinary.com/prisma-groupe/image/upload/v1744982302/musiqat_g6ezzj.jpg"
-      }
-    ],
-    "user": "507f1f77bcf86cd799439013"
-    },
-    {
     "title": "New Headquarters Opening Ceremony",
     "subtitle": "Celebrating a new chapter in innovation and growth",
     "paragraph": "We are proud to announce the grand opening of our new company headquarters. This move marks a significant milestone in our journey toward providing better services and a dynamic work environment.",
@@ -130,20 +10,12 @@
     },
     "photos": [
       {
-        "public_id": "actualites/gallery/musiqat_g6ezzj",
-        "url": "https://res.cloudinary.com/prisma-groupe/image/upload/v1744982302/musiqat_g6ezzj.jpg"
+        "public_id": "actualites/gallery/ribbon_cutting",
+        "url": "https://res.cloudinary.com/example/image/upload/v1234567/actualites/gallery/ribbon_cutting.jpg"
       },
       {
-        "public_id": "actualites/gallery/musiqat_g6ezzj",
-        "url": "https://res.cloudinary.com/prisma-groupe/image/upload/v1744982302/musiqat_g6ezzj.jpg"
-      },
-      {
-        "public_id": "actualites/gallery/musiqat_g6ezzj",
-        "url": "https://res.cloudinary.com/prisma-groupe/image/upload/v1744982302/musiqat_g6ezzj.jpg"
-      },
-      {
-        "public_id": "actualites/gallery/musiqat_g6ezzj",
-        "url": "https://res.cloudinary.com/prisma-groupe/image/upload/v1744982302/musiqat_g6ezzj.jpg"
+        "public_id": "actualites/gallery/team_celebration",
+        "url": "https://res.cloudinary.com/example/image/upload/v1234567/actualites/gallery/team_celebration.jpg"
       }
     ],
     "category": "Events",
@@ -160,20 +32,8 @@
     },
     "photos": [
       {
-        "public_id": "actualites/gallery/musiqat_g6ezzj",
-        "url": "https://res.cloudinary.com/prisma-groupe/image/upload/v1744982302/musiqat_g6ezzj.jpg"
-      },
-      {
-        "public_id": "actualites/gallery/musiqat_g6ezzj",
-        "url": "https://res.cloudinary.com/prisma-groupe/image/upload/v1744982302/musiqat_g6ezzj.jpg"
-      },
-      {
-        "public_id": "actualites/gallery/musiqat_g6ezzj",
-        "url": "https://res.cloudinary.com/prisma-groupe/image/upload/v1744982302/musiqat_g6ezzj.jpg"
-      },
-      {
-        "public_id": "actualites/gallery/musiqat_g6ezzj",
-        "url": "https://res.cloudinary.com/prisma-groupe/image/upload/v1744982302/musiqat_g6ezzj.jpg"
+        "public_id": "actualites/gallery/greentech_team",
+        "url": "https://res.cloudinary.com/example/image/upload/v1234567/actualites/gallery/greentech_team.jpg"
       }
     ],
     "category": "Partnerships",
@@ -185,25 +45,13 @@
     "paragraph": "Sarah Johnson has been recognized for her exceptional contributions to the software development team. Her leadership and dedication have played a crucial role in recent successful projects.",
     "date": "2024-03-10T00:00:00.000Z",
     "image": {
-      "public_id": "actualites/image/musiqat_g6ezzj",
-      "url": "https://res.cloudinary.com/prisma-groupe/image/upload/v1744982302/musiqat_g6ezzj.jpg"
+      "public_id": "actualites/image/sarah_spotlight",
+      "url": "https://res.cloudinary.com/example/image/upload/v1234567/actualites/image/sarah_spotlight.jpg"
     },
     "photos": [
       {
-        "public_id": "actualites/gallery/musiqat_g6ezzj",
-        "url": "https://res.cloudinary.com/prisma-groupe/image/upload/v1744982302/musiqat_g6ezzj.jpg"
-      },
-      {
-        "public_id": "actualites/gallery/musiqat_g6ezzj",
-        "url": "https://res.cloudinary.com/prisma-groupe/image/upload/v1744982302/musiqat_g6ezzj.jpg"
-      },
-      {
-        "public_id": "actualites/gallery/musiqat_g6ezzj",
-        "url": "https://res.cloudinary.com/prisma-groupe/image/upload/v1744982302/musiqat_g6ezzj.jpg"
-      },
-      {
-        "public_id": "actualites/gallery/musiqat_g6ezzj",
-        "url": "https://res.cloudinary.com/prisma-groupe/image/upload/v1744982302/musiqat_g6ezzj.jpg"
+        "public_id": "actualites/gallery/meat_sara",
+        "url": "https://res.cloudinary.com/example/image/upload/v1234567/actualites/gallery/meat_sara.jpg"
       }
     ],
     "category": "Team Updates",
