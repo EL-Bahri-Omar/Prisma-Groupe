@@ -173,200 +173,17 @@ const LeftColumn = () => {
 
   return (
     <div className="col col-l">
-      <div id="page1" className="full-page left-page">
+      
+      <div id="page1" className="full-page left-page" style={{ backgroundColor: '#dee2e6'}}>
         <div className="left-content">
             <div id="top-navigation-arrow" className="top-nav-arrow page-top-nav-arrow" onClick={navigateUp}>
               <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               </svg>
             </div>
-          <h2>About US</h2>
-          <p>Get in touch with us for any inquiries.</p>
-          <Link to="/about" className="cta-button">About Us</Link>
-          <div id="bottom-navigation-arrow" className="bottom-nav-arrow page-bottom-nav-arrow">
-            <div className="page-counter">
-              <span className="current-page">{currentPage}</span>
-              <span className="page-exponent">
-                <span className="page-separator">/</span>
-                <span className="total-pages">{totalPages}</span>
-              </span>
-            </div>
-            {/* Only show down arrow if not on last page */}
-            {currentPage < totalPages && (
-              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={navigateDown}>
-                <path d="M5 10L12 17L19 10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            )}
-          </div>
-        </div>
-      </div>
-      <div id="page3" className="full-page left-page">
-        <div className="left-content">
-          {currentPage > 1 && (
-            <div id="top-navigation-arrow" className="top-nav-arrow page-top-nav-arrow" onClick={navigateUp}>
-              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 14L12 7L19 14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
-          )}
 
-          <h2>Prisma Groupe</h2>
-          <p> Conseil technologique et innovation.</p>
-          <Link to="/PrismaGroupe" className="cta-button">En savoir plus</Link>
-
-          <div id="bottom-navigation-arrow" className="bottom-nav-arrow page-bottom-nav-arrow">
-            <div className="page-counter">
-              <span className="current-page">{currentPage}</span>
-              <span className="page-exponent">
-                <span className="page-separator">/</span>
-                <span className="total-pages">{totalPages}</span>
-              </span>
-            </div>
-            {/* Only show down arrow if not on last page */}
-            {currentPage < totalPages && (
-              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={navigateDown}>
-                <path d="M5 10L12 17L19 10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            )}
-          </div>
-        </div>
-      </div>
-      <div id="page5" className="full-page left-page">
-        <div className="left-content">
-          {currentPage > 1 && (
-            <div id="top-navigation-arrow" className="top-nav-arrow page-top-nav-arrow" onClick={navigateUp}>
-              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 14L12 7L19 14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
-          )}
-
-          <h2>Prisma Event</h2>
-          <p>	Organisation et gestion d'événements.</p>
-          <Link to="/PrismaEvents" className="cta-button">Read More</Link>
-
-          <div id="bottom-navigation-arrow" className="bottom-nav-arrow page-bottom-nav-arrow">
-            <div className="page-counter">
-              <span className="current-page">{currentPage}</span>
-              <span className="page-exponent">
-                <span className="page-separator">/</span>
-                <span className="total-pages">{totalPages}</span>
-              </span>
-            </div>
-            {/* Only show down arrow if not on last page */}
-            {currentPage < totalPages && (
-              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={navigateDown}>
-                <path d="M5 10L12 17L19 10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            )}
-          </div>
-        </div>
-      </div>
-      <div id="page7" className="full-page left-page">
-        <div className="left-content">
-          {currentPage > 1 && (
-            <div id="top-navigation-arrow" className="top-nav-arrow page-top-nav-arrow" onClick={navigateUp}>
-              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 14L12 7L19 14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
-          )}
-
-          <h2>Prisma Studio</h2>
-          <p>Création audiovisuelle et design graphique.</p>
-          <Link to="/PrismaStudio" className="cta-button">Read More</Link>
-
-          <div id="bottom-navigation-arrow" className="bottom-nav-arrow page-bottom-nav-arrow">
-            <div className="page-counter">
-              <span className="current-page">{currentPage}</span>
-              <span className="page-exponent">
-                <span className="page-separator">/</span>
-                <span className="total-pages">{totalPages}</span>
-              </span>
-            </div>
-            {/* Only show down arrow if not on last page */}
-            {currentPage < totalPages && (
-              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={navigateDown}>
-                <path d="M5 10L12 17L19 10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            )}
-          </div>
-        </div>
-      </div>
-      <div id="page9" className="full-page left-page">
-        <div className="left-content">
-          {currentPage > 1 && (
-            <div id="top-navigation-arrow" className="top-nav-arrow page-top-nav-arrow" onClick={navigateUp}>
-              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 14L12 7L19 14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
-          )}
-
-          <h2>Prisma Logistique</h2>
-          <p>Gestion logistique et supply chain.</p>
-          <Link to="/PrismaLogestique" className="cta-button">Read More</Link>
-
-          <div id="bottom-navigation-arrow" className="bottom-nav-arrow page-bottom-nav-arrow">
-            <div className="page-counter">
-              <span className="current-page">{currentPage}</span>
-              <span className="page-exponent">
-                <span className="page-separator">/</span>
-                <span className="total-pages">{totalPages}</span>
-              </span>
-            </div>
-            {/* Only show down arrow if not on last page */}
-            {currentPage < totalPages && (
-              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={navigateDown}>
-                <path d="M5 10L12 17L19 10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            )}
-          </div>
-        </div>
-      </div>
-      <div id="page11" className="full-page left-page">
-        <div className="left-content">
-          {currentPage > 1 && (
-            <div id="top-navigation-arrow" className="top-nav-arrow page-top-nav-arrow" onClick={navigateUp}>
-              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 14L12 7L19 14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
-          )}
-
-          <h2>Prisma Espace Déco</h2>
-          <p>Décoration intérieure et aménagement.</p>
-          <Link to="/PrismaEspaceDeco" className="cta-button">Read More</Link>
-
-          <div id="bottom-navigation-arrow" className="bottom-nav-arrow page-bottom-nav-arrow">
-            <div className="page-counter">
-              <span className="current-page">{currentPage}</span>
-              <span className="page-exponent">
-                <span className="page-separator">/</span>
-                <span className="total-pages">{totalPages}</span>
-              </span>
-            </div>
-            {/* Only show down arrow if not on last page */}
-            {currentPage < totalPages && (
-              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={navigateDown}>
-                <path d="M5 10L12 17L19 10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            )}
-          </div>
-        </div>
-      </div>
-      <div id="page13" className="full-page left-page">
-        <div className="left-content">
-          {currentPage > 1 && (
-            <div id="top-navigation-arrow" className="top-nav-arrow page-top-nav-arrow" onClick={navigateUp}>
-              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 14L12 7L19 14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
-          )}
-
-          <h2>Prisma Lab</h2>
+          <img src="/src/assets/prisma-groupe1.png"/>
           <p>Recherche et développement technologique.</p>
-          <Link to="/PrismaLab" className="cta-button">Read More</Link>
+          <Link to="/about" className="cta-button" style={{ backgroundColor: '#286987', color: 'black'}}>Découvrir</Link>
 
           <div id="bottom-navigation-arrow" className="bottom-nav-arrow page-bottom-nav-arrow">
             <div className="page-counter">
@@ -385,7 +202,188 @@ const LeftColumn = () => {
           </div>
         </div>
       </div>
-      <div id="page15" className="full-page left-page">
+      <div id="page3" className="full-page left-page" style={{ backgroundColor: '#bfd8b5'}}>
+        <div className="left-content">
+          {currentPage > 1 && (
+            <div id="top-navigation-arrow" className="top-nav-arrow page-top-nav-arrow" onClick={navigateUp}>
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 14L12 7L19 14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
+          )}
+
+          <img src="/src/assets/home/prisma-event.png"/>
+          <p>Recherche et développement technologique.</p>
+          <Link to="/PrismaEvents" className="cta-button" style={{ backgroundColor: '#98a389', color: 'black'}}>En savoir plus</Link>
+
+          <div id="bottom-navigation-arrow" className="bottom-nav-arrow page-bottom-nav-arrow">
+            <div className="page-counter">
+              <span className="current-page">{currentPage}</span>
+              <span className="page-exponent">
+                <span className="page-separator">/</span>
+                <span className="total-pages">{totalPages}</span>
+              </span>
+            </div>
+            {/* Only show down arrow if not on last page */}
+            {currentPage < totalPages && (
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={navigateDown}>
+                <path d="M5 10L12 17L19 10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            )}
+          </div>
+        </div>
+      </div>
+      <div id="page5" className="full-page left-page" style={{ backgroundColor: '#d7edf7'}}>
+        <div className="left-content">
+          {currentPage > 1 && (
+            <div id="top-navigation-arrow" className="top-nav-arrow page-top-nav-arrow" onClick={navigateUp}>
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 14L12 7L19 14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
+          )}
+
+          <img src="/src/assets/home/prisma-logistique.png"/>
+          <p>Recherche et développement technologique.</p>
+          <Link to="/PrismaLogestique" className="cta-button" style={{ backgroundColor: '#7aa4bd', color: 'black'}}>En savoir plus</Link>
+
+          <div id="bottom-navigation-arrow" className="bottom-nav-arrow page-bottom-nav-arrow">
+            <div className="page-counter">
+              <span className="current-page">{currentPage}</span>
+              <span className="page-exponent">
+                <span className="page-separator">/</span>
+                <span className="total-pages">{totalPages}</span>
+              </span>
+            </div>
+            {/* Only show down arrow if not on last page */}
+            {currentPage < totalPages && (
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={navigateDown}>
+                <path d="M5 10L12 17L19 10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            )}
+          </div>
+        </div>
+      </div>
+      <div id="page7" className="full-page left-page" style={{ backgroundImage: 'url("/src/assets/home/space1.png")'}}>
+        <div className="left-content">
+          {currentPage > 1 && (
+            <div id="top-navigation-arrow" className="top-nav-arrow page-top-nav-arrow" onClick={navigateUp}>
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 14L12 7L19 14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
+          )}
+
+          <img src="/src/assets/home/prisma-space.png"/>
+          <p>Recherche et développement technologique.</p>
+          <Link to="/PrismaLab" className="cta-button" style={{ backgroundColor: '#a1b5d9', color: 'black'}}>En savoir plus</Link>
+
+          <div id="bottom-navigation-arrow" className="bottom-nav-arrow page-bottom-nav-arrow">
+            <div className="page-counter">
+              <span className="current-page">{currentPage}</span>
+              <span className="page-exponent">
+                <span className="page-separator">/</span>
+                <span className="total-pages">{totalPages}</span>
+              </span>
+            </div>
+            {/* Only show down arrow if not on last page */}
+            {currentPage < totalPages && (
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={navigateDown}>
+                <path d="M5 10L12 17L19 10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            )}
+          </div>
+        </div>
+      </div>
+      <div id="page9" className="full-page left-page" style={{ backgroundColor: '#f7a072'}}>
+        <div className="left-content">
+          {currentPage > 1 && (
+            <div id="top-navigation-arrow" className="top-nav-arrow page-top-nav-arrow" onClick={navigateUp}>
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 14L12 7L19 14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
+          )}
+
+          <img src="/src/assets/home/prisma-digital.png"/>
+          <p>Recherche et développement technologique.</p>
+          <Link to="/PrismaEspaceDeco" className="cta-button" style={{ backgroundColor: '#dc4926', color: 'black'}}>En savoir plus</Link>
+
+          <div id="bottom-navigation-arrow" className="bottom-nav-arrow page-bottom-nav-arrow">
+            <div className="page-counter">
+              <span className="current-page">{currentPage}</span>
+              <span className="page-exponent">
+                <span className="page-separator">/</span>
+                <span className="total-pages">{totalPages}</span>
+              </span>
+            </div>
+            {/* Only show down arrow if not on last page */}
+            {currentPage < totalPages && (
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={navigateDown}>
+                <path d="M5 10L12 17L19 10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            )}
+          </div>
+        </div>
+      </div>
+      <div id="page11" className="full-page left-page" style={{ backgroundImage: 'url("/src/assets/home/studio1.png")'}}>
+        <div className="left-content">
+            <div id="top-navigation-arrow" className="top-nav-arrow page-top-nav-arrow" onClick={navigateUp}>
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              </svg>
+            </div>
+          <img src="/src/assets/home/prisma-studio.png"/>
+          <p>Recherche et développement technologique.</p>
+          <Link to="/PrismaStudio" className="cta-button" style={{ backgroundColor: '#0530475', color: 'black'}}>En savoir plus</Link>
+          <div id="bottom-navigation-arrow" className="bottom-nav-arrow page-bottom-nav-arrow">
+            <div className="page-counter">
+              <span className="current-page">{currentPage}</span>
+              <span className="page-exponent">
+                <span className="page-separator">/</span>
+                <span className="total-pages">{totalPages}</span>
+              </span>
+            </div>
+            {/* Only show down arrow if not on last page */}
+            {currentPage < totalPages && (
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={navigateDown}>
+                <path d="M5 10L12 17L19 10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            )}
+          </div>
+        </div>
+      </div>
+      <div id="page13" className="full-page left-page" style={{ backgroundColor: '#ffe377'}}>
+        <div className="left-content">
+          {currentPage > 1 && (
+            <div id="top-navigation-arrow" className="top-nav-arrow page-top-nav-arrow" onClick={navigateUp}>
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 14L12 7L19 14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
+          )}
+
+          <img src="/src/assets/home/prisma-travel.png"/>
+          <p>Recherche et développement technologique.</p>
+          <Link to="/PrismaLab" className="cta-button" style={{ backgroundColor: '#faa526', color: 'black'}}>En savoir plus</Link>
+
+          <div id="bottom-navigation-arrow" className="bottom-nav-arrow page-bottom-nav-arrow">
+            <div className="page-counter">
+              <span className="current-page">{currentPage}</span>
+              <span className="page-exponent">
+                <span className="page-separator">/</span>
+                <span className="total-pages">{totalPages}</span>
+              </span>
+            </div>
+            {/* Only show down arrow if not on last page */}
+            {currentPage < totalPages && (
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={navigateDown}>
+                <path d="M5 10L12 17L19 10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            )}
+          </div>
+        </div>
+      </div>
+      <div id="page15" className="full-page left-page" style={{ backgroundColor: '#6bc9e6'}}>
         <div className="left-content">
           {currentPage > 1 && (
             <div id="top-navigation-arrow" className="top-nav-arrow page-top-nav-arrow" onClick={navigateUp}>
@@ -397,7 +395,7 @@ const LeftColumn = () => {
 
           <h2>Contact</h2>
           <p>Latest updates and news from our company.</p>
-          <Link to="/news" className="cta-button">Contacter-nous</Link>
+          <Link to="/contact" className="cta-button">Contacter-nous</Link>
 
           <div id="bottom-navigation-arrow" className="bottom-nav-arrow page-bottom-nav-arrow">
             <div className="page-counter">

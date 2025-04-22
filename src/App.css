@@ -51,8 +51,14 @@ html {
   box-sizing: border-box;
 }
 
+.left-content img {
+  width: 350px;
+  height: 140px;
+  margin-bottom: 20px;
+}
 .left-content h2 {
-  font-size: 3rem;
+  margin-top: -20px;
+  font-size: 4rem;
   margin-bottom: 20px;
   color: #fff;
 }
@@ -62,6 +68,7 @@ html {
   margin-bottom: 30px;
   line-height: 1.6;
   max-width: 80%;
+  color: #000;
 }
 
 .cta-button {
