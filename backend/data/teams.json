@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Sophia Reynolds",
+    "description": "Sophia is a lead architect with over 10 years of experience in designing modern residential and commercial spaces.",
+    "image": {
+      "public_id": "team/image/sophia_reynolds",
+      "url": "https://res.cloudinary.com/example/image/upload/v1234567/team/image/sophia_reynolds.jpg"
+    },
+    "position": "Lead Architect",
+    "user": "507f1f77bcf86cd799439011"
+  },
+  {
+    "name": "Liam Bennett",
+    "description": "Liam specializes in sustainable interior design, focusing on eco-friendly materials and smart layouts.",
+    "image": {
+      "public_id": "team/image/liam_bennett",
+      "url": "https://res.cloudinary.com/example/image/upload/v1234567/team/image/liam_bennett.jpg"
+    },
+    "position": "Interior Designer",
+    "user": "507f1f77bcf86cd799439012"
+  },
+  {
+    "name": "Isabella Kim",
+    "description": "Isabella manages construction projects with precision and ensures all builds meet the highest quality standards.",
+    "image": {
+      "public_id": "team/image/isabella_kim",
+      "url": "https://res.cloudinary.com/example/image/upload/v1234567/team/image/isabella_kim.jpg"
+    },
+    "position": "Project Manager",
+    "user": "507f1f77bcf86cd799439013"
+  },
+  {
+    "name": "Ethan Martinez",
+    "description": "Ethan is a creative landscape designer with a passion for integrating nature into urban environments.",
+    "image": {
+      "public_id": "team/image/ethan_martinez",
+      "url": "https://res.cloudinary.com/example/image/upload/v1234567/team/image/ethan_martinez.jpg"
+    },
+    "position": "Landscape Designer",
+    "user": "507f1f77bcf86cd799439014"
+  },
+  {
+    "name": "Chloe Patel",
+    "description": "Chloe oversees client relations and ensures seamless communication between the design team and clients.",
+    "image": {
+      "public_id": "team/image/chloe_patel",
+      "url": "https://res.cloudinary.com/example/image/upload/v1234567/team/image/chloe_patel.jpg"
+    },
+    "position": "Client Relations Manager",
+    "user": "507f1f77bcf86cd799439015"
+  }
+]

@@ -1,0 +1,100 @@
+[
+  {
+    "title": "Modern Residential Villa Design",
+    "subtitle": "A blend of elegance and sustainability",
+    "description": "This project showcases a luxurious residential villa with energy-efficient design, spacious interiors, and green landscaping. Smart technologies have been integrated throughout the house.",
+    "date": "2024-07-20T00:00:00.000Z",
+    "ratings": 4.5,
+    "image": {
+      "public_id": "projects/image/villa_modern_design",
+      "url": "https://res.cloudinary.com/example/image/upload/v1234567/projects/image/villa_modern_design.jpg"
+    },
+    "photos": [
+      {
+        "public_id": "projects/gallery/villa_living_room",
+        "url": "https://res.cloudinary.com/example/image/upload/v1234567/projects/gallery/villa_living_room.jpg"
+      },
+      {
+        "public_id": "projects/gallery/villa_exterior",
+        "url": "https://res.cloudinary.com/example/image/upload/v1234567/projects/gallery/villa_exterior.jpg"
+      }
+    ],
+    "category": "Residential",
+    "place": "Los Angeles, USA",
+    "numOfReviews": 2,
+    "reviews": [
+      {
+        "user": "507f1f77bcf86cd799439011",
+        "name": "Jane Doe",
+        "rating": 5,
+        "comment": "Absolutely stunning work!"
+      },
+      {
+        "user": "507f1f77bcf86cd799439012",
+        "name": "John Smith",
+        "rating": 4,
+        "comment": "Modern and sleek design, well executed."
+      }
+    ],
+    "user": "507f1f77bcf86cd799439099"
+  },
+  {
+    "title": "Downtown Commercial Complex",
+    "subtitle": "Innovative architecture for urban businesses",
+    "description": "A commercial complex designed to accommodate multiple businesses with shared facilities, open spaces, and sustainable materials. Completed on budget and ahead of schedule.",
+    "date": "2024-06-05T00:00:00.000Z",
+    "ratings": 5,
+    "image": {
+      "public_id": "projects/image/commercial_complex",
+      "url": "https://res.cloudinary.com/example/image/upload/v1234567/projects/image/commercial_complex.jpg"
+    },
+    "photos": [],
+    "category": "Commercial",
+    "place": "New York, USA",
+    "numOfReviews": 1,
+    "reviews": [
+      {
+        "user": "507f1f77bcf86cd799439013",
+        "name": "Alice White",
+        "rating": 5,
+        "comment": "Perfectly suits the fast-paced downtown life!"
+      }
+    ],
+    "user": "507f1f77bcf86cd799439099"
+  },
+  {
+    "title": "Urban Park Revitalization",
+    "subtitle": "A green escape in the heart of the city",
+    "description": "Transforming an old unused plot into a vibrant community park featuring walkways, playgrounds, water features, and native vegetation.",
+    "date": "2024-08-15T00:00:00.000Z",
+    "ratings": 4.5,
+    "image": {
+      "public_id": "projects/image/urban_park",
+      "url": "https://res.cloudinary.com/example/image/upload/v1234567/projects/image/urban_park.jpg"
+    },
+    "photos": [
+      {
+        "public_id": "projects/gallery/park_aerial",
+        "url": "https://res.cloudinary.com/example/image/upload/v1234567/projects/gallery/park_aerial.jpg"
+      }
+    ],
+    "category": "Urban Planning",
+    "place": "Toronto, Canada",
+    "numOfReviews": 2,
+    "reviews": [
+      {
+        "user": "507f1f77bcf86cd799439014",
+        "name": "Carlos Green",
+        "rating": 5,
+        "comment": "Beautiful and eco-friendly. A win for the city!"
+      },
+      {
+        "user": "507f1f77bcf86cd799439015",
+        "name": "Mina Lee",
+        "rating": 4,
+        "comment": "A refreshing space with a thoughtful layout."
+      }
+    ],
+    "user": "507f1f77bcf86cd799439099"
+  }
+]
