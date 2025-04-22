@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Footer.css';
+import './styles/Footer.css';
 
 const Footer = () => {
   const [selectedOption, setSelectedOption] = useState('briefer');

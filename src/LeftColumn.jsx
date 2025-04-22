@@ -264,37 +264,46 @@ const LeftColumn = () => {
           </div>
         </div>
       </div>
-      <div id="page7" className="full-page left-page" style={{ backgroundImage: 'url("/src/assets/home/space1.png")'}}>
-        <div className="left-content">
-          {currentPage > 1 && (
-            <div id="top-navigation-arrow" className="top-nav-arrow page-top-nav-arrow" onClick={navigateUp}>
-              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 14L12 7L19 14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
-          )}
+     
 
-          <img src="/src/assets/home/prisma-space.png"/>
-          <p>Recherche et développement technologique.</p>
-          <Link to="/PrismaLab" className="cta-button" style={{ backgroundColor: '#a1b5d9', color: 'black'}}>En savoir plus</Link>
 
-          <div id="bottom-navigation-arrow" className="bottom-nav-arrow page-bottom-nav-arrow">
-            <div className="page-counter">
-              <span className="current-page">{currentPage}</span>
-              <span className="page-exponent">
-                <span className="page-separator">/</span>
-                <span className="total-pages">{totalPages}</span>
-              </span>
-            </div>
-            {/* Only show down arrow if not on last page */}
-            {currentPage < totalPages && (
-              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={navigateDown}>
-                <path d="M5 10L12 17L19 10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            )}
-          </div>
-        </div>
+      <div id="page7" className="full-page left-page" style={{ 
+  backgroundImage: 'url("/src/assets/home/space1.png")',
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  backgroundRepeat: 'no-repeat'
+}}>
+  <div className="left-content">
+    {currentPage > 1 && (
+      <div id="top-navigation-arrow" className="top-nav-arrow page-top-nav-arrow" onClick={navigateUp}>
+        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 14L12 7L19 14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
       </div>
+    )}
+
+    <img src="/src/assets/home/prisma-space.png"/>
+    <p>Recherche et développement technologique.</p>
+    <Link to="/PrismaLab" className="cta-button" style={{ backgroundColor: '#a1b5d9', color: 'black'}}>En savoir plus</Link>
+
+    <div id="bottom-navigation-arrow" className="bottom-nav-arrow page-bottom-nav-arrow">
+      <div className="page-counter">
+        <span className="current-page">{currentPage}</span>
+        <span className="page-exponent">
+          <span className="page-separator">/</span>
+          <span className="total-pages">{totalPages}</span>
+        </span>
+      </div>
+      {currentPage < totalPages && (
+        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={navigateDown}>
+          <path d="M5 10L12 17L19 10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      )}
+    </div>
+  </div>
+</div>
+
+
       <div id="page9" className="full-page left-page" style={{ backgroundColor: '#f7a072'}}>
         <div className="left-content">
           {currentPage > 1 && (
@@ -330,6 +339,7 @@ const LeftColumn = () => {
         <div className="left-content">
             <div id="top-navigation-arrow" className="top-nav-arrow page-top-nav-arrow" onClick={navigateUp}>
               <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 14L12 7L19 14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </div>
           <img src="/src/assets/home/prisma-studio.png"/>

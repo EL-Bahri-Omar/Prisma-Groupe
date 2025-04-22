@@ -1,29 +1,49 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 
-const RightSidebar = () => {
+const TeamRightSidebar = () => {
   const [currentPage, setCurrentPage] = useState(1);
-
-  // Function to handle radio button changes
-  const handleRadioChange = (event) => {
-    const target = document.querySelector(event.target.value);
-    if (target) {
-      window.scrollTo({
-        top: target.offsetTop,
-        behavior: 'smooth',
-      });
-    }
+  
+  // Map between page numbers and their corresponding IDs (left column pages)
+  const pageIdMap = {
+    1: 'page1',
+    2: 'page3',
+    3: 'page5',
+    4: 'page7',
+    5: 'page9',
+    6: 'page11',
+    7: 'page13',
+    8: 'page15'
   };
 
   // Listen for scroll events to update radio button selection
   useEffect(() => {
     const handleScroll = () => {
-      const pageHeight = document.querySelector('.full-page')?.clientHeight || window.innerHeight;
-      const scrollTop = window.scrollY;
-      const newPage = Math.floor(scrollTop / pageHeight) + 1;
+      // Find the most visible page in the left column
+      const pageElements = document.querySelectorAll('.team-left-page');
+      let mostVisiblePage = 1;
+      let maxVisibility = 0;
       
-      // Update the current page
-      setCurrentPage(newPage);
+      pageElements.forEach(page => {
+        const rect = page.getBoundingClientRect();
+        const pageId = page.id;
+        
+        // Find the page number for this page ID
+        const pageNum = Object.entries(pageIdMap).find(([num, id]) => id === pageId)?.[0];
+        
+        if (pageNum) {
+          // Calculate how much of the page is visible in the viewport
+          const visibleHeight = Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
+          const visibility = visibleHeight > 0 ? visibleHeight / page.clientHeight : 0;
+          
+          if (visibility > maxVisibility) {
+            maxVisibility = visibility;
+            mostVisiblePage = parseInt(pageNum);
+          }
+        }
+      });
+      
+      setCurrentPage(mostVisiblePage);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -34,18 +54,18 @@ const RightSidebar = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [pageIdMap]);
 
-  // Map between page numbers and their corresponding IDs
-  const pageIdMap = {
-    1: '#page1',
-    2: '#page3',
-    3: '#page5',
-    4: '#page7',
-    5: '#page9',
-    6: '#page11',
-    7: '#page13',
-    8: '#page15'
+  // Function to handle radio button changes
+  const handleRadioChange = (event) => {
+    const pageNum = event.target.value;
+    const targetId = pageIdMap[pageNum];
+    const target = document.getElementById(targetId);
+    
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+      setCurrentPage(parseInt(pageNum));
+    }
   };
 
   return (
@@ -56,7 +76,7 @@ const RightSidebar = () => {
             <input
               type="radio"
               name="page"
-              value={pageId}
+              value={pageNum}
               checked={currentPage === parseInt(pageNum)}
               onChange={handleRadioChange}
             />
@@ -67,4 +87,4 @@ const RightSidebar = () => {
   );
 };
 
-export default RightSidebar;
+export default TeamRightSidebar;

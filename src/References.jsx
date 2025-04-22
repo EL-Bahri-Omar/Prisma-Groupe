@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 import Sidebar from './Sidebar';
 import GoBack from './GoBack';
 import './App.css';
+import './styles/references.css';
 
 const ReferencesPage = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -98,7 +100,8 @@ const ReferencesPage = () => {
               <div className="references-grid">
                 {filteredReferences.map((reference) => (
                   <div key={reference.id} className="reference-cell">
-                    <div 
+                    <Link
+                      to={`/project/${reference.id}`} 
                       className="reference-card"
                       onMouseEnter={() => setHoveredRef(reference.id)}
                       onMouseLeave={() => setHoveredRef(null)}
@@ -120,7 +123,7 @@ const ReferencesPage = () => {
                           </div>
                         )}
                       </div>
-                    </div>
+                    </Link>
                   </div>
                 ))}
               </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-const RightColumn = () => {
+const TeamRight = () => {
   return (
     <div className="mask">
       <div className="col col-r">
@@ -34,4 +34,4 @@ const RightColumn = () => {
   );
 };
 
-export default RightColumn;
+export default TeamRight;

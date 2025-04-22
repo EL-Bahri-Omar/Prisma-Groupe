@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import GoBack from './GoBack';
-import './siginup.css';
+import './styles/siginup.css';
 
 const SignUp = () => {
   const [authMode, setAuthMode] = useState('connexion'); // 'connexion', 'inscription', 'mot-de-passe-oublie'
@@ -41,32 +41,30 @@ const SignUp = () => {
   };
 
   return (
-    <div className={`app-container ${sidebarOpen ? 'sidebar-open' : ''}`}>
+    <div className={`signup-app-container ${sidebarOpen ? 'signup-sidebar-open' : ''}`}>
       {/* Barre latérale */}
       <Sidebar isOpen={sidebarOpen} onToggle={toggleSidebar} />
       
-      
-
-      <div className="main-content">
-        <div className={`auth-container ${authMode !== 'connexion' ? 'active' : ''}`}>
-          <div className="form-container">
+      <div className="signup-main-content">
+        <div className={`signup-auth-container ${authMode !== 'connexion' ? 'signup-active' : ''}`}>
+          <div className="signup-form-container">
             {/* Formulaire de Connexion */}
             <form 
-              className={`auth-form ${authMode === 'connexion' ? 'active' : ''}`} 
+              className={`signup-auth-form ${authMode === 'connexion' ? 'signup-active' : ''}`} 
               onSubmit={handleSubmit}
             >
               <h2>Bienvenue à nouveau</h2>
               
-              <div className="social-auth">
-                <button type="button" className="social-btn google">
+              <div className="signup-social-auth">
+                <button type="button" className="signup-social-btn signup-google">
                   <i className="fab fa-google"></i> Continuer avec Google
                 </button>
-                <button type="button" className="social-btn facebook">
+                <button type="button" className="signup-social-btn signup-facebook">
                   <i className="fab fa-facebook-f"></i> Continuer avec Facebook
                 </button>
               </div>
               
-              <div className="divider">
+              <div className="signup-divider">
                 <span>ou connectez-vous avec votre email</span>
               </div>
               
@@ -88,26 +86,26 @@ const SignUp = () => {
                 required
               />
               
-              <div className="form-options">
+              <div className="signup-form-options">
                 <button 
                   type="button" 
-                  className="forgot-link"
+                  className="signup-forgot-link"
                   onClick={() => setAuthMode('mot-de-passe-oublie')}
                 >
                   Mot de passe oublié ?
                 </button>
               </div>
               
-              <button type="submit" className="submit-btn">
+              <button type="submit" className="signup-submit-btn">
                 Se connecter
               </button>
               
-              <p className="switch-text">
+              <p className="signup-switch-text">
                 Pas encore de compte ?{' '}
                 <button 
                   type="button" 
                   onClick={() => setAuthMode('inscription')}
-                  className="switch-link"
+                  className="signup-switch-link"
                 >
                   Créer un compte
                 </button>
@@ -116,12 +114,12 @@ const SignUp = () => {
 
             {/* Formulaire d'Inscription */}
             <form 
-              className={`auth-form ${authMode === 'inscription' ? 'active' : ''}`} 
+              className={`signup-auth-form ${authMode === 'inscription' ? 'signup-active' : ''}`} 
               onSubmit={handleSubmit}
             >
               <h2>Créer votre compte</h2>
               
-              <div className="divider">
+              <div className="signup-divider">
                 <span>ou inscrivez-vous avec votre email</span>
               </div>
               
@@ -160,18 +158,16 @@ const SignUp = () => {
                 onChange={handleChange}
                 required
               />
-              <button type="submit" className="submit-btn">
+              <button type="submit" className="signup-submit-btn">
                 S'inscrire
               </button>
               
-              
-              
-              <p className="switch-text">
+              <p className="signup-switch-text">
                 Vous avez déjà un compte ?{' '}
                 <button 
                   type="button" 
                   onClick={() => setAuthMode('connexion')}
-                  className="switch-link"
+                  className="signup-switch-link"
                 >
                   Se connecter
                 </button>
@@ -180,20 +176,20 @@ const SignUp = () => {
 
             {/* Formulaire Mot de passe oublié */}
             <form 
-              className={`auth-form ${authMode === 'mot-de-passe-oublie' ? 'active' : ''}`} 
+              className={`signup-auth-form ${authMode === 'mot-de-passe-oublie' ? 'signup-active' : ''}`} 
               onSubmit={(e) => {
                 e.preventDefault();
                 alert(`Un lien de réinitialisation a été envoyé à ${formData.email}`);
                 setAuthMode('connexion');
               }}
             >
-              <div className="lock-icon">
+              <div className="signup-lock-icon">
                 <i className="fas fa-lock"></i>
               </div>
               
               <h2>Réinitialisation du mot de passe</h2>
               
-              <p className="reset-text">
+              <p className="signup-reset-text">
                 Entrez l'adresse email associée à votre compte et nous vous enverrons un lien pour réinitialiser votre mot de passe.
               </p>
               
@@ -206,20 +202,20 @@ const SignUp = () => {
                 required
               />
               
-              <button type="submit" className="submit-btn">
+              <button type="submit" className="signup-submit-btn">
                 Envoyer les instructions
               </button>
               
-              <div className="additional-options">
+              <div className="signup-additional-options">
                 <button 
                   type="button" 
                   onClick={() => setAuthMode('connexion')}
-                  className="back-btn"
+                  className="signup-back-btn"
                 >
                   <i className="fas fa-arrow-left"></i> Retour à la connexion
                 </button>
                 
-                <p className="contact-support">
+                <p className="signup-contact-support">
                   Des problèmes ? <a href="/contact">Contactez notre support</a>
                 </p>
               </div>
@@ -227,9 +223,9 @@ const SignUp = () => {
           </div>
 
           {/* Panneau d'animation */}
-          <div className="overlay-container">
-            <div className="overlay">
-              <div className={`overlay-panel ${authMode === 'connexion' ? 'right' : 'left'}`}>
+          <div className="signup-overlay-container">
+            <div className="signup-overlay">
+              <div className={`signup-overlay-panel ${authMode === 'connexion' ? 'signup-right' : 'signup-left'}`}>
                 <h2>
                   {authMode === 'connexion' ? 'Nouveau ici ?' : 'Content de vous revoir !'}
                 </h2>
@@ -239,7 +235,7 @@ const SignUp = () => {
                     : 'Connectez-vous avec vos identifiants pour accéder à votre compte'}
                 </p>
                 <button 
-                  className="ghost-btn" 
+                  className="signup-ghost-btn" 
                   onClick={() => setAuthMode(authMode === 'connexion' ? 'inscription' : 'connexion')}
                 >
                   {authMode === 'connexion' ? "S'inscrire" : "Se connecter"}

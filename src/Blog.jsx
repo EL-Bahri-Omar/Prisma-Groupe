@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import GoBack from './GoBack';
-import './BlogPage.css';
+import './styles/BlogPage.css';
 import ScrollTop from "./ScrollTop";
 
 const BlogPage = () => {

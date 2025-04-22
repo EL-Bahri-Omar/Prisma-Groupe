@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import LeftColumn from './LeftColumn';
 import RightColumn from './RightColumn';
-import './team.css';
 import Sidebar from './Sidebar';
 import RightSidebar from './RightSidebar';
 

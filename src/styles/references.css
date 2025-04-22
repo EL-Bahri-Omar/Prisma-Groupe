@@ -1,0 +1,239 @@
+/* ReferencesPage Styles - Add to your App.css or create a separate CSS file */
+
+/* Container and layout */
+.references-container {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+.references-layout {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+}
+
+/* Left side text content - Fixed position */
+.project-filters {
+    width: 19%;
+    background-color: #1c1c1c;
+    color: white;
+    padding-left: 60px;
+    position: fixed;
+    height: 100vh;
+    display: flex;
+    left: 50px;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 1;
+}
+
+.filter-title-small {
+    font-size: 0.9rem;
+    color: #4a4cd6;
+    margin-bottom: 0px;
+    font-weight: 400;
+}
+
+.filter-title-large {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.filter-category {
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    align-items: center;
+    margin-bottom: 2px;
+    cursor: pointer;
+    color: #aaa;
+    transition: color 0.3s ease;
+    font-size: 0.8rem;
+}
+
+.filter-category:hover,
+.filter-category.active {
+    color: white;
+}
+
+.filter-circle-cell {
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.filter-circle {
+    width: 20px;
+    height: 20px;
+    background-color: #292bc7;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
+
+.filter-category.all .filter-circle {
+    visibility: visible;
+}
+
+.filter-text {
+    padding-left: 5px;
+}
+
+/* Right side references grid - Scrollable */
+.references-grid-section {
+    width: 74%;
+    background-color: #e1d6af;
+    margin-left: 26%;
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.references-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0;
+}
+
+.reference-cell {
+    position: relative;
+    overflow: hidden;
+    background-color: #000;
+    aspect-ratio: 1/1;
+}
+
+.reference-card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.reference-image-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.reference-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+.reference-image.grayscale {
+    filter: grayscale(100%);
+    opacity: 0.8;
+}
+
+.reference-image.colored {
+    filter: grayscale(0);
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.reference-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.reference-logo {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.reference-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.reference-divider {
+    width: 60px;
+    height: 3px;
+    background-color: #042f38;
+    margin: 10px 0;
+}
+
+.reference-name {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+    .references-layout {
+        flex-direction: column;
+    }
+
+    .project-filters {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 40px;
+    }
+
+    .references-grid-section {
+        width: 100%;
+        margin-left: 0;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .references-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .filter-title-large {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .references-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-filters {
+        padding: 30px 20px;
+    }
+
+    .filter-title-large {
+        font-size: 2rem;
+    }
+}

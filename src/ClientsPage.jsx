@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom"
 import Sidebar from './Sidebar';
 import './App.css';
+import './styles/clients.css'
 
 const ClientsPage = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Sidebar from './Sidebar';
 import GoBack from './GoBack';
-import './philosophie.css';
+import './styles/philosophie.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import ScrollTop from "./ScrollTop";
@@ -133,12 +133,11 @@ const Philosophie = () => {
               </div>
             </div>
           </section>
-
-          <ScrollTop/>
-        </div>
+        </div>       
         
-        <GoBack />
       </div>
+      <ScrollTop />
+      <GoBack />
     </div>
   );
 };

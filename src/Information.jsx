@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Sidebar from './Sidebar';
 import GoBack from './GoBack';
-import './information.css';
+import './styles/information.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarAlt, faDesktop, faUsers } from "@fortawesome/free-solid-svg-icons";
 import sameTeamImage from './assets/info1.png';
@@ -124,12 +124,11 @@ const Informations = () => {
             </div>
           </div>
         </section>
-
-        <ScrollTop/>
       </div>
-      
-        <GoBack />
+        
     </div>
+      <ScrollTop />
+      <GoBack />
     </div>
   );
 };

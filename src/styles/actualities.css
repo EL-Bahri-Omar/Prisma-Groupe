@@ -1,0 +1,203 @@
+/* Base Styles */
+.app-container {
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.actualities-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: 'Arial', sans-serif;
+    transition: transform 0.3s ease-out;
+}
+
+.content-shifted {
+    transform: translateX(280px);
+}
+
+.page-title {
+    text-align: center;
+    color: #042f38;
+    margin-bottom: 40px;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+
+.page-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 560px;
+    transform: translateX(-100%);
+    width: 150px;
+    height: 7px;
+    background-color: #474747;
+}
+
+/* News Vertical Layout */
+.news-vertical-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.news-vertical-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    max-width: 900px;
+    width: 100%;
+}
+
+.news-vertical-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.vertical-card-image-container {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.vertical-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.news-vertical-card:hover .vertical-card-image {
+    transform: scale(1.05);
+}
+
+.vertical-card-content {
+    padding: 25px;
+}
+
+.vertical-card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #042f38;
+    margin: 0 0 15px 0;
+}
+
+.vertical-card-description {
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.vertical-card-meta {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.vertical-card-date {
+    font-size: 0.9rem;
+    color: #666;
+    background-color: #f5f5f5;
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+.vertical-card-excerpt {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+.vertical-card-footer {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.read-more {
+    background-color: #042f38;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.read-more:hover {
+    background-color: #02161b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Scroll to Top Button */
+.scroll-to-top-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #042f38;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(40, 105, 135, 0.3);
+    transition: all 0.3s ease;
+    border: none;
+    z-index: 100;
+}
+
+.scroll-to-top-button:hover {
+    background-color: #286987;
+        box-shadow: 0 6px 12px rgba(40, 105, 135, 0.4);
+}
+
+.arrow-icon {
+    font-size: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .news-vertical-card {
+        max-width: 500px;
+    }
+    
+    .vertical-card-image-container {
+        height: 200px;
+    }
+    
+    .page-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .actualities-container {
+        padding: 20px 15px;
+    }
+    
+    .vertical-card-title {
+        font-size: 1.3rem;
+    }
+    
+    .vertical-card-description {
+        font-size: 1rem;
+    }
+}

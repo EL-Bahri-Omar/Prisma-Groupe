@@ -1,0 +1,107 @@
+.exact-footer {
+    background-color: #343434;
+    color: #fff;
+    display: flex;
+    height: 200px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+  
+  .footer-title {
+    font-size: 3.5rem;
+    font-weight: 300;
+    margin-left: 80px;
+    letter-spacing: -1px;
+  }
+  
+  .footer-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .action-prompt {
+    color: #fff;
+    margin-right: 20px;
+    font-size: 25px;
+  }
+  
+  .footer-custom-dropdown {
+    background-color: #343434;
+    color: #fff;
+    border: 1px solid #333;
+    padding: 10px 30px 10px 10px;
+    font-size: 1rem;
+    appearance: none;
+    max-height: 200px;
+    overflow-y: scroll;
+    direction: rtl; /* This reverses the scroll direction */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none' stroke='white'%3E%3Cpath d='M1 4L6 9L11 4' stroke-width='1.5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    scrollbar-width: thin;
+    scrollbar-color: #666 #343434;
+  }
+  
+  .footer-custom-dropdown::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .footer-custom-dropdown::-webkit-scrollbar-track {
+    background: #343434;
+  }
+  
+  .footer-custom-dropdown::-webkit-scrollbar-thumb {
+    background-color: #666;
+    border-radius: 4px;
+  }
+  
+  .footer-custom-dropdown option {
+    background-color: #343434;
+    color: #fff;
+    padding: 10px;
+    direction: ltr; /* Ensure text remains left-to-right */
+  }
+  
+  .footer-custom-dropdown option:hover {
+    background-color: #444;
+  }
+  
+  .footer-submit-btn {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 10px 30px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .footer-submit-btn:hover {
+    background-color: #000000;
+    color: #fff;
+  }
+  
+  @media (max-width: 768px) {
+    .exact-footer {
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+    }
+  
+    .footer-actions {
+      flex-direction: column;
+      gap: 15px;
+      width: 100%;
+    }
+  
+    .custom-dropdown,
+    .submit-btn {
+      width: 100%;
+    }
+  }

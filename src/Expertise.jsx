@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import GoBack from './GoBack';
-import "./Expertise.css";
+import "./styles/Expertise.css";
 import ScrollTop from "./ScrollTop";
 
 const ExpertisePage = () => {

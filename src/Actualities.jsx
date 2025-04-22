@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import GoBack from './GoBack';
-import "./actualities.css"
+import "./styles/actualities.css"
 import ScrollTop from "./ScrollTop";
 
 const Actualities = () => {
@@ -108,12 +108,11 @@ const Actualities = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        <ScrollTop/>
+        </div>       
       </main>
       
       <GoBack />
+      <ScrollTop/>
     </div>
   );
 };
