@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 const Sidebar = ({ onToggle }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [expandedMenu, setExpandedMenu] = useState(null);
+  const [showNumbers, setShowNumbers] = useState(false);
 
   const toggleSidebar = () => {
     const newState = !isOpen;
@@ -15,6 +16,23 @@ const Sidebar = ({ onToggle }) => {
     if (!newState) {
       setExpandedMenu(null);
     }
+
+    // When closing sidebar, also close the WhatsApp numbers popup
+    if (!newState) {
+      setShowNumbers(false);
+    }
+  };
+
+  const handleWhatsAppClick = () => {
+    setShowNumbers(!showNumbers);
+  };
+
+  const handleNumberClick = (number) => {
+    // Remove spaces and non-numeric characters for compatibility
+    const cleanNumber = number.replace(/\s+/g, '');
+    
+    // Open WhatsApp with the number
+    window.open(`https://wa.me/${cleanNumber}`, '_blank');
   };
 
   const toggleMenu = (menu) => {
@@ -73,12 +91,11 @@ const Sidebar = ({ onToggle }) => {
                   <span>AGENCES</span>
                   <span className="dropdown-arrow">▼</span>
                 </div>
-                <ul className="submenu">
-                  <li><Link to="/agence/depuis-2003">Depuis 2003</Link></li>
-                  <li><Link to="/agence/equipe-manageriale">Equipe Managériale</Link></li>
-                  <li><Link to="/agence/nearshore-offshore">Nearshore / Offshore</Link></li>
-                  <li><Link to="/agence/actualites">Actualités</Link></li>
-                  <li><Link to="/agence/espace-carriere">Espace carrière</Link></li>
+                <ul className="submenu active-menu">
+                  <li><Link to="/agence/depuis-2008" className={window.location.pathname === '/agence/depuis-2008' ? 'active-nav-item' : ''}>Depuis 2008</Link></li>
+                  <li><Link to="/agence/team" className={window.location.pathname === '/agence/team' ? 'active-nav-item' : ''}>Team</Link></li>
+                  <li><Link to="/agence/philosophie" className={window.location.pathname === '/agence/philosophie' ? 'active-nav-item' : ''}>Philosophie</Link></li>
+                  <li><Link to="/agence/actualites" className={window.location.pathname === '/agence/actualites' ? 'active-nav-item' : ''}>Actualités</Link></li>
                 </ul>
               </li>
             ) : (
@@ -128,13 +145,26 @@ const Sidebar = ({ onToggle }) => {
           </ul>
         </div>
       )}
+
+      {/* WhatsApp number popup */}
+            {showNumbers && (
+              <div className="whatsapp-numbers">
+                <p 
+                  onClick={() => handleNumberClick('+216 12 345 678')}
+                  className="whatsapp-number"
+                >
+                  +216 12 345 678
+                </p>
+              </div>
+      )}
       
       {/* Social icons section - always visible when sidebar is open */}
       {isOpen && (
         <div className="social-icons">
-          <a href="https://whatsapp.com" className="social-icon" target="_blank" rel="noopener noreferrer">
-            <div style={{ marginRight: "80px"}}><i className="fab fa-whatsapp"></i></div>
+          <a className="social-icon" target="_blank" rel="noopener noreferrer" >
+            <div style={{ marginRight: "80px"}}><i className="fab fa-whatsapp" onClick={handleWhatsAppClick}></i></div>
           </a>
+          
           <a href="https://facebook.com" className="social-icon" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-facebook-f"></i>
           </a>

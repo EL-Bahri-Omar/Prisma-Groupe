@@ -1,227 +1,130 @@
 import React, { useState } from 'react';
 import Sidebar from '../Sidebar';
 import ScrollToTop from '../ScrollToTop';
-import '../App.css';
-import { useNavigate } from 'react-router-dom';
-import { Mail, Phone, Clock, MapPin, Briefcase, Users, Share2 } from 'lucide-react';
+import './contact.css';
 
-const Contact = () => {
+const ContactPage = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState({
-    name: '',
+    nom: '',
+    prenom: '',
+    societe: '',
+    telephone: '',
     email: '',
-    subject: '',
-    message: ''
+    sujet: '',
+    message: '',
+    captcha: ''
   });
-  const [formSubmitted, setFormSubmitted] = useState(false);
-  const navigate = useNavigate();
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
   };
 
-  const handleContactClick = () => {
-    navigate('/contact');
-  };
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Logique pour envoyer le formulaire
-    setFormSubmitted(true);
-    setTimeout(() => {
-      setFormSubmitted(false);
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
-    }, 3000);
+    if (!formData.nom || !formData.prenom || !formData.email || !formData.captcha) {
+      alert('Veuillez remplir tous les champs obligatoires');
+      return;
+    }
+    
+    console.log('Form submitted:', formData);
+    
+    // Réinitialisation du formulaire
+    setFormData({
+      nom: '',
+      prenom: '',
+      societe: '',
+      telephone: '',
+      email: '',
+      sujet: '',
+      message: '',
+      captcha: ''
+    });
+    
+    // Fermer la modale
+    setShowModal(false);
+    
+    // Afficher un message de succès
+    alert('Votre message a été envoyé avec succès!');
   };
 
+  // Générer un CAPTCHA aléatoire
+  const generateCaptcha = () => {
+    const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let captcha = '';
+    for (let i = 0; i < 6; i++) {
+      captcha += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return captcha;
+  };
+
+  const [captchaText] = useState(generateCaptcha());
+
   return (
-    
     <div className={`app-container ${sidebarOpen ? 'sidebar-open' : ''}`}>
-      {/* Barre latérale */}
       <Sidebar isOpen={sidebarOpen} onToggle={toggleSidebar} />
+      
       <div className="main-content">
-        <div className="explore-container">
-          {/* Section d'en-tête avec fond gradient */}
-          <div className="contact-header">
-            <div className="contact-header-content">
-              <h1 className="contact-title">Contactez-nous</h1>
-              <div className="contact-subtitle">Parlons de vos projets</div>
-              <div className="contact-divider"></div>
-              <p className="contact-intro">
-                Chez Prisma Groupe, nous sommes passionnés par l'innovation et l'excellence. 
-                Notre équipe d'experts est prête à vous accompagner dans tous vos défis technologiques.
-              </p>
-            </div>
-          </div>
-
-          {/* Section principale avec formulaire et infos de contact */}
-          <div className="contact-main-section">
-            <div className="contact-form-section">
-              <div className="contact-form-card">
-                <h2 className="form-title">Envoyez-nous un message</h2>
+        <div className="contact-container">
+          <div className="contact-layout">
+            {/* Section de contact (gauche) */}
+            <div className="contact-text-section">
+              <h1>Restons en contact</h1>
+              <p>Vous Avez Une Idée, Un Projet ? Discutons ?</p>
+              
+              <div className="contact-details">
+                <p>29 Rue de l'énergie solaire</p>
+                <p>Z.I. Charguia 1</p>
+                <p>2035 Tunis -Tunisie</p>
                 
-                {formSubmitted ? (
-                  <div className="form-success">
-                    <div className="success-icon">✓</div>
-                    <h3>Message envoyé avec succès!</h3>
-                    <p>Nous vous contacterons très prochainement.</p>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="contact-form">
-                    <div className="form-row">
-                      <div className="form-group">
-                        <label htmlFor="name">Nom complet</label>
-                        <input
-                          type="text"
-                          id="name"
-                          name="name"
-                          value={formData.name}
-                          onChange={handleChange}
-                          placeholder="Votre nom et prénom"
-                          required
-                        />
-                      </div>
-                      <div className="form-group">
-                        <label htmlFor="email">Adresse email</label>
-                        <input
-                          type="email"
-                          id="email"
-                          name="email"
-                          value={formData.email}
-                          onChange={handleChange}
-                          placeholder="exemple@email.com"
-                          required
-                        />
-                      </div>
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="subject">Sujet</label>
-                      <input
-                        type="text"
-                        id="subject"
-                        name="subject"
-                        value={formData.subject}
-                        onChange={handleChange}
-                        placeholder="L'objet de votre message"
-                        required
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="message">Message</label>
-                      <textarea
-                        id="message"
-                        name="message"
-                        value={formData.message}
-                        onChange={handleChange}
-                        placeholder="Décrivez votre projet ou votre demande..."
-                        rows="5"
-                        required
-                      ></textarea>
-                    </div>
-                    <button type="submit" className="submit-btn">Envoyer le message</button>
-                  </form>
-                )}
-              </div>
-            </div>
-
-            <div className="contact-info-section">
-              <div className="info-card">
-                <div className="info-item">
-                  <div className="info-icon">
-                    <MapPin size={24} />
-                  </div>
-                  <div className="info-content">
-                    <h3>Notre siège social</h3>
-                    <p>Prisma Groupe<br />29 Rue de l'énergie solaire<br />Charguia 2, Tunis, Tunisie</p>
-                  </div>
+                <div className="contact-info">
+                  <p><span className="icon email"></span>contact@prisma-groupe.com</p>
+                  <p><span className="icon phone"></span>(+216) 71 828 422 </p>
+                  <p><span className="icon fax"></span>(+216) 70 031 019</p>
                 </div>
-                
-                <div className="info-item">
-                  <div className="info-icon">
-                    <Phone size={24} />
-                  </div>
-                  <div className="info-content">
-                    <h3>Téléphone</h3>
-                    <p>+33 1 23 45 67 89</p>
-                    <p>+33 1 23 45 67 90 (Support)</p>
-                  </div>
-                </div>
-                
-                <div className="info-item">
-                  <div className="info-icon">
-                    <Mail size={24} />
-                  </div>
-                  <div className="info-content">
-                    <h3>Email</h3>
-                    <p>contact@prismagroupe.com</p>
-                    <p>support@prismagroupe.com</p>
-                  </div>
-                </div>
-                
-                <div className="info-item">
-                  <div className="info-icon">
-                    <Clock size={24} />
-                  </div>
-                  <div className="info-content">
-                    <h3>Horaires d'ouverture</h3>
-                    <p>Lundi - Vendredi: 9h00 - 18h00</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Section des départements */}
-          <div className="contact-departments">
-            <h2 className="departments-title">Nos départements</h2>
-            <div className="departments-grid">
-              <div className="department-card">
-                <div className="department-icon">
-                  <Briefcase size={32} />
-                </div>
-                <h3>Service Commercial</h3>
-                <p>Rejoignez notre équipe de talents</p>
-                <a href="mailto:commercial@prismagroupe.com">commercial@prismagroupe.com</a>
               </div>
               
-              <div className="department-card">
-                <div className="department-icon">
-                  <Users size={32} />
-                </div>
-                <h3>Ressources Humaines</h3>
-                <p>Rejoignez notre équipe de talents</p>
-                <a href="mailto:carriere@prismagroupe.com">carriere@prismagroupe.com</a>
-              </div>
+              <hr className="separator" />
               
-              <div className="department-card">
-                <div className="department-icon">
-                  <Share2 size={32} />
-                </div>
-                <h3>Partenariats</h3>
-                <p>Rejoignez notre équipe de talents</p>
-                <a href="mailto:partenariat@prismagroupe.com">partenariat@prismagroupe.com</a>
+              
+              <div className="contact-social-icons">
+              <a href="https://whatsapp.com" className="social-icon" target="_blank" rel="noopener noreferrer">
+            <div style={{ marginRight: "80px"}}><i className="fab fa-whatsapp"></i></div>
+          </a>
+          <a href="https://facebook.com" className="social-icon" target="_blank" rel="noopener noreferrer">
+            <i className="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://linkedin.com" className="social-icon" target="_blank" rel="noopener noreferrer">
+            <i className="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://tiktok.com" className="social-icon" target="_blank" rel="noopener noreferrer">
+            <i className="fab fa-tiktok"></i>
+          </a>
+          <a href="https://instagram.com" className="social-icon" target="_blank" rel="noopener noreferrer">
+            <i className="fab fa-instagram"></i>
+          </a>
               </div>
+                            
+              <button 
+                onClick={() => setShowModal(true)}
+                className="contact-button"
+              >
+                CONTACTER NOUS
+              </button>
             </div>
-          </div>
 
-          {/* Section carte et réseaux sociaux */}
-          <div className="contact-map-section">
-            <div className="map-container">
-              {/* Intégrez ici une iframe Google Maps ou une image de carte */}
-              <div className="map-placeholder">
-                <iframe 
+            {/* Section carte (droite) */}
+            <div className="contact-map-section">
+            <iframe 
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3193.673127002574!2d10.18966147554845!3d36.84578097144222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd34c6aa7a81fd%3A0xf35d3ce3b95f45ed!2s29%20Rue%20de%20l%27%C3%A9nergie%20solaire%2C%20Tunis%2C%20Tunisie!5e0!3m2!1sfr!2stn!4v1711450800927!5m2!1sfr!2stn&iwloc=near&q=Prisma%20Groupe" 
                   width="100%" 
                   height="100%" 
@@ -231,16 +134,103 @@ const Contact = () => {
                   referrerPolicy="no-referrer-when-downgrade"
                   title="29 Rue de l'énergie solaire, Tunis"
                 ></iframe>
-              </div>
             </div>
-
           </div>
         </div>
       </div>
+
+      {/* Modale de contact */}
+      {showModal && (
+        <div className="full-screen-modal">
+          <div className="modal-content">
+            <button 
+              onClick={() => setShowModal(false)}
+              className="modal-close"
+            >
+              ×
+            </button>
+            
+            <h2>CONTACTEZ-NOUS</h2>
+            <hr className="modal-separator" />
+            
+            <form onSubmit={handleSubmit}>
+              <div className="form-row">
+                <input 
+                  type="text" 
+                  name="nom"
+                  placeholder="Nom" 
+                  value={formData.nom}
+                  onChange={handleInputChange}
+                  required
+                />
+                <input 
+                  type="text" 
+                  name="prenom"
+                  placeholder="Prénom" 
+                  value={formData.prenom}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              
+              <div className="form-row">
+                <input 
+                  type="text" 
+                  name="societe"
+                  placeholder="Société" 
+                  value={formData.societe}
+                  onChange={handleInputChange}
+                />
+                <input 
+                  type="tel" 
+                  name="telephone"
+                  placeholder="Téléphone" 
+                  value={formData.telephone}
+                  onChange={handleInputChange}
+                />
+              </div>
+              
+              <div className="form-row">
+                <input 
+                  type="email" 
+                  name="email"
+                  placeholder="Email" 
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
+                />
+                <input 
+                  type="text" 
+                  name="sujet"
+                  placeholder="Sujet" 
+                  value={formData.sujet}
+                  onChange={handleInputChange}
+                />
+              </div>
+              
+              <textarea 
+                name="message"
+                placeholder="Message"
+                value={formData.message}
+                onChange={handleInputChange}
+              ></textarea>
+              
+             
+              
+              <button 
+                type="submit" 
+                className="submit-button"
+              >
+                ENVOYER
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
+
       <ScrollToTop />
-    </div >
-    
+    </div>
   );
 };
 
-export default Contact;
+export default ContactPage;

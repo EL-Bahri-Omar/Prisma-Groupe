@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import { Link } from "react-router-dom";
 
-const LeftColumn = () => {
+const TeamLeft = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = 8;
   const isScrollingRef = useRef(false);
@@ -421,4 +421,4 @@ const LeftColumn = () => {
   );
 };
 
-export default LeftColumn;
+export default TeamLeft;

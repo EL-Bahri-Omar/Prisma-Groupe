@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import LeftColumn from './LeftColumn';
-import RightColumn from './RightColumn';
+import TeamLeft from './TeamLeft';
+import TeamRight from './TeamRight';
 import './team.css';
 import Sidebar from './Sidebar';
-import RightSidebar from './RightSidebar';
+import TeamRightSidebar from './TeamRightSidebar';
 
-const Home = () => {
+const Team = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -52,9 +52,9 @@ const Home = () => {
     <div className={`app-container ${sidebarOpen ? 'sidebar-open' : ''}`}>
         <Sidebar onToggle={handleSidebarToggle} />
         <div className="home-content">
-        <LeftColumn />
-        <RightColumn />
-        <RightSidebar />
+        <TeamLeft />
+        <TeamRight />
+        <TeamRightSidebar />
       </div>
     </div>
       
@@ -62,4 +62,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Team;

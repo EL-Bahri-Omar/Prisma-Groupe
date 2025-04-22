@@ -186,7 +186,7 @@ html {
 .hamburger {
   width: 30px;
   height: 2.9px;
-  background-color: #b50a0a;
+  background-color: #042f38;
   margin: 2.5px;
 }
 
@@ -273,8 +273,8 @@ html {
   background-color: rgba(22, 142, 68, 0.1);
   padding-left: 25px;
   font-weight: bold;
-  border-left: 10px solid #b50a0a;
-  color: #b50a0a;
+  border-left: 10px solid #042f38;
+  color: #042f38;
 }
 
 .nav-icon {
@@ -291,15 +291,6 @@ html {
   flex-wrap: wrap;
   padding: 40px 0;
   width: 70%;
-}
-.whatsapp-icon {
-  margin-top: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 20px 0;
-  width: 20%;
 }
 
 .sidebar.open .social-icons {
@@ -345,7 +336,7 @@ html {
 .right-sidebar {
   position: fixed;
   top: 50%;
-  right: 20px;
+  right: 8px;
   transform: translateY(-50%);
   z-index: 1;
   background: transparent;
@@ -356,7 +347,7 @@ html {
 .radio-group {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 12px;
 }
 
 .radio-group label {
@@ -372,8 +363,8 @@ html {
   -moz-appearance: none;
   appearance: none;
   margin: 0;
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   border: 2px solid rgba(255, 255, 255, 0.7);
   border-radius: 50%;
   cursor: pointer;
@@ -407,27 +398,28 @@ html {
   border-radius: 50px;
 }
 
-.whatsapp img {
-  margin-top: 100px;
-  width: 130px;
-  height: 30px;
-  cursor: pointer;
-}
-
 .whatsapp-numbers {
-  width: 150px;
-  height: 90px;
+  width: 100px;
+  height: 30px;
   border-color: #878383;
   border-style: solid;
   border-radius: 20px;
   background-color: #d5caca;
   text-align: center;
   color: #000000;
+  margin-top: 65px;
+  margin-bottom: -50px;
+  margin-left: -120px;
+}
+
+.whatsapp-number {
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 10px;
 }
 
 .whatsapp-number:hover {
-  cursor: pointer;
-  text-decoration: underline;
+  color: rgb(10, 49, 10);
 }
 
 
@@ -767,7 +759,7 @@ html {
 .scroll-to-top {
   position: fixed;
   top: 30px;
-  right: 30px;
+  right: 20px;
   background-color: transparent;
   color: white;
   border: none;
@@ -785,331 +777,6 @@ html {
 
 .scroll-to-top:hover {
   background-color: #a3a3a3;
-}
-
-
-
-/* Styles généraux pour la page contact */
-
-/* En-tête avec fond gradient */
-.contact-header {
-  background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
-  color: white;
-  padding: 80px 40px;
-  border-radius: 12px;
-  margin-bottom: 40px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.contact-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 16px;
-  letter-spacing: 1px;
-}
-
-.contact-subtitle {
-  font-size: 1.25rem;
-  font-weight: 500;
-  margin-bottom: 20px;
-  opacity: 0.9;
-}
-
-.contact-divider {
-  width: 80px;
-  height: 4px;
-  background-color: white;
-  margin: 0 auto 24px;
-  border-radius: 2px;
-}
-
-.contact-intro {
-  max-width: 700px;
-  margin: 0 auto;
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-/* Section principale avec formulaire et infos */
-.contact-main-section {
-  display: flex;
-  gap: 30px;
-  margin-bottom: 60px;
-}
-
-@media (max-width: 992px) {
-  .contact-main-section {
-    flex-direction: column;
-  }
-}
-
-.contact-form-section {
-  flex: 3;
-}
-
-.contact-info-section {
-  flex: 2;
-}
-
-/* Styles du formulaire de contact */
-.contact-form-card {
-  background-color: rgb(171, 162, 219);
-  padding: 40px;
-  border-radius: 12px;
-  margin-left: 100px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
-}
-
-.form-title {
-  font-size: 1.75rem;
-  font-weight: 600;
-  margin-bottom: 8px;
-  color: #333;
-}
-
-.form-subtitle {
-  font-size: 1rem;
-  color: #666;
-  margin-bottom: 30px;
-}
-
-.contact-form {
-  display: flex;
-  margin-top: 50px;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.form-row {
-  display: flex;
-  gap: 20px;
-}
-
-@media (max-width: 768px) {
-  .form-row {
-    flex-direction: column;
-  }
-}
-
-.form-group {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.form-group label {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #444;
-}
-
-.form-group input,
-.form-group textarea {
-  padding: 14px 16px;
-  border: 1px solid #e1e1e1;
-  background-color: white;
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: border 0.3s, box-shadow 0.3s;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: #1a2a6c;
-  box-shadow: 0 0 0 3px rgba(26, 42, 108, 0.1);
-}
-
-.submit-btn {
-  background: linear-gradient(135deg, #1a2a6c, #362a84);
-  color: white;
-  padding: 16px 24px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s;
-  margin-top: 10px;
-  display: inline-block;
-  text-align: center;
-}
-
-.submit-btn:hover {
-  background: linear-gradient(135deg, #152256, #2e246e);
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(26, 42, 108, 0.2);
-}
-
-/* Styles pour le message de succès */
-.form-success {
-  text-align: center;
-  padding: 30px 20px;
-}
-
-.success-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 60px;
-  background-color: #4CAF50;
-  color: white;
-  font-size: 32px;
-  border-radius: 50%;
-  margin: 0 auto 20px;
-}
-
-/* Styles pour les informations de contact */
-.info-card {
-  background-color: rgb(239, 204, 224);
-  padding: 40px;
-  border-radius: 12px;
-  margin-right: 50px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-.info-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-}
-
-.info-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  background-color: rgba(26, 42, 108, 0.1);
-  border-radius: 10px;
-  color: #1a2a6c;
-}
-
-.info-content h3 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 6px;
-  color: #333;
-}
-
-.info-content p {
-  font-size: 0.95rem;
-  color: #666;
-  line-height: 1.5;
-  margin: 0;
-}
-
-/* Styles pour les départements */
-.contact-departments {
-  margin-bottom: 60px;
-}
-
-.departments-title {
-  font-size: 1.75rem;
-  font-weight: 600;
-  margin-bottom: 30px;
-  text-align: center;
-  color: #333;
-}
-
-.departments-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-}
-
-.department-card {
-  background-color: rgb(185, 174, 217);
-  padding: 30px;
-  width: 300px;
-  margin-left: 100px;
-  border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
-  text-align: center;
-  transition: transform 0.3s;
-}
-
-.department-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(26, 42, 108, 0.25);
-}
-
-.department-icon {
-  background-color: rgba(26, 42, 108, 0.1);
-  box-shadow: 0 4px 10px rgba(26, 42, 108, 0.2);
-
-
-  width: 70px;
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  margin: 0 auto 20px;
-  color: #1a2a6c;
-}
-
-.department-card h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 12px;
-  color: #333;
-}
-
-.department-card p {
-  margin-top: 25px;
-  font-size: 0.95rem;
-  color: #2c0808;
-  margin-bottom: 16px;
-}
-
-.department-card a {
-  color: #1a2a6c;
-  font-weight: 600;
-  text-decoration: none;
-  position: relative;
-  transition: all 0.3s;
-}
-
-.department-card a:hover {
-  text-decoration: underline;
-}
-
-/* Styles pour la carte et réseaux sociaux */
-.contact-map-section {
-  display: flex;
-  gap: 30px;
-  margin-bottom: 40px;
-}
-
-@media (max-width: 992px) {
-  .contact-map-section {
-    flex-direction: column;
-  }
-}
-
-.map-container {
-  flex: 3;
-  border-radius: 12px;
-  overflow: hidden;
-  height: 300px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
-}
-
-.map-placeholder {
-  height: 100%;
-  margin-left: 200px;
-  margin-right: 200px;
-  background-color: #f5f5f5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 
@@ -1138,8 +805,16 @@ html {
   background-color: rgba(22, 142, 68, 0.1);
   padding-left: 25px;
   font-weight: bold;
-  border-left: 10px solid #b50a0a;
-  color: #b50a0a;
+  border-left: 10px solid #042f38;
+  color: #042f38;
+}
+
+.submenu.active-nav-item {
+  background-color: rgba(22, 142, 68, 0.1);
+  padding-left: 25px;
+  font-weight: bold;
+  border-left: 10px solid #042f38;
+  color: #042f38;
 }
 
 .dropdown-arrow {
@@ -1169,14 +844,478 @@ html {
 }
 
 .submenu li a:hover {
-  color: #b50a0a;
+  color: #042f38;
   background-color: #fafafa;
   padding-left: 20px !important;
 }
 
 /* Add styles for the active submenu item */
 .submenu li a.active-submenu-item {
-  color: #b50a0a;
+  color: #042f38;
   font-weight: bold;
   background-color: #f0f0f0;
 }
+
+
+
+/* ClientsPage Styles */
+
+/* Container and layout */
+.clients-container {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+.clients-layout {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+}
+
+/* Left side text content */
+.clients-text-section {
+  width: 23.5%;
+  background-color: #1c1c1c;
+  color: white;
+  padding-left: 60px;
+  padding-bottom: 10px;
+  position: sticky;
+  height: 100vh;
+  display: flex;
+  left: 50px;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.clients-subtitle-small {
+  font-size: 0.9rem;
+  color: #4a4cd6;
+  margin-bottom: 0px;
+  font-weight: 100;
+}
+
+.clients-title-large {
+  font-size: 1.9rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 5px;
+  color: white;
+}
+
+.clients-intro {
+  width: 230px;
+  font-size: .8rem;
+  line-height: 1.8;
+  color: #aaa;
+}
+
+/* Right side clients grid with scrolling */
+.clients-grid-section {
+  width: 75%;
+  background-color: #f5f5f5;
+  height: 100vh;
+  /* Fixed height to allow scrolling */
+  overflow: hidden;
+  /* Hide overflow to make the container fixed */
+}
+
+.clients-grid-container {
+  height: 100%;
+  overflow-y: auto;
+  /* Enable vertical scrolling */
+}
+
+.clients-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0;
+  /* Height calculation: each row should be about 33.33% of the visible area */
+  grid-auto-rows: calc(100vh / 3);
+}
+
+.client-scroll-to-top {
+  position: fixed;
+  top: 30px;
+  right: 20px;
+  background-color: #555555;
+  color: rgb(91, 89, 89);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.client-scroll-to-top:hover {
+  background-color: #a3a3a3;
+}
+
+.client-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #eee;
+  position: relative;
+  background-color: white;
+}
+
+.client-card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  transition: none;
+  /* Remove transition since we'll use animation */
+}
+
+@keyframes bounceEffect {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+
+  40% {
+    transform: translateY(0) scale(1.35);
+  }
+
+  60% {
+    transform: translateY(0) scale(1.75);
+  }
+
+  80% {
+    transform: translateY(0px) scale(1.75);
+  }
+
+  100% {
+    transform: translateY(5px) scale(1.15);
+  }
+}
+
+.client-card:hover {
+  animation: bounceEffect 0.5s ease forwards;
+}
+
+.client-card img {
+  max-width: 80%;
+  max-height: 60%;
+  object-fit: contain;
+}
+
+/* Custom scrollbar styling */
+.clients-grid-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.clients-grid-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.clients-grid-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.clients-grid-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+  .clients-layout {
+    flex-direction: column;
+  }
+
+  .clients-text-section {
+    width: 100%;
+    height: auto;
+    min-height: auto;
+    position: relative;
+    padding: 40px;
+  }
+
+  .clients-grid-section {
+    width: 100%;
+    height: 75vh;
+    /* Adjust height for mobile */
+  }
+}
+
+@media (max-width: 768px) {
+  .clients-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: calc(75vh / 3);
+  }
+
+  .clients-title-large {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .clients-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: calc(75vh / 3);
+  }
+
+  .clients-text-section {
+    padding: 30px 20px;
+  }
+
+  .clients-title-large {
+    font-size: 2rem;
+  }
+}
+
+
+/* ReferencesPage Styles - Add to your App.css or create a separate CSS file */
+
+/* Container and layout */
+.references-container {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+.references-layout {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+}
+
+/* Left side text content - Fixed position */
+.project-filters {
+  width: 19%;
+  background-color: #1c1c1c;
+  color: white;
+  padding-left: 60px;
+  position: fixed;
+  height: 100vh;
+  display: flex;
+  left: 60px;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+}
+
+.filter-title-small {
+  font-size: 0.9rem;
+  color: #4a4cd6;
+  margin-bottom: 0px;
+  font-weight: 400;
+}
+
+.filter-title-large {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.filter-category {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  align-items: center;
+  margin-bottom: 2px;
+  cursor: pointer;
+  color: #aaa;
+  transition: color 0.3s ease;
+  font-size: 0.8rem;
+}
+
+.filter-category:hover,
+.filter-category.active {
+  color: white;
+}
+
+.filter-circle-cell {
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.filter-circle {
+  width: 20px;
+  height: 20px;
+  background-color: #292bc7;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+}
+
+.filter-category.all .filter-circle {
+  visibility: visible;
+}
+
+.filter-text {
+  padding-left: 5px;
+}
+
+/* Right side references grid - Scrollable */
+.references-grid-section {
+  width: 74%;
+  background-color: #e1d6af;
+  margin-left: 26%;
+  overflow-y: auto;
+  height: 100vh;
+}
+
+.references-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0;
+}
+
+.reference-cell {
+  position: relative;
+  overflow: hidden;
+  background-color: #000;
+  aspect-ratio: 1/1;
+}
+
+.reference-card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.reference-image-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.reference-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+.reference-image.grayscale {
+  filter: grayscale(100%);
+  opacity: 0.8;
+}
+
+.reference-image.colored {
+  filter: grayscale(0);
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.reference-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.reference-logo {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+.reference-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.reference-divider {
+  width: 60px;
+  height: 3px;
+  background-color: #042f38;
+  margin: 10px 0;
+}
+
+.reference-name {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+  .references-layout {
+    flex-direction: column;
+  }
+
+  .project-filters {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 40px;
+  }
+
+  .references-grid-section {
+    width: 100%;
+    margin-left: 0;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .references-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .filter-title-large {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .references-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-filters {
+    padding: 30px 20px;
+  }
+
+  .filter-title-large {
+    font-size: 2rem;
+  }
+}
+
+
+/* added css */
+
