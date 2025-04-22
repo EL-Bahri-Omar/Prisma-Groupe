@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import TeamLeft from './TeamLeft';
 import TeamRight from './TeamRight';
-import './team.css';
+import './App.css';
 import Sidebar from './Sidebar';
 import TeamRightSidebar from './TeamRightSidebar';
 
@@ -17,7 +17,7 @@ const Team = () => {
       const newPage = Math.round(scrollTop / pageHeight) + 1;
       setCurrentPage(newPage);
 
-      const revScroll = Math.round(-document.querySelector('.col-l').clientHeight + scrollTop + winHeight);
+      const revScroll = Math.round(-document.querySelector('.team-col-l').clientHeight + scrollTop + winHeight);
       document.querySelector('.col-r').style.marginTop = `${revScroll}px`;
     };
 

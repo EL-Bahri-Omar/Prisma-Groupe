@@ -21,20 +21,27 @@ import PrismaEspaceDeco from './components/PrismaEspaceDeco';
 import Informations from "./Information";
 import Team from "./Team";
 import Actualities from "./Actualities";
+import Philosophie from "./Philosophie"
+import SignUp from "./SignUp";
 
 const App = () => {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/expertises" element={<Expertises />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/clients" element={<ClientsPage />} />
-        <Route path="/references" element={<References />} />
+
         <Route path="/agence/depuis-2008" element={<Informations />} />
         <Route path="/agence/team" element={<Team />} />
+        <Route path="/agence/philosophie" element={<Philosophie />} />
         <Route path="/agence/actualites" element={<Actualities />} />
+
+        <Route path="/expertises" element={<Expertises />} />
+        <Route path="/references" element={<References />} />
+        <Route path="/clients" element={<ClientsPage />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/inscrire" element={<SignUp />} />
+      
 
         <Route path="/PrismaEvents" element={<PrismaEvents />} />
         <Route path="/PrismaGroupe" element={<PrismaGroupe />} />

@@ -147,26 +147,26 @@
 /* Scroll to Top Button */
 .scroll-to-top-button {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    bottom: 20px;
+    right: 20px;
     background-color: #042f38;
     color: white;
-    border: none;
-    border-radius: 50%;
     width: 50px;
     height: 50px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(40, 105, 135, 0.3);
     transition: all 0.3s ease;
+    border: none;
     z-index: 100;
 }
 
 .scroll-to-top-button:hover {
-    background-color: #02161b;
-    transform: scale(1.1);
+    background-color: #286987;
+        box-shadow: 0 6px 12px rgba(40, 105, 135, 0.4);
 }
 
 .arrow-icon {
