@@ -19,11 +19,11 @@ router.route('/admin/projects').get(getAdminProjects);
 router.route('/project/:id').get(getSingleProject);
 
 router.route('/admin/project/new')
-    .post(isAuthenticatedUser, authorizeRoles('admin'), newProject);
+    .post(isAuthenticatedUser, authorizeRoles('admin', 'super'), newProject);
 
 router.route('/admin/project/:id')
-    .put(isAuthenticatedUser, authorizeRoles('admin'), updateProject)
-    .delete(isAuthenticatedUser, authorizeRoles('admin'), deleteProject);
+    .put(isAuthenticatedUser, authorizeRoles('admin', 'super'), updateProject)
+    .delete(isAuthenticatedUser, authorizeRoles('admin', 'super'), deleteProject);
 
 router.route('/review').put(isAuthenticatedUser, createProjectReview);
 router.route('/reviews')

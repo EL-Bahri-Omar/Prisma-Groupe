@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import MetaData from '../layout/MetaData';
 import Loader from '../layout/Loader';
 import Sidebar from './Sidebar';
+import Header from "../layout/Header";
 import { getMessageDetails, updateMessage, clearErrors } from '../../actions/messageActions';
 import { UPDATE_MESSAGE_RESET } from '../../constants/messageConstants';
 
@@ -47,29 +48,38 @@ const ProcessMessage = () => {
     return (
         <Fragment>
             <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
-            <MetaData title={`Process Message #${id}`} />
-            <div className="dashboard-content row">
-                <div className="col-12 col-md-2">
-                    <Sidebar />
+            <MetaData title={`Traiter Message #${id}`} />
+            
+            <div className="dashboard-content">
+                {/* Fixed Header at top */}
+                <div className="header-container">
+                    <Header />
                 </div>
-
-                <div className="col-12 col-md-10">
-                    <Fragment>
+                
+                {/* Main Content Area (sidebar + scrollable content) */}
+                <div className="main-content-container">
+                    {/* Fixed Sidebar below header */}
+                    <div className="sidebar-column">
+                        <Sidebar />
+                    </div>
+                    
+                    {/* Scrollable Content */}
+                    <div className="scrollable-content">
                         {loading ? <Loader /> : (
                             <div className="row d-flex justify-content-around">
                                 <div className="col-12 col-lg-8 message-details">
-                                    <h2 className="my-5">Message # {message._id}</h2>
+                                    <h2 className="my-5"><b><u>Traiter Message :</u></b> {message.subject}</h2>
 
-                                    <h4 className="mb-4">From</h4>
-                                    <p><b>Name:</b> {message.name || 'N/A'}</p>
-                                    <p><b>Company:</b> {message.societe || 'N/A'}</p>
+                                    <h4 className="mb-4">Message Envoyé par :</h4>
+                                    <p><b>Nom:</b> {message.name || 'N/A'}</p>
+                                    <p><b>Société:</b> {message.societe || 'N/A'}</p>
                                     <p><b>Email:</b> {message.email}</p>
-                                    <p><b>Phone:</b> {message.phone}</p>
+                                    <p><b>Téléphone:</b> {message.phone}</p>
                                     <p className="mb-4"><b>Date:</b> {new Date(message.createdAt).toLocaleString()}</p>
 
                                     <hr />
 
-                                    <h4 className="my-4">Subject</h4>
+                                    <h4 className="my-4">Sujet</h4>
                                     <p>{message.subject}</p>
 
                                     <h4 className="my-4">Message</h4>
@@ -78,14 +88,14 @@ const ProcessMessage = () => {
                                     {message.adminReply && (
                                         <Fragment>
                                             <hr />
-                                            <h4 className="my-4 text-success">Previous Reply</h4>
+                                            <h4 className="my-4 text-success">Dernière Réponse</h4>
                                             <p style={{ whiteSpace: 'pre-line' }}>{message.adminReply}</p>
                                         </Fragment>
                                     )}
                                 </div>
                                 
                                 <div className="col-12 col-lg-3 mt-5">
-                                    <h4 className="my-4">Reply</h4>
+                                    <h4 className="my-4">Réponse</h4>
                                     <div className="form-group">
                                         <textarea
                                             className="form-control"
@@ -101,12 +111,12 @@ const ProcessMessage = () => {
                                         className="btn btn-primary btn-block" 
                                         onClick={submitHandler}
                                     >
-                                        Send Reply
+                                        Répondre
                                     </button>
                                 </div>
                             </div>
                         )}
-                    </Fragment>
+                    </div>
                 </div>
             </div>
         </Fragment>

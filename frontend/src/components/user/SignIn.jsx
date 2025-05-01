@@ -24,9 +24,13 @@ const SignIn = () => {
           }
               
           if (error) {
-              alert.error(error);
-              dispatch(clearErrors());
-          }
+      if (error.includes('Invalid') || error.includes('Invalide')) {
+        alert.error('Email ou mot de passe incorrect');
+      } else {
+        alert.error(error);
+      }
+      dispatch(clearErrors());
+    }
       }, [dispatch, alert, isAuthenticated, error, navigate]);
       
       const submitHandler = (e) => {

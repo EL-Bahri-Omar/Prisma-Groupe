@@ -14,7 +14,7 @@ const Header = () => {
 
     const logoutHandler = () => {
         dispatch(logout());
-        alert.success('Logged out successfully.')
+        alert.success('Déconnecté avec succès.')
     }
 
     // Close dropdown when clicking outside

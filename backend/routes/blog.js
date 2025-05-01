@@ -17,10 +17,10 @@ router.route('/blogs').get(getBlogs)
 router.route('/admin/blogs').get(getAdminBlogs)
 router.route('/blog/:id').get(getSingleBlog)
 
-router.route('/admin/blog/new').post(isAuthenticatedUser, authorizeRoles('admin'), newBlog)
+router.route('/admin/blog/new').post(isAuthenticatedUser, authorizeRoles('admin', 'super'), newBlog)
 
 router.route('/admin/blog/:id')
-    .put(isAuthenticatedUser, authorizeRoles('admin'), updateBlog)
-    .delete(isAuthenticatedUser, authorizeRoles('admin'), deleteBlog)
+    .put(isAuthenticatedUser, authorizeRoles('admin', 'super'), updateBlog)
+    .delete(isAuthenticatedUser, authorizeRoles('admin', 'super'), deleteBlog)
 
 module.exports = router

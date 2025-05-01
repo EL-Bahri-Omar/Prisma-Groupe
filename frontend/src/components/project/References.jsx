@@ -13,6 +13,8 @@ const ReferencesPage = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [hoveredRef, setHoveredRef] = useState(null);
   const [activeFilter, setActiveFilter] = useState('all');
+  const [searchTerm, setSearchTerm] = useState('');
+  
   const dispatch = useDispatch();
   const alert = useAlert();
 
@@ -25,35 +27,38 @@ const ReferencesPage = () => {
     dispatch(getProjects());
   }, [dispatch, alert, error]);
 
+  // Filter projects based on search and category
+  const filteredProjects = projects && projects.filter(project => {
+    const matchesSearch = project.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                         project.description.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesCategory = activeFilter === 'all' || project.category === activeFilter;
+    return matchesSearch && matchesCategory;
+  });
+
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
   };
 
   // Categories from your project schema
   const categories = [
-  { id: 'all', name: 'Toutes' },
-  { id: 'Education', name: 'Education' },
-  { id: 'Web', name: 'Web' },
-  { id: 'Finance', name: 'Finance' },
-  { id: 'Commerce', name: 'Commerce' },
-  { id: 'Tourism', name: 'Tourism' },
-  { id: 'Hotels', name: 'Hotels' },
-  { id: 'IT', name: 'IT' },
-  { id: 'Immobilier', name: 'Immobilier' },
-  { id: 'Culture', name: 'Culture' },
-  { id: 'Organizations', name: 'Organizations' },
-  { id: 'Events', name: 'Events' },
-  { id: 'Restauration', name: 'Restauration' },
-  { id: 'Magazine', name: 'Magazine' },
-  { id: 'Automobile', name: 'Automobile' },
-  { id: 'BTP', name: 'BTP' },
-  { id: 'Assurance', name: 'Assurance' }
-];
-
-  // Filter projects based on selected category
-  const filteredProjects = activeFilter === 'all' 
-    ? projects 
-    : projects.filter(project => project.category === activeFilter);
+    { id: 'all', name: 'Toutes' },
+    { id: 'Education', name: 'Education' },
+    { id: 'Web', name: 'Web' },
+    { id: 'Finance', name: 'Finance' },
+    { id: 'Commerce', name: 'Commerce' },
+    { id: 'Tourism', name: 'Tourism' },
+    { id: 'Hotels', name: 'Hotels' },
+    { id: 'IT', name: 'IT' },
+    { id: 'Immobilier', name: 'Immobilier' },
+    { id: 'Culture', name: 'Culture' },
+    { id: 'Organizations', name: 'Organizations' },
+    { id: 'Events', name: 'Events' },
+    { id: 'Restauration', name: 'Restauration' },
+    { id: 'Magazine', name: 'Magazine' },
+    { id: 'Automobile', name: 'Automobile' },
+    { id: 'BTP', name: 'BTP' },
+    { id: 'Assurance', name: 'Assurance' }
+  ];
 
   return (
     <div className={`app-container ${sidebarOpen ? 'sidebar-open' : ''}`}>
@@ -66,6 +71,20 @@ const ReferencesPage = () => {
             <div className="references-layout">
               {/* Left side project filters */}
               <div className="project-filters">
+                {/* Compact Search Bar */}
+                <div className="compact-search-container">
+                  <input 
+                    type="text" 
+                    placeholder="Rechercher..." 
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="compact-search-input"
+                  />
+                  <button className="compact-search-button">
+                    <i className="fas fa-search"></i>
+                  </button>
+                </div>
+                
                 <p className="filter-title-small">Derniers</p>
                 <h1 className="filter-title-large">Projets</h1>
                 
@@ -88,30 +107,36 @@ const ReferencesPage = () => {
               {/* Right side references grid - Scrollable */}
               <div className="references-grid-section">
                 <div className="references-grid">
-                  {filteredProjects && filteredProjects.map((project) => (
-                    <div key={project._id} className="reference-cell">
-                      <Link
-                        to={`/project/${project._id}`} 
-                        className="reference-card"
-                        onMouseEnter={() => setHoveredRef(project._id)}
-                        onMouseLeave={() => setHoveredRef(null)}
-                      >
-                        <div className="reference-image-container">
-                          <img 
-                            src={project.image.url} 
-                            alt={project.title} 
-                            className={`reference-image ${hoveredRef === project._id ? 'colored' : 'grayscale'}`}
-                          />
-                          
-                          {hoveredRef === project._id && (
-                            <div className="reference-overlay">
-                              <div className="reference-name">{project.title}</div>
-                            </div>
-                          )}
-                        </div>
-                      </Link>
+                  {filteredProjects && filteredProjects.length > 0 ? (
+                    filteredProjects.map((project) => (
+                      <div key={project._id} className="reference-cell">
+                        <Link
+                          to={`/project/${project._id}`} 
+                          className="reference-card"
+                          onMouseEnter={() => setHoveredRef(project._id)}
+                          onMouseLeave={() => setHoveredRef(null)}
+                        >
+                          <div className="reference-image-container">
+                            <img 
+                              src={project.image.url} 
+                              alt={project.title} 
+                              className={`reference-image ${hoveredRef === project._id ? 'colored' : 'grayscale'}`}
+                            />
+                            
+                            {hoveredRef === project._id && (
+                              <div className="reference-overlay">
+                                <div className="reference-name">{project.title}</div>
+                              </div>
+                            )}
+                          </div>
+                        </Link>
+                      </div>
+                    ))
+                  ) : (
+                    <div className="no-results-message">
+                      Aucun projet ne correspond à votre recherche
                     </div>
-                  ))}
+                  )}
                 </div>
               </div>
             </div>

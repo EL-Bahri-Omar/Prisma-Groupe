@@ -2,6 +2,7 @@ import React, { Fragment, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import MetaData from '../layout/MetaData';
 import Sidebar from './Sidebar';
+import Header from "../layout/Header";
 import { useAlert } from 'react-alert';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateTeamMember, getTeamMemberDetails, clearErrors } from '../../actions/teamActions';
@@ -84,20 +85,29 @@ const UpdateTeamMember = () => {
     return (
         <Fragment>
             <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
-            <MetaData title={'Update Team Member'} />
-            <div className="dashboard-content row">
-                <div className="col-12 col-md-2">
-                    <Sidebar />
+            <MetaData title={'Mettre à jour le Membre de Team'} />
+            
+            <div className="dashboard-content">
+                {/* Fixed Header at top */}
+                <div className="header-container">
+                    <Header />
                 </div>
-
-                <div className="col-12 col-md-10">
-                    <Fragment>
+                
+                {/* Main Content Area (sidebar + scrollable content) */}
+                <div className="main-content-container">
+                    {/* Fixed Sidebar below header */}
+                    <div className="sidebar-column">
+                        <Sidebar />
+                    </div>
+                    
+                    {/* Scrollable Content */}
+                    <div className="scrollable-content">
                         <div className="wrapper my-5">
-                            <form className="shadow-lg" onSubmit={submitHandler} encType='multipart/form-data'>
-                                <h1 className="mb-4">Update Team Member</h1>
+                            <form className="shadow-lg p-4" onSubmit={submitHandler} encType='multipart/form-data'>
+                                <h1 className="mb-4 text-center">Mettre à jour le Membre de Team</h1>
 
                                 <div className="form-group">
-                                    <label htmlFor="name_field">Name</label>
+                                    <label htmlFor="name_field">Nom</label>
                                     <input
                                         type="text"
                                         id="name_field"
@@ -130,7 +140,7 @@ const UpdateTeamMember = () => {
                                 </div>
 
                                 <div className="form-group">
-                                    <label>Profile Image</label>
+                                    <label>Photo de Profil</label>
                                     <div className="custom-file">
                                         <input
                                             type="file"
@@ -140,28 +150,45 @@ const UpdateTeamMember = () => {
                                             onChange={onChangeImage}
                                         />
                                         <label className="custom-file-label" htmlFor="customFile">
-                                            Choose Profile Image
+                                            Choisir Photo
                                         </label>
                                     </div>
-                                    {oldImage && (
-                                        <img src={oldImage} alt="Old Profile Preview" className="mt-3 mr-2" width="100" />
-                                    )}
-                                    {imagePreview && (
-                                        <img src={imagePreview} alt="Profile Preview" className="mt-3 mr-2" width="100" />
-                                    )}
+                                    <div className="d-flex mt-2">
+                                        {oldImage && (
+                                            <img 
+                                                src={oldImage} 
+                                                alt="Old Profile Preview" 
+                                                className="mr-2"
+                                                width="80" 
+                                                height="80"
+                                            />
+                                        )}
+                                        {imagePreview && (
+                                            <img 
+                                                src={imagePreview} 
+                                                alt="Profile Preview" 
+                                                className="mr-2"
+                                                width="80" 
+                                                height="80"
+                                            />
+                                        )}
+                                    </div>
                                 </div>
 
-                                <button
-                                    id="login_button"
-                                    type="submit"
-                                    className="btn btn-block py-3"
-                                    disabled={loading ? true : false}
-                                >
-                                    UPDATE
-                                </button>
+                                <div className="text-center">
+                                    <button
+                                        id="login_button"
+                                        type="submit"
+                                        className="btn btn-primary py-3"
+                                        style={{ width: '400px' }}
+                                        disabled={loading ? true : false}
+                                    >
+                                        MISE À JOUR
+                                    </button>
+                                </div>
                             </form>
                         </div>
-                    </Fragment>
+                    </div>
                 </div>
             </div>
         </Fragment>

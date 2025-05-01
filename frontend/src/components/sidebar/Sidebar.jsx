@@ -19,7 +19,7 @@ const Sidebar = ({ onToggle }) => {
 
   const logoutHandler = () => {
     dispatch(logout());
-    alert.success('Logged out successfully.');
+    alert.success('Déconnecté avec succès.');
   };
 
   // Close dropdowns when clicking outside
@@ -113,59 +113,6 @@ const Sidebar = ({ onToggle }) => {
                   className="rounded-circle"
                 />
               </figure>
-              
-              {/* Dropdown for closed sidebar */}
-              {userDropdownOpen && (
-                <ul className="user-submenu closed-sidebar-dropdown">
-                  {user.role === 'admin' && (
-                    <li>
-                      <Link 
-                        className="dropdown-item" 
-                        to="/dashboard"
-                        onClick={() => {
-                          setUserDropdownOpen(false);
-                        }}
-                      >
-                        Dashboard
-                      </Link>
-                    </li>
-                  )}
-                  <li>
-                    <Link 
-                      className="dropdown-item" 
-                      to="/messages/me"
-                      onClick={() => {
-                        setUserDropdownOpen(false);
-                      }}
-                    >
-                      Mes Messages
-                    </Link>
-                  </li>
-                  <li>
-                    <Link 
-                      className="dropdown-item" 
-                      to="/me"
-                      onClick={() => {
-                        setUserDropdownOpen(false);
-                      }}
-                    >
-                      Profil
-                    </Link>
-                  </li>
-                  <li>
-                    <Link 
-                      className="dropdown-item text-danger" 
-                      to="/"
-                      onClick={() => {
-                        setUserDropdownOpen(false);
-                        logoutHandler();
-                      }}
-                    >
-                      Déconnexion
-                    </Link>
-                  </li>
-                </ul>
-              )}
             </div>
           )}
           <div className="sidebar-logo-closed">
@@ -255,7 +202,7 @@ const Sidebar = ({ onToggle }) => {
                       
                       {userDropdownOpen && (
                         <ul className="user-submenu">
-                          {user.role === 'admin' && (
+                          {user.role === 'admin' || user.role === 'super' ? (
                             <li>
                               <Link 
                                 className="dropdown-item" 
@@ -268,7 +215,7 @@ const Sidebar = ({ onToggle }) => {
                                 Dashboard
                               </Link>
                             </li>
-                          )}
+                          ): null}
                           <li>
                             <Link 
                               className="dropdown-item" 
@@ -399,7 +346,7 @@ const Sidebar = ({ onToggle }) => {
                       
                       {userDropdownOpen && (
                         <ul className="user-submenu">
-                          {user.role === 'admin' && (
+                          {user.role === 'admin' || user.role === 'super' ? (
                             <li>
                               <Link 
                                 className="dropdown-item" 
@@ -412,7 +359,7 @@ const Sidebar = ({ onToggle }) => {
                                 Dashboard
                               </Link>
                             </li>
-                          )}
+                          ): null}
                           <li>
                             <Link 
                               className="dropdown-item" 

@@ -127,7 +127,7 @@ const ContactPage = () => {
                 onClick={() => setShowModal(true)}
                 className="contact-button"
               >
-                CONTACTER NOUS
+               ENVOYER UN MESSAGE
               </button>
             </div>
 

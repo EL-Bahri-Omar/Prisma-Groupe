@@ -113,24 +113,24 @@
 }
 
 .contact-button {
-  color: white;
-  background-color: #000000;
+  color: black;
+  background-color: white;
   padding: 12px 25px;
   font-size: 10px;
-  font-weight: 500;
+  font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
   width: 220px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  border-radius: 0;
+  border-radius: 4px;
   margin-left: 15px;
 }
 
 .contact-button:hover {
-  background-color: #000000;
+  background-color: #205090;
   border: none;
-  color: #dc2626;
+  color: black;
 }
 
 /* Le reste du CSS (modal, responsive) reste inchangé */

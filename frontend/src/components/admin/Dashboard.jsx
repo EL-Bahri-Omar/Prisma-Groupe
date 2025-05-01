@@ -52,7 +52,7 @@ const Dashboard = () => {
                                             <div className="text-center card-font-size">Notifications<br /> <b>{messages && messages.length}</b></div>
                                         </div>
                                         <Link className="card-footer text-white clearfix small z-1" to="/admin/messages">
-                                            <span className="float-left">View Details</span>
+                                            <span className="float-left">Afficher les détails</span>
                                             <span className="float-right">
                                                 <i className="fa fa-angle-right"></i>
                                             </span>
@@ -68,7 +68,7 @@ const Dashboard = () => {
                                             <div className="text-center card-font-size">Projets<br /> <b>{projects && projects.length}</b></div>
                                         </div>
                                         <Link className="card-footer text-white clearfix small z-1" to="/admin/projects">
-                                            <span className="float-left">View Details</span>
+                                            <span className="float-left">Afficher les détails</span>
                                             <span className="float-right">
                                                 <i className="fa fa-angle-right"></i>
                                             </span>
@@ -82,7 +82,7 @@ const Dashboard = () => {
                                             <div className="text-center card-font-size">Actualités<br /> <b>{actualites && actualites.length}</b></div>
                                         </div>
                                         <Link className="card-footer text-white clearfix small z-1" to="/admin/actualites">
-                                            <span className="float-left">View Details</span>
+                                            <span className="float-left">Afficher les détails</span>
                                             <span className="float-right">
                                                 <i className="fa fa-angle-right"></i>
                                             </span>
@@ -96,7 +96,7 @@ const Dashboard = () => {
                                             <div className="text-center card-font-size">Blogs<br /> <b>{blogs && blogs.length}</b></div>
                                         </div>
                                         <Link className="card-footer text-white clearfix small z-1" to="/admin/blogs">
-                                            <span className="float-left">View Details</span>
+                                            <span className="float-left">Afficher les détails</span>
                                             <span className="float-right">
                                                 <i className="fa fa-angle-right"></i>
                                             </span>
@@ -110,7 +110,7 @@ const Dashboard = () => {
                                             <div className="text-center card-font-size">Users<br /> <b>{users && users.length}</b></div>
                                         </div>
                                         <Link className="card-footer text-white clearfix small z-1" to="/admin/users">
-                                            <span className="float-left">View Details</span>
+                                            <span className="float-left">Afficher les détails</span>
                                             <span className="float-right">
                                                 <i className="fa fa-angle-right"></i>
                                             </span>

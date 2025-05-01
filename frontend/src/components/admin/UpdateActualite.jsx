@@ -2,6 +2,7 @@ import React, { Fragment, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import MetaData from '../layout/MetaData';
 import Sidebar from './Sidebar';
+import Header from "../layout/Header";
 import { useAlert } from 'react-alert';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateActualite, getActualiteDetails, clearErrors } from '../../actions/actualiteActions';
@@ -130,132 +131,181 @@ const UpdateActualite = () => {
     return (
         <Fragment>
             <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
-            <MetaData title={'Update News'} />
-            <div className="dashboard-content row">
-                <div className="col-12 col-md-2">
-                    <Sidebar />
+            <MetaData title={'Mettre à jour Actualité'} />
+            
+            <div className="dashboard-content">
+                {/* Fixed Header at top */}
+                <div className="header-container">
+                    <Header />
                 </div>
-
-                <div className="col-12 col-md-10">
-                    <Fragment>
-                        <div className="wrapper my-5">
-                            <form className="shadow-lg" onSubmit={submitHandler} encType='multipart/form-data'>
-                                <h1 className="mb-4">Update News</h1>
-
-                                <div className="form-group">
-                                    <label htmlFor="title_field">Title</label>
-                                    <input
-                                        type="text"
-                                        id="title_field"
-                                        className="form-control"
-                                        value={title}
-                                        onChange={(e) => setTitle(e.target.value)}
-                                    />
+                
+                {/* Main Content Area (sidebar + scrollable content) */}
+                <div className="main-content-container">
+                    {/* Fixed Sidebar below header */}
+                    <div className="sidebar-column">
+                        <Sidebar />
+                    </div>
+                    
+                    {/* Scrollable Content */}
+                    <div className="scrollable-content">
+                        <div className="wrapper my-5"> 
+                            <form className="shadow-lg p-4" onSubmit={submitHandler} encType='multipart/form-data'>
+                                <h1 className="mb-4 text-center">Mettre à jour Actualité</h1>
+                                
+                                {/* First Row - Title and Subtitle */}
+                                <div className="d-flex justify-content-between mb-3">
+                                    <div className="form-group" style={{ width: '48%' }}>
+                                        <label htmlFor="title_field">Titre</label>
+                                        <input
+                                            type="text"
+                                            id="title_field"
+                                            className="form-control"
+                                            value={title}
+                                            onChange={(e) => setTitle(e.target.value)}
+                                        />
+                                    </div>
+                                    <div className="form-group" style={{ width: '48%' }}>
+                                        <label htmlFor="subtitle_field">Sous-titre</label>
+                                        <input
+                                            type="text"
+                                            id="subtitle_field"
+                                            className="form-control"
+                                            value={subtitle}
+                                            onChange={(e) => setSubtitle(e.target.value)}
+                                        />
+                                    </div>
                                 </div>
 
-                                <div className="form-group">
-                                    <label htmlFor="subtitle_field">Subtitle</label>
-                                    <input
-                                        type="text"
-                                        id="subtitle_field"
-                                        className="form-control"
-                                        value={subtitle}
-                                        onChange={(e) => setSubtitle(e.target.value)}
-                                    />
+                                {/* Second Row - Date and Category */}
+                                <div className="d-flex justify-content-between mb-3">
+                                    <div className="form-group" style={{ width: '48%' }}>
+                                        <label htmlFor="date_field">Date</label>
+                                        <input
+                                            type="date"
+                                            id="date_field"
+                                            className="form-control"
+                                            value={date}
+                                            onChange={(e) => setDate(e.target.value)}
+                                        />
+                                    </div>
+                                    <div className="form-group" style={{ width: '48%' }}>
+                                        <label htmlFor="category_field">Catégorie</label>
+                                        <select
+                                            className="form-control" 
+                                            id="category_field" 
+                                            value={category} 
+                                            onChange={(e) => setCategory(e.target.value)}>
+                                            {categories.map(cat => (
+                                                <option key={cat} value={cat}>{cat}</option>
+                                            ))}
+                                        </select>
+                                    </div>
                                 </div>
-
-                                <div className="form-group">
-                                    <label htmlFor="paragraph_field">Content</label>
+                                
+                                {/* Description Field */}
+                                <div className="form-group mb-3">
+                                    <label htmlFor="paragraph_field">Contenue</label>
                                     <textarea
-                                        className="form-control"
-                                        id="paragraph_field"
-                                        rows="8"
-                                        value={paragraph}
-                                        onChange={(e) => setParagraph(e.target.value)}
-                                    ></textarea>
+                                        className="form-control" 
+                                        id="paragraph_field" 
+                                        rows="4" 
+                                        value={paragraph} 
+                                        onChange={(e) => setParagraph(e.target.value)}>
+                                    </textarea>
                                 </div>
-
-                                <div className="form-group">
-                                    <label htmlFor="date_field">Date</label>
-                                    <input
-                                        type="date"
-                                        id="date_field"
-                                        className="form-control"
-                                        value={date}
-                                        onChange={(e) => setDate(e.target.value)}
-                                    />
+                                
+                                {/* Images Row */}
+                                <div className="d-flex justify-content-between mb-4">
+                                    <div className="form-group" style={{ width: '48%' }}>
+                                        <label>Image Principale</label>
+                                        <div className='custom-file'>
+                                            <input
+                                                type='file'
+                                                name='featured_image'
+                                                className='custom-file-input'
+                                                id='customFile1'
+                                                onChange={onChangeFeaturedImage}
+                                            />
+                                            <label className='custom-file-label' htmlFor='customFile1'>
+                                                Choisir Image
+                                            </label>
+                                        </div>
+                                        <div className="d-flex mt-2">
+                                            {oldFeaturedImage && (
+                                                <img 
+                                                    src={oldFeaturedImage.url} 
+                                                    alt="Old Featured Preview"
+                                                    className="mr-2" 
+                                                    width="80" 
+                                                    height="80"
+                                                />
+                                            )}
+                                            {featuredImagePreview && (
+                                                <img 
+                                                    src={featuredImagePreview} 
+                                                    alt="Featured Preview"
+                                                    className="mr-2" 
+                                                    width="80" 
+                                                    height="80"
+                                                />
+                                            )}
+                                        </div>
+                                    </div>
+                                    <div className="form-group" style={{ width: '48%' }}>
+                                        <label>Galerie de Photos</label>
+                                        <div className='custom-file'>
+                                            <input
+                                                type='file'
+                                                name='actualite_images'
+                                                className='custom-file-input'
+                                                id='customFile2'
+                                                onChange={onChangeImages}
+                                                multiple
+                                            />
+                                            <label className='custom-file-label' htmlFor='customFile2'>
+                                                Choisir les Photos
+                                            </label>
+                                        </div>
+                                        <div className="d-flex flex-wrap mt-2">
+                                            {oldImages && oldImages.map(img => (
+                                                <img 
+                                                    key={img.public_id} 
+                                                    src={img.url} 
+                                                    alt={img.url}
+                                                    className="mr-2 mb-2"
+                                                    width="80" 
+                                                    height="80"
+                                                />
+                                            ))}
+                                            {imagesPreview.map((img, index) => (
+                                                <img 
+                                                    src={img} 
+                                                    key={index} 
+                                                    alt="Images Preview"
+                                                    className="mr-2 mb-2"
+                                                    width="80" 
+                                                    height="80"
+                                                />
+                                            ))}
+                                        </div>
+                                    </div>
                                 </div>
-
-                                <div className="form-group">
-                                    <label htmlFor="category_field">Category</label>
-                                    <select
-                                        className="form-control"
-                                        id="category_field"
-                                        value={category}
-                                        onChange={(e) => setCategory(e.target.value)}
+                                
+                                {/* Submit Button */}
+                                <div className="text-center">
+                                    <button
+                                        id="login_button"
+                                        type="submit"
+                                        className="btn btn-primary py-3"
+                                        style={{ width: '400px' }}
+                                        disabled={loading ? true : false}
                                     >
-                                        {categories.map(cat => (
-                                            <option key={cat} value={cat}>{cat}</option>
-                                        ))}
-                                    </select>
+                                        MISE À JOUR
+                                    </button>
                                 </div>
-
-                                <div className="form-group">
-                                    <label>Featured Image</label>
-                                    <div className="custom-file">
-                                        <input
-                                            type="file"
-                                            name="featured_image"
-                                            className="custom-file-input"
-                                            id="customFile1"
-                                            onChange={onChangeFeaturedImage}
-                                        />
-                                        <label className="custom-file-label" htmlFor="customFile1">
-                                            Choose Featured Image
-                                        </label>
-                                    </div>
-                                    {oldFeaturedImage && (
-                                        <img src={oldFeaturedImage.url} alt="Featured Preview" className="mt-3 mr-2" width="200" />
-                                    )}
-                                    {featuredImagePreview && (
-                                        <img src={featuredImagePreview} alt="Featured Preview" className="mt-3 mr-2" width="200" />
-                                    )}
-                                </div>
-
-                                <div className="form-group">
-                                    <label>Gallery Photos</label>
-                                    <div className="custom-file">
-                                        <input
-                                            type="file"
-                                            name="blog_images"
-                                            className="custom-file-input"
-                                            id="customFile2"
-                                            onChange={onChangeImages}
-                                            multiple
-                                        />
-                                        <label className="custom-file-label" htmlFor="customFile2">
-                                            Choose Gallery Photos
-                                        </label>
-                                    </div>
-                                    {oldImages && oldImages.map(img => (
-                                        <img key={img.public_id} src={img.url} alt={img.url} className="mt-3 mr-2" width="55" height="52" />
-                                    ))}
-                                    {imagesPreview.map(img => (
-                                        <img src={img} key={img} alt="Images Preview" className="mt-3 mr-2" width="55" height="52" />
-                                    ))}
-                                </div>
-
-                                <button
-                                    id="login_button"
-                                    type="submit"
-                                    className="btn btn-block py-3"
-                                    disabled={loading ? true : false}
-                                >
-                                    UPDATE
-                                </button>
                             </form>
                         </div>
-                    </Fragment>
+                    </div>
                 </div>
             </div>
         </Fragment>

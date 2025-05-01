@@ -1,4 +1,3 @@
-// controllers/blogController.js
 const Blog = require('../models/blog')
 const ErrorHandler = require('../utils/errorHandler')
 const catchAsyncErrors = require('../middlewares/catchAsyncErrors')
@@ -19,49 +18,44 @@ exports.newBlog = catchAsyncErrors(async (req, res, next) => {
         };
     }
 
-    // Handle multiple photos upload
-    let photos = [];
-    if (typeof req.body.photos === 'string') {
-        photos.push(req.body.photos);
-    } else {
-        photos = req.body.photos;
+    // Process content blocks to handle gallery uploads
+    let contentBlocks = [];
+    if (req.body.contentBlocks) {
+        contentBlocks = JSON.parse(req.body.contentBlocks);
+        
+        for (let i = 0; i < contentBlocks.length; i++) {
+            const block = contentBlocks[i];
+            if (block.type === 'gallery' && block.photos && block.photos.length > 0) {
+                const photos = typeof block.photos === 'string' 
+                    ? [block.photos] 
+                    : block.photos;
+
+                let galleryPhotosLinks = [];
+                for (let j = 0; j < photos.length; j++) {
+                    const result = await cloudinary.v2.uploader.upload(photos[j], {
+                        folder: 'blogs/gallery'
+                    });
+                    galleryPhotosLinks.push({
+                        public_id: result.public_id,
+                        url: result.secure_url
+                    });
+                }
+                contentBlocks[i].photos = galleryPhotosLinks;
+                delete contentBlocks[i].content;
+            }
+        }
     }
 
-    let photosLinks = [];
-    for (let i = 0; i < photos.length; i++) {
-        const result = await cloudinary.v2.uploader.upload(photos[i], {
-            folder: 'blogs/gallery'
-        });
-        photosLinks.push({
-            public_id: result.public_id,
-            url: result.secure_url
-        });
-    } 
-    
 
-    // Handle PDF upload if provided
-    let pdf = {};
-    if (req.body.pdf) {
-        const result = await cloudinary.v2.uploader.upload(req.body.pdf, {
-            folder: 'blogs/pdfs',
-            resource_type: 'raw',
-        });
-        pdf = {
-            public_id: result.public_id,
-            url: result.secure_url,
-        };
-    }
     const blogData = {
         title: req.body.title,
         subtitle: req.body.subtitle,
         slug: req.body.slug,
-        paragraph: req.body.paragraph,
+        contentBlocks: contentBlocks,
         category: req.body.category,
         tags: req.body.tags,
         readTime: req.body.readTime,
         image: featuredImage,
-        photos: photosLinks,
-        pdf: pdf,
         author: req.user.id
     };
 
@@ -124,30 +118,6 @@ exports.updateBlog = catchAsyncErrors(async (req, res, next) => {
         return next(new ErrorHandler('Blog not found', 404))
     }
 
-    // Handle photos update
-    if (req.body.photos && req.body.photos.length > 0) {
-        // Delete existing photos
-        for (let i = 0; i < project.photos.length; i++) {
-            await cloudinary.v2.uploader.destroy(project.photos[i].public_id);
-        }
-
-        let photosLinks = [];
-        const photos = typeof req.body.photos === 'string' 
-            ? [req.body.photos] 
-            : req.body.photos;
-
-        for (let i = 0; i < photos.length; i++) {
-            const result = await cloudinary.v2.uploader.upload(photos[i], {
-                folder: 'projects/gallery'
-            });
-            photosLinks.push({
-                public_id: result.public_id,
-                url: result.secure_url
-            });
-        }
-        req.body.photos = photosLinks;
-    }
-
     // Handle image update
     if (req.body.image) {
         if (blog.image.public_id) {
@@ -164,23 +134,59 @@ exports.updateBlog = catchAsyncErrors(async (req, res, next) => {
         }
     }
 
-    // Handle PDF update
-    if (req.body.pdf) {
-        if (blog.pdf && blog.pdf.public_id) {
-            await cloudinary.v2.uploader.destroy(blog.pdf.public_id, {
-                resource_type: 'raw'
-            })
+    // Handle contentBlocks update
+    if (req.body.contentBlocks) {
+        let contentBlocks = JSON.parse(req.body.contentBlocks);
+        
+        // First delete any removed gallery images from Cloudinary
+        const existingBlocks = blog.contentBlocks;
+        for (let i = 0; i < existingBlocks.length; i++) {
+            const existingBlock = existingBlocks[i];
+            if (existingBlock.type === 'gallery' && existingBlock.photos) {
+                for (const photo of existingBlock.photos) {
+                    if (photo.public_id) {
+                        const stillExists = contentBlocks.some(newBlock => 
+                            newBlock.type === 'gallery' && 
+                            newBlock.photos && 
+                            newBlock.photos.some(p => p.public_id === photo.public_id)
+                        );
+                        
+                        if (!stillExists) {
+                            await cloudinary.v2.uploader.destroy(photo.public_id);
+                        }
+                    }
+                }
+            }
         }
 
-        const pdfResult = await cloudinary.v2.uploader.upload(req.body.pdf, {
-            folder: 'blogs/pdfs',
-            resource_type: 'raw'
-        })
+        // Then upload new gallery images
+        for (let i = 0; i < contentBlocks.length; i++) {
+            const block = contentBlocks[i];
+            if (block.type === 'gallery' && block.photos && block.photos.length > 0) {
+                let galleryPhotosLinks = [];
+                const photos = typeof block.photos === 'string' 
+                    ? [block.photos] 
+                    : block.photos;
 
-        req.body.pdf = {
-            public_id: pdfResult.public_id,
-            url: pdfResult.secure_url
+                for (let j = 0; j < photos.length; j++) {
+                    if (typeof photos[j] === 'string') {
+                        const result = await cloudinary.v2.uploader.upload(photos[j], {
+                            folder: 'blogs/gallery'
+                        });
+                        galleryPhotosLinks.push({
+                            public_id: result.public_id,
+                            url: result.secure_url
+                        });
+                    } else {
+                        galleryPhotosLinks.push(photos[j]);
+                    }
+                }
+                contentBlocks[i].photos = galleryPhotosLinks;
+                delete contentBlocks[i].content;
+            }
         }
+        
+        req.body.contentBlocks = contentBlocks;
     }
 
     blog = await Blog.findByIdAndUpdate(req.params.id, req.body, {
@@ -211,13 +217,6 @@ exports.deleteBlog = catchAsyncErrors(async (req, res, next) => {
     // Delete featured image if exists
     if (blog.image.public_id) {
         await cloudinary.v2.uploader.destroy(blog.image.public_id)
-    }
-
-    // Delete PDF if exists
-    if (blog.pdf && blog.pdf.public_id) {
-        await cloudinary.v2.uploader.destroy(blog.pdf.public_id, {
-            resource_type: 'raw'
-        })
     }
 
     await blog.deleteOne()

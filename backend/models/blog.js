@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+ const mongoose = require('mongoose');
 
 const blogSchema = new mongoose.Schema({
     title: {
@@ -18,12 +18,19 @@ const blogSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
-    paragraph: {
-        type: String,
-        required: [true, 'Please enter blog content']
-    },
-    photos: [
-        {
+    contentBlocks: [{
+        type: {
+            type: String,
+            enum: ['title', 'subtitle', 'paragraph', 'headline', 'gallery'],
+            required: true
+        },
+        content: {
+            type: String,
+            required: function() {
+                return this.type !== 'gallery';
+            }
+        },
+        photos: [{
             public_id: {
                 type: String,
                 required: true
@@ -32,8 +39,12 @@ const blogSchema = new mongoose.Schema({
                 type: String,
                 required: true
             }
+        }],
+        order: {
+            type: Number,
+            required: true
         }
-    ],
+    }],
     image: {
         public_id: {
             type: String

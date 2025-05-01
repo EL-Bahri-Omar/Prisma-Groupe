@@ -182,7 +182,7 @@ const LeftColumn = () => {
             </div>
 
           <img src="/src/assets/home/prisma-groupe.png"/>
-          <p>Recherche et développement technologique.</p>
+          <p></p>
           <Link to="/about" className="cta-button" style={{ backgroundColor: '#dfe3e8', color: 'black'}}>Découvrir</Link>
 
           <div id="bottom-navigation-arrow" className="bottom-nav-arrow page-bottom-nav-arrow">
@@ -206,8 +206,7 @@ const LeftColumn = () => {
         backgroundImage: 'url("/src/assets/home/digital0.png")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        width: '655px'
+        backgroundRepeat: 'no-repeat'
       }}>
         <div className="left-content">
           {currentPage > 1 && (
@@ -219,7 +218,7 @@ const LeftColumn = () => {
           )}
 
           <img src="/src/assets/home/prisma-digital.png"/>
-          <p>Recherche et développement technologique.</p>
+          <p></p>
           <Link to="/PrismaEvents" className="cta-button" style={{ backgroundColor: '#98a389', color: 'black'}}>En savoir plus</Link>
 
           <div id="bottom-navigation-arrow" className="bottom-nav-arrow page-bottom-nav-arrow">
@@ -243,8 +242,7 @@ const LeftColumn = () => {
         backgroundImage: 'url("/src/assets/home/spazio0.png")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        width: '655px'
+        backgroundRepeat: 'no-repeat'
       }}>
         <div className="left-content">
           {currentPage > 1 && (
@@ -295,7 +293,7 @@ const LeftColumn = () => {
     )}
 
     <img src="/src/assets/home/prisma-event.png"/>
-    <p>Recherche et développement technologique.</p>
+    <p></p>
     <Link to="/PrismaLab" className="cta-button" style={{ backgroundColor: '#ddaab3', color: 'black'}}>En savoir plus</Link>
 
     <div id="bottom-navigation-arrow" className="bottom-nav-arrow page-bottom-nav-arrow">
@@ -332,7 +330,7 @@ const LeftColumn = () => {
           )}
 
           <img src="/src/assets/home/prisma-studio.png"/>
-          <p>Recherche et développement technologique.</p>
+          <p></p>
           <Link to="/PrismaEspaceDeco" className="cta-button" style={{ backgroundColor: '#003f5d', color: 'black'}}>En savoir plus</Link>
 
           <div id="bottom-navigation-arrow" className="bottom-nav-arrow page-bottom-nav-arrow">
@@ -360,7 +358,7 @@ const LeftColumn = () => {
               </svg>
             </div>
           <img src="/src/assets/home/prisma-logistique.png"/>
-          <p>Recherche et développement technologique.</p>
+          <p></p>
           <Link to="/PrismaStudio" className="cta-button" style={{ backgroundColor: '#0530475', color: 'black'}}>En savoir plus</Link>
           <div id="bottom-navigation-arrow" className="bottom-nav-arrow page-bottom-nav-arrow">
             <div className="page-counter">
@@ -390,7 +388,7 @@ const LeftColumn = () => {
           )}
 
           <img src="/src/assets/home/prisma-distribution.png"/>
-          <p>Recherche et développement technologique.</p>
+          <p></p>
           <Link to="/PrismaLab" className="cta-button" style={{ backgroundColor: '#9198aa', color: 'black'}}>En savoir plus</Link>
 
           <div id="bottom-navigation-arrow" className="bottom-nav-arrow page-bottom-nav-arrow">
@@ -410,7 +408,7 @@ const LeftColumn = () => {
           </div>
         </div>
       </div>
-      <div id="page15" className="full-page left-page" style={{ backgroundColor: '#6bc9e6'}}>
+      <div id="page15" className="full-page left-page" style={{ backgroundColor: '#6bc9e6', width: '655px'}}>
         <div className="left-content">
           {currentPage > 1 && (
             <div id="top-navigation-arrow" className="top-nav-arrow page-top-nav-arrow" onClick={navigateUp}>
@@ -421,7 +419,7 @@ const LeftColumn = () => {
           )}
 
           <h2>Contact</h2>
-          <p>Latest updates and news from our company.</p>
+          <p></p>
           <Link to="/contact" className="cta-button">Contacter-nous</Link>
 
           <div id="bottom-navigation-arrow" className="bottom-nav-arrow page-bottom-nav-arrow">

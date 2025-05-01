@@ -6,43 +6,65 @@ const cloudinary = require('cloudinary');
 
 // Create new project => /api/v1/admin/project/new
 exports.newProject = catchAsyncErrors(async (req, res, next) => {
-    // Upload featured image
-        const imageResult = await cloudinary.v2.uploader.upload(req.body.image, {
+    console.log('Received project data:', req.body); // Log incoming data
+    
+    // Validate required fields
+    if (!req.body.title || !req.body.description || !req.body.category) {
+        return next(new ErrorHandler('Missing required fields', 400));
+    }
+
+    try {
+        // Upload featured image
+    let imageResult={};
+    if (req.body.image) {
+        imageResult = await cloudinary.v2.uploader.upload(req.body.image, {
             folder: 'projects/image'
         });
-    
-        // Upload gallery photos
-        let photos = [];
-        if (req.body.photos && req.body.photos.length > 0) {
-            photos = typeof req.body.photos === 'string' 
-                ? [req.body.photos] 
-                : req.body.photos;
-    
-            let photosLinks = [];
-            for (let i = 0; i < photos.length; i++) {
-                const result = await cloudinary.v2.uploader.upload(photos[i], {
-                    folder: 'projects/gallery'
-                });
-                photosLinks.push({
-                    public_id: result.public_id,
-                    url: result.secure_url
-                });
-            }
-            req.body.photos = photosLinks;
+    }
+
+    // Upload gallery photos
+    let photosLinks = [];
+    if (req.body.photos && req.body.photos.length > 0) {
+        const photos = typeof req.body.photos === 'string' 
+            ? [req.body.photos] 
+            : req.body.photos;
+
+        for (let i = 0; i < photos.length; i++) {
+            const result = await cloudinary.v2.uploader.upload(photos[i], {
+                folder: 'projects/gallery'
+            });
+            photosLinks.push({
+                public_id: result.public_id,
+                url: result.secure_url
+            });
         }
-    
-        req.body.image = {
-            public_id: imageResult.public_id,
-            url: imageResult.secure_url
-        };
-        req.body.user = req.user.id;
+    }
 
-    const project = await Project.create(req.body);
+        // Create project
+        const project = await Project.create({
+            title: req.body.title,
+            subtitle: req.body.subtitle,
+            description: req.body.description,
+            date: req.body.date,
+            category: req.body.category,
+            place: req.body.place,
+            image: {
+                public_id: imageResult.public_id,
+                url: imageResult.secure_url
+            },
+            photos: photosLinks,
+            user: req.user.id
+        });
 
-    res.status(201).json({
-        success: true,
-        project
-    });
+        res.status(201).json({
+            success: true,
+            project
+        });
+
+    } catch (error) {
+        console.error('Error in newProject:', error);
+        next(new ErrorHandler(error.message, 500));
+    }
 });
 
 // Get all projects => /api/v1/projects?keyword=modern

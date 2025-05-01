@@ -188,7 +188,7 @@ const App = () => {
           <Route element={<ProtectedRoute isAdmin={true} />}>
               <Route path="/admin/users" element={<UsersList />} exact />
           </Route>
-          <Route element={<ProtectedRoute isAdmin={true} />}>
+          <Route element={<ProtectedRoute isSuperAdmin={true} />}>
               <Route path="/admin/user/:userId" element={<UpdateUser />} exact />
           </Route>
 

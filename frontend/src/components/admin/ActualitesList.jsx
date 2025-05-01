@@ -1,15 +1,19 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MDBDataTable } from 'mdbreact';
 import MetaData from '../layout/MetaData';
 import Loader from '../layout/Loader';
 import Sidebar from './Sidebar';
+import Header from "../layout/Header"
 import { useAlert } from 'react-alert';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAdminActualites, deleteActualite, clearErrors } from '../../actions/actualiteActions';
 import { DELETE_ACTUALITE_RESET } from '../../constants/actualiteConstants';
 
 const ActualiteList = () => {
+    const [deleteConfirm, setDeleteConfirm] = useState(false);
+    const [actualiteToDelete, setActualiteToDelete] = useState(null);
+    
     const alert = useAlert();
     const dispatch = useDispatch();
 
@@ -30,10 +34,25 @@ const ActualiteList = () => {
         }
 
         if (isDeleted) {
-            alert.success('News deleted successfully');
+            alert.success('Actualité supprimé avec succès');
             dispatch({ type: DELETE_ACTUALITE_RESET });
         }
     }, [dispatch, alert, error, deleteError, isDeleted]);
+
+    const deleteActualiteHandler = (id) => {
+        setActualiteToDelete(id);
+        setDeleteConfirm(true);
+    };
+
+    const confirmDelete = () => {
+        dispatch(deleteActualite(actualiteToDelete));
+        setDeleteConfirm(false);
+    };
+    
+    const cancelDelete = () => {
+        setDeleteConfirm(false);
+        setActualiteToDelete(null);
+    };
 
     const setActualites = () => {
         const data = {
@@ -44,13 +63,13 @@ const ActualiteList = () => {
                     sort: 'asc'
                 },
                 {
-                    label: 'Title',
-                    field: 'title',
+                    label: 'Titre',
+                    field: 'titre',
                     sort: 'asc'
                 },
                 {
-                    label: 'Category',
-                    field: 'category',
+                    label: 'Catégorie',
+                    field: 'categorie',
                     sort: 'asc'
                 },
                 {
@@ -69,8 +88,8 @@ const ActualiteList = () => {
         actualites.forEach(actualite => {
             data.rows.push({
                 id: actualite._id,
-                title: actualite.title,
-                category: actualite.category,
+                titre: actualite.title,
+                categorie: actualite.category,
                 date: new Date(actualite.date).toLocaleDateString(),
                 actions: (
                     <Fragment>
@@ -91,35 +110,87 @@ const ActualiteList = () => {
         return data;
     };
 
-    const deleteActualiteHandler = (id) => {
-        dispatch(deleteActualite(id));
-    };
-
     return (
         <Fragment>
             <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
-            <MetaData title={'All News'} />
-            <div className="dashboard-content row">
-                <div className="col-12 col-md-2">
-                    <Sidebar />
+            <MetaData title={'Tout Les Actualités'} />
+            
+            <div className="dashboard-content">
+                {/* Fixed Header at top */}
+                <div className="header-container">
+                    <Header />
                 </div>
+                
+                {/* Main Content Area (sidebar + scrollable content) */}
+                <div className="main-content-container">
+                    {/* Fixed Sidebar below header */}
+                    <div className="sidebar-column">
+                        <Sidebar />
+                    </div>
+                    
+                    {/* Scrollable Content */}
+                    <div className="scrollable-content">
+                        
+                            <h1 className="my-5">Tout Les Actualités</h1>
 
-                <div className="col-12 col-md-10">
-                    <Fragment>
-                        <h1 className="my-5">All News</h1>
-
-                        {loading ? <Loader /> : (
-                            <MDBDataTable
-                                data={setActualites()}
-                                className="px-3"
-                                bordered
-                                striped
-                                hover
-                            />
-                        )}
-                    </Fragment>
+                            {loading ? <Loader /> : (
+                                <MDBDataTable
+                                    data={setActualites()}
+                                    className="px-3"
+                                    bordered
+                                    striped
+                                    hover
+                                />
+                            )}
+                        
+                    </div>
                 </div>
             </div>
+
+            {/* Delete Confirmation Modal */}
+            {deleteConfirm && (
+                <div className="modal-backdrop" style={{
+                    position: 'fixed',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    backgroundColor: 'rgba(0,0,0,0.5)',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    zIndex: 1050
+                }}>
+                    <div className="modal-content" style={{
+                        backgroundColor: 'white',
+                        padding: '20px',
+                        borderRadius: '5px',
+                        maxWidth: '500px',
+                        width: '90%'
+                    }}>
+                        <h4>Êtes-vous sûr de supprimer cette actualité ?</h4>
+                        <div className="modal-footer" style={{
+                            display: 'flex',
+                            justifyContent: 'flex-end',
+                            marginTop: '20px'
+                        }}>
+                            <button 
+                                onClick={cancelDelete} 
+                                className="btn btn-secondary mr-2"
+                                style={{marginRight: '10px'}}
+                            >
+                                Annuler
+                            </button>
+                            <button 
+                                onClick={confirmDelete} 
+                                className="btn btn-danger"
+                            >
+                                Oui, supprimer
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </Fragment>
     );
 };

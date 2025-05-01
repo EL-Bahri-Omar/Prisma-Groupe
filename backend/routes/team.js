@@ -16,10 +16,10 @@ router.route('/admin/team').get(getAdminTeamMembers);
 router.route('/team/:id').get(getSingleTeamMember);
 
 router.route('/admin/team/new')
-    .post(isAuthenticatedUser, authorizeRoles('admin'), newTeamMember);
+    .post(isAuthenticatedUser, authorizeRoles('admin', 'super'), newTeamMember);
 
 router.route('/admin/team/:id')
-    .put(isAuthenticatedUser, authorizeRoles('admin'), updateTeamMember)
-    .delete(isAuthenticatedUser, authorizeRoles('admin'), deleteTeamMember);
+    .put(isAuthenticatedUser, authorizeRoles('admin', 'super'), updateTeamMember)
+    .delete(isAuthenticatedUser, authorizeRoles('admin', 'super'), deleteTeamMember);
 
 module.exports = router;

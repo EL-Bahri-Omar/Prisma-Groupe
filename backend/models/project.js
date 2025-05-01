@@ -36,12 +36,10 @@ const projectSchema = new mongoose.Schema({
     },
     video: {
         public_id: {
-            type: String,
-            required: true
+            type: String
         },
         url: {
-            type: String,
-            required: true
+            type: String
         }
     },
     photos: [

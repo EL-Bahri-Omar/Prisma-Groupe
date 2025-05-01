@@ -1,22 +1,22 @@
-const Project = require('../models/project');
+const Blog = require('../models/blog');
 const dotenv = require('dotenv');
 const connectDatabase = require('../config/database');
 
-const Projects = require('../data/projects');
+const Blogs = require('../data/blogs');
 
 //Setting dotenv file
 dotenv.config({ path: 'backend/config/config.env' })
 
 connectDatabase();
 
-const seedProjects = async () => {
+const seedBlogs = async () => {
     try {
 
-        await Project.deleteMany();
-        console.log('All Project are deleted.');
+        await Blog.deleteMany();
+        console.log('All Blog are deleted.');
 
-        await Project.insertMany(Projects);
-        console.log('All Project are added');
+        await Blog.insertMany(Blogs);
+        console.log('All Blog are added');
 
         process.exit();
 
@@ -26,4 +26,4 @@ const seedProjects = async () => {
     }
 }
 
-seedProjects();
+seedBlogs();

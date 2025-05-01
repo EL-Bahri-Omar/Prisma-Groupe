@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { MDBDataTable } from 'mdbreact';
 import { useAlert } from 'react-alert';
@@ -6,10 +6,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import MetaData from '../layout/MetaData';
 import Loader from '../layout/Loader';
 import Sidebar from './Sidebar';
+import Header from "../layout/Header"
+
 import { getAllMessages, deleteMessage, clearErrors } from '../../actions/messageActions';
 import { DELETE_MESSAGE_RESET } from '../../constants/messageConstants';
 
 const MessagesList = () => {
+    const [deleteConfirm, setDeleteConfirm] = useState(false);
+    const [messageToDelete, setMessageToDelete] = useState(null);
+    
     const navigate = useNavigate();
     const alert = useAlert();
     const dispatch = useDispatch();
@@ -26,36 +31,47 @@ const MessagesList = () => {
         }
 
         if (isDeleted) {
-            alert.success('Message deleted successfully');
+            alert.success('Message supprimé avec succès');
             navigate('/admin/messages');
             dispatch({ type: DELETE_MESSAGE_RESET });
         }
     }, [dispatch, alert, error, isDeleted, navigate]);
 
     const deleteMessageHandler = (id) => {
-        dispatch(deleteMessage(id));
+        setMessageToDelete(id);
+        setDeleteConfirm(true);
+    };
+    
+    const confirmDelete = () => {
+        dispatch(deleteMessage(messageToDelete));
+        setDeleteConfirm(false);
+    };
+    
+    const cancelDelete = () => {
+        setDeleteConfirm(false);
+        setMessageToDelete(null);
     };
     
     const setMessages = () => {
         const data = {
             columns: [
                 {
-                    label: 'Message ID',
+                    label: 'ID',
                     field: 'id',
                     sort: 'asc'
                 },
                 {
-                    label: 'From',
+                    label: 'De',
                     field: 'from',
                     sort: 'asc'
                 },
                 {
-                    label: 'Subject',
+                    label: 'Sujet',
                     field: 'subject',
                     sort: 'asc'
                 },
                 {
-                    label: 'Status',
+                    label: 'Statut',
                     field: 'status',
                     sort: 'asc'
                 },
@@ -97,35 +113,88 @@ const MessagesList = () => {
             });
         });
         
-    
         return data;
     };
     
     return (
         <Fragment>
             <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
-            <MetaData title={'All Messages'} />
-            <div className="dashboard-content row">
-                <div className="col-12 col-md-2">
-                    <Sidebar />
+            <MetaData title={'Tout Les Messages'} />
+            
+            <div className="dashboard-content">
+                {/* Fixed Header at top */}
+                <div className="header-container">
+                    <Header />
                 </div>
+                
+                {/* Main Content Area (sidebar + scrollable content) */}
+                <div className="main-content-container">
+                    {/* Fixed Sidebar below header */}
+                    <div className="sidebar-column">
+                        <Sidebar />
+                    </div>
+                    
+                    {/* Scrollable Content */}
+                    <div className="scrollable-content">
+                            <h1 className="my-5">Tout Les Messages</h1>
 
-                <div className="col-12 col-md-10">
-                    <Fragment>
-                        <h1 className="my-5">All Messages</h1>
-
-                        {loading ? <Loader /> : (
-                            <MDBDataTable
-                                data={setMessages()}
-                                className="px-3"
-                                bordered
-                                striped
-                                hover
-                            />
-                        )}
-                    </Fragment>
+                            {loading ? <Loader /> : (
+                                <MDBDataTable
+                                    data={setMessages()}
+                                    className="px-3"
+                                    bordered
+                                    striped
+                                    hover
+                                />
+                            )}
+                    </div>
                 </div>
             </div>
+
+            {/* Delete Confirmation Modal */}
+            {deleteConfirm && (
+                <div className="modal-backdrop" style={{
+                    position: 'fixed',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    backgroundColor: 'rgba(0,0,0,0.5)',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    zIndex: 1050
+                }}>
+                    <div className="modal-content" style={{
+                        backgroundColor: 'white',
+                        padding: '20px',
+                        borderRadius: '5px',
+                        maxWidth: '500px',
+                        width: '90%'
+                    }}>
+                        <h4>Êtes-vous sûr de supprimer ce message ?</h4>
+                        <div className="modal-footer" style={{
+                            display: 'flex',
+                            justifyContent: 'flex-end',
+                            marginTop: '20px'
+                        }}>
+                            <button 
+                                onClick={cancelDelete} 
+                                className="btn btn-secondary mr-2"
+                                style={{marginRight: '10px'}}
+                            >
+                                Annuler
+                            </button>
+                            <button 
+                                onClick={confirmDelete} 
+                                className="btn btn-danger"
+                            >
+                                Oui, supprimer
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </Fragment>
     );
 };

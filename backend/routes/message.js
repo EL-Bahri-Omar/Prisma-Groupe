@@ -17,10 +17,10 @@ router.route('/message/:id').get(isAuthenticatedUser, getSingleMessage)
 
 // Admin routes
 router.route('/admin/messages')
-    .get(isAuthenticatedUser, authorizeRoles('admin'), allMessages);
+    .get(isAuthenticatedUser, authorizeRoles('admin', 'super'), allMessages);
 
 router.route('/admin/message/:id')
-    .put(isAuthenticatedUser, authorizeRoles('admin'), updateMessage)
-    .delete(isAuthenticatedUser, authorizeRoles('admin'), deleteMessage);
+    .put(isAuthenticatedUser, authorizeRoles('admin', 'super'), updateMessage)
+    .delete(isAuthenticatedUser, authorizeRoles('admin', 'super'), deleteMessage);
 
 module.exports = router;

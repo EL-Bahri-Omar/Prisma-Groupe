@@ -50,17 +50,21 @@ const UpdateProfile = () => {
         }
         
     }, [dispatch, alert, user, isUpdated, error, navigate])
-        
+    
     const submitHandler = (e) => {
-        e.preventDefault();
+    e.preventDefault();
+
+    const formData = new FormData();
+    formData.set('name', name);
+    formData.set('email', email);
     
-        const formData = new FormData();
-        formData.set('name', name);
-        formData.set('email', email);
+    // Only include avatar if it's a new file (not the default or preview)
+    if (avatar !== '/images/default_avatar.jpg' && avatar !== user?.avatar?.url) {
         formData.set('avatar', avatar);
-    
-        dispatch(updateProfile(formData))
     }
+
+    dispatch(updateProfile(formData));
+}
     
     const onChange = e => {
                 
@@ -140,7 +144,7 @@ const UpdateProfile = () => {
                             </div>
 
                             <button type="submit"
-                                className="btn update-btn btn-block mt-4 mb-3"
+                                className="update-btn btn-block mt-4 mb-3"
                                 disabled={loading ? true : false} > Update </button>
                         </form>
                     </div>

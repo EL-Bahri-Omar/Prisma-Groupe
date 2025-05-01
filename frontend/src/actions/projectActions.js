@@ -76,22 +76,27 @@ export const newProject = (projectData) => async (dispatch) => {
     try {
         dispatch({ type: NEW_PROJECT_REQUEST });
         
-        const config = {
+        const { data } = await axios.post('/api/v1/admin/project/new', projectData, {
             headers: {
                 'Content-Type': 'application/json'
             }
-        };
-        
-        const { data } = await axios.post('/api/v1/admin/project/new', projectData, config);
-        
-        dispatch({
-            type: NEW_PROJECT_SUCCESS,
-            payload: data
         });
+        
+        dispatch({ type: NEW_PROJECT_SUCCESS, payload: data });
+        
     } catch (error) {
-        dispatch({
-            type: NEW_PROJECT_FAIL,
-            payload: error.response?.data?.message
+        const errorMessage = error.response?.data?.message || 
+                            error.response?.data?.error ||
+                            error.message;
+        
+        console.error('Project creation error:', {
+            error: error.response?.data,
+            config: error.config
+        });
+        
+        dispatch({ 
+            type: NEW_PROJECT_FAIL, 
+            payload: errorMessage 
         });
     }
 };

@@ -85,7 +85,7 @@ const UpdatePassword = () => {
                             </div>
 
                             <button type="submit"
-                                className="btn update-btn btn-block mt-4 mb-3"
+                                className="update-btn btn-block mt-4 mb-3"
                                 disabled={loading ? true : false} > Update Password </button>
                         </form>
                     </div>

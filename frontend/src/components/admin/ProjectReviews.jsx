@@ -1,9 +1,9 @@
 import React, { Fragment, useState, useEffect } from 'react'
 import { MDBDataTable } from 'mdbreact'
-
 import MetaData from "../layout/MetaData"
 import Loader from '../layout/Loader'
 import Sidebar from "./Sidebar"
+import Header from "../layout/Header";
 
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
@@ -12,6 +12,8 @@ import { DELETE_REVIEW_RESET } from "../../constants/projectConstants"
 
 const ProjectReviews = () => {
     const [projectId, setProjectId] = useState('')
+    const [deleteConfirm, setDeleteConfirm] = useState(false)
+    const [reviewToDelete, setReviewToDelete] = useState(null)
 
     const alert = useAlert()
     const dispatch = useDispatch()
@@ -30,14 +32,29 @@ const ProjectReviews = () => {
         }
     
         if (isDeleted) {
-            alert.success('Review deleted successfully')
+            alert.success('Avis supprimé avec succès')
             dispatch({ type: DELETE_REVIEW_RESET })
+            // Refresh reviews after deletion
+            if (projectId !== '') {
+                dispatch(getProjectReviews(projectId))
+            }
         }
     
     }, [dispatch, alert, error, projectId, isDeleted])
     
     const deleteReviewHandler = (id) => {
-        dispatch(deleteReview(id, projectId))
+        setReviewToDelete(id)
+        setDeleteConfirm(true)
+    }
+
+    const confirmDelete = () => {
+        dispatch(deleteReview(reviewToDelete, projectId))
+        setDeleteConfirm(false)
+    }
+
+    const cancelDelete = () => {
+        setDeleteConfirm(false)
+        setReviewToDelete(null)
     }
 
     const submitHandler = (e) => { 
@@ -49,22 +66,22 @@ const ProjectReviews = () => {
         const data = {
             columns: [
                 {
-                    label: 'Review ID',
+                    label: 'ID',
                     field: 'id',
                     sort: 'asc'
                 },
                 {
-                    label: 'Rating',
+                    label: 'Note',
                     field: 'rating',
                     sort: 'asc'
                 },
                 {
-                    label: 'Comment',
+                    label: 'Commentaire',
                     field: 'comment',
                     sort: 'asc'
                 },
                 {
-                    label: 'User',
+                    label: 'Utilisateur',
                     field: 'user',
                     sort: 'asc'
                 },
@@ -99,54 +116,108 @@ const ProjectReviews = () => {
         <Fragment>
             <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
             <MetaData title={'Project Reviews'}/>
-            <div className="dashboard-content row">
-                <div className="col-12 col-md-2">
-                    <Sidebar />
+            
+            <div className="dashboard-content">
+                {/* Fixed Header at top */}
+                <div className="header-container">
+                    <Header />
                 </div>
+                
+                {/* Main Content Area (sidebar + scrollable content) */}
+                <div className="main-content-container">
+                    {/* Fixed Sidebar below header */}
+                    <div className="sidebar-column">
+                        <Sidebar />
+                    </div>
+                    
+                    {/* Scrollable Content */}
+                    <div className="scrollable-content">
+                            <div className="row justify-content-center mt-5">
+                                <div className="col-5">
+                                    <form onSubmit={submitHandler}>
+                                        <div className="form-group">
+                                            <label htmlFor="projectId_field">Enter Project ID</label>
+                                            <input
+                                                type="text"
+                                                id="projectId_field"
+                                                className="form-control"
+                                                value={projectId}
+                                                onChange={(e) => setProjectId(e.target.value)}
+                                            />
+                                        </div>
 
-                <div className="col-12 col-md-10">
-                    <Fragment>
-                        <div className="row justify-content-center mt-5">
-                            <div className="col-5">
-                                <form onSubmit={submitHandler}>
-                                    <div className="form-group">
-                                        <label htmlFor="projectId_field">Enter Project ID</label>
-                                        <input
-                                            type="text"
-                                            id="projectId_field"
-                                            className="form-control"
-                                            value={projectId}
-                                            onChange={(e) => setProjectId(e.target.value)}
-                                        />
-                                    </div>
+                                        <button
+                                            id="search_button"
+                                            type="submit"
+                                            className="btn btn-primary btn-block py-2"
+                                        >
+                                            SEARCH
+                                        </button>
+                                    </form>
+                                </div>                            
+                            </div>
 
-                                    <button
-                                        id="search_button"
-                                        type="submit"
-                                        className="btn btn-primary btn-block py-2"
-                                    >
-                                        SEARCH
-                                    </button>
-                                </form>
-                            </div>                            
-                        </div>
-
-                        {loading ? <Loader /> : (
-                            reviews && reviews.length > 0 ? (
-                                <MDBDataTable
-                                    data={setReviews()}
-                                    className="px-3"
-                                    bordered
-                                    striped
-                                    hover
-                                />
-                            ) : (
-                                <p className="mt-5 text-center">No Reviews</p>
-                            )
-                        )}
-                    </Fragment>
+                            {loading ? <Loader /> : (
+                                reviews && reviews.length > 0 ? (
+                                    <MDBDataTable
+                                        data={setReviews()}
+                                        className="px-3"
+                                        bordered
+                                        striped
+                                        hover
+                                    />
+                                ) : (
+                                    <p className="mt-5 text-center">No Reviews</p>
+                                )
+                            )}
+                    </div>
                 </div>
             </div>
+
+            {/* Delete Confirmation Modal */}
+            {deleteConfirm && (
+                <div className="modal-backdrop" style={{
+                    position: 'fixed',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    backgroundColor: 'rgba(0,0,0,0.5)',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    zIndex: 1050
+                }}>
+                    <div className="modal-content" style={{
+                        backgroundColor: 'white',
+                        padding: '20px',
+                        borderRadius: '5px',
+                        maxWidth: '500px',
+                        width: '90%'
+                    }}>
+                        <h4>Êtes-vous sûr de supprimer cet avis ?</h4>
+                        <div className="modal-footer" style={{
+                            display: 'flex',
+                            justifyContent: 'flex-end',
+                            marginTop: '20px'
+                        }}>
+                            <button 
+                                onClick={cancelDelete} 
+                                className="btn btn-secondary mr-2"
+                                style={{marginRight: '10px'}}
+                            >
+                                Annuler
+                            </button>
+                            <button 
+                                onClick={confirmDelete} 
+                                className="btn btn-danger"
+                            >
+                                Oui, supprimer
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </Fragment>
     )
 }

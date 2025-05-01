@@ -137,7 +137,7 @@ export const blogReducer = (state = {}, action) => {
             return {
                 ...state,
                 loading: false,
-                isUpdated: action.payload
+                isUpdated: action.payload.success
             }
         case DELETE_BLOG_FAIL:
         case UPDATE_BLOG_FAIL:

@@ -47,7 +47,7 @@ const MessageDetails = () => {
             <div className="col-8 col-md-8">
               {loading ? <Loader /> : (
                 <div className="px-3">
-                  <h1 className="my-4">Message #{message?._id}</h1>
+                  <h1 className="my-4">Message : {message?.subject}</h1>
 
                   <div className="card mb-4">
                     <div className="card-body">
