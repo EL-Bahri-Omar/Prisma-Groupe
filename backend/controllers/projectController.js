@@ -39,6 +39,20 @@ exports.newProject = catchAsyncErrors(async (req, res, next) => {
             });
         }
     }
+    
+    // Handle video registration
+        let videoData = {};
+        if (req.body.video) {
+
+                const result = await cloudinary.v2.uploader.upload(req.body.video, {
+                    resource_type: "video",
+                    folder: 'projects/video'
+                });
+                videoData = {
+                    public_id: result.public_id,
+                    url: result.secure_url
+                };
+        }
 
         // Create project
         const project = await Project.create({
@@ -53,6 +67,7 @@ exports.newProject = catchAsyncErrors(async (req, res, next) => {
                 url: imageResult.secure_url
             },
             photos: photosLinks,
+            video: videoData,
             user: req.user.id
         });
 
@@ -151,6 +166,26 @@ exports.updateProject = catchAsyncErrors(async (req, res, next) => {
             });
         }
         req.body.photos = photosLinks;
+    }
+
+    if (req.body.video) {
+        // Delete previous video if exists
+        if (project.video?.public_id) {
+            await cloudinary.v2.uploader.destroy(project.video.public_id, {
+                resource_type: 'video'
+            });
+        }
+
+        // Upload new video
+        const result = await cloudinary.v2.uploader.upload(req.body.video, {
+            resource_type: "video",
+            folder: 'projects/video'
+        });
+        
+        req.body.video = {
+            public_id: result.public_id,
+            url: result.secure_url
+        };
     }
 
     project = await Project.findByIdAndUpdate(req.params.id, req.body, {

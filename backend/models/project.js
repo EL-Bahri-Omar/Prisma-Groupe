@@ -39,7 +39,8 @@ const projectSchema = new mongoose.Schema({
             type: String
         },
         url: {
-            type: String
+            type: String,
+            trim: true
         }
     },
     photos: [

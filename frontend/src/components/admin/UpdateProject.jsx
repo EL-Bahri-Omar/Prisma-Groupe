@@ -15,6 +15,7 @@ const UpdateProject = () => {
     const [date, setDate] = useState('')
     const [category, setCategory] = useState('')
     const [place, setPlace] = useState('')
+    const [video, setVideo] = useState('')
     const [image, setImage] = useState('')
     const [photos, setPhotos] = useState([])
     const [oldImage, setOldImage] = useState('')
@@ -23,15 +24,22 @@ const UpdateProject = () => {
     const [photosPreview, setPhotosPreview] = useState([])
 
     const categories = [
-        'Architecture',
-        'Interior Design',
-        'Construction',
-        'Renovation',
-        'Landscaping',
-        'Commercial',
-        'Residential',
-        'Hospitality',
-        'Urban Planning'
+        "Education",
+        "Web",
+        "Finance",
+        "Commerce",
+        "Tourism",
+        "Hotels",
+        "IT",
+        "Immobilier",
+        "Culture",
+        "Organizations",
+        "Events",
+        "Restauration",
+        "Magazine",
+        "Automobile",
+        "BTP",
+        "Assurance"
     ]
 
     const navigate = useNavigate()
@@ -55,6 +63,7 @@ const UpdateProject = () => {
             setPlace(project.place)
             setOldImage(project.image?.url)
             setOldPhotos(project.photos)
+            setVideo(project.video?.url)
         }
 
         if (error) {
@@ -77,11 +86,13 @@ const UpdateProject = () => {
     const submitHandler = (e) => {
         e.preventDefault()
     
+        const formattedDate = new Date(date).toISOString();
+
         const formData = new FormData()
         formData.set('title', title)
         formData.set('subtitle', subtitle)
         formData.set('description', description)
-        formData.set('date', date)
+        formData.set('date', formattedDate)
         formData.set('category', category)
         formData.set('place', place)
         
@@ -92,6 +103,10 @@ const UpdateProject = () => {
         photos.forEach(photo => {
             formData.append('photos', photo)
         })
+
+        if (video) {
+            formData.set('video', video)
+        } 
     
         dispatch(updateProject(project._id, formData))
     }
@@ -302,6 +317,18 @@ const UpdateProject = () => {
                                             ))}
                                         </div>
                                     </div>
+                                </div>
+
+                                <div className="form-group mb-4">
+                                    <label htmlFor="video_field">Video URL (from Cloudinary)</label>
+                                    <input
+                                        type="text"
+                                        id="video_field"
+                                        className="form-control"
+                                        value={video}
+                                        onChange={(e) => setVideo(e.target.value)}
+                                        placeholder="Paste Cloudinary video URL here"
+                                    />
                                 </div>
                                 
                                 {/* Submit Button - Centered */}

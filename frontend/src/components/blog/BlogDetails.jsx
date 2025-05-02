@@ -122,49 +122,21 @@ const BlogDetails = () => {
               ));
             case 'gallery':
               return (
-                <div key={index} className="mb-6">
+                <div key={index} className="gallery-container">
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {block.photos.map((photo, idx) => (
-                      <div key={idx} className="relative group">
+                      <div key={idx} className="gallery-item">
                         <img
                           src={photo.url || photo}
                           alt={`Gallery ${idx + 1}`}
-                          className="w-full h-64 object-cover rounded-lg shadow-lg"
+                          className="gallery-image"
                           loading="lazy"
-                        />
-                        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                          <button
-                            onClick={() => {
-                              const img = new Image();
-                              img.src = photo.url || photo;
-                              const win = window.open('', '_blank');
-                              win.document.write(`
-                                <html>
-                                  <head>
-                                    <title>Image Viewer</title>
-                                    <style>
-                                      body { margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #000; }
-                                      img { max-width: 100%; max-height: 100%; object-fit: contain; }
-                                    </style>
-                                  </head>
-                                  <body>
-                                    <img src="${photo.url || photo}" alt="Full size image" />
-                                  </body>
-                                </html>
-                              `);
-                              win.document.close();
-                            }}
-                            className="p-2 bg-white rounded-full shadow-lg hover:bg-gray-100 transition-colors"
-                            aria-label="View fullscreen"
-                          >
-                            <i className="fa fa-expand text-gray-700"></i>
-                          </button>
-                        </div>
+                        />                 
                       </div>
                     ))}
                   </div>
                   {block.caption && (
-                    <p className="text-sm text-gray-500 dark:text-gray-400 mt-2 text-center italic">
+                    <p className="gallery-caption">
                       {block.caption}
                     </p>
                   )}
@@ -252,7 +224,7 @@ const BlogDetails = () => {
           <div className="blogdetail-header">
             <div className="blogdetail-header-meta">
               <span className="blogdetail-header-category">{article.category}</span>
-              <span className="blogdetail-header-date">{formatDate(article.createdAt)} • {article.readTime}</span>
+              <span className="blogdetail-header-date">{formatDate(article.updateddAt)} • {article.readTime}</span>
             </div>
             <h2 className="blogdetail-header-subtitle">{article.subtitle}</h2>
 
@@ -281,7 +253,8 @@ const BlogDetails = () => {
                   ))}
                 </div>
               </div>
-              <div className="blogdetail-share-article">
+            </div>
+            <div className="blogdetail-share-article">
                 <h4>Partager</h4>
                 <div className="blogdetail-social-icons">
                   <a href="#" className="blogdetail-social-icon"><i className="fab fa-linkedin"></i></a>
@@ -289,7 +262,6 @@ const BlogDetails = () => {
                   <a href="#" className="blogdetail-social-icon"><i className="fab fa-facebook"></i></a>
                   <a href="#" className="blogdetail-social-icon"><i className="fas fa-envelope"></i></a>
                 </div>
-              </div>
             </div>
           </div>
 
@@ -299,15 +271,17 @@ const BlogDetails = () => {
             </div>
           </div>
 
-          {/* Related Articles Section */}
+          
+        </div>
+        {/* Related Articles Section */}
           <div className="blogdetail-related-articles">
             <h3>Articles similaires</h3>
             <p className="blogdetail-related-articles-subtitle">
               D'autres articles de la catégorie <strong>{article.category}</strong>
             </p>
             {renderRelatedArticles()}
-          </div>
         </div>
+        <p> &nbsp; </p>
       </div>
 
       <ScrollTop/>

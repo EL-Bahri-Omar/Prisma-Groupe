@@ -81,6 +81,11 @@ const ProjectsList = () => {
                     sort: 'asc'
                 },
                 {
+                    label: 'Date',
+                    field: 'date',
+                    sort: 'asc'
+                },
+                {
                     label: 'Actions',
                     field: 'actions'
                 }
@@ -94,6 +99,7 @@ const ProjectsList = () => {
                 titre: project.title,
                 categorie: project.category,
                 place: project.place,
+                date: new Date(project.date).toLocaleDateString(),
                 actions:
                     <Fragment>
                         <Link to={`/admin/project/${project._id}`} className="btn btn-primary py-1 px-2">

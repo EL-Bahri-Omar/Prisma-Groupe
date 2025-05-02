@@ -15,6 +15,7 @@ const NewProject = () => {
     const [date, setDate] = useState('')
     const [category, setCategory] = useState('')
     const [place, setPlace] = useState('')
+    const [video, setVideo] = useState('')
     const [image, setImage] = useState('')
     const [photos, setPhotos] = useState([])
     const [imagePreview, setImagePreview] = useState('')
@@ -79,7 +80,8 @@ const NewProject = () => {
             category,
             place,
             image: imagePreview,
-            photos: photosPreview
+            photos: photosPreview,
+            video
         };
 
         dispatch(newProject(projectData));
@@ -271,6 +273,18 @@ const NewProject = () => {
                                             ))}
                                         </div>
                                     </div>
+                                </div>
+
+                                <div className="form-group mb-4">
+                                    <label htmlFor="video_field">Video URL (from Cloudinary)</label>
+                                    <input
+                                        type="text"
+                                        id="video_field"
+                                        className="form-control"
+                                        value={video}
+                                        onChange={(e) => setVideo(e.target.value)}
+                                        placeholder="Paste Cloudinary video URL here"
+                                    />
                                 </div>
                                 
                                 {/* Submit Button */}

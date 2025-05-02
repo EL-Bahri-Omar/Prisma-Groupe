@@ -189,6 +189,8 @@ exports.updateBlog = catchAsyncErrors(async (req, res, next) => {
         req.body.contentBlocks = contentBlocks;
     }
 
+    req.body.author = req.user.id;
+
     blog = await Blog.findByIdAndUpdate(req.params.id, req.body, {
         new: true,
         runValidators: true,
@@ -209,20 +211,35 @@ exports.deleteBlog = catchAsyncErrors(async (req, res, next) => {
         return next(new ErrorHandler('Blog not found', 404))
     }
 
-    // Deleting photos associated with the blog
-    for (let i = 0; i < blog.photos.length; i++) {
-        await cloudinary.v2.uploader.destroy(blog.photos[i].public_id)
+    // Delete all gallery images from Cloudinary
+    if (blog.contentBlocks && blog.contentBlocks.length > 0) {
+        for (const block of blog.contentBlocks) {
+            if (block.type === 'gallery' && block.photos) {
+                for (const photo of block.photos) {
+                    try {
+                        await cloudinary.v2.uploader.destroy(photo.public_id)
+                    } catch (error) {
+                        console.error(`Error deleting image ${photo.public_id}:`, error.message)
+                        // Continue with deletion even if one image fails
+                    }
+                }
+            }
+        }
     }
 
     // Delete featured image if exists
-    if (blog.image.public_id) {
-        await cloudinary.v2.uploader.destroy(blog.image.public_id)
+    if (blog.image && blog.image.public_id) {
+        try {
+            await cloudinary.v2.uploader.destroy(blog.image.public_id)
+        } catch (error) {
+            console.error(`Error deleting featured image ${blog.image.public_id}:`, error.message)
+        }
     }
 
     await blog.deleteOne()
 
     res.status(200).json({
         success: true,
-        message: 'Blog is deleted'
+        message: 'Blog is deleted successfully'
     })
 })
