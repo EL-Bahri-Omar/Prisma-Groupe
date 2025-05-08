@@ -84,7 +84,7 @@ const SignUp = () => {
                             <h2>Créer votre compte</h2>
                             
                             <div className="signup-divider">
-                                <span>ou inscrivez-vous avec votre email</span>
+                                <span>inscrivez-vous avec votre email</span>
                             </div>
                             
                             <input

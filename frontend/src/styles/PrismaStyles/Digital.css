@@ -1,0 +1,436 @@
+/* Base Styles */
+.digital-app-container {
+    position: relative;
+    min-height: 100vh;
+    transition: transform 0.3s ease;
+    background-color: white;
+}
+
+.digital-sidebar-open .digital-main-content {
+    transform: translateX(180px);
+}
+
+.digital-main-content {
+    margin-left: 65px;
+    transition: transform 0.3s ease;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "Roboto", Arial, sans-serif;
+}
+
+.digital-page-container {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Shared Section Styles */
+.digital-cta-section,
+.digital-content-section,
+.digital-full-width-section {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.section-600 {
+    height: 600px;
+}
+
+/* CTA Section Specific Styles */
+.digital-cta-section {
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 4rem;
+}
+
+.digital-cta-content {
+    width: 100%;
+    padding: 0 4rem;
+}
+
+.digital-cta-content h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.digital-cta-content h3 {
+    color: white;
+    width: 100%;
+    font-size: 3rem;
+    font-weight: 500;
+    padding-top: 1rem;
+    text-align: center;
+}
+
+.digital-cta-divider {
+    width: 400px;
+    height: 3px;
+    background-color: #f92174;
+    margin: 1.5rem 0;
+}
+
+.digital-cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.digital-email-button,
+.digital-whatsapp-button {
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.digital-email-button:hover,
+.digital-whatsapp-button:hover {
+    transform: scale(1.05);
+}
+
+.digital-cta-tagline {
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-top: 2rem;
+}
+
+/* Content Section Styles (Left & Right Text) */
+.digital-content-section .digital-section-content {
+    max-width: 36%;
+    color: black
+}
+
+.digital-left-text .digital-section-content {
+    margin-right: auto;
+    margin-left: 5%;
+}
+
+.digital-right-text .digital-section-content {
+    margin-left: auto;
+    margin-right: 5%;
+    text-align: left;
+}
+
+.digital-content-section img {
+    width: 80px;
+    height: 60px;
+}
+
+.digital-content-section h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: -2rem;
+}
+
+.digital-content-section h3 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 2.5rem;
+    color: #f92174;
+}
+
+.digital-content-section p {
+    font-size: 1rem;
+    text-align: justify;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    max-width: 95%;
+    line-height: 1.5;
+}
+
+/* Tagline Specific Styles */
+.digital-tagline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.digital-tagline-main {
+    font-size: 3rem;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.digital-tagline-sub {
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: white;
+    line-height: 1.4;
+}
+
+/* Full Width Section (Centered Text) */
+.digital-full-width-section {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.digital-full-width-section h2 {
+    color: white;
+    font-size: 5.7rem;
+    font-weight: 500;
+    margin-bottom: -4rem;
+}
+
+.digital-full-width-section p {
+    color: white;
+    font-size: 3.5rem;
+    font-weight: 400;
+    max-width: 90%;
+}
+
+/* Overlay for better text readability */
+.digital-content-section::before,
+.digital-full-width-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+}
+
+.digital-content-section .digital-section-content,
+.digital-full-width-section h2,
+.digital-full-width-section p {
+    position: relative;
+    z-index: 1;
+}
+
+/* Digital.css */
+
+/* Container for the full-width section with background image */
+.text-overlay-container {
+    position: relative;
+    min-height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Superposition de texte */
+.text-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+/* Styles for "think", "outside", "the", and "box" */
+.think-text,
+.outside-text,
+.the-text,
+.box-text {
+    color: #e3e3e2;
+    font-weight: 300;
+    text-align: center;
+    line-height: 0.9;
+}
+
+/* Font size adjustments */
+.think-text {
+    font-size: 5.8rem;
+    margin-bottom: 0;
+    margin-left: 50px;
+    margin-top: -5rem;
+}
+
+.outside-text {
+    font-size: 5.8rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+/* Conteneur pour "the box" en rotation */
+.box-container {
+    position: relative;
+    transform: rotate(45deg);
+    /* Rotate "the box" container by 45 degrees */
+}
+
+/* Styles for "the" and "box" with counter-rotation */
+.the-text,
+.box-text {
+    font-size: 6rem;
+    transform: rotate(-45deg);
+    /* Counter-rotate the text to make it readable */
+    position: absolute;
+}
+
+/* Position "the" */
+.the-text {
+    top: -90px;
+    left: -40px;
+}
+
+/* Position "box" */
+.box-text {
+
+    top: 5px;
+    left: 90px;
+}
+
+/* Add the period after "box" */
+.box-text::after {
+    content: "the box.";
+    position: absolute;
+    margin-top: 80px;
+    bottom: -10px;
+    font-size: 6.8rem;
+    right: -20px;
+
+    transform: rotate(45deg);
+    /* Rotate the period to match the container's rotation */
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .digital-content-section .digital-section-content {
+        max-width: 50%;
+    }
+
+    .digital-cta-tagline {
+        font-size: 2.8rem;
+    }
+
+    .digital-full-width-section h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .digital-content-section .digital-section-content {
+        max-width: 60%;
+    }
+
+    .digital-cta-section,
+    .digital-content-section,
+    .digital-full-width-section {
+        padding: 0 2rem;
+    }
+
+    .digital-cta-tagline {
+        font-size: 2.2rem;
+    }
+
+    .digital-content-section h2 {
+        font-size: 2rem;
+    }
+
+    .digital-content-section h3 {
+        font-size: 1.3rem;
+    }
+
+    .digital-full-width-section p {
+        max-width: 70%;
+    }
+}
+
+@media (max-width: 768px) {
+    .digital-content-section .digital-section-content {
+        max-width: 70%;
+    }
+
+    .digital-cta-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .digital-cta-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .digital-email-button,
+    .digital-whatsapp-button {
+        width: 120px;
+    }
+
+    .digital-cta-tagline {
+        font-size: 1.8rem;
+    }
+
+    .digital-full-width-section h2 {
+        font-size: 2rem;
+    }
+
+    .digital-content-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .digital-content-section p {
+        font-size: 0.9rem;
+        max-width: 100%;
+    }
+
+    .digital-full-width-section p {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 576px) {
+    .digital-content-section .digital-section-content {
+        max-width: 85%;
+    }
+
+    .digital-cta-section,
+    .digital-content-section,
+    .digital-full-width-section {
+        padding: 0 1rem;
+        height: auto;
+        min-height: 500px;
+    }
+
+    .digital-cta-content h2 {
+        font-size: 1.3rem;
+    }
+
+    .digital-cta-tagline {
+        font-size: 1.5rem;
+    }
+
+    .digital-full-width-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .digital-content-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .digital-content-section h3 {
+        font-size: 1.1rem;
+    }
+
+    .digital-full-width-section p {
+        max-width: 90%;
+    }
+
+    .digital-left-text .digital-section-content,
+    .digital-right-text .digital-section-content {
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+}

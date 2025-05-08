@@ -174,16 +174,22 @@ const LeftColumn = () => {
   return (
     <div className="col col-l">
       
-      <div id="page1" className="full-page left-page" style={{ backgroundColor: '#014351'}}>
+      <div id="page1" className="full-page left-page" style={{ 
+        backgroundImage: 'url("/src/assets/home/groupe1.png")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}>
         <div className="left-content">
             <div id="top-navigation-arrow" className="top-nav-arrow page-top-nav-arrow" onClick={navigateUp}>
               <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               </svg>
             </div>
 
-          <img src="/src/assets/home/prisma-groupe.png"/>
           <p></p>
-          <Link to="/about" className="cta-button" style={{ backgroundColor: '#dfe3e8', color: 'black'}}>Découvrir</Link>
+          <p></p>
+          <p></p>
+          <Link to="/Prisma-Groupe" className="cta-button" style={{ backgroundColor: '#dfe3e8'}}>Découvrir</Link>
 
           <div id="bottom-navigation-arrow" className="bottom-nav-arrow page-bottom-nav-arrow">
             <div className="page-counter">
@@ -203,7 +209,7 @@ const LeftColumn = () => {
         </div>
       </div>
       <div id="page3" className="full-page left-page" style={{ 
-        backgroundImage: 'url("/src/assets/home/digital0.png")',
+        backgroundImage: 'url("/src/assets/home/live1.png")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
@@ -217,9 +223,10 @@ const LeftColumn = () => {
             </div>
           )}
 
-          <img src="/src/assets/home/prisma-digital.png"/>
           <p></p>
-          <Link to="/PrismaEvents" className="cta-button" style={{ backgroundColor: '#98a389', color: 'black'}}>En savoir plus</Link>
+          <p></p>
+          <p></p>
+          <Link to="/Prisma-Live" className="cta-button" style={{ backgroundColor: '#98a389'}}>En savoir plus</Link>
 
           <div id="bottom-navigation-arrow" className="bottom-nav-arrow page-bottom-nav-arrow">
             <div className="page-counter">
@@ -239,7 +246,7 @@ const LeftColumn = () => {
         </div>
       </div>
       <div id="page5" className="full-page left-page" style={{ 
-        backgroundImage: 'url("/src/assets/home/spazio0.png")',
+        backgroundImage: 'url("/src/assets/home/venue1.png")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
@@ -253,9 +260,10 @@ const LeftColumn = () => {
             </div>
           )}
 
-          <img src="/src/assets/home/prisma-spazio.png"/>
           <p></p>
-          <Link to="/PrismaLogestique" className="cta-button" style={{ backgroundColor: '#f7eb17'}}>En savoir plus</Link>
+          <p></p>
+          <p></p>
+          <Link to="/Prisma-Venues" className="cta-button" style={{ backgroundColor: '#c89d6f'}}>En savoir plus</Link>
 
           <div id="bottom-navigation-arrow" className="bottom-nav-arrow page-bottom-nav-arrow">
             <div className="page-counter">
@@ -278,7 +286,7 @@ const LeftColumn = () => {
 
 
       <div id="page7" className="full-page left-page" style={{ 
-        backgroundImage: 'url("/src/assets/home/event0.png")',
+        backgroundImage: 'url("/src/assets/home/spazio1.png")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
@@ -292,9 +300,10 @@ const LeftColumn = () => {
       </div>
     )}
 
-    <img src="/src/assets/home/prisma-event.png"/>
     <p></p>
-    <Link to="/PrismaLab" className="cta-button" style={{ backgroundColor: '#ddaab3', color: 'black'}}>En savoir plus</Link>
+    <p></p>
+    <p></p>
+    <Link to="/Prisma-Spazio" className="cta-button" style={{ backgroundColor: '#f7eb17'}}>En savoir plus</Link>
 
     <div id="bottom-navigation-arrow" className="bottom-nav-arrow page-bottom-nav-arrow">
       <div className="page-counter">
@@ -315,7 +324,7 @@ const LeftColumn = () => {
 
 
       <div id="page9" className="full-page left-page" style={{ 
-        backgroundImage: 'url("/src/assets/home/studio0.png")',
+        backgroundImage: 'url("/src/assets/home/digital1.png")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
@@ -329,9 +338,10 @@ const LeftColumn = () => {
             </div>
           )}
 
-          <img src="/src/assets/home/prisma-studio.png"/>
           <p></p>
-          <Link to="/PrismaEspaceDeco" className="cta-button" style={{ backgroundColor: '#003f5d', color: 'black'}}>En savoir plus</Link>
+          <p></p>
+          <p></p>
+          <Link to="/Prisma-Digital" className="cta-button" style={{ backgroundColor: '#ee2176'}}>En savoir plus</Link>
 
           <div id="bottom-navigation-arrow" className="bottom-nav-arrow page-bottom-nav-arrow">
             <div className="page-counter">
@@ -350,16 +360,22 @@ const LeftColumn = () => {
           </div>
         </div>
       </div>
-      <div id="page11" className="full-page left-page" style={{ backgroundColor: '#c1272d'}}>
+      <div id="page11" className="full-page left-page" style={{ 
+        backgroundImage: 'url("/src/assets/home/distribution1.png")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}>
         <div className="left-content">
             <div id="top-navigation-arrow" className="top-nav-arrow page-top-nav-arrow" onClick={navigateUp}>
               <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M5 14L12 7L19 14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </div>
-          <img src="/src/assets/home/prisma-logistique.png"/>
           <p></p>
-          <Link to="/PrismaStudio" className="cta-button" style={{ backgroundColor: '#0530475', color: 'black'}}>En savoir plus</Link>
+          <p></p>
+          <p></p>
+          <Link to="/Prisma-Distribution" className="cta-button" style={{ backgroundColor: '#fdca7d'}}>En savoir plus</Link>
           <div id="bottom-navigation-arrow" className="bottom-nav-arrow page-bottom-nav-arrow">
             <div className="page-counter">
               <span className="current-page">{currentPage}</span>
@@ -377,7 +393,12 @@ const LeftColumn = () => {
           </div>
         </div>
       </div>
-      <div id="page13" className="full-page left-page" style={{ backgroundColor: '#0533a6'}}>
+      <div id="page13" className="full-page left-page" style={{ 
+        backgroundImage: 'url("/src/assets/home/audio1.png")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}>
         <div className="left-content">
           {currentPage > 1 && (
             <div id="top-navigation-arrow" className="top-nav-arrow page-top-nav-arrow" onClick={navigateUp}>
@@ -387,9 +408,10 @@ const LeftColumn = () => {
             </div>
           )}
 
-          <img src="/src/assets/home/prisma-distribution.png"/>
           <p></p>
-          <Link to="/PrismaLab" className="cta-button" style={{ backgroundColor: '#9198aa', color: 'black'}}>En savoir plus</Link>
+          <p></p>
+          <p></p>
+          <Link to="/Prisma-Audiovisual" className="cta-button" style={{ backgroundColor: '#9198aa'}}>En savoir plus</Link>
 
           <div id="bottom-navigation-arrow" className="bottom-nav-arrow page-bottom-nav-arrow">
             <div className="page-counter">
@@ -408,7 +430,7 @@ const LeftColumn = () => {
           </div>
         </div>
       </div>
-      <div id="page15" className="full-page left-page" style={{ backgroundColor: '#6bc9e6', width: '655px'}}>
+      <div id="page15" className="full-page left-page" style={{ backgroundColor: '#6bc9e6'}}>
         <div className="left-content">
           {currentPage > 1 && (
             <div id="top-navigation-arrow" className="top-nav-arrow page-top-nav-arrow" onClick={navigateUp}>

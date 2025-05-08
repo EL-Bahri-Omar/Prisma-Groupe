@@ -422,7 +422,7 @@ const Sidebar = ({ onToggle }) => {
         <div className="whatsapp-numbers">
           <p 
             onClick={() => handleNumberClick('+216 12 345 678')}
-            className="whatsapp-number"
+            className="whatsapp-number w-4"
           >
             +216 12 345 678
           </p>

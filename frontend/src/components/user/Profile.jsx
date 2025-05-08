@@ -28,22 +28,22 @@ const Profile = () => {
                                     <img className="rounded-circle img-fluid" src={user.avatar.url} alt={user.name} />
                                 </figure>
                                 <Link to="/me/update" id="edit_profile" className="btn btn-primary btn-block my-5 ml-4">
-                                    Edit Profile
+                                    Modifier Profil
                                 </Link>
                             </div>
                     
                             <div className="col-12 col-md-3">
-                                <h4>Full Name</h4>
+                                <h4>Nom</h4>
                                 <p>{user.name}</p>
                     
-                                <h4>Email Address</h4>
+                                <h4>Address Mail </h4>
                                 <p>{user.email}</p>
 
-                                <h4>Joined On</h4>
+                                <h4>Rejoint Le</h4>
                                 <p>{String(user.createdAt).substring(0, 10)}</p>   
 
                                 <Link to="/password/update" className="btn btn-primary btn-block mt-5">
-                                    Change Password
+                                    Changer Mot de Passe
                                 </Link>
                             </div>
                         </div>

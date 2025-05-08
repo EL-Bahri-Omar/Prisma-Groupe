@@ -1,0 +1,325 @@
+/* Base Styles */
+.live-app-container {
+    position: relative;
+    min-height: 100vh;
+    transition: transform 0.3s ease;
+    background-color: white;
+}
+
+.live-sidebar-open .live-main-content {
+    transform: translateX(180px);
+}
+
+.live-main-content {
+    margin-left: 65px;
+    transition: transform 0.3s ease;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "Roboto", Arial, sans-serif;
+}
+
+.live-page-container {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Shared Section Styles */
+.live-cta-section,
+.live-content-section,
+.live-full-width-section {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.section-600 {
+    height: 600px;
+}
+
+/* CTA Section Specific Styles */
+.live-cta-section {
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 4rem;
+}
+
+.live-cta-content {
+    width: 100%;
+    padding: 0 4rem;
+}
+
+.live-cta-content h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.live-cta-content h3 {
+    color: #ff8533;
+    width: 100%;
+    font-size: 3rem;
+    font-weight: 500;
+    padding-top: 1rem;
+    text-align: center;
+}
+
+.live-cta-divider {
+    width: 400px;
+    height: 2px;
+    background-color: #ff8533;
+    margin: 1.5rem 0;
+}
+
+.live-cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.live-email-button,
+.live-whatsapp-button {
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.live-email-button:hover,
+.live-whatsapp-button:hover {
+    transform: scale(1.05);
+}
+
+.live-cta-tagline {
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-top: 2rem;
+}
+
+/* Content Section Styles (Left & Right Text) */
+.live-content-section .live-section-content {
+    max-width: 36%;
+    color:black
+}
+.live-content-section .white{
+    color: white;
+}
+
+.live-left-text .live-section-content {
+    margin-right: auto;
+    margin-left: 5%;
+}
+
+.live-right-text .live-section-content {
+    margin-left: auto;
+    margin-right: 5%;
+    text-align: left;
+}
+
+.live-content-section img {
+    width: 80px;
+    height: 60px;
+}
+
+.live-content-section h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: -2rem;
+}
+
+.live-content-section h3 {
+    font-size: 1.7rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.live-content-section p {
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: justify;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    max-width: 90%;
+    line-height: 1.5;
+}
+
+/* Full Width Section (Centered Text) */
+.live-full-width-section {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.live-full-width-section h2 {
+    color: #ff8533;
+    font-size: 3.5rem;
+    font-weight: 600;
+    margin-bottom: -2rem;
+}
+
+.live-full-width-section p {
+    color: white;
+    font-size: 2rem;
+    font-weight: 500;
+    max-width: 60%;
+}
+
+/* Overlay for better text readability */
+.live-content-section::before,
+.live-full-width-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+}
+
+.live-content-section .live-section-content,
+.live-full-width-section h2,
+.live-full-width-section p {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .live-content-section .live-section-content {
+        max-width: 50%;
+    }
+
+    .live-cta-tagline {
+        font-size: 2.8rem;
+    }
+
+    .live-full-width-section h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .live-content-section .live-section-content {
+        max-width: 60%;
+    }
+
+    .live-cta-section,
+    .live-content-section,
+    .live-full-width-section {
+        padding: 0 2rem;
+    }
+
+    .live-cta-tagline {
+        font-size: 2.2rem;
+    }
+
+    .live-content-section h2 {
+        font-size: 2rem;
+    }
+
+    .live-content-section h3 {
+        font-size: 1.3rem;
+    }
+
+    .live-full-width-section p {
+        max-width: 70%;
+    }
+}
+
+@media (max-width: 768px) {
+    .live-content-section .live-section-content {
+        max-width: 70%;
+    }
+
+    .live-cta-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .live-cta-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .live-email-button,
+    .live-whatsapp-button {
+        width: 120px;
+    }
+
+    .live-cta-tagline {
+        font-size: 1.8rem;
+    }
+
+    .live-full-width-section h2 {
+        font-size: 2rem;
+    }
+
+    .live-content-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .live-content-section p {
+        font-size: 0.9rem;
+        max-width: 100%;
+    }
+
+    .live-full-width-section p {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 576px) {
+    .live-content-section .live-section-content {
+        max-width: 85%;
+    }
+
+    .live-cta-section,
+    .live-content-section,
+    .live-full-width-section {
+        padding: 0 1rem;
+        height: auto;
+        min-height: 500px;
+    }
+
+    .live-cta-content h2 {
+        font-size: 1.3rem;
+    }
+
+    .live-cta-tagline {
+        font-size: 1.5rem;
+    }
+
+    .live-full-width-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .live-content-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .live-content-section h3 {
+        font-size: 1.1rem;
+    }
+
+    .live-full-width-section p {
+        max-width: 90%;
+    }
+
+    .live-left-text .live-section-content,
+    .live-right-text .live-section-content {
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+}

@@ -61,9 +61,9 @@ const UpdatePassword = () => {
                 <div className="row wrapper">
                     <div className="col-10 col-lg-5">
                         <form className="shadow-lg" onSubmit={submitHandler}>
-                            <h1 className="mt-2 mb-5">Update Password</h1>
+                            <h1 className="mt-2 mb-5">Changer Mot de Passe</h1>
                             <div className="form-group">
-                                <label for="old_password_field">Old Password</label>
+                                <label for="old_password_field">Ancien Mot de Passe</label>
                                 <input
                                     type="password"
                                     id="old_password_field"
@@ -74,7 +74,7 @@ const UpdatePassword = () => {
                             </div>
 
                             <div className="form-group">
-                                <label for="new_password_field">New Password</label>
+                                <label for="new_password_field">Nouveau Mot de Passe</label>
                                 <input
                                     type="password"
                                     id="new_password_field"
@@ -86,7 +86,7 @@ const UpdatePassword = () => {
 
                             <button type="submit"
                                 className="update-btn btn-block mt-4 mb-3"
-                                disabled={loading ? true : false} > Update Password </button>
+                                disabled={loading ? true : false} > Mettre à jour </button>
                         </form>
                     </div>
                 </div>

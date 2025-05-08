@@ -1,0 +1,343 @@
+/* Base Styles */
+.distribution-app-container {
+    position: relative;
+    min-height: 100vh;
+    transition: transform 0.3s ease;
+    background-color: #FBB03B;
+}
+
+.distribution-sidebar-open .distribution-main-content {
+    transform: translateX(180px);
+}
+
+.distribution-main-content {
+    margin-left: 65px;
+    transition: transform 0.3s ease;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "Roboto", Arial, sans-serif;
+}
+
+.distribution-page-container {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Shared Section Styles */
+.distribution-cta-section,
+.distribution-content-section,
+.distribution-full-width-section {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    color: #333;
+    margin-bottom: 5px;
+    background-color: white;
+}
+
+.section-550 {
+    height: 550px;
+}
+
+/* CTA Section Specific Styles */
+.distribution-cta-section {
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 4rem;
+}
+
+.distribution-cta-content {
+    width: 100%;
+    padding: 0 4rem;
+}
+
+.distribution-cta-content h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.distribution-cta-content h3 {
+    color: white;
+    width: 100%;
+    font-size: 2.8rem;
+    font-weight: 400;
+    padding-top: 1rem;
+    text-align: center;
+}
+
+.distribution-cta-divider {
+    width: 400px;
+    height: 3px;
+    background-color: #FBB03B;
+    margin: 1.5rem 0;
+}
+
+.distribution-cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.distribution-email-button,
+.distribution-whatsapp-button {
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.distribution-email-button:hover,
+.distribution-whatsapp-button:hover {
+    transform: scale(1.05);
+}
+
+.distribution-cta-tagline {
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-top: 2rem;
+}
+
+/* Content Section Styles (Left & Right Text) */
+.distribution-content-section .distribution-section-content {
+    max-width: 36%;
+    color: black
+}
+
+.distribution-left-text .distribution-section-content {
+    margin-right: auto;
+    margin-left: 5%;
+}
+
+.distribution-left-text .margin {
+    margin-right: auto;
+    margin-left: 9%;
+}
+
+.distribution-right-text .distribution-section-content {
+    margin-left: auto;
+    margin-right: 5%;
+    text-align: left;
+}
+
+.distribution-right-text .margin {
+    margin-left: auto;
+    margin-right: 3%;
+    text-align: left;
+}
+
+.distribution-content-section img {
+    width: 80px;
+    height: 60px;
+}
+
+.distribution-content-section h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: -2rem;
+}
+
+.distribution-content-section h3 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.distribution-content-section p {
+    font-size: 1rem;
+    text-align: justify;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    max-width: 90%;
+    line-height: 1.2;
+}
+
+.distribution-content-section .p {
+    font-size: 1rem;
+    text-align: justify;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    max-width: 70%;
+    line-height: 1.2;
+}
+
+/* Full Width Section (Centered Text) */
+.distribution-full-width-section {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.distribution-full-width-section h2 {
+    color: white;
+    font-size: 3.5rem;
+    font-weight: 400;
+    margin-bottom: -2rem;
+}
+
+.distribution-full-width-section p {
+    color: white;
+    text-align: justify;
+    font-size: 1.5rem;
+    font-weight: 400;
+    max-width: 70%;
+}
+
+/* Overlay for better text readability */
+.distribution-content-section::before,
+.distribution-full-width-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+}
+
+.distribution-content-section .distribution-section-content,
+.distribution-full-width-section h2,
+.distribution-full-width-section p {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .distribution-content-section .distribution-section-content {
+        max-width: 50%;
+    }
+
+    .distribution-cta-tagline {
+        font-size: 2.8rem;
+    }
+
+    .distribution-full-width-section h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .distribution-content-section .distribution-section-content {
+        max-width: 60%;
+    }
+
+    .distribution-cta-section,
+    .distribution-content-section,
+    .distribution-full-width-section {
+        padding: 0 2rem;
+    }
+
+    .distribution-cta-tagline {
+        font-size: 2.2rem;
+    }
+
+    .distribution-content-section h2 {
+        font-size: 2rem;
+    }
+
+    .distribution-content-section h3 {
+        font-size: 1.3rem;
+    }
+
+    .distribution-full-width-section p {
+        max-width: 70%;
+    }
+}
+
+@media (max-width: 768px) {
+    .distribution-content-section .distribution-section-content {
+        max-width: 70%;
+    }
+
+    .distribution-cta-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .distribution-cta-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .distribution-email-button,
+    .distribution-whatsapp-button {
+        width: 120px;
+    }
+
+    .distribution-cta-tagline {
+        font-size: 1.8rem;
+    }
+
+    .distribution-full-width-section h2 {
+        font-size: 2rem;
+    }
+
+    .distribution-content-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .distribution-content-section p {
+        font-size: 0.9rem;
+        max-width: 100%;
+    }
+
+    .distribution-full-width-section p {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 576px) {
+    .distribution-content-section .distribution-section-content {
+        max-width: 85%;
+    }
+
+    .distribution-cta-section,
+    .distribution-content-section,
+    .distribution-full-width-section {
+        padding: 0 1rem;
+        height: auto;
+        min-height: 500px;
+    }
+
+    .distribution-cta-content h2 {
+        font-size: 1.3rem;
+    }
+
+    .distribution-cta-tagline {
+        font-size: 1.5rem;
+    }
+
+    .distribution-full-width-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .distribution-content-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .distribution-content-section h3 {
+        font-size: 1.1rem;
+    }
+
+    .distribution-full-width-section p {
+        max-width: 90%;
+    }
+
+    .distribution-left-text .distribution-section-content,
+    .distribution-right-text .distribution-section-content {
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+}

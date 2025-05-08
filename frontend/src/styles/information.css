@@ -1,221 +1,112 @@
-/* Base Styles */
-.informations-container {
-    font-family: 'Arial', sans-serif;
-    color: #286987;
-    max-width: 1200px;
-    margin-left: 180px;
-    margin-right: 100px;
-    padding: 20px;
-}
-
-/* Section Styles */
-.information-content-section {
-    padding: 70px 0;
+/* Main Container */
+.information-container {
+    background-image: url("/src/assets/home/PrismaGroupe/depuis2008.png");
     position: relative;
-}
-
-.information-content-wrapper {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-}
-
-.information-text-content {
-    flex: 2;
-}
-
-.information-image-content {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-start;
-}
-
-.information-section-image {
-    max-width: 80%;
-    height: auto;
-    margin-top: 5.5em;
-    margin-right: 30px;
-}
-
-/* Typography */
-.information-section-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-top: -20px;
-    margin-bottom: 20px;
-    line-height: 1.2;
-    position: relative;
-}
-
-.information-section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 90px;
-    height: 3px;
-    background-color: #042f38;
-}
-
-.information-section-subtitle {
-    color: #042f38;
-    font-weight: bold;
-    margin-bottom: 20px;
-    font-size: 1.2rem;
-}
-
-.information-section-description {
-    margin-bottom: 20px;
-    line-height: 1.6;
-    color: black;
-}
-
-/* Full-width Stats Cards with Floating Icons */
-.information-full-width-stats {
-    display: flex;
-    justify-content: space-between;
-    margin: 80px 0 40px;
-    gap: 20px;
-    position: relative;
-}
-
-.information-stat-card {
-    flex: 1;
-    background-color: #f8f8f8;
-    border-radius: 8px;
-    padding: 60px 30px 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    position: relative;
-    margin-top: 40px;
-}
-
-.information-stat-icon-container {
-    position: absolute;
-    top: -40px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 80px;
-}
-
-.information-stat-icon {
     width: 100%;
-    height: 100%;
-    background-color: #042f38;
-    color: white;
-    border-radius: 50%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
 }
 
-.information-stat-card-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Main Content Text Overlay */
+.information-text-overlay {
+    max-width: 550px;
+    padding: 2rem;
+    margin-left: 5%;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    box-shadow:  0 1px 10px #042f38;
 }
 
-.information-stat-card-value {
-    font-size: 3rem;
-    font-weight: bold;
+.information-heading {
+    font-size: 2rem;
+    font-weight: 600;
     color: #286987;
-    margin-bottom: 5px;
-}
-
-.information-stat-card-label {
-    font-size: 0.9rem;
-    color: #666;
-    text-transform: uppercase;
-}
-
-/* Why Section */
-.information-why-section {
-    padding: 70px 0;
-}
-
-.information-values-container {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 30px;
-    flex-wrap: wrap;
-    gap: 30px;
-}
-
-.information-value-item {
-    flex: 1;
-    min-width: 300px;
-    color: #000;
-}
-
-.information-value-item h3 {
-    color: #286987;
-    margin-bottom: 15px;
+    margin-bottom: 1.5rem;
     position: relative;
 }
 
-.information-value-item h3::after {
+.information-heading::after {
     content: '';
     position: absolute;
-    bottom: -10px;
+    bottom: 5px;
     left: 0;
-    width: 90px;
+    width: 70px;
     height: 3px;
     background-color: #042f38;
 }
 
-/* Scroll to Top Button */
-.information-scroll-to-top-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #042f38;
-    color: white;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(40, 105, 135, 0.3);
-    transition: all 0.3s ease;
-    border: none;
+.information-paragraph {
+    color: #303030;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
 }
 
-.information-scroll-to-top-button:hover {
-    background-color: #286987;
-    box-shadow: 0 6px 12px rgba(40, 105, 135, 0.4);
+.information-paragraph:last-child {
+    margin-bottom: 0;
 }
 
-.information-arrow-icon {
-    font-size: 1.5em;
+/* Tagline Container - Bottom Right */
+.information-tagline-container {
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    text-align: right;
+    padding: 1.5rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.information-main-tagline {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: -1rem;
+}
+
+.information-tagline-item {
+    color: #ffffff;
+    font-size: 1.4rem;
+    line-height: 1;
+    margin-bottom: -1.5rem;
+    font-weight: 300;
 }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    .content-wrapper {
-        flex-direction: column;
+    .information-text-overlay {
+        max-width: 90%;
+        margin-left: 5%;
+        padding: 1.5rem;
     }
 
-    .image-content {
-        justify-content: flex-start;
-        margin-top: 30px;
+    .information-heading {
+        font-size: 1.6rem;
     }
 
-    .full-width-stats {
-        flex-direction: column;
-        gap: 60px;
-    }
-    
-    .stat-card {
-        margin-top: 40px;
+    .information-paragraph {
+        font-size: 0.9rem;
     }
 
-    .values-container {
-        flex-direction: column;
+    .information-tagline-container {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        margin: 1rem 5% 0;
+        text-align: left;
+        max-width: 90%;
+    }
+
+    .information-main-tagline {
+        font-size: 1.5rem;
+    }
+
+    .information-sub-tagline {
+        font-size: 1.1rem;
     }
 }

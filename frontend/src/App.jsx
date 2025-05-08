@@ -11,16 +11,16 @@ import ProjectDetails from "./components/project/ProjectDetails"
 import ClientsPage from "./components/ClientsPage";
 
 
-import PrismaGroupe from './components/prisma/PrismaGroupe';
-import PrismaEvents from './components/prisma/PrismaEvents';
-import PrismaLogestique from './components/prisma/PrismaLogestique';
-import PrismaLab from './components/prisma/PrismaLab';
+import PrismaGroupe from './components/prisma/PrismaGroupe.jsx';
+import PrismaLive from "./components/prisma/PrismaLive.jsx";
+import PrismaAudiovisual from "./components/prisma/PrismaAudiovisual.jsx";
+import PrismaDistribution from "./components/prisma/PrismaDistribution.jsx";
+import PrismaVenues from "./components/prisma/PrismaVenues.jsx";
+import PrismaDigital from "./components/prisma/PrismaDigital.jsx";
+import PrismaSpazio from "./components/prisma/PrismaSpazio.jsx";
 
 
-import AboutUs from "./components/prisma/AboutUs"
 import Contact from "./components/Contact"
-import PrismaStudio from './components/prisma/PrismaStudio';
-import PrismaEspaceDeco from './components/prisma/PrismaEspaceDeco';
 import Informations from "./components/agence/Information";
 import Team from "./components/agence/team/Team";
 import Actualities from "./components/agence/actualite/Actualities";
@@ -114,16 +114,15 @@ const App = () => {
           <Route path="/password/update" element={<UpdatePassword />} />
         </Route>
     
+              
+        <Route path="/Prisma-Groupe" element={<PrismaGroupe/>} />
+        <Route path="/Prisma-Live" element={<PrismaLive/>} />
+        <Route path="/Prisma-Audiovisual" element={<PrismaAudiovisual/>} />
+        <Route path="/Prisma-Distribution" element={<PrismaDistribution />} />
+        <Route path="/Prisma-Venues" element={<PrismaVenues/>} />
+        <Route path="/Prisma-Digital" element={<PrismaDigital/>} />
+        <Route path="/Prisma-Spazio" element={<PrismaSpazio/>} />
 
-        <Route path="/PrismaEvents" element={<PrismaEvents />} />
-        <Route path="/PrismaGroupe" element={<PrismaGroupe />} />
-        <Route path="/PrismaStudio" element={<PrismaStudio />} />
-        <Route path="/PrismaLogestique" element={<PrismaLogestique />} />
-        <Route path="/PrismaEspaceDeco" element={<PrismaEspaceDeco/>}/>
-        <Route path="/PrismaLab" element={<PrismaLab />} />
-
-
-        <Route path="/about" element={<AboutUs />} />
           
       </Routes>
       

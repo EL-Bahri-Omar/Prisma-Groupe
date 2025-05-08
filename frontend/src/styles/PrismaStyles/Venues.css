@@ -1,0 +1,456 @@
+/* Base Styles */
+.venues-app-container {
+    position: relative;
+    min-height: 100vh;
+    transition: transform 0.3s ease;
+    background-color: white;
+}
+
+.venues-sidebar-open .venues-main-content {
+    transform: translateX(180px);
+}
+
+.venues-main-content {
+    margin-left: 65px;
+    transition: transform 0.3s ease;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "Roboto", Arial, sans-serif;
+}
+
+.venues-page-container {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Shared Section Styles */
+.venues-cta-section,
+.venues-content-section,
+.venues-full-width-section,
+.venues-stats-section {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* CTA Section Specific Styles */
+.venues-cta-section {
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 4rem;
+}
+
+.venues-cta-content {
+    width: 100%;
+    padding: 0 4rem;
+}
+
+.venues-cta-content h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.venues-cta-content p {
+    color: white;
+    width: 100%;
+    font-size: 2.3rem;
+    font-weight: 400;
+    line-height: 2.5rem;
+    padding-top: 10rem;
+    margin-left: 41%;
+}
+
+.venues-cta-divider {
+    width: 400px;
+    height: 2px;
+    background-color: #C69C6D;
+    margin: 1.5rem 0;
+}
+
+.venues-cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.venues-email-button,
+.venues-whatsapp-button {
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.venues-email-button:hover,
+.venues-whatsapp-button:hover {
+    transform: scale(1.05);
+}
+
+.venues-cta-tagline {
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-top: 2rem;
+}
+
+/* Content Section Styles (Left & Right Text) */
+.venues-content-section .venues-section-content {
+    max-width: 36%;
+    color: #613329;
+}
+
+.venues-left-text .venues-section-content {
+    margin-right: auto;
+    margin-left: 10%;
+    width: 80%;
+}
+
+.venues-left-text .venues-section-content p {
+    font-size: 1rem;
+    text-align: justify;
+    line-height: 1.2;
+    color: #020405;
+    margin-bottom: 1rem;
+    max-width: 100%;
+    line-height: 1.5;
+    margin-left: -50px;
+    width: 90%;
+}
+
+.venues-right-text .venues-section-content {
+    margin-left: 65%;
+    margin-right: 5%;
+    text-align: left;
+}
+
+.venues-content-section img {
+    width: 80px;
+    height: 60px;
+    margin-left: -50px;
+}
+
+.venues-content-section h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.venues-content-section p {
+    font-size: 0.8rem;
+    text-align: justify;
+    line-height: 1.2;
+    color: #020405;
+    margin-bottom: 1rem;
+    max-width: 100%;
+    line-height: 1.5;
+}
+
+/* Full Width Section (Centered Text) */
+.venues-full-width-section {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.venues-full-width-section-divider {
+    width: 1000px;
+    height: 3px;
+    background-color: #C69C6D;
+    margin: -1rem 0;
+}
+
+.venues-full-width-section h2 {
+    color: white;
+    font-size: 2.6rem;
+    font-weight: 500;
+}
+
+.venues-full-width-section p {
+    color: white;
+    font-size: 2.2rem;
+    margin-top: 20px;
+    font-weight: 300;
+    max-width: 70%;
+}
+
+.venues-full-width-section h3 {
+    color: white;
+    font-size: 1rem;
+    font-weight: 400;
+    max-width: 70%;
+}
+
+/* Statistics Section Styles */
+.venues-stats-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.venues-stats-section h2 {
+    margin-top: -2%;
+    margin-left: 4%;
+    align-self: flex-start;
+    color: white;
+    font-size: 7.5rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.venues-stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.venues-stat-item {
+    text-align: start;
+}
+
+.venues-stat-number {
+    color: white;
+    font-size: 3.5rem;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.venues-stat-label {
+    color: white;
+    font-size: 2.7rem;
+    margin-top: 15px;
+    letter-spacing: 1px;
+}
+
+/* Overlay for better text readability */
+.venues-content-section::before,
+.venues-full-width-section::before,
+.venues-stats-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+}
+
+.venues-content-section .venues-section-content,
+.venues-full-width-section h2,
+.venues-full-width-section p,
+.venues-stats-section h2,
+.venues-stats-container {
+    position: relative;
+    z-index: 1;
+}
+
+.venues-section-content h3 {
+    font-size: 1.2rem;
+    margin-left: -50px;
+}
+
+.venues-section-content p {
+    font-size: 1rem;
+    text-align: justify;
+    line-height: 1.2;
+    color: #020405;
+    margin-bottom: 1rem;
+    max-width: 100%;
+    line-height: 1.5;
+    margin-left: -50px;
+    width: 100%;
+}
+
+.venues-section-content h2 {
+    font-size: 1.2rem;
+    margin-left: -50px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .venues-content-section .venues-section-content {
+        max-width: 50%;
+    }
+
+    .venues-cta-tagline {
+        font-size: 2.8rem;
+    }
+
+    .venues-full-width-section h2 {
+        font-size: 2.5rem;
+    }
+
+    .venues-stats-section h2 {
+        font-size: 4rem;
+    }
+
+    .venues-stat-number {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .venues-content-section .venues-section-content {
+        max-width: 60%;
+    }
+
+    .venues-cta-section,
+    .venues-content-section,
+    .venues-full-width-section,
+    .venues-stats-section {
+        padding: 0 2rem;
+    }
+
+    .venues-cta-tagline {
+        font-size: 2.2rem;
+    }
+
+    .venues-content-section h2 {
+        font-size: 2rem;
+    }
+
+    .venues-content-section h3 {
+        font-size: 1.3rem;
+    }
+
+    .venues-full-width-section p {
+        max-width: 70%;
+    }
+
+    .venues-stats-section h2 {
+        font-size: 3.5rem;
+    }
+
+    .venues-stats-container {
+        gap: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .venues-content-section .venues-section-content {
+        max-width: 70%;
+    }
+
+    .venues-cta-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .venues-cta-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .venues-email-button,
+    .venues-whatsapp-button {
+        width: 120px;
+    }
+
+    .venues-cta-tagline {
+        font-size: 1.8rem;
+    }
+
+    .venues-full-width-section h2 {
+        font-size: 2rem;
+    }
+
+    .venues-content-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .venues-content-section p {
+        font-size: 0.9rem;
+        max-width: 100%;
+    }
+
+    .venues-full-width-section p {
+        max-width: 80%;
+    }
+
+    .venues-stats-section h2 {
+        font-size: 3rem;
+        margin-bottom: 30px;
+    }
+
+    .venues-stats-container {
+        gap: 40px;
+        flex-direction: column;
+    }
+
+    .venues-stat-number {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .venues-content-section .venues-section-content {
+        max-width: 85%;
+    }
+
+    .venues-cta-section,
+    .venues-content-section,
+    .venues-full-width-section,
+    .venues-stats-section {
+        padding: 0 1rem;
+        height: auto;
+        min-height: 500px;
+    }
+
+    .venues-cta-content h2 {
+        font-size: 1.3rem;
+    }
+
+    .venues-cta-tagline {
+        font-size: 1.5rem;
+    }
+
+    .venues-full-width-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .venues-content-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .venues-content-section h3 {
+        font-size: 1.1rem;
+    }
+
+    .venues-full-width-section p {
+        max-width: 90%;
+    }
+
+    .venues-left-text .venues-section-content,
+    .venues-right-text .venues-section-content {
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    .venues-stats-section h2 {
+        font-size: 2.5rem;
+    }
+
+    .venues-stat-number {
+        font-size: 2.5rem;
+    }
+
+    .venues-stat-label {
+        font-size: 1rem;
+    }
+}

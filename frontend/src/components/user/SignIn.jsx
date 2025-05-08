@@ -56,7 +56,7 @@ const SignIn = () => {
               <h2>Bienvenue à nouveau</h2>
               
               <div className="signup-divider">
-                <span>ou connectez-vous avec votre email</span>
+                <span>connectez-vous avec votre email</span>
               </div>
               
               <input

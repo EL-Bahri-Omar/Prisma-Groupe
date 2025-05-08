@@ -89,10 +89,10 @@ const UpdateProfile = () => {
                 <div className="row wrapper">
                     <div className="col-10 col-lg-5">
                         <form className="shadow-lg" onSubmit={submitHandler} encType='multipart/form-data'>
-                            <h1 className="mt-2 mb-5">Update Profile</h1>
+                            <h1 className="mt-2 mb-5">Modifier Profil</h1>
 
                             <div className="form-group">
-                                <label htmlFor="email_field">Name</label>
+                                <label htmlFor="email_field">Nom</label>
                                 <input 
                                     type="name" 
                                     id="name_field" 
@@ -137,7 +137,7 @@ const UpdateProfile = () => {
                                             onChange={onChange}
                                         />
                                         <label className='custom-file-label' htmlFor='customFile'>
-                                            Choose Avatar
+                                            Choisir Avatar
                                     </label>
                                     </div>
                                 </div>
@@ -145,7 +145,7 @@ const UpdateProfile = () => {
 
                             <button type="submit"
                                 className="update-btn btn-block mt-4 mb-3"
-                                disabled={loading ? true : false} > Update </button>
+                                disabled={loading ? true : false} > Mettre à jour </button>
                         </form>
                     </div>
                 </div>
