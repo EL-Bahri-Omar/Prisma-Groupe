@@ -3,7 +3,6 @@
     background-color: #fff;
     position: relative;
     min-height: 100vh;
-    font-family: "Roboto", Arial, sans-serif;
     transition: transform 0.3s ease;
 }
 
@@ -17,6 +16,7 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    font-family: "Roboto", Arial, sans-serif;
 }
 
 .audio-page-container {
