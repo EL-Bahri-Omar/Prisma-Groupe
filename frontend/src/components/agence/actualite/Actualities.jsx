@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import Sidebar from '../../sidebar/Sidebar';
 import GoBack from '../../action_buttons/GoBack';
 import '../../../styles/actualities.css';
-import ScrollTop from "../../action_buttons/ScrollTop";
 import { useDispatch, useSelector } from 'react-redux';
 import { getActualites, clearErrors } from '../../../actions/actualiteActions';
 import { useAlert } from 'react-alert';
@@ -87,7 +86,6 @@ const Actualities = () => {
       </main>
       
       <GoBack />
-      <ScrollTop/>
     </div>
   );
 };

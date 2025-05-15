@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import Sidebar from '../sidebar/Sidebar';
 import GoBack from '../action_buttons/GoBack';
 import '../../styles/BlogPage.css';
-import ScrollTop from "../action_buttons/ScrollTop";
 import { useDispatch, useSelector } from 'react-redux';
 import { getBlogs, clearErrors } from '../../actions/blogActions';
 import { useAlert } from 'react-alert';
@@ -184,7 +183,6 @@ const BlogPage = () => {
         </div>
       </div>
 
-      <ScrollTop/>
       <GoBack />
     </div>
   );

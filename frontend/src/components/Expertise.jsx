@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import Sidebar from "./sidebar/Sidebar";
 import GoBack from './action_buttons/GoBack';
 import "./../styles/Expertise.css";
-import ScrollTop from "./action_buttons/ScrollTop";
 
 const ExpertisePage = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -19,48 +18,16 @@ const ExpertisePage = () => {
 
   const navigateToPrisma = (entity) => {
     const routeMap = {
-      'prisma-groupe': '/PrismaGroupe',
-      'prisma-events': '/PrismaEvents',
-      'prisma-studio': '/PrismaStudio',
-      'prisma-logistique': '/PrismaLogestique',
-      'prisma-deco': '/PrismaEspaceDeco',
-      'prisma-lab': '/PrismaLab'
+      'Prisma-Groupe': '/Prisma-Groupe',
+      'prisma-digital': '/Prisma-Digital',
+      'prisma-spazio': '/Prisma-Spazio',
+      'prisma-audio': '/Prisma-AudioVisual',
+      'prisma-venues': '/Prisma-Venues',
+      'prisma-live': '/Prisma-Live',
+      'prisma-distribution': '/Prisma-Distribution'
     };
     navigate(routeMap[entity]);
   };
-
-  const prismaEntities = [
-    {
-      id: 'prisma-groupe',
-      title: 'PRISMA GROUPE',
-      image: '/src/assets/PrismaGroupe.png'
-    },
-    {
-      id: 'prisma-events',
-      title: 'PRISMA EVENTS',
-      image: '/src/assets/Prisma Events.png'
-    },
-    {
-      id: 'prisma-studio',
-      title: 'PRISMA STUDIO',
-      image: '/src/assets/Prisma Studio.png'
-    },
-    {
-      id: 'prisma-logistique',
-      title: 'PRISMA LOGISTIQUE',
-      image: '/src/assets/Prisma Logistique.png'
-    },
-    {
-      id: 'prisma-deco',
-      title: 'PRISMA ESPACE DÉCO',
-      image: '/src/assets/Prisma Espace Déco.png'
-    },
-    {
-      id: 'prisma-lab',
-      title: 'PRISMA LAB',
-      image: '/src/assets/Prisma Lab.png'
-    }
-  ];
 
   return (
     <div className={`app-container ${sidebarOpen ? "sidebar-open" : ""}`}>
@@ -86,29 +53,115 @@ const ExpertisePage = () => {
         {/* Section des cartes Prisma */}
         <div className="prisma-cards-container">
           <div className="prisma-cards-grid">
-            {prismaEntities.map((entity) => (
-              <div 
-                key={entity.id} 
-                className="prisma-card"
-                onClick={() => navigateToPrisma(entity.id)}
-              >
-                <div className="prisma-card-image-container">
-                  <div className="prisma-card-image">
-                    <img src={entity.image} alt={entity.title} />
-                  </div>
-                </div>
-                <div className="prisma-card-title">
-                  <h3>{entity.title}</h3>
+            {/* Prisma Groupe Card */}
+            <div 
+              className="prisma-card"
+              onClick={() => navigateToPrisma('Prisma-Groupe')}
+            >
+              <div className="prisma-card-image-container">
+                <div className="prisma-card-image">
+                  <img src="/src/assets/home/logosPrisma/PrismaGroupe.png" alt="PRISMA GROUPE" />
                 </div>
               </div>
-            ))}
+              <div className="prisma-card-title" style={{ color: '#042E38' }}>
+                <h3>PRISMA GROUPE</h3>
+              </div>
+            </div>
+
+            {/* Prisma Digital Card */}
+            <div 
+              className="prisma-card"
+              onClick={() => navigateToPrisma('prisma-digital')}
+            >
+              <div className="prisma-card-image-container">
+                <div className="prisma-card-image">
+                  <img src="/src/assets/home/logosPrisma/PrismaDigital.png" alt="PRISMA DIGITAL" />
+                </div>
+              </div>
+              <div className="prisma-card-title" style={{ color: '#042E38' }}>
+                <h3>PRISMA <span style={{ color: '#ee2176' }}>DIGITAL</span></h3>
+              </div>
+            </div>
+
+            {/* Prisma Spazio Card */}
+            <div 
+              className="prisma-card"
+              onClick={() => navigateToPrisma('prisma-spazio')}
+            >
+              <div className="prisma-card-image-container">
+                <div className="prisma-card-image">
+                  <img src="/src/assets/home/logosPrisma/PrismaSpazio.png" alt="PRISMA SPAZIO" />
+                </div>
+              </div>
+              <div className="prisma-card-title" style={{ color: '#042E38' }}>
+                <h3>PRISMA <span style={{ color: '#f7eb17' }}>SPAZIO</span></h3>
+              </div>
+            </div>
+
+            {/* Prisma Audio Card */}
+            <div 
+              className="prisma-card"
+              onClick={() => navigateToPrisma('prisma-audio')}
+            >
+              <div className="prisma-card-image-container">
+                <div className="prisma-card-image">
+                  <img src="/src/assets/home/logosPrisma/PrismaAudio.png" alt="PRISMA AUDIO" />
+                </div>
+              </div>
+              <div className="prisma-card-title" style={{ color: '#042E38' }}>
+                <h3>PRISMA <span style={{ color: '#7e82bd' }}>AUDIOVISUAL</span></h3>
+              </div>
+            </div>
+
+            {/* Prisma Venues Card */}
+            <div 
+              className="prisma-card"
+              onClick={() => navigateToPrisma('prisma-venues')}
+            >
+              <div className="prisma-card-image-container">
+                <div className="prisma-card-image">
+                  <img src="/src/assets/home/logosPrisma/PrismaVenues.png" alt="PRISMA VENUES" />
+                </div>
+              </div>
+              <div className="prisma-card-title" style={{ color: '#042E38' }}>
+                <h3>PRISMA <span style={{ color: '#c89d6f' }}>VENUES</span></h3>
+              </div>
+            </div>
+
+            {/* Prisma Live Card */}
+            <div 
+              className="prisma-card"
+              onClick={() => navigateToPrisma('prisma-live')}
+            >
+              <div className="prisma-card-image-container">
+                <div className="prisma-card-image">
+                  <img src="/src/assets/home/logosPrisma/PrismaLive.png" alt="PRISMA LIVE" />
+                </div>
+              </div>
+              <div className="prisma-card-title" style={{ color: '#042E38' }}>
+                <h3>PRISMA <span style={{ color: '#f58639' }}>LIVE</span></h3>
+              </div>
+            </div>
+
+            {/* Prisma Distribution Card */}
+            <div 
+              className="prisma-card"
+              onClick={() => navigateToPrisma('prisma-distribution')}
+            >
+              <div className="prisma-card-image-container">
+                <div className="prisma-card-image">
+                  <img src="/src/assets/home/logosPrisma/PrismaDistribution.png" alt="PRISMA DISTRIBUTION" />
+                </div>
+              </div>
+              <div className="prisma-card-title" style={{ color: '#042E38' }}>
+                <h3>PRISMA <span style={{ color: '#faaf3e' }}>DISTRIBUTION</span></h3>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Flèche de retour en haut */}
-      <ScrollTop/>
-
       <GoBack />
     </div>
   );

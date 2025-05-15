@@ -131,15 +131,15 @@ const Sidebar = ({ onToggle }) => {
       {sidebarOpen && (
         <div className="sidebar-nav">
           <ul>
-            {/* AGENCES menu */}
-            {expandedMenu === 'agences' ? (
+            {/* AGENCE menu */}
+            {expandedMenu === 'agence' ? (
               <>
                 <li className="menu-item">
                   <div 
                     className="menu-header active-menu"
-                    onClick={(e) => toggleMenu('agences', e)}
+                    onClick={(e) => toggleMenu('agence', e)}
                   >
-                    <span>AGENCES</span>
+                    <span>AGENCE</span>
                     <span className="dropdown-arrow">▼</span>
                   </div>
                   <ul className="submenu active-menu">
@@ -273,9 +273,9 @@ const Sidebar = ({ onToggle }) => {
                 <li className="menu-item">
                   <div 
                     className={`menu-header ${window.location.pathname.startsWith('/agence') ? 'active-menu' : ''}`}
-                    onClick={(e) => toggleMenu('agences', e)}
+                    onClick={(e) => toggleMenu('agence', e)}
                   >
-                    <span>AGENCES</span>
+                    <span>AGENCE</span>
                     <span className="dropdown-arrow">▶</span>
                   </div>
                 </li>

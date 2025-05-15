@@ -2,7 +2,6 @@ import React, { useState, useEffect, Fragment } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Sidebar from '../sidebar/Sidebar';
 import GoBack from '../action_buttons/GoBack';
-import ScrollTop from '../action_buttons/ScrollTop';
 import '../../styles/ProjectDetails.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProjectDetails, createProjectReview } from '../../actions/projectActions';
@@ -298,7 +297,6 @@ const ProjectDetails = () => {
 </Modal>
       
       <GoBack />
-      <ScrollTop />
     </div>
   );
 };

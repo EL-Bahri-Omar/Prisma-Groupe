@@ -153,13 +153,13 @@ const TeamLeft = ({ teamMembers, currentPage, setCurrentPage }) => {
         >
           <div className="team-left-content">
             {currentPage == 1 && (
-              <div className="top-nav-arrow page-top-nav-arrow" onClick={navigateUp}>
+              <div className="top-nav-arrow page-top-team-arrow" onClick={navigateUp}>
                 <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 </svg>
               </div>
             )}
             {currentPage > 1 && (
-              <div className="top-nav-arrow page-top-nav-arrow" onClick={navigateUp}>
+              <div className="top-nav-arrow page-top-team-arrow" onClick={navigateUp}>
                 <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5 14L12 7L19 14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
@@ -170,7 +170,7 @@ const TeamLeft = ({ teamMembers, currentPage, setCurrentPage }) => {
             <h3>{member.position}</h3>
             <p>{member.description}</p>
 
-            <div className="bottom-nav-arrow page-bottom-nav-arrow">
+            <div className="bottom-nav-arrow page-bottom-team-arrow">
               <div className="page-counter">
                 <span className="current-page">{currentPage}</span>
                 <span className="page-exponent">

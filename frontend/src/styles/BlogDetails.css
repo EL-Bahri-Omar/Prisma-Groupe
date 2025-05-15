@@ -86,6 +86,7 @@
 .blogdetail-container {
     max-width: 1000px;
     margin: 0 auto;
+    width: 80%;
     margin-top: 60px;
     margin-bottom: 10px;
     padding: 40px 40px;
@@ -393,6 +394,7 @@
 .blogdetail-no-results {
     text-align: center;
     padding: 30px;
+    width: 80%;
     color: #666;
     font-style: italic;
     background-color: #f9f9f9;
@@ -556,81 +558,260 @@
 }
 
 
-/* Responsive Styles */
-@media (max-width: 768px) {
+
+
+
+
+
+/* Responsive Design - Complete Coverage */
+
+/* Extra Small Devices (320px - 424px) */
+@media (min-width: 320px) and (max-width: 424px) {
     .hero-image-container {
-        height: 40vh;
-        min-height: 300px;
+      height: 30vh;
+      min-height: 200px;
     }
     
     .hero-title {
-        font-size: 2rem;
-        margin-left: 20px;
+      font-size: 1.5rem;
+      margin-left: 10px;
+    }
+    
+    .blogdetail-container {
+      padding: 20px;
+      margin-top: 30px;
+      border-radius: 10px;
     }
     
     .blogdetail-header-subtitle {
-        font-size: 1.5rem;
-    }
-    
-    .blogdetail-tags-share-container {
-        flex-direction: column;
-        gap: 20px;
-    }
-    
-    .blogdetail-share-article {
-        text-align: left;
-    }
-    
-    .blogdetail-social-icons {
-        justify-content: flex-start;
-    }
-    
-    .blogdetail-related-articles-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .content-title {
-        font-size: 1.8rem;
-    }
-
-    .content-subtitle {
-        font-size: 1.4rem;
-    }
-    
-    .content-headline {
-        font-size: 1.2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-image-container {
-        height: 30vh;
-        min-height: 200px;
-    }
-    
-    .hero-overlay {
-        padding: 15px;
-    }
-    
-    .hero-title {
-        font-size: 1.5rem;
-        margin-left: 10px;
+      font-size: 1.2rem;
     }
     
     .blogdetail-header-meta {
-        flex-direction: column;
-        gap: 10px;
+      flex-direction: column;
+      gap: 10px;
     }
     
-    .blogdetail-header-subtitle {
-        font-size: 1.2rem;
+    .blogdetail-tags-share-container {
+      flex-direction: column;
+      gap: 20px;
     }
     
-    .blogdetail-content {
-        padding: 0;
+    .content-title {
+      font-size: 1.8rem;
+      margin: 1.5rem 0 0.8rem;
     }
     
-    .blogdetail-article-subtitle {
-        font-size: 1.3rem;
+    .content-subtitle {
+      font-size: 1.4rem;
+      margin-left: 1rem;
     }
-}
+    
+    .content-paragraph {
+      font-size: 1rem;
+      margin-left: 1.5rem;
+    }
+    
+    .content-headline-container {
+      margin-left: 2rem;
+    }
+    
+    .blogdetail-related-articles {
+      margin-left: 0;
+      padding: 0 20px;
+    }
+    
+    .gallery-item {
+      height: 250px;
+    }
+  }
+  
+  /* Small Devices (425px - 639px) */
+  @media (min-width: 425px) and (max-width: 639px) {
+    .hero-image-container {
+      height: 35vh;
+      min-height: 250px;
+    }
+    
+    .hero-title {
+      font-size: 1.8rem;
+      margin-left: 15px;
+    }
+    
+    .blogdetail-container {
+      padding: 25px;
+    }
+    
+    .content-title {
+      font-size: 2rem;
+    }
+    
+    .blogdetail-related-articles {
+      margin-left: 0;
+      padding: 0 25px;
+    }
+  }
+  
+  /* Medium Devices (640px - 767px) */
+  @media (min-width: 640px) and (max-width: 767px) {
+    .hero-image-container {
+      height: 40vh;
+      min-height: 300px;
+    }
+    
+    .hero-title {
+      font-size: 2.2rem;
+    }
+    
+    .blogdetail-related-articles {
+      margin-left: 0;
+      padding: 0 30px;
+    }
+    
+    .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  /* Large Tablets (768px - 1023px) */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .hero-image-container {
+      height: 45vh;
+    }
+    
+    .blogdetail-related-articles {
+      margin-left: 0;
+      padding: 0 40px;
+    }
+    
+    .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  /* Small Laptops (1024px - 1279px) */
+  @media (min-width: 1024px) and (max-width: 1279px) {
+    .blogdetail-related-articles {
+      margin-left: 200px;
+    }
+    
+    .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .blogdetail-container {
+        padding: 20px;
+        margin-left: 70px;
+        margin-top: 30px;
+        border-radius: 10px;
+      }
+  }
+  
+  /* Standard Laptops/Desktops (1280px - 1439px) */
+  @media (min-width: 1280px) and (max-width: 1439px) {
+    .blogdetail-container {
+      max-width: 1100px;
+    }
+    
+    .gallery-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  /* Large Desktops (1440px - 1919px) */
+  @media (min-width: 1440px) and (max-width: 1919px) {
+    .blogdetail-container {
+      max-width: 1200px;
+      padding: 50px;
+    }
+    
+    .hero-title {
+      font-size: 3.5rem;
+    }
+    
+    .content-title {
+      font-size: 3rem;
+    }
+    
+    .gallery-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .gallery-item {
+      height: 450px;
+    }
+    .blogdetail-no-results {
+        width: 80%;
+        
+        
+    }
+  }
+  
+  /* Extra Large Desktops (1920px - 2559px) */
+  @media (min-width: 1920px) and (max-width: 2559px) {
+    .blogdetail-container {
+      max-width: 1400px;
+      padding: 60px;
+    }
+    
+    .hero-image-container {
+      height: 70vh;
+    }
+    
+    .hero-title {
+      font-size: 4rem;
+    }
+    
+    .content-title {
+      font-size: 3.5rem;
+    }
+    
+    .content-paragraph {
+      font-size: 1.3rem;
+    }
+    
+    .gallery-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .blogdetail-related-articles-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  /* Ultra HD/4K Displays (2560px and above) */
+  @media (min-width: 2560px) {
+    .blogdetail-container {
+      max-width: 1600px;
+      padding: 80px;
+    }
+    
+    .hero-image-container {
+      height: 80vh;
+    }
+    
+    .hero-title {
+      font-size: 5rem;
+    }
+    
+    .content-title {
+      font-size: 4rem;
+    }
+    
+    .content-paragraph {
+      font-size: 1.5rem;
+    }
+    
+    .gallery-grid {
+      grid-template-columns: repeat(5, 1fr);
+    }
+    
+    .blogdetail-related-articles-grid {
+      grid-template-columns: repeat(5, 1fr);
+    }
+    
+    .blogdetail-social-icon {
+      width: 50px;
+      height: 50px;
+      font-size: 1.2rem;
+    }
+  }

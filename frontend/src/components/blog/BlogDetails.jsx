@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Sidebar from '../sidebar/Sidebar';
 import GoBack from '../action_buttons/GoBack';
-import ScrollTop from '../action_buttons/ScrollTop';
 import '../../styles/BlogDetails.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { getBlogDetails, getBlogs, clearErrors } from '../../actions/blogActions';
@@ -284,7 +283,6 @@ const BlogDetails = () => {
         <p> &nbsp; </p>
       </div>
 
-      <ScrollTop/>
       <GoBack />
     </div>
   );

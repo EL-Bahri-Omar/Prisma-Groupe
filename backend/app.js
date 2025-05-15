@@ -26,8 +26,6 @@ app.use(fileUpload({
 }));
 
 
-
-
 //Import all routes 
 const actualites = require('./routes/actualite');
 const blogs = require('./routes/blog');

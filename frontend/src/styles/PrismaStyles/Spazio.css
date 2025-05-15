@@ -3,7 +3,6 @@
     background-color: #ffffff;
     position: relative;
     min-height: 100vh;
-    font-family: "Roboto", Arial, sans-serif;
     transition: transform 0.3s ease;
 }
 
@@ -12,6 +11,7 @@
 }
 
 .spazio-main-content {
+    font-family: "Roboto", Arial, sans-serif;
     margin-left: 65px;
     transition: transform 0.3s ease;
     min-height: 100vh;

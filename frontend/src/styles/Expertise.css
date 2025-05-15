@@ -1,221 +1,389 @@
 /* Base Styles */
 .app-container {
-    position: relative;
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
-  
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.main-content-expertise {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  transition: transform 0.3s ease-out;
+}
+
+.content-shifted {
+  transform: translateX(280px);
+}
+
+/* Title Section */
+.title-section {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-top: 2rem;
+}
+
+.title-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #286987;
+}
+
+.highlight {
+  color: #042f38;
+}
+
+.red-underline {
+  width: 93px;
+  height: 7px;
+  background-color: #042f38;
+  margin: 1rem auto;
+  margin-right: 730px;
+}
+
+/* Call to Action */
+.call-to-action {
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.call-to-action h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #286987;
+}
+
+.btn-contact {
+  background-color: #042f38;
+  color: white;
+  border: none;
+  padding: 0.8rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-contact:hover {
+  background-color: #286987;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px #286987;
+}
+
+/* Prisma Cards Grid */
+.prisma-cards-container {
+  margin: 4rem 0;
+}
+
+.prisma-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.prisma-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.prisma-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.prisma-card-image-container {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.prisma-card-image {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
+}
+
+.prisma-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.prisma-card:hover .prisma-card-image img {
+  transform: scale(1.1);
+}
+
+.prisma-card-title {
+  padding: 1.5rem;
+  text-align: center;
+  background: #fff;
+}
+
+.prisma-card-title h3 {
+  margin: 0;
+  color: #042f38;
+  font-size: 1.3rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+
+
+/* Scroll to top button */
+.scroll-to-top-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #042f38;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(40, 105, 135, 0.3);
+  transition: all 0.3s ease;
+  border: none;
+  z-index: 100;
+}
+
+.scroll-to-top-button:hover {
+  background-color: #286987;
+  box-shadow: 0 6px 12px rgba(40, 105, 135, 0.4);
+}
+
+.arrow-icon {
+  font-size: 1.2rem;
+}
+
+
+
+
+
+
+
+
+@media (min-width: 320px) and (max-width: 376px) {
   .main-content-expertise {
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    transition: transform 0.3s ease-out;
-  }
-  
-  .content-shifted {
-    transform: translateX(280px);
-  }
-  
-  /* Title Section */
-  .title-section {
-    text-align: center;
-    margin-bottom: 3rem;
-    padding-top: 2rem;
-  }
-  
-  .title-content h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: #286987;
-  }
-  
-  .highlight {
-    color: #042f38;
-  }
-  
-  .red-underline {
-    width: 93px;
-    height: 7px;
-    background-color: #042f38;
-    margin: 1rem auto;
-    margin-right: 730px;
-  }
-  
-  /* Call to Action */
-  .call-to-action {
-    text-align: center;
-    margin: 3rem 0;
-  }
-  
-  .call-to-action h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-    color: #286987;
-  }
-  
-  .btn-contact {
-    background-color: #042f38;
-    color: white;
-    border: none;
-    padding: 0.8rem 2.5rem;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border-radius: 4px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  
-  .btn-contact:hover {
-    background-color: #286987;
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px #286987;
-  }
-  
-  /* Prisma Cards Grid */
-  .prisma-cards-container {
-    margin: 4rem 0;
-  }
-  
-  .prisma-cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
     padding: 1rem;
   }
   
-  .prisma-card {
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    cursor: pointer;
-    position: relative;
+  .title-content h1 {
+    font-size: 1.6rem;
   }
   
-  .prisma-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  .btn-contact {
+    padding: 0.6rem 1.8rem;
+    font-size: 0.8rem;
+  }
+  
+  .prisma-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .red-underline {
+    width: 100px;
+    height: 4px;
+    margin-left: 30%;
+  }
+  
+  .content-shifted {
+    transform: translateX(0);
   }
   
   .prisma-card-image-container {
-    height: 200px;
-    overflow: hidden;
-    position: relative;
+    height: 180px;
   }
   
-  .prisma-card-image {
-    width: 100%;
-    height: 100%;
-    transition: transform 0.5s ease;
-  }
-  
-  .prisma-card-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-  }
-  
-  .prisma-card:hover .prisma-card-image img {
-    transform: scale(1.1);
-  }
-  
-  .prisma-card-title {
-    padding: 1.5rem;
-    text-align: center;
-    background: #fff;
-  }
-  
-  .prisma-card-title h3 {
-    margin: 0;
-    color: #042f38;
+  .call-to-action h2 {
     font-size: 1.3rem;
-    font-weight: 600;
-    transition: color 0.3s ease;
+  }
+}
+
+/* Small Devices (425px - 639px) */
+@media (min-width: 425px) and (max-width: 639px) {
+  .title-content h1 {
+    font-size: 1.8rem;
   }
   
-  .prisma-card:hover .prisma-card-title h3 {
-    color: #000000;
+  .btn-contact {
+    padding: 0.7rem 2rem;
+    font-size: 0.9rem;
   }
   
-  /* Scroll to top button */
-  .scroll-to-top-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #042f38;
-    color: white;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(40, 105, 135, 0.3);
-    transition: all 0.3s ease;
-    border: none;
-    z-index: 100;
+  .prisma-cards-grid {
+    grid-template-columns: 1fr;
   }
   
-  .scroll-to-top-button:hover {
-    background-color: #286987;
-    box-shadow: 0 6px 12px rgba(40, 105, 135, 0.4);
+  .red-underline {
+    width: 100px;
+    height: 5px;
+    margin: 1rem auto;
   }
   
-  .arrow-icon {
+  .content-shifted {
+    transform: translateX(0);
+  }
+  
+  .call-to-action h2 {
+    font-size: 1.4rem;
+  }
+}
+
+/* Medium Devices (640px - 767px) */
+@media (min-width: 640px) and (max-width: 767px) {
+  .title-content h1 {
+    font-size: 2rem;
+  }
+  
+  .prisma-cards-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .red-underline {
+    width: 120px;
+    height: 5px;
+    margin: 1rem auto;
+  }
+  
+  .content-shifted {
+    transform: translateX(0);
+  }
+  
+  .call-to-action h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Large Tablets (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .title-content h1 {
+    font-size: 2.2rem;
+  }
+  
+  .prisma-cards-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .red-underline {
+    width: 150px;
+    height: 6px;
+    margin: 1rem auto;
+  }
+  
+  .content-shifted {
+    margin-left: 50px;
+    transform: translateX(250px);
+  }
+  
+  .call-to-action h2 {
+    font-size: 1.6rem;
+  }
+}
+
+/* Small Laptops (1024px - 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .title-content h1 {
+    font-size: 2.3rem;
+  }
+  
+  .prisma-cards-grid {
+    margin-left: 40px;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  
+  .red-underline {
+    width: 80px;
+    margin-right: 580px;
+  }
+  
+  .content-shifted {
+    transform: translateX(250px);
+  }
+}
+
+
+/* Large Desktops (1440px - 1919px) */
+@media (min-width: 1440px) and (max-width: 1919px) {
+  .main-content-expertise {
+    max-width: 1300px;
+  }
+  
+  .title-content h1 {
+    font-size: 2.7rem;
+  }
+  
+  .red-underline {
+    margin-right: 770px;
+  }
+  
+  .prisma-cards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+}
+
+
+/* Ultra HD/4K Displays (2560px and above) */
+@media (min-width: 2560px) {
+  .main-content-expertise {
+    max-width: 2000px;
+    padding: 4rem;
+  }
+  
+  .title-content h1 {
+    font-size: 3.5rem;
+  }
+  
+  .call-to-action h2 {
+    font-size: 2.5rem;
+  }
+  
+  .btn-contact {
+    padding: 1.2rem 3.5rem;
     font-size: 1.2rem;
   }
   
-  /* Responsive adjustments */
-  @media (max-width: 1024px) {
-    .content-shifted {
-      transform: translateX(250px);
-    }
-    
-    .red-underline {
-      margin-right: auto;
-    }
+  .red-underline {
+    width: 150px;
+    height: 10px;
+    margin-right: 1130px;
   }
   
-  @media (max-width: 768px) {
-    .title-content h1 {
-      font-size: 2rem;
-    }
-    
-    .call-to-action h2 {
-      font-size: 1.5rem;
-    }
-    
-    .prisma-cards-grid {
-      grid-template-columns: 1fr 1fr;
-    }
-  
-    .content-shifted {
-      transform: translateX(0);
-    }
+  .prisma-cards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 3rem;
   }
   
-  @media (max-width: 480px) {
-    .title-content h1 {
-      font-size: 1.8rem;
-    }
-    
-    .btn-contact {
-      padding: 0.7rem 2rem;
-      font-size: 0.9rem;
-    }
-    
-    .prisma-cards-grid {
-      grid-template-columns: 1fr;
-    }
-    
-    .red-underline {
-      width: 200px;
-      height: 5px;
-    }
+  .prisma-card-image-container {
+    height: 300px;
   }
+  
+  .prisma-card-title h3 {
+    font-size: 1.8rem;
+  }
+  
+  .scroll-to-top-button {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .arrow-icon {
+    font-size: 1.5rem;
+  }
+}
+
+

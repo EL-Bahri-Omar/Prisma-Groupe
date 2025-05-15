@@ -40,3 +40,71 @@
     line-height: 1.6;
     max-width:80%;
 }
+
+.page-top-team-arrow {
+  position: relative;
+  top: -10px;
+  margin: auto;
+}
+
+.page-bottom-team-arrow {
+  position: relative;
+  bottom: 10px;
+  margin: auto;
+
+}
+
+  /* Styles spécifiques pour mobile (320px - 768px) */
+  @media screen and (max-width: 768px) {
+    .team-col-l {
+      width: 100% !important;
+      float: none !important;
+      transform: translateX(0);
+      transition: transform 0.3s ease;
+    }
+    
+    .mask, .col-r {
+      display: none !important;
+    }
+    
+    .app-container.sidebar-open .team-col-l {
+      transform: translateX(190px) !important;
+    }
+    
+    .team-left-content {
+      padding: 0 20px !important;
+    }
+    
+    .team-left-content h2 {
+      font-size: 2rem !important;
+    }
+    
+    .team-left-content p {
+      font-size: 1.2rem !important;
+      max-width: 80% !important;
+    }
+    
+    .top-nav-arrow, .bottom-nav-arrow {
+      display: none !important;
+    }
+  }
+  
+  /* Styles spécifiques pour desktop (769px et plus) */
+  @media screen and (min-width: 769px) {
+    .team-col-l {
+      width: 50% !important;
+      float: left !important;
+    }
+    
+    .mask, .col-r {
+      display: block !important;
+    }
+    
+    .app-container.sidebar-open .team-col-l {
+      transform: translateX(190px) !important;
+    }
+    
+    .top-nav-arrow, .bottom-nav-arrow {
+      display: flex !important;
+    }
+  }

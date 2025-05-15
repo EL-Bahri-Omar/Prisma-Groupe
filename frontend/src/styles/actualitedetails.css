@@ -235,7 +235,6 @@
     
     .hero-overlay {
         padding: 15px;
-        left: 20px;
     }
     
     .hero-title {
@@ -255,3 +254,134 @@
         padding: 20px 15px;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive Design - Complete Coverage */
+
+/* Extra Small Devices (320px - 424px) */
+@media (min-width: 320px) and (max-width: 424px) {
+    .hero-image-container {
+      height: 30vh;
+      min-height: 200px;
+    }
+    
+    .hero-overlay {
+      padding: 15px;
+    }
+    
+    .hero-title {
+      font-size: 1.5rem;
+      margin-left: 15px;
+    }
+    
+    .actualite-content {
+      padding: 20px 15px;
+    }
+    
+    .actualite-meta {
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .actualite-description {
+      font-size: 1.2rem;
+    }
+    
+    .actualite-text {
+      font-size: 1rem;
+    }
+    
+    .gallery-grid-container {
+      grid-template-columns: 1fr;
+    }
+    
+    .back-to-news-btn {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* Small Devices (425px - 639px) */
+  @media (min-width: 425px) and (max-width: 639px) {
+    .hero-image-container {
+      height: 35vh;
+      min-height: 250px;
+    }
+    
+    .hero-title {
+      font-size: 1.8rem;
+      margin-left: 20px;
+    }
+    
+    .actualite-description {
+      font-size: 1.4rem;
+    }
+    
+    .gallery-grid-container {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* Medium Devices (640px - 767px) */
+  @media (min-width: 640px) and (max-width: 767px) {
+    .hero-image-container {
+      height: 40vh;
+      min-height: 300px;
+    }
+    
+    .hero-title {
+      font-size: 2rem;
+    }
+    
+    .actualite-description {
+      font-size: 1.6rem;
+    }
+    
+    .gallery-grid-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  /* Large Tablets (768px - 1023px) */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .hero-image-container {
+      height: 45vh;
+    }
+    
+    .hero-title {
+      font-size: 2.2rem;
+    }
+    
+    .actualite-content {
+      padding: 30px;
+    }
+    
+    .gallery-grid-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  /* Small Laptops (1024px - 1279px) */
+  @media (min-width: 1023px)and (max-width: 1024px) {
+    .hero-image-container {
+      height: 50vh;
+    }
+    
+    .hero-title {
+      font-size: 2.5rem;
+    }
+    
+    .actualite-content {
+      max-width: 900px;
+      margin-left: 70px;
+    }
+  }
