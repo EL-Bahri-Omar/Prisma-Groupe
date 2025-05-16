@@ -18,6 +18,10 @@ const {
 
 const { isAuthenticatedUser, authorizeRoles } = require('../middlewares/auth');
 
+const { generateCaptcha, verifyCaptcha } = require('../controllers/captchaController');
+router.route('/captcha/generate').get(generateCaptcha);
+router.route('/captcha/verify').post(verifyCaptcha);
+
 router.route('/register').post(registerUser);
 router.route('/login').post(loginUser);
 

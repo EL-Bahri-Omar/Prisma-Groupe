@@ -270,11 +270,6 @@ const ClientsPage = () => {
                   </div>
                   <div className="client-cell">
                     <div className="client-card">
-                      <img src="src/assets/clients/client40.png" alt="Tunisie Leasing" />
-                    </div>
-                  </div>
-                  <div className="client-cell">
-                    <div className="client-card">
                       <img src="src/assets/clients/client41.png" alt="Tunisie Leasing" />
                     </div>
                   </div>
@@ -296,16 +291,6 @@ const ClientsPage = () => {
                   <div className="client-cell">
                     <div className="client-card">
                       <img src="src/assets/clients/client45.png" alt="Tunisie Leasing" />
-                    </div>
-                  </div>
-                  <div className="client-cell">
-                    <div className="client-card">
-                      <img src="src/assets/clients/client46.png" alt="Tunisie Leasing" />
-                    </div>
-                  </div>
-                  <div className="client-cell">
-                    <div className="client-card">
-                      <img src="src/assets/clients/client47.png" alt="Tunisie Leasing" />
                     </div>
                   </div>
                   <div className="client-cell">

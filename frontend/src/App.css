@@ -299,7 +299,6 @@ html {
   justify-content: center;
   flex-wrap: wrap;
   padding: 20px;
-  width: 80%;
 }
 
 .sidebar.open .social-icons {
@@ -1075,118 +1074,48 @@ html {
   background-color: #f0f0f0;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media screen and (max-width: 768px) {
   .col-l {
     width: 100% !important;
   }
-  
-  .mask, .col-r {
+
+  .mask,
+  .col-r {
     display: none !important;
   }
-  
+
   .app-container.sidebar-open .col-l {
     transform: none !important;
   }
-  
+
   .left-content {
     padding: 0 30px;
   }
-  
+
   .left-content img {
     max-width: 200px;
   }
-  
+
   .left-content h2 {
     font-size: 2.5rem;
   }
-  
+
   .left-content p {
     font-size: 1rem;
     max-width: 100%;
   }
-  
+
   .cta-button {
     padding: 10px 25px;
     font-size: 0.9rem;
   }
-  
-  
-  
+
+
+
   .right-sidebar {
     display: flex;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @media (min-width: 320px) and (max-width: 768px) {
   .app-container {
@@ -1210,7 +1139,7 @@ html {
   .sidebar.open {
     left: 0;
     width: 100%;
-    
+
   }
 
   .sidebar-toggle {

@@ -39,6 +39,7 @@ import NewPassword from "./components/user/NewPassword";
 import SignUp from "./components/user/SignUp";
 import SignIn from "./components/user/SignIn";
 import SignInForgotPassword from "./components/user/SignInForgotPassword";
+import CaptchaVerification from "./components/user/CaptchaVerification";
 
 // Admin routes 
 import Dashboard from './components/admin/Dashboard.jsx'
@@ -103,6 +104,7 @@ const App = () => {
 
         <Route path="/login" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/captcha" element={<CaptchaVerification />} />
         <Route path="/password/forgot" element={<SignInForgotPassword />} />
         <Route path="/password/reset/:token" element={<NewPassword/>}/>
 

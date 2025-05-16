@@ -250,36 +250,36 @@
     .references-layout {
         flex-direction: column;
     }
-    
+
     .project-filters {
         width: 90%;
         position: relative;
         padding: 20px;
         height: auto;
     }
-    
+
     .references-grid-section {
         width: 100%;
         margin-left: 0;
         height: auto;
     }
-    
+
     .references-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .filter-title-large {
         font-size: 1.5rem;
     }
-    
+
     .compact-search-container {
         width: 100%;
     }
-    
+
     .reference-overlay {
         padding: 10px;
     }
-    
+
     .reference-logo {
         width: 40px;
         height: 40px;
@@ -292,84 +292,192 @@
     .references-layout {
         flex-direction: column;
     }
-    
+
     .project-filters {
         width: 90%;
         position: relative;
         padding: 25px;
         height: auto;
     }
-    
+
     .references-grid-section {
         width: 100%;
         margin-left: 0;
         height: auto;
     }
-    
+
     .references-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .filter-title-large {
         font-size: 1.8rem;
     }
-    
+
     .compact-search-container {
         width: 100%;
     }
 }
 
 /* Medium Devices (640px - 767px) */
-@media (min-width: 640px) and (max-width: 767px) {
+@media (min-width: 640px) and (max-width: 768px) {
     .references-layout {
         flex-direction: column;
     }
-    
+
     .project-filters {
         width: 100%;
         position: relative;
         padding: 30px;
         height: auto;
     }
-    
+
     .references-grid-section {
         width: 100%;
         margin-left: 0;
         height: auto;
     }
-    
+
     .references-grid {
         grid-template-columns: 1fr 1fr;
     }
-    
+
     .filter-title-large {
         font-size: 2rem;
     }
 }
 
-/* Large Tablets (768px - 1023px) */
-@media (min-width: 768px) and (max-width: 1023px) {
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 767px) {
     .references-layout {
         flex-direction: column;
     }
-    
+
+    .project-filters {
+        width: 100%;
+        position: relative;
+        height: auto;
+    }
+
+    .references-grid-section {
+        width: 100%;
+        margin-left: 0;
+        height: auto;
+    }
+
+    .references-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .filter-title-large {
+        font-size: 1rem;
+    }
+
+    /* Nouveau style pour les catégories en deux colonnes */
+    .filter-categories {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0px;
+    }
+
+    .filter-category {
+        margin-bottom: 10px;
+    }
+
+    .compact-search-container {
+        width: 90%;
+        margin-top: 25px;
+    }
+}
+
+
+@media (min-width: 767px) and (max-width: 768px) {
+    .references-layout {
+        flex-direction: column;
+    }
+
+    .project-filters {
+        width: 100%;
+        position: relative;
+        height: auto;
+    }
+
+    .references-grid-section {
+        width: 100%;
+        margin-left: 0;
+        height: auto;
+    }
+
+    .references-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .filter-title-large {
+        font-size: 1rem;
+    }
+
+    /* Nouveau style pour les catégories en deux colonnes */
+    .filter-categories {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0px;
+    }
+
+    .filter-category {
+        margin-bottom: 10px;
+    }
+
+    .compact-search-container {
+        width: 90%;
+        margin-top: 25px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Large Tablets (768px - 1023px) */
+@media (min-width: 769px) and (max-width: 1023px) {
+    .references-layout {
+        flex-direction: column;
+    }
+
     .project-filters {
         width: 100%;
         position: relative;
         padding: 40px;
         height: auto;
     }
-    
+
     .references-grid-section {
         width: 100%;
         margin-left: 0;
         height: auto;
     }
-    
+
     .references-grid {
         grid-template-columns: 1fr 1fr;
     }
-    
+
     .filter-title-large {
         font-size: 2.2rem;
     }
@@ -379,18 +487,18 @@
 @media (min-width: 1024px) and (max-width: 1279px) {
     .project-filters {
         width: 25%;
-        padding-left: 70px;
+        padding-left: 80px;
     }
-    
+
     .references-grid-section {
         width: 75%;
         margin-left: 25%;
     }
-    
+
     .references-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .filter-title-large {
         font-size: 2rem;
     }
@@ -400,14 +508,14 @@
 @media (min-width: 1280px) and (max-width: 1439px) {
     .project-filters {
         width: 22%;
-        padding-left: 70px;
+        padding-left: 80px;
     }
-    
+
     .references-grid-section {
         width: 78%;
         margin-left: 22%;
     }
-    
+
     .references-grid {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -417,18 +525,18 @@
 @media (min-width: 1440px) and (max-width: 1919px) {
     .project-filters {
         width: 20%;
-        padding-left: 70px;
+        padding-left: 80px;
     }
-    
+
     .references-grid-section {
         width: 80%;
         margin-left: 20%;
     }
-    
+
     .references-grid {
         grid-template-columns: repeat(3, 1fr);
     }
-    
+
     .filter-title-large {
         font-size: 2.3rem;
     }
@@ -438,27 +546,27 @@
 @media (min-width: 1920px) and (max-width: 2559px) {
     .project-filters {
         width: 18%;
-        padding-left: 80px;
+        padding-left: 90px;
     }
-    
+
     .references-grid-section {
         width: 82%;
         margin-left: 18%;
     }
-    
+
     .references-grid {
         grid-template-columns: repeat(4, 1fr);
     }
-    
+
     .filter-title-large {
         font-size: 2.5rem;
     }
-    
+
     .reference-logo {
         width: 80px;
         height: 80px;
     }
-    
+
     .reference-name {
         font-size: 1.2rem;
     }
@@ -470,37 +578,37 @@
         width: 15%;
         padding-left: 100px;
     }
-    
+
     .references-grid-section {
         width: 85%;
         margin-left: 15%;
     }
-    
+
     .references-grid {
         grid-template-columns: repeat(5, 1fr);
     }
-    
+
     .filter-title-large {
         font-size: 3rem;
     }
-    
+
     .filter-title-small {
         font-size: 1.1rem;
     }
-    
+
     .filter-category {
         font-size: 1rem;
     }
-    
+
     .reference-logo {
         width: 100px;
         height: 100px;
     }
-    
+
     .reference-name {
         font-size: 1.5rem;
     }
-    
+
     .compact-search-input {
         font-size: 1.1rem;
         padding: 0.7rem 1rem;

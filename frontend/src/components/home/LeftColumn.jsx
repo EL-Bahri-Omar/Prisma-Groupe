@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const LeftColumn = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = 8;
+  const totalPages = 7;
   const isScrollingRef = useRef(false);
   const lastScrollTimeRef = useRef(0);
 
@@ -16,8 +16,7 @@ const LeftColumn = () => {
     4: 'page7',
     5: 'page9',
     6: 'page11',
-    7: 'page13',
-    8: 'page15'
+    7: 'page13'
   };
 
   // Map from ID to page number (reverse mapping)
@@ -412,37 +411,6 @@ const LeftColumn = () => {
           <p></p>
           <p></p>
           <Link to="/Prisma-Audiovisual" className="cta-button" style={{ backgroundColor: '#9198aa'}}>En savoir plus</Link>
-
-          <div id="bottom-navigation-arrow" className="bottom-nav-arrow page-bottom-nav-arrow">
-            <div className="page-counter">
-              <span className="current-page">{currentPage}</span>
-              <span className="page-exponent">
-                <span className="page-separator">/</span>
-                <span className="total-pages">{totalPages}</span>
-              </span>
-            </div>
-            {/* Only show down arrow if not on last page */}
-            {currentPage < totalPages && (
-              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={navigateDown}>
-                <path d="M5 10L12 17L19 10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            )}
-          </div>
-        </div>
-      </div>
-      <div id="page15" className="full-page left-page" style={{ backgroundColor: '#6bc9e6'}}>
-        <div className="left-content">
-          {currentPage > 1 && (
-            <div id="top-navigation-arrow" className="top-nav-arrow page-top-nav-arrow" onClick={navigateUp}>
-              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 14L12 7L19 14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
-          )}
-
-          <h2>Contact</h2>
-          <p></p>
-          <Link to="/contact" className="cta-button">Contacter-nous</Link>
 
           <div id="bottom-navigation-arrow" className="bottom-nav-arrow page-bottom-nav-arrow">
             <div className="page-counter">

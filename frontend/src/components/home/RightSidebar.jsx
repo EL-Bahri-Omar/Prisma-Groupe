@@ -12,8 +12,7 @@ const RightSidebar = () => {
     4: 'page7',
     5: 'page9',
     6: 'page11',
-    7: 'page13',
-    8: 'page15'
+    7: 'page13'
   };
 
   // Listen for scroll events to update radio button selection

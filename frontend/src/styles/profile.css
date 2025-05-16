@@ -1,0 +1,122 @@
+/* Profile Page Specific Styles */
+.profile-wrapper {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f8f3f3;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.profile-content {
+    margin-top: 50px;
+    flex: 1;
+    padding: 20px;
+    transition: margin-left 0.3s;
+    margin-left: 0;
+}
+
+.sidebar-open .profile-content {
+    margin-left: 250px;
+    /* Ajustez cette valeur selon la largeur de votre sidebar */
+}
+
+/* Le reste de votre CSS existant peut rester inchangé */
+.profile-header {
+    text-align: center;
+    color: #333;
+}
+
+.profile-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.profile-avatar-container {
+    flex: 0 0 250px;
+    text-align: center;
+}
+
+.avatar-profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ddd;
+}
+
+.profile-info {
+    flex: 1;
+    min-width: 250px;
+    max-width: 400px;
+    padding: 0 20px;
+}
+
+.profile-info h4 {
+    font-weight: 800;
+    color: grey;
+    margin-top: 20px;
+}
+
+.profile-info p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.btn-edit-profile,
+.btn-change-password {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    padding: 10px;
+    text-align: center;
+    background-color: #767471;
+    color: white;
+    border: 1px solid #000;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn-change-password {
+    background-color: #007bff;
+    border-color: #007bff;
+    margin-top: 30px;
+}
+
+.btn-edit-profile:hover {
+    background-color: #5a5a5a;
+}
+
+.btn-change-password:hover {
+    background-color: #0069d9;
+}
+
+@media (max-width: 426px) {
+    .sidebar-open .profile-content {
+        margin-left: 0;
+    }
+
+    .avatar-profile img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-info h4 {
+        font-size: 1.4rem;
+        margin-top: 15px;
+    }
+
+    .profile-info p {
+        font-size: 1.3rem;
+    }
+
+    .btn-edit-profile,
+    .btn-change-password {
+        width: 150px;
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+}

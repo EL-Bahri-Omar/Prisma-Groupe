@@ -1,54 +1,59 @@
 import React, { Fragment, useState } from 'react'
 import { Link } from "react-router-dom"
-import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux'
 
 import MetaData from '../layout/MetaData'
 import Loader from '../layout/Loader'
 import '../../styles/dashboard.css'
-import Sidebar from '../sidebar/Sidebar';
+import '../../styles/profile.css'
+import Sidebar from '../sidebar/Sidebar'
 
 const Profile = () => {
-    const [sidebarOpen, setSidebarOpen] = useState(false);
-
+    const [sidebarOpen, setSidebarOpen] = useState(false)
     const { user, loading } = useSelector(state => state.auth)
+    
+    const toggleSidebar = () => {
+        setSidebarOpen(!sidebarOpen)
+    }
     
     return (
         <Fragment>
             {loading ? <Loader /> : (
-                <Fragment>
+                <div className={`profile-wrapper ${sidebarOpen ? 'sidebar-open' : ''}`}>
                     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
                     <MetaData title={'Your Profile'} />
                     
-                    <div className={`dashboard-content app-container ${sidebarOpen ? 'sidebar-open' : ''}`}>
-                        <Sidebar isOpen={sidebarOpen} onToggle={() => setSidebarOpen(!sidebarOpen)} />
-                        <h2 className="row justify-content-around user-info mt-5">My Profile</h2>
-                        <div className="row justify-content-around mt-5 user-info ml-5">
-                            <div className="col-2 col-md-2">
-                                <figure className='avatar avatar-profile'>
-                                    <img className="rounded-circle img-fluid" src={user.avatar.url} alt={user.name} />
+                    <Sidebar isOpen={sidebarOpen} onToggle={toggleSidebar} />
+                    
+                    <div className="profile-content">
+                        <h2 className="profile-header">My Profile</h2>
+                        <div className="profile-container">
+                            <div className="profile-avatar-container">
+                                <figure className="avatar-profile">
+                                    <img src={user.avatar.url} alt={user.name} />
                                 </figure>
-                                <Link to="/me/update" id="edit_profile" className="btn btn-primary btn-block my-5 ml-4">
+                                <Link to="/me/update" className="btn-edit-profile">
                                     Modifier Profil
                                 </Link>
                             </div>
-                    
-                            <div className="col-12 col-md-3">
+                
+                            <div className="profile-info">
                                 <h4>Nom</h4>
                                 <p>{user.name}</p>
-                    
-                                <h4>Address Mail </h4>
+                
+                                <h4>Address Mail</h4>
                                 <p>{user.email}</p>
 
                                 <h4>Rejoint Le</h4>
                                 <p>{String(user.createdAt).substring(0, 10)}</p>   
 
-                                <Link to="/password/update" className="btn btn-primary btn-block mt-5">
+                                <Link to="/password/update" className="btn-change-password">
                                     Changer Mot de Passe
                                 </Link>
                             </div>
                         </div>
                     </div>
-                </Fragment>
+                </div>
             )}
         </Fragment>
     )

@@ -5,9 +5,6 @@ const RightColumn = () => {
   return (
     <div className="mask">
       <div className="col col-r">
-        <div id="page16" className="full-page right-page">
-          <img src="/src/assets/home/contact.png" alt="Background" className="background-img" />
-        </div>
         <div id="page14" className="full-page right-page">
           <img src="/src/assets/home/audio2.png" alt="Background" className="background-img" />
         </div>

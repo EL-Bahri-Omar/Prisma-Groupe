@@ -82,11 +82,12 @@ body {
 }
 
 
-.navbar-brand img{
+.navbar-brand img {
   width: 170px;
   height: 50px;
   margin-left: 10px;
 }
+
 /* Scroll Bar */
 
 nav {
@@ -126,6 +127,7 @@ nav {
   height: 80px;
   padding-left: 0;
 }
+
 .loader:after {
   content: ' ';
   display: block;
@@ -137,10 +139,12 @@ nav {
   border-color: #fa9c23 transparent;
   animation: lds-dual-ring 1.2s linear infinite;
 }
+
 @keyframes lds-dual-ring {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -174,6 +178,7 @@ nav {
   color: white;
   margin-top: 2.5rem;
 }
+
 .wrapper form .btn:hover {
   background-color: #232f3e;
 }
@@ -239,6 +244,7 @@ nav {
 #edit_profile {
   background-color: #767471;
   border-color: black;
+  width: 200px;
 }
 
 /* Confirm Order */
@@ -246,6 +252,7 @@ nav {
 .update-btn {
   background-color: #232f3e;
   color: white;
+
 }
 
 /* Pagination */
@@ -277,6 +284,7 @@ nav {
   top: 0;
   z-index: 10;
 }
+
 #admin-sidebar {
   min-width: 100%;
   max-width: 100%;
@@ -284,6 +292,7 @@ nav {
   color: #fff;
   transition: all 0.3s;
 }
+
 #admin-sidebar.active {
   margin-left: -250px;
 }
@@ -292,6 +301,7 @@ nav {
   padding: 20px;
   background: #232f3e;
 }
+
 #admin-sidebar ul.components {
   padding: 5px 0px;
   border-bottom: 1px solid #232f3e;
@@ -304,6 +314,7 @@ nav {
   color: white;
   text-decoration: none;
 }
+
 #admin-sidebar ul li a:hover {
   color: #232f3e;
   background: #fff;
@@ -313,14 +324,16 @@ nav {
   margin-right: 0.3rem;
 }
 
-#admin-sidebar ul li.active > a,
+#admin-sidebar ul li.active>a,
 a[aria-expanded='true'] {
   color: #fff;
   background: #232f3e;
 }
+
 a[data-toggle='collapse'] {
   position: relative;
 }
+
 .dropdown-toggle::after {
   display: inline-block;
   position: static;
@@ -404,4 +417,230 @@ a[data-toggle='collapse'] {
 
 .content-block .badge {
   text-transform: capitalize;
+}
+
+
+/* Petit mobile (320px-375px) */
+@media (min-width: 320px) and (max-width: 426px) {
+  .avatar-profile {
+    width: 100px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  .profile-container {
+    padding: 10px 8px;
+
+  }
+
+  .user-info h4 {
+    font-size: 0.95rem;
+    margin: 12px 0 5px;
+  }
+
+  .user-info p {
+    font-size: 0.88rem;
+  }
+
+  /* Boutons */
+
+  .profile-btn,
+  .btn-primary {
+    width: 100%;
+    max-width: 190px;
+    padding: 7px 0;
+    font-size: 0.82rem;
+    margin: 6px auto;
+    display: block;
+  }
+
+  #edit_profile {
+    background-color: #767471;
+    width: 150px;
+    border-color: black;
+
+  }
+
+  .row.justify-content-around.mt-5,
+  .row.justify-content-around.mt-5.ml-5 {
+    margin-top: 1rem !important;
+    margin-left: 0 !important;
+
+  }
+
+  .col-2 {
+    margin-left: -50px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 767.98px) {
+
+  /* Fix sidebar issues on small screens */
+  .col-12.col-md-2 {
+    display: none;
+    /* Hide the second sidebar on mobile */
+  }
+
+  .col-8.col-md-8 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0 5px;
+  }
+
+  /* Table adjustments for small screens */
+  .MDBDataTable {
+    font-size: 0.85rem;
+  }
+
+  /* Make headings even smaller on small screens */
+  h1.my-4 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  /* Adjust entries selector dropdown */
+  .dataTables_length select {
+    width: 60px;
+  }
+
+  /* Adjust search box */
+  .dataTables_filter input {
+    width: 120px;
+  }
+
+  table td,
+  .table th {
+    padding: 0 !important;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+/* Styles spécifiques pour MDBDataTable sur petits écrans */
+@media (min-width: 320px) and (max-width: 425px) {
+
+  /* Conteneur principal */
+  .dashboard-content {
+    padding: 0px;
+    margin-left: 0px;
+  }
+
+  /* Ajustement de la grille */
+  .row.mt-5 {
+    margin-top: 1rem !important;
+  }
+
+  .col-8.col-md-8 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0 5px;
+  }
+
+  /* Titre */
+  h1.my-4 {
+    font-size: 1.3rem;
+    margin: 1rem 0;
+    text-align: center;
+  }
+
+  /* Tableau */
+  .MDBDataTable {
+    font-size: 0.75rem;
+  }
+
+  /* En-têtes de colonnes */
+  .MDBDataTable thead th {
+    padding: 0.3rem;
+    white-space: nowrap;
+  }
+
+  /* Cellules */
+  .MDBDataTable tbody td {
+    padding: 0.3rem;
+    vertical-align: middle;
+  }
+
+  /* Boutons */
+  .MDBDataTable .btn {
+    padding: 0.2rem 0.3rem;
+    font-size: 0.7rem;
+  }
+
+  /* Contrôles du tableau (pagination, recherche) */
+  .dataTables_wrapper .dataTables_length,
+  .dataTables_wrapper .dataTables_filter,
+  .dataTables_wrapper .dataTables_info,
+  .dataTables_wrapper .dataTables_paginate {
+    font-size: 0.7rem;
+  }
+
+  .dataTables_length select {
+    height: 1.8rem;
+    padding: 0 0.5rem;
+  }
+
+  .dataTables_filter input {
+    height: 1.8rem;
+    padding: 0 0.5rem;
+    width: 120px !important;
+  }
+
+  /* Pagination */
+  .dataTables_paginate .paginate_button {
+    padding: 0.2rem 0.4rem;
+    min-width: 1.8rem;
+  }
+
+  /* Masquer certaines colonnes si nécessaire */
+  .MDBDataTable .date-column {
+    min-width: 70px;
+  }
+
+  .MDBDataTable .status-column {
+    min-width: 80px;
+  }
+
+  .MDBDataTable .actions-column {
+    min-width: 60px;
+  }
+
+  /* Scroll horizontal forcé */
+  .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Ajustement spécifique pour le tableau */
+  .MDBDataTable {
+    width: 100% !important;
+    display: block;
+  }
+
+  /* Icônes */
+  .MDBDataTable .fa {
+    font-size: 0.8rem;
+  }
 }
