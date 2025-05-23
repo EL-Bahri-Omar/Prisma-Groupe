@@ -78,7 +78,7 @@ const UpdateProject = () => {
     
         if (isUpdated) {
             navigate('/admin/projects')
-            alert.success('Project updated successfully')
+            alert.success('Projet mis à jour avec succès')
             dispatch({ type: UPDATE_PROJECT_RESET})
         }
     }, [dispatch, alert, error, isUpdated, navigate, updateError, project, projectId])
@@ -168,28 +168,30 @@ const UpdateProject = () => {
                     <div className="scrollable-content">
                         <div className="wrapper my-5"> 
                             <form className="shadow-lg p-4" onSubmit={submitHandler} encType='multipart/form-data'>
-                                <h1 className="mb-4 text-center">Update Project</h1>
+                                <h1 className="mb-4 text-center">Mettre À Jour Projet</h1>
                                 
                                 {/* First Row - Title and Subtitle */}
                                 <div className="d-flex justify-content-between mb-3">
                                     <div className="form-group" style={{ width: '48%' }}>
-                                        <label htmlFor="title_field">Title</label>
+                                        <label htmlFor="title_field">Titre</label>
                                         <input
                                             type="text"
                                             id="title_field"
                                             className="form-control"
                                             value={title}
                                             onChange={(e) => setTitle(e.target.value)}
+                                            required
                                         />
                                     </div>
                                     <div className="form-group" style={{ width: '48%' }}>
-                                        <label htmlFor="subtitle_field">Subtitle</label>
+                                        <label htmlFor="subtitle_field">Sous-titre</label>
                                         <input
                                             type="text"
                                             id="subtitle_field"
                                             className="form-control"
                                             value={subtitle}
                                             onChange={(e) => setSubtitle(e.target.value)}
+                                            required
                                         />
                                     </div>
                                 </div>
@@ -204,28 +206,31 @@ const UpdateProject = () => {
                                             className="form-control"
                                             value={date}
                                             onChange={(e) => setDate(e.target.value)}
+                                            required
                                         />
                                     </div>
                                     <div className="form-group" style={{ width: '30%' }}>
-                                        <label htmlFor="category_field">Category</label>
+                                        <label htmlFor="category_field">Catégorie</label>
                                         <select 
                                             className="form-control" 
                                             id="category_field" 
                                             value={category} 
-                                            onChange={(e) => setCategory(e.target.value)}>
+                                            onChange={(e) => setCategory(e.target.value)}
+                                            required>
                                             {categories.map(cat => (
                                                 <option key={cat} value={cat}>{cat}</option>
                                             ))}                                  
                                         </select>
                                     </div>
                                     <div className="form-group" style={{ width: '30%' }}>
-                                        <label htmlFor="place_field">Location</label>
+                                        <label htmlFor="place_field">Lieu</label>
                                         <input
                                             type="text"
                                             id="place_field"
                                             className="form-control"
                                             value={place}
                                             onChange={(e) => setPlace(e.target.value)}
+                                            required
                                         />
                                     </div>
                                 </div>
@@ -238,14 +243,15 @@ const UpdateProject = () => {
                                         id="description_field" 
                                         rows="4" 
                                         value={description} 
-                                        onChange={(e) => setDescription(e.target.value)}>
+                                        onChange={(e) => setDescription(e.target.value)}
+                                        required>
                                     </textarea>
                                 </div>
                                 
                                 {/* Third Row - Images */}
                                 <div className="d-flex justify-content-between">
                                     <div className="form-group" style={{ width: '48%' }}>
-                                        <label>Featured Image</label>
+                                        <label>Image Principale</label>
                                         <div className='custom-file'>
                                             <input
                                                 type='file'
@@ -253,9 +259,10 @@ const UpdateProject = () => {
                                                 className='custom-file-input'
                                                 id='customFile'
                                                 onChange={onImageChange}
+                                                required
                                             />
                                             <label className='custom-file-label' htmlFor='customFile'>
-                                                Choose Featured Image
+                                                Choisir Image
                                             </label>
                                         </div>
                                         <div className="d-flex mt-2">
@@ -280,7 +287,7 @@ const UpdateProject = () => {
                                         </div>
                                     </div>
                                     <div className="form-group" style={{ width: '48%' }}>
-                                        <label>Gallery Photos</label>
+                                        <label>Galerie des Photos</label>
                                         <div className='custom-file'>
                                             <input
                                                 type='file'
@@ -291,7 +298,7 @@ const UpdateProject = () => {
                                                 multiple
                                             />
                                             <label className='custom-file-label' htmlFor='customFile'>
-                                                Choose Gallery Photos
+                                                Chosir des Photos
                                             </label>
                                         </div>
                                         <div className="d-flex flex-wrap mt-2">
@@ -320,7 +327,7 @@ const UpdateProject = () => {
                                 </div>
 
                                 <div className="form-group mb-4">
-                                    <label htmlFor="video_field">Video URL (from Cloudinary)</label>
+                                    <label htmlFor="video_field">Lien du Video (Depuis Cloudinary)</label>
                                     <input
                                         type="text"
                                         id="video_field"
@@ -340,7 +347,7 @@ const UpdateProject = () => {
                                         style={{ width: '400px' }}
                                         disabled={loading ? true : false}
                                     >
-                                        UPDATE
+                                        MISE À JOUR
                                     </button>
                                 </div>
                             </form>

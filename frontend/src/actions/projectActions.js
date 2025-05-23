@@ -190,11 +190,15 @@ export const createProjectReview = (reviewData) => async (dispatch) => {
 };
 
 // Get project reviews
-export const getProjectReviews = (id) => async (dispatch) => {
+export const getProjectReviews = (id, name) => async (dispatch) => {
     try {
         dispatch({ type: GET_REVIEWS_REQUEST });
         
-        const { data } = await axios.get(`/api/v1/reviews?id=${id}`);
+        let url = '/api/v1/reviews?';
+        if (id) url += `id=${id}`;
+        if (name) url += `name=${encodeURIComponent(name)}`;
+        
+        const { data } = await axios.get(url);
         
         dispatch({
             type: GET_REVIEWS_SUCCESS,
@@ -209,11 +213,16 @@ export const getProjectReviews = (id) => async (dispatch) => {
 };
 
 // Delete review
-export const deleteReview = (id, projectId) => async (dispatch) => {
+export const deleteReview = (id, projectId, projectName) => async (dispatch) => {
     try {
         dispatch({ type: DELETE_REVIEW_REQUEST });
         
-        const { data } = await axios.delete(`/api/v1/reviews?id=${id}&projectId=${projectId}`);
+        let url = '/api/v1/reviews?';
+        url += `id=${id}&`;
+        if (projectId) url += `projectId=${projectId}`;
+        if (projectName) url += `projectName=${encodeURIComponent(projectName)}`;
+        
+        const { data } = await axios.delete(url);
         
         dispatch({
             type: DELETE_REVIEW_SUCCESS,

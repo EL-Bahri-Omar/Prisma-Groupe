@@ -44,7 +44,7 @@ const NewActualite = () => {
 
         if (success) {
             navigate('/admin/actualites');
-            alert.success('News created successfully');
+            alert.success('Actualité créé avec succès');
             dispatch({ type: NEW_ACTUALITE_RESET });
         }
     }, [dispatch, alert, error, success, navigate]);
@@ -134,6 +134,7 @@ const NewActualite = () => {
                                             className="form-control"
                                             value={title}
                                             onChange={(e) => setTitle(e.target.value)}
+                                            required
                                         />
                                     </div>
                                     <div className="form-group" style={{ width: '48%' }}>
@@ -144,6 +145,7 @@ const NewActualite = () => {
                                             className="form-control"
                                             value={subtitle}
                                             onChange={(e) => setSubtitle(e.target.value)}
+                                            required
                                         />
                                     </div>
                                 </div>
@@ -158,6 +160,7 @@ const NewActualite = () => {
                                             className="form-control"
                                             value={date}
                                             onChange={(e) => setDate(e.target.value)}
+                                            required
                                         />
                                     </div>
                                     <div className="form-group" style={{ width: '48%' }}>
@@ -166,7 +169,8 @@ const NewActualite = () => {
                                             className="form-control" 
                                             id="category_field" 
                                             value={category} 
-                                            onChange={(e) => setCategory(e.target.value)}>
+                                            onChange={(e) => setCategory(e.target.value)}
+                                            required>
                                             <option value="">Sélectionner une Catégorie</option>
                                             {categories.map(cat => (
                                                 <option key={cat} value={cat}>{cat}</option>
@@ -183,7 +187,8 @@ const NewActualite = () => {
                                         id="paragraph_field" 
                                         rows="4" 
                                         value={paragraph} 
-                                        onChange={(e) => setParagraph(e.target.value)}>
+                                        onChange={(e) => setParagraph(e.target.value)}
+                                        required>
                                     </textarea>
                                 </div>
                                 
@@ -198,6 +203,7 @@ const NewActualite = () => {
                                                 className='custom-file-input'
                                                 id='customFile1'
                                                 onChange={onChangeImage}
+                                                required
                                             />
                                             <label className='custom-file-label' htmlFor='customFile1'>
                                                 Choisir Image

@@ -34,7 +34,7 @@ const ActualiteList = () => {
         }
 
         if (isDeleted) {
-            alert.success('Actualité supprimé avec succès');
+            alert.success('Actualité supprimée avec succès');
             dispatch({ type: DELETE_ACTUALITE_RESET });
         }
     }, [dispatch, alert, error, deleteError, isDeleted]);

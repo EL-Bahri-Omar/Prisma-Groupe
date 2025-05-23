@@ -67,7 +67,7 @@ const UpdateActualite = () => {
 
         if (isUpdated) {
             navigate('/admin/actualites');
-            alert.success('News updated successfully');
+            alert.success('Actualité mis à jour avec succès');
             dispatch({ type: UPDATE_ACTUALITE_RESET });
         }
     }, [dispatch, alert, error, isUpdated, navigate, updateError, actualite, actualiteId]);
@@ -162,6 +162,7 @@ const UpdateActualite = () => {
                                             className="form-control"
                                             value={title}
                                             onChange={(e) => setTitle(e.target.value)}
+                                            required
                                         />
                                     </div>
                                     <div className="form-group" style={{ width: '48%' }}>
@@ -172,6 +173,7 @@ const UpdateActualite = () => {
                                             className="form-control"
                                             value={subtitle}
                                             onChange={(e) => setSubtitle(e.target.value)}
+                                            required
                                         />
                                     </div>
                                 </div>
@@ -186,6 +188,7 @@ const UpdateActualite = () => {
                                             className="form-control"
                                             value={date}
                                             onChange={(e) => setDate(e.target.value)}
+                                            required
                                         />
                                     </div>
                                     <div className="form-group" style={{ width: '48%' }}>
@@ -194,7 +197,8 @@ const UpdateActualite = () => {
                                             className="form-control" 
                                             id="category_field" 
                                             value={category} 
-                                            onChange={(e) => setCategory(e.target.value)}>
+                                            onChange={(e) => setCategory(e.target.value)}
+                                            required>
                                             {categories.map(cat => (
                                                 <option key={cat} value={cat}>{cat}</option>
                                             ))}
@@ -210,7 +214,8 @@ const UpdateActualite = () => {
                                         id="paragraph_field" 
                                         rows="4" 
                                         value={paragraph} 
-                                        onChange={(e) => setParagraph(e.target.value)}>
+                                        onChange={(e) => setParagraph(e.target.value)}
+                                        required>
                                     </textarea>
                                 </div>
                                 
@@ -225,6 +230,7 @@ const UpdateActualite = () => {
                                                 className='custom-file-input'
                                                 id='customFile1'
                                                 onChange={onChangeFeaturedImage}
+                                                required
                                             />
                                             <label className='custom-file-label' htmlFor='customFile1'>
                                                 Choisir Image

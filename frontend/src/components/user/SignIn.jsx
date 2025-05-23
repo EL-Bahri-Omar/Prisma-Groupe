@@ -18,24 +18,31 @@ const SignIn = () => {
       
       const { isAuthenticated, error, loading } = useSelector(state => state.auth);
       
+      const [errors, setErrors] = useState({
+        emailOrpass: false
+      });
+      
       useEffect(() => {
-          if (isAuthenticated) {
-              navigate('/');
-          }
-              
-          if (error) {
-      if (error.includes('Invalid') || error.includes('Invalide')) {
-        alert.error('Email ou mot de passe incorrect');
-      } else {
-        alert.error(error);
-      }
-      dispatch(clearErrors());
-    }
+        setErrors({ emailOrpass: false });
+
+        
+        
+
       }, [dispatch, alert, isAuthenticated, error, navigate]);
       
       const submitHandler = (e) => {
           e.preventDefault();
           dispatch(login(email, password))
+          
+          if (isAuthenticated) {
+            navigate('/');
+            setErrors({ emailOrpass: false });
+          }
+                
+          else {
+            setErrors({ emailOrpass: true });
+            return;
+          }
       }
 
   return (
@@ -58,6 +65,10 @@ const SignIn = () => {
               <div className="signup-divider">
                 <span>connectez-vous avec votre email</span>
               </div>
+
+              {errors.emailOrpass &&(
+                <div className="error-message">Email ou Mot de passe incorrect !</div>
+              )}
               
               <input
                 type="email"
@@ -65,6 +76,7 @@ const SignIn = () => {
                 placeholder="Adresse email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                required
               />
               
               <input
@@ -73,6 +85,7 @@ const SignIn = () => {
                 placeholder="Mot de passe"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                required
               />
               
               <div className="signup-form-options">

@@ -11,9 +11,9 @@ import Sidebar from '../sidebar/Sidebar';
 
 const UpdatePassword = () => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
-
     const [oldPassword, setOldPassword] = useState('')
     const [password, setPassword] = useState('')
+    const [errors, setErrors] = useState({ oldpass: false })
         
     const navigate = useNavigate();
     const alert = useAlert();
@@ -23,38 +23,39 @@ const UpdatePassword = () => {
     const { error, isUpdated, loading } = useSelector(state => state.user);
             
     useEffect(() => {
-           
-        if (error) {
-            alert.error(error);
-            dispatch(clearErrors());
-        }
+        
     
-        if (isUpdated) {
-            alert.success('Password updated successfully.');
-
-            navigate('/me')
-    
-            dispatch({
-                type: UPDATE_PASSWORD_RESET
-            })
-        }
+        
             
-    }, [dispatch, alert, user, isUpdated, error, navigate])
+    }, [dispatch, alert, error, isUpdated, navigate])
             
     const submitHandler = (e) => {
         e.preventDefault();
+        setErrors({ oldpass: false });
         
         const formData = new FormData();
         formData.set('oldPassword', oldPassword);
         formData.set('password', password);
         
         dispatch(updatePassword(formData))
+
+        if (isUpdated) {
+            alert.success('Mot de passe mis à jour avec succès.');
+            setErrors({ oldpass: false });
+            dispatch({ type: UPDATE_PASSWORD_RESET });
+            navigate('/me');
+        }
+
+        else {
+            setErrors({ oldpass: true });
+            dispatch(clearErrors());
+        }
     }
     
     return (
         <Fragment>
             <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
-            <MetaData title={'Change password'} />
+            <MetaData title={'Changer mot de passe'} />
 
             <div className={`dashboard-content app-container ${sidebarOpen ? 'sidebar-open' : ''}`}>
                 <Sidebar isOpen={sidebarOpen} onToggle={() => setSidebarOpen(!sidebarOpen)} />
@@ -63,30 +64,42 @@ const UpdatePassword = () => {
                         <form className="shadow-lg" onSubmit={submitHandler}>
                             <h1 className="mt-2 mb-5">Changer Mot de Passe</h1>
                             <div className="form-group">
-                                <label for="old_password_field">Ancien Mot de Passe</label>
+                                <label htmlFor="old_password_field">Ancien Mot de Passe</label>
                                 <input
                                     type="password"
                                     id="old_password_field"
-                                    className="form-control"
+                                    className={`form-control ${errors.oldpass ? 'is-invalid' : ''}`}
                                     value={oldPassword}
-                                    onChange={(e) => setOldPassword(e.target.value)}
+                                    onChange={(e) => {
+                                        setOldPassword(e.target.value);
+                                        if (errors.oldpass) {
+                                            setErrors({ oldpass: false });
+                                        }
+                                    }}
+                                    required
                                 />
+                                {errors.oldpass && (
+                                    <div className="invalid-feedback">** ! Ce mot de passe ne correspond pas à l'ancien mot de passe ! **</div>
+                                )}
                             </div>
 
                             <div className="form-group">
-                                <label for="new_password_field">Nouveau Mot de Passe</label>
+                                <label htmlFor="new_password_field">Nouveau Mot de Passe</label>
                                 <input
                                     type="password"
                                     id="new_password_field"
                                     className="form-control"
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
+                                    required
                                 />
                             </div>
 
                             <button type="submit"
-                                className="update-btn btn-block mt-4 mb-3"
-                                disabled={loading ? true : false} > Mettre à jour </button>
+                                className="btn btn-primary btn-block mt-4 mb-3"
+                                disabled={loading}>
+                                {loading ? 'Mise à jour...' : 'Mettre à jour'}
+                            </button>
                         </form>
                     </div>
                 </div>

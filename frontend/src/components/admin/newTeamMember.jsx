@@ -29,7 +29,7 @@ const NewTeamMember = () => {
 
         if (success) {
             navigate('/admin/team');
-            alert.success('Team member created successfully');
+            alert.success('Membre créé avec succès');
             dispatch({ type: NEW_TEAM_RESET });
         }
     }, [dispatch, alert, error, success, navigate]);
@@ -91,6 +91,7 @@ const NewTeamMember = () => {
                                         className="form-control"
                                         value={name}
                                         onChange={(e) => setName(e.target.value)}
+                                        required
                                     />
                                 </div>
 
@@ -102,6 +103,7 @@ const NewTeamMember = () => {
                                         className="form-control"
                                         value={position}
                                         onChange={(e) => setPosition(e.target.value)}
+                                        required
                                     />
                                 </div>
 
@@ -113,6 +115,7 @@ const NewTeamMember = () => {
                                         rows="8"
                                         value={description}
                                         onChange={(e) => setDescription(e.target.value)}
+                                        required
                                     ></textarea>
                                 </div>
 
@@ -125,6 +128,7 @@ const NewTeamMember = () => {
                                             className="custom-file-input"
                                             id="customFile"
                                             onChange={onChangeImage}
+                                            required
                                         />
                                         <label className="custom-file-label" htmlFor="customFile">
                                             Choisir Image de Profil

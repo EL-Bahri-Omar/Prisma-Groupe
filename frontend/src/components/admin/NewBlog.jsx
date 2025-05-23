@@ -53,7 +53,7 @@ const NewBlog = () => {
 
         if (success) {
             navigate('/admin/blogs');
-            alert.success('Blog created successfully');
+            alert.success('Blog créé avec succès');
             dispatch({ type: NEW_BLOG_RESET });
         }
     }, [dispatch, alert, error, success, navigate]);
@@ -401,6 +401,7 @@ const NewBlog = () => {
                                             className="form-control"
                                             value={title}
                                             onChange={(e) => setTitle(e.target.value)}
+                                            required
                                         />
                                     </div>
                                     <div className="form-group" style={{ width: '48%' }}>
@@ -411,6 +412,7 @@ const NewBlog = () => {
                                             className="form-control"
                                             value={subtitle}
                                             onChange={(e) => setSubtitle(e.target.value)}
+                                            required
                                         />
                                     </div>
                                 </div>
@@ -424,6 +426,7 @@ const NewBlog = () => {
                                             className="form-control"
                                             value={slug}
                                             onChange={(e) => setSlug(e.target.value)}
+                                            required
                                         />
                                     </div>
                                     <div className="form-group" style={{ width: '48%' }}>
@@ -432,7 +435,8 @@ const NewBlog = () => {
                                             className="form-control" 
                                             id="category_field" 
                                             value={category} 
-                                            onChange={(e) => setCategory(e.target.value)}>
+                                            onChange={(e) => setCategory(e.target.value)}
+                                            required>
                                             <option value="">Selectionner une Catégorie</option>
                                             {categories.map(cat => (
                                                 <option key={cat} value={cat}>{cat}</option>
@@ -450,6 +454,7 @@ const NewBlog = () => {
                                             className="form-control"
                                             value={tags}
                                             onChange={(e) => setTags(e.target.value)}
+                                            required
                                         />
                                     </div>
                                     <div className="form-group" style={{ width: '48%' }}>
@@ -460,6 +465,7 @@ const NewBlog = () => {
                                             className="form-control"
                                             value={readTime}
                                             onChange={(e) => setReadTime(e.target.value)}
+                                            required
                                         />
                                     </div>
                                 </div>
@@ -473,6 +479,7 @@ const NewBlog = () => {
                                             className='custom-file-input'
                                             id='customFile1'
                                             onChange={onImageChange}
+                                            required
                                         />
                                         <label className='custom-file-label' htmlFor='customFile1'>
                                             {image ? image.name : 'Choisir Image'}
@@ -499,12 +506,13 @@ const NewBlog = () => {
                                             className="form-control mb-2"
                                             value={currentBlockType}
                                             onChange={(e) => setCurrentBlockType(e.target.value)}
+                                            required
                                         >
                                             <option value="paragraph">Paragraphe</option>
                                             <option value="title">Titre</option>
                                             <option value="subtitle">Sous-titre</option>
-                                            <option value="headline">Titre de section</option>
-                                            <option value="gallery">Galerie</option>
+                                            <option value="headline">Tirets</option>
+                                            <option value="gallery">Images</option>
                                         </select>
                                         
                                         {currentBlockType === 'gallery' ? (
@@ -546,6 +554,7 @@ const NewBlog = () => {
                                                 value={currentBlockContent}
                                                 onChange={(e) => setCurrentBlockContent(e.target.value)}
                                                 placeholder={`Entrez le contenu ${currentBlockType}`}
+                                                required
                                             />
                                         )}
                                         

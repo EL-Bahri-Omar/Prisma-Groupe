@@ -4,7 +4,6 @@ html {
   padding: 0;
   height: 100%;
   font-family: tahoma, sans-serif;
-  /* Enable smooth scrolling */
 }
 
 .col-l {
@@ -12,7 +11,6 @@ html {
   width: 38.5%;
   margin-left: 65px;
   background-color: #1b4b5a;
-  /* Default color - will need to be adjusted to match your images */
   color: #fff;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   position: relative;
@@ -431,6 +429,7 @@ html {
   right: 30px; /* Position from right */
   z-index: 10; /* Ensure it appears above other elements */
 }
+
 .sidebar-nav .user-menu-item ul {
   list-style: none;
   padding: 0;
@@ -604,6 +603,21 @@ html {
     padding: 6px 15px;
     font-size: 12px;
   }
+
+  .user-submenu {
+    list-style: none;
+    width: auto; /* Changed from 100% to auto */
+    max-width: 180px; /* Added min-width */
+    padding: 5px 0;
+    margin: 5px 0 0 0; /* Removed bottom margin */
+    background-color: #eae1e1;
+    border-radius: 10px;
+    overflow: hidden;
+    animation: fadeIn 0.2s ease-out;
+    position: absolute;
+    left: 50px; /* Position from right */
+    z-index: 10; /* Ensure it appears above other elements */
+  }
 }
 
 
@@ -657,6 +671,21 @@ html {
   border-color: white;
 }
 
+
+/* Styles pour l'avatar mobile */
+.team-member-avatar-mobile {
+  display: none;
+  /* Caché par défaut */
+}
+
+.team-member-avatar-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 2px solid white;
+}
 
 .left-navigation-arrow {
   position: fixed;
@@ -1077,6 +1106,7 @@ html {
 @media screen and (max-width: 768px) {
   .col-l {
     width: 100% !important;
+    margin-left: 0px;
   }
 
   .mask,
@@ -1110,10 +1140,12 @@ html {
     font-size: 0.9rem;
   }
 
-
-
   .right-sidebar {
     display: flex;
+  }
+
+  .team-member-avatar-mobile {
+    display: block;
   }
 }
 
@@ -1180,5 +1212,24 @@ html {
 
   .sidebar-open .main-content {
     transform: translateX(0);
+  }
+  
+}
+
+@media (min-width: 320px) and (max-width: 426px){
+  .groupe-back {
+    background-image: url("/src/assets/home/contact.png");
+  }
+    .live-back {
+      background-image: 'url("/src/assets/home/event0.png")',
+    }
+}
+
+@media (min-width: 427px){
+  .groupe-back {
+    background-image: url("/src/assets/home/groupe1.png");
+  }
+  .live-back{
+    background-image: 'url("/src/assets/home/live1.png")',
   }
 }

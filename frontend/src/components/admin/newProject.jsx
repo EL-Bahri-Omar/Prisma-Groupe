@@ -54,7 +54,7 @@ const NewProject = () => {
 
         if (success) {
             navigate('/admin/projects')
-            alert.success('Project created successfully')
+            alert.success('Projet créé avec succès')
             dispatch({ type: NEW_PROJECT_RESET})
         }
     }, [dispatch, alert, error, success, navigate])
@@ -63,12 +63,12 @@ const NewProject = () => {
         e.preventDefault();
 
         if (!title || !subtitle || !description || !date || !place || !category ) {
-            alert.error('Please fill all the fields');
+            alert.error('Veuillez remplir tous les champs');
             return;
         }
 
         if (!imagePreview) {
-            alert.error('Please select a featured image');
+            alert.error("Veuillez sélectionner l'image principale");
             return;
         }
 
@@ -154,6 +154,7 @@ const NewProject = () => {
                                             className="form-control"
                                             value={title}
                                             onChange={(e) => setTitle(e.target.value)}
+                                            required
                                         />
                                     </div>
                                     <div className="form-group" style={{ width: '48%' }}>
@@ -164,6 +165,7 @@ const NewProject = () => {
                                             className="form-control"
                                             value={subtitle}
                                             onChange={(e) => setSubtitle(e.target.value)}
+                                            required
                                         />
                                     </div>
                                 </div>
@@ -178,6 +180,7 @@ const NewProject = () => {
                                             className="form-control"
                                             value={date}
                                             onChange={(e) => setDate(e.target.value)}
+                                            required
                                         />
                                     </div>
                                     <div className="form-group" style={{ width: '30%' }}>
@@ -186,7 +189,9 @@ const NewProject = () => {
                                             className="form-control" 
                                             id="category_field" 
                                             value={category} 
-                                            onChange={(e) => setCategory(e.target.value)}>
+                                            onChange={(e) => setCategory(e.target.value)}
+                                            required
+                                        >
                                             <option value="">Select a category</option>
                                             {categories.map(cat => (
                                                 <option key={cat} value={cat}>{cat}</option>
@@ -201,6 +206,7 @@ const NewProject = () => {
                                             className="form-control"
                                             value={place}
                                             onChange={(e) => setPlace(e.target.value)}
+                                            required
                                         />
                                     </div>
                                 </div>
@@ -213,7 +219,8 @@ const NewProject = () => {
                                         id="description_field" 
                                         rows="4" 
                                         value={description} 
-                                        onChange={(e) => setDescription(e.target.value)}>
+                                        onChange={(e) => setDescription(e.target.value)}
+                                        required>
                                     </textarea>
                                 </div>
                                 
@@ -228,6 +235,7 @@ const NewProject = () => {
                                                 className='custom-file-input'
                                                 id='customFile1'
                                                 onChange={onImageChange}
+                                                required
                                             />
                                             <label className='custom-file-label' htmlFor='customFile1'>
                                                 Choisir image
@@ -257,7 +265,7 @@ const NewProject = () => {
                                                 multiple
                                             />
                                             <label className='custom-file-label' htmlFor='customFile2'>
-                                                Choisir Galerie de Photos
+                                                Choisir des Photos
                                             </label>
                                         </div>
                                         <div className="d-flex flex-wrap mt-2">
@@ -276,7 +284,7 @@ const NewProject = () => {
                                 </div>
 
                                 <div className="form-group mb-4">
-                                    <label htmlFor="video_field">Video URL (from Cloudinary)</label>
+                                    <label htmlFor="video_field">Lien du Video (Depuis Cloudinary)</label>
                                     <input
                                         type="text"
                                         id="video_field"

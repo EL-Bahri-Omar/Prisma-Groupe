@@ -152,6 +152,7 @@ const TeamLeft = ({ teamMembers, currentPage, setCurrentPage }) => {
           className="full-page team-left-page"
         >
           <div className="team-left-content">
+            {/* Flèche de navigation haut - reste inchangée */}
             {currentPage == 1 && (
               <div className="top-nav-arrow page-top-team-arrow" onClick={navigateUp}>
                 <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -166,10 +167,25 @@ const TeamLeft = ({ teamMembers, currentPage, setCurrentPage }) => {
               </div>
             )}
 
+            {/* Nouvel avatar mobile - seulement visible en dessous de 768px */}
+            <div className="team-member-avatar-mobile">
+              <img 
+                src={member.image.url} 
+                alt={`${member.name}`} 
+                className="team-member-avatar-img"
+                onError={(e) => {
+                  e.target.onerror = null; 
+                  e.target.src = '/images/default-avatar.jpg'
+                }}
+              />
+            </div>
+
+            {/* Section texte - reste inchangée */}
             <h2>{member.name}</h2>
             <h3>{member.position}</h3>
             <p>{member.description}</p>
 
+            {/* Flèche de navigation bas - reste inchangée */}
             <div className="bottom-nav-arrow page-bottom-team-arrow">
               <div className="page-counter">
                 <span className="current-page">{currentPage}</span>

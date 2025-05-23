@@ -916,7 +916,7 @@
     }
 
     .ref-details-meta {
-        flex-direction: column;
+        flex-direction: row;
         align-items: flex-start;
         gap: 10px;
     }

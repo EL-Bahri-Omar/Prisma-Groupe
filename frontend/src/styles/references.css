@@ -122,7 +122,7 @@
 
 /* No Results Message */
 .no-results-message {
-    width: 100%;
+    width: 150%;
     text-align: center;
     padding: 2rem;
     color: #666;
@@ -132,7 +132,6 @@
 /* Right side references grid - Scrollable */
 .references-grid-section {
     width: 75%;
-    background-color: #e1afcb;
     margin-left: 25%;
     overflow-y: auto;
     height: 100vh;
@@ -246,7 +245,7 @@
 /* Responsive Design - Complete Coverage */
 
 /* Extra Small Devices (320px - 424px) */
-@media (min-width: 320px) and (max-width: 424px) {
+@media (min-width: 320px) and (max-width: 426px) {
     .references-layout {
         flex-direction: column;
     }

@@ -20,7 +20,7 @@ const Profile = () => {
         <Fragment>
             {loading ? <Loader /> : (
                 <div className={`profile-wrapper ${sidebarOpen ? 'sidebar-open' : ''}`}>
-                    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+                    
                     <MetaData title={'Your Profile'} />
                     
                     <Sidebar isOpen={sidebarOpen} onToggle={toggleSidebar} />

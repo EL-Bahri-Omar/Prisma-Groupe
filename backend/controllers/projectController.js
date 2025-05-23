@@ -264,17 +264,55 @@ exports.createProjectReview = catchAsyncErrors(async (req, res, next) => {
 
 // Get project reviews => /api/v1/reviews
 exports.getProjectReviews = catchAsyncErrors(async (req, res, next) => {
-    const project = await Project.findById(req.query.id);
+    let project;
+    
+    // Search by project ID if provided
+    if (req.query.id) {
+        project = await Project.findById(req.query.id);
+    } 
+    // Search by project name if provided
+    else if (req.query.name) {
+        project = await Project.findOne({ title: req.query.name });
+    } 
+    // Return error if neither is provided
+    else {
+        return next(new ErrorHandler('Please provide either project ID or name', 400));
+    }
+
+    if (!project) {
+        return next(new ErrorHandler('Project not found', 404));
+    }
 
     res.status(200).json({
         success: true,
-        reviews: project.reviews
+        reviews: project.reviews,
+        project: { // Return some basic project info too
+            _id: project._id,
+            title: project.title
+        }
     });
 });
 
 // Delete review => /api/v1/reviews
 exports.deleteReview = catchAsyncErrors(async (req, res, next) => {
-    const project = await Project.findById(req.query.projectId);
+    let project;
+    
+    // Find project by ID if provided
+    if (req.query.projectId) {
+        project = await Project.findById(req.query.projectId);
+    } 
+    // Find project by name if provided
+    else if (req.query.projectName) {
+        project = await Project.findOne({ title: req.query.projectName });
+    } 
+    // Return error if neither is provided
+    else {
+        return next(new ErrorHandler('Please provide either project ID or name', 400));
+    }
+
+    if (!project) {
+        return next(new ErrorHandler('Project not found', 404));
+    }
 
     const reviews = project.reviews.filter(
         review => review._id.toString() !== req.query.id.toString()
@@ -285,7 +323,7 @@ exports.deleteReview = catchAsyncErrors(async (req, res, next) => {
         ? project.reviews.reduce((acc, item) => item.rating + acc, 0) / numOfReviews 
         : 0;
 
-    await Project.findByIdAndUpdate(req.query.projectId, {
+    await Project.findByIdAndUpdate(project._id, {
         reviews,
         ratings,
         numOfReviews

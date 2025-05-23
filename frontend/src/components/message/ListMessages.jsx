@@ -83,7 +83,7 @@ const ListMessages = () => {
               <Sidebar />
             </div>
 
-            <div className="col-8 col-md-8">
+            <div className="col- col-md-8">
               <h1 className="my-4">Mes Messages</h1>
               
               {loading ? <Loader /> : (

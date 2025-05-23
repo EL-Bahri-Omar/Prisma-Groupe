@@ -39,7 +39,7 @@ const UpdateUser = () => {
         }
     
         if (isUpdated) {
-            alert.success('User updated successfully.');
+            alert.success('Utilisateur mis à jour avec succès');
             navigate('/admin/users')
             dispatch({ type: UPDATE_USER_RESET })
         }
@@ -89,7 +89,8 @@ const UpdateUser = () => {
                                                 className="form-control"
                                                 name='name'
                                                 value={name}
-                                                onChange={(e) => setName(e.target.value)}
+                                            onChange={(e) => setName(e.target.value)}
+                                            required
                                             />
                                         </div>
 
@@ -101,7 +102,8 @@ const UpdateUser = () => {
                                                 className="form-control"
                                                 name='email'
                                                 value={email}
-                                                onChange={(e) => setEmail(e.target.value)}
+                                            onChange={(e) => setEmail(e.target.value)}
+                                            required
                                             />
                                         </div>
 
@@ -112,7 +114,8 @@ const UpdateUser = () => {
                                                 className="form-control"
                                                 name='role'
                                                 value={role}
-                                                onChange={(e) => setRole(e.target.value)}
+                                            onChange={(e) => setRole(e.target.value)}
+                                            required
                                             >
                                                 <option value="user">user</option>
                                                 <option value="admin">admin</option>

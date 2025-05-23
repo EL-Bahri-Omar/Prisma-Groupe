@@ -18,6 +18,9 @@ const ContactPage = () => {
     subject: '',
     message: ''
   });
+  const [errors, setErrors] = useState({
+    nameOrSociete: false
+  });
 
   const dispatch = useDispatch();
   const alert = useAlert();
@@ -34,40 +37,40 @@ const ContactPage = () => {
       ...prevState,
       [name]: value
     }));
+    
+    // Clear name/societe error if either has value
+    if ((name === 'name' && value) || (name === 'societe' && value)) {
+      setErrors({ nameOrSociete: false });
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    // Validate required fields
+    // Validate either name or societe
+    if (!formData.name && !formData.societe) {
+      setErrors({ nameOrSociete: true });
+      return;
+    }
+
+    // Validate other required fields
     if (!formData.email || !formData.phone || !formData.subject || !formData.message) {
       alert.error('Veuillez remplir tous les champs obligatoires');
       return;
     }
+
+    alert.success('Votre message a été envoyé avec succès!');
+    setFormData({
+      name: '',
+      societe: '',
+      phone: '',
+      email: '',
+      subject: '',
+      message: ''
+    });
+    setShowModal(false);
+    window.scrollTo(0, 0);
     
-    // Validate either name or societe is provided
-    if (!formData.name && !formData.societe) {
-      alert.error('Veuillez fournir soit votre nom soit le nom de votre société');
-      return;
-    }
-
-    else {
-      alert.success('Votre message a été envoyé avec succès!');
-      // Reset form
-      setFormData({
-        name: '',
-        societe: '',
-        phone: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
-      // Close modal
-      setShowModal(false);
-      // Scroll to top
-      window.scrollTo(0, 0);
-    }
-
     dispatch(createMessage(formData));
   };
 
@@ -76,7 +79,6 @@ const ContactPage = () => {
       alert.error(error);
       dispatch(clearErrors());
     }
-
   }, [dispatch, alert, error, success]);
 
   return (
@@ -170,6 +172,7 @@ const ContactPage = () => {
                   placeholder="Société" 
                   value={formData.societe}
                   onChange={handleInputChange}
+                  className={errors.nameOrSociete ? 'error' : ''}
                 />
 
                 <input 
@@ -178,8 +181,12 @@ const ContactPage = () => {
                   placeholder="Nom" 
                   value={formData.name}
                   onChange={handleInputChange}
+                  className={errors.nameOrSociete ? 'error' : ''}
                 />
               </div>
+              {errors.nameOrSociete && (
+                <div className="error-message">** ! Veuillez remplir soit la société soit le nom ! **</div>
+              )}
               
               <div className="form-row">
                 <input 

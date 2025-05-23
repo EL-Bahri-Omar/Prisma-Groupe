@@ -82,7 +82,7 @@ const UpdateBlog = () => {
 
         if (isUpdated) {
             navigate('/admin/blogs');
-            alert.success('Blog updated successfully');
+            alert.success('Blog mis à jour avec succès');
             dispatch({ type: UPDATE_BLOG_RESET });
         }
     }, [dispatch, alert, error, isUpdated, navigate, updateError, blog, blogId]);
@@ -427,6 +427,7 @@ const UpdateBlog = () => {
                                             className="form-control"
                                             value={title}
                                             onChange={(e) => setTitle(e.target.value)}
+                                            required
                                         />
                                     </div>
                                     <div className="form-group" style={{ width: '48%' }}>
@@ -437,6 +438,7 @@ const UpdateBlog = () => {
                                             className="form-control"
                                             value={subtitle}
                                             onChange={(e) => setSubtitle(e.target.value)}
+                                            required
                                         />
                                     </div>
                                 </div>
@@ -450,6 +452,7 @@ const UpdateBlog = () => {
                                             className="form-control"
                                             value={slug}
                                             onChange={(e) => setSlug(e.target.value)}
+                                            required
                                         />
                                     </div>
                                     <div className="form-group" style={{ width: '48%' }}>
@@ -458,7 +461,8 @@ const UpdateBlog = () => {
                                             className="form-control" 
                                             id="category_field" 
                                             value={category} 
-                                            onChange={(e) => setCategory(e.target.value)}>
+                                            onChange={(e) => setCategory(e.target.value)}
+                                            required>
                                             <option value="">Selectionner une Catégorie</option>
                                             {categories.map(cat => (
                                                 <option key={cat} value={cat}>{cat}</option>
@@ -476,6 +480,7 @@ const UpdateBlog = () => {
                                             className="form-control"
                                             value={tags}
                                             onChange={(e) => setTags(e.target.value)}
+                                            required
                                         />
                                     </div>
                                     <div className="form-group" style={{ width: '48%' }}>
@@ -486,6 +491,7 @@ const UpdateBlog = () => {
                                             className="form-control"
                                             value={readTime}
                                             onChange={(e) => setReadTime(e.target.value)}
+                                            required
                                         />
                                     </div>
                                 </div>
@@ -499,6 +505,7 @@ const UpdateBlog = () => {
                                             className='custom-file-input'
                                             id='customFile1'
                                             onChange={onChangeFeaturedImage}
+                                            required
                                         />
                                         <label className='custom-file-label' htmlFor='customFile1'>
                                             Choisir Image
@@ -534,6 +541,7 @@ const UpdateBlog = () => {
                                             className="form-control mb-2"
                                             value={currentBlockType}
                                             onChange={(e) => setCurrentBlockType(e.target.value)}
+                                            required
                                         >
                                             <option value="paragraph">Paragraphe</option>
                                             <option value="title">Titre</option>

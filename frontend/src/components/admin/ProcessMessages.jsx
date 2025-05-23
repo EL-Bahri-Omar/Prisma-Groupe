@@ -34,7 +34,7 @@ const ProcessMessage = () => {
         }
 
         if (isUpdated) {
-            alert.success('Reply sent successfully');
+            alert.success('Réponse envoyée avec succès');
             navigate('/admin/messages');
             dispatch({ type: UPDATE_MESSAGE_RESET });
         }

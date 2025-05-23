@@ -34,7 +34,7 @@ const TeamList = () => {
         }
 
         if (isDeleted) {
-            alert.success("Membre de l'équipe supprimé avec succès");
+            alert.success("Membre supprimé avec succès");
             dispatch({ type: DELETE_TEAM_RESET });
         }
     }, [dispatch, alert, error, deleteError, isDeleted]);
@@ -124,7 +124,7 @@ const TeamList = () => {
                     
                     {/* Scrollable Content */}
                     <div className="scrollable-content">
-                            <h1 className="my-5">All Team Members</h1>
+                            <h1 className="my-5">Tout Les Members du Team</h1>
 
                             {loading ? <Loader /> : (
                                 <MDBDataTable

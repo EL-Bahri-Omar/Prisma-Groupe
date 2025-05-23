@@ -48,7 +48,7 @@ const UpdateTeamMember = () => {
 
         if (isUpdated) {
             navigate('/admin/team');
-            alert.success('Team member updated successfully');
+            alert.success('Membre mis à jour avec succès');
             dispatch({ type: UPDATE_TEAM_RESET });
         }
     }, [dispatch, alert, error, isUpdated, navigate, updateError, member, memberId]);
@@ -114,6 +114,7 @@ const UpdateTeamMember = () => {
                                         className="form-control"
                                         value={name}
                                         onChange={(e) => setName(e.target.value)}
+                                        required
                                     />
                                 </div>
 
@@ -125,6 +126,7 @@ const UpdateTeamMember = () => {
                                         className="form-control"
                                         value={position}
                                         onChange={(e) => setPosition(e.target.value)}
+                                        required
                                     />
                                 </div>
 
@@ -136,6 +138,7 @@ const UpdateTeamMember = () => {
                                         rows="8"
                                         value={description}
                                         onChange={(e) => setDescription(e.target.value)}
+                                        required
                                     ></textarea>
                                 </div>
 
@@ -148,6 +151,7 @@ const UpdateTeamMember = () => {
                                             className="custom-file-input"
                                             id="customFile"
                                             onChange={onChangeImage}
+                                            required
                                         />
                                         <label className="custom-file-label" htmlFor="customFile">
                                             Choisir Photo

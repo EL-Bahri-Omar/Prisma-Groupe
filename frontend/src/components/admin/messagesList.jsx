@@ -94,8 +94,8 @@ const MessagesList = () => {
                 from: message.name || message.societe || message.email,
                 subject: message.subject,
                 status: message.isResponded
-                    ? <p style={{ color: 'green' }}>Responded</p>
-                    : <p style={{ color: 'red' }}>Pending</p>,
+                    ? <p style={{ color: 'green' }}>Répondu</p>
+                    : <p style={{ color: 'red' }}>En attente</p>,
                 date: new Date(message.createdAt).toLocaleDateString(),
                 actions: (
                     <Fragment>
