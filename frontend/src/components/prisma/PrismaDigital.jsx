@@ -159,15 +159,13 @@ const PrismaDigital = () => {
             <p>Des stratégies connectées, des résultats concrets
             </p>
           </div>
-
-          
-          
+  
         </div>
+        <Footer sidebarOpen={sidebarOpen} />
+        <ScrollTop/>
+        <GoBack />
       </div>
-      <Footer sidebarOpen={sidebarOpen} />
-      {/* Flèche de retour en haut */}
-      <ScrollTop/>
-      <GoBack />
+      
     </div>
   );
 };

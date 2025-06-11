@@ -4,6 +4,7 @@ import Sidebar from "../sidebar/Sidebar";
 import GoBack from "../action_buttons/GoBack";
 import Footer from "../Footer";
 import "../../styles/PrismaStyles/AudioVisual.css";
+import ScrollTop from "../action_buttons/ScrollTop";
 
 const PrismaAudioVisual = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -175,9 +176,11 @@ const PrismaAudioVisual = () => {
           </div>
           
         </div>
+        <Footer sidebarOpen={sidebarOpen} />
+        <GoBack />
+        <ScrollTop/>
       </div>
-      <Footer sidebarOpen={sidebarOpen} />
-      <GoBack />
+      
     </div>
   );
 };

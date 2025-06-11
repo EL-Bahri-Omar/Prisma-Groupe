@@ -234,7 +234,7 @@ textarea {
   text-align: center;
 }
 
-/* ========== RESPONSIVE STYLES (Can be modified independently) ========== */
+/* ========== RESPONSIVE STYLES ========== */
 /* Large screens */
 
 @media (min-width: 1024px) {
@@ -265,7 +265,7 @@ textarea {
     background-color: #d5caca;
     text-align: center;
     color: #000000;
-    margin-top: 50px;
+    margin-top: 120px;
     margin-bottom: -50px;
     margin-left: -120px;
   }
@@ -279,8 +279,6 @@ textarea {
   .whatsapp-number:hover {
     color: rgb(10, 49, 10);
   }
-
-
 
 }
 
@@ -381,10 +379,6 @@ textarea {
     display: none;
   }
 
-
-
-
-
   .contact-info {
     display: flex;
     flex-direction: column;
@@ -399,12 +393,7 @@ textarea {
     margin: 0;
     margin-top: -50px;
     padding-left: 30px;
-    /* Espace pour l'icône */
   }
-
-
-
-
 
 }
 
@@ -432,7 +421,6 @@ textarea {
   }
 
 }
-
 
 /* ========== SIDEBAR EFFECT FOR CONTACT PAGE (320px - 425px) ========== */
 @media (min-width: 320px) and (max-width: 426px) {

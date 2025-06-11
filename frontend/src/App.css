@@ -1216,20 +1216,63 @@ html {
   
 }
 
-@media (min-width: 320px) and (max-width: 426px){
+@media (min-width: 320px) and (max-width: 426px) {
   .groupe-back {
-    background-image: url("/src/assets/home/contact.png");
+    background-image: url("/src/assets/home/Groupe_Mobile.png");
   }
-    .live-back {
-      background-image: 'url("/src/assets/home/event0.png")',
-    }
+
+  .live-back {
+    background-image: url("/src/assets/home/Live_Mobile.png");
+  }
+
+  .venue-back {
+    background-image: url("/src/assets/home/Venue_Mobile.png");
+  }
+
+  .spazio-back {
+    background-image: url("/src/assets/home/Spazio_Mobile.png");
+  }
+
+  .digital-back {
+    background-image: url("/src/assets/home/Digital_Mobile.png");
+  }
+
+  .distribution-back {
+    background-image: url("/src/assets/home/Distribution_Mobile.png");
+
+  }
+
+  .audio-back {
+    background-image: url("/src/assets/home/Audio_Mobile.png");
+  }
 }
 
-@media (min-width: 427px){
+@media (min-width: 427px) {
   .groupe-back {
     background-image: url("/src/assets/home/groupe1.png");
   }
-  .live-back{
-    background-image: 'url("/src/assets/home/live1.png")',
+
+  .live-back {
+    background-image: url("/src/assets/home/live1.png");
+  }
+
+  .venue-back {
+    background-image: url("/src/assets/home/venue1.png");
+  }
+
+  .spazio-back {
+    background-image: url("/src/assets/home/spazio1.png");
+  }
+
+  .digital-back {
+    background-image: url("/src/assets/home/digital1.png");
+  }
+
+  .distribution-back {
+    background-image: url("/src/assets/home/distribution1.png");
+  }
+
+  .audio-back {
+    background-image: url("/src/assets/home/audio1.png");
   }
 }

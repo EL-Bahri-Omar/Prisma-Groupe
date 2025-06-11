@@ -4,6 +4,7 @@ import Sidebar from "../sidebar/Sidebar";
 import GoBack from "../action_buttons/GoBack";
 import Footer from "../Footer";
 import "../../styles/PrismaStyles/Distribution.css";
+import ScrollTop from "../action_buttons/ScrollTop";
 
 const PrismaDistribution = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -142,9 +143,11 @@ const PrismaDistribution = () => {
           </div>
 
         </div>
+        <Footer sidebarOpen={sidebarOpen} />
+        <ScrollTop/>
+        <GoBack />
       </div>
-      <Footer sidebarOpen={sidebarOpen} />
-      <GoBack />
+      
     </div>
   );
 };

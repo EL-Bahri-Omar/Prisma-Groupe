@@ -4,6 +4,7 @@ import Sidebar from "../sidebar/Sidebar";
 import GoBack from "../action_buttons/GoBack";
 import Footer from "../Footer";
 import "../../styles/PrismaStyles/Groupe.css";
+import ScrollTop from "../action_buttons/ScrollTop";
 
 const PrismaGroupe = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -166,9 +167,12 @@ const PrismaGroupe = () => {
           </div>
           
         </div>
+        <Footer sidebarOpen={sidebarOpen} />
+        <ScrollTop/>
+        <GoBack />
       </div>
-      <Footer sidebarOpen={sidebarOpen} />
-      <GoBack />
+      
+      
     </div>
   );
 };

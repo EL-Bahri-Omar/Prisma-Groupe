@@ -159,7 +159,6 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(40, 105, 135, 0.3);
     transition: all 0.3s ease;
     border: none;
     z-index: 100;

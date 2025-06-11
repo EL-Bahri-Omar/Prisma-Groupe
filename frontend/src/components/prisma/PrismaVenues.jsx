@@ -4,6 +4,7 @@ import Sidebar from "../sidebar/Sidebar";
 import GoBack from "../action_buttons/GoBack";
 import Footer from "../Footer";
 import "../../styles/PrismaStyles/Venues.css";
+import ScrollTop from "../action_buttons/ScrollTop";
 
 const PrismaVenues = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -160,9 +161,11 @@ const PrismaVenues = () => {
           </div>
           
         </div>
+        <Footer sidebarOpen={sidebarOpen} />
+        <ScrollTop/>
+        <GoBack />
       </div>
-      <Footer sidebarOpen={sidebarOpen} />
-      <GoBack />
+      
     </div>
   );
 };

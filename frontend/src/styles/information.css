@@ -1,25 +1,37 @@
-/* Main Container */
-.information-container {
-    background-image: url("/src/assets/home/PrismaGroupe/depuis2008.png");
-    position: relative;
+/* Container principal pour les deux divs */
+.information-split-container {
+    display: flex;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
+}
+
+/* Styles communs aux deux sections */
+.information-left-section,
+.information-right-section {
+    flex: 1;
+    display: flex;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
+    padding: 2rem;
 }
 
-/* Main Content Text Overlay */
+/* Section gauche avec texte */
+.information-left-section {
+    background-image: url("/src/assets/home/information_image1.png");
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* Overlay de texte */
 .information-text-overlay {
-    max-width: 550px;
-    padding: 2rem;
-    margin-left: 5%;
+    max-width: 600px;
+    padding: 1rem;
+    width: 80%;
+    margin-left: 40px;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 5px;
-    box-shadow:  0 1px 10px #042f38;
+    box-shadow: 0 1px 10px #042f38;
 }
 
 .information-heading {
@@ -47,18 +59,15 @@
     margin-bottom: 1rem;
 }
 
-.information-paragraph:last-child {
-    margin-bottom: 0;
+/* Section droite avec taglines */
+.information-right-section {
+    background-image: url("/src/assets/home/information_image2.png");
+    justify-content: flex-end;
+    align-items: flex-end;
 }
 
-/* Tagline Container - Bottom Right */
 .information-tagline-container {
-    position: absolute;
-    bottom: 10%;
-    right: 10%;
-    text-align: right;
     padding: 1.5rem;
-    border-radius: 5px;
     text-align: center;
 }
 
@@ -66,47 +75,235 @@
     font-size: 3.5rem;
     font-weight: 700;
     color: #ffffff;
-    margin-bottom: -1rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 .information-tagline-item {
     color: #ffffff;
     font-size: 1.4rem;
-    line-height: 1;
-    margin-bottom: -1.5rem;
+    line-height: 1.6;
     font-weight: 300;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
+/* Écrans très petits (325px - 479px) */
+@media (min-width: 320px) and (max-width: 479px) {
+    .information-split-container {
+        flex-direction: column;
+    }
+
+    .information-left-section,
+    .information-right-section {
+        min-height: 50vh;
+        padding: 1rem;
+    }
+
     .information-text-overlay {
-        max-width: 90%;
-        margin-left: 5%;
-        padding: 1.5rem;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 1rem;
     }
 
     .information-heading {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
+    }
+
+    .information-paragraph {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    .information-tagline-container {
+        padding: 2rem;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .information-main-tagline {
+        font-size: 1.8rem;
+    }
+
+    .information-tagline-item {
+        font-size: 1rem;
+    }
+}
+
+/* Petits écrans (480px - 767px) */
+@media (min-width: 480px) and (max-width: 767px) {
+    .information-text-overlay {
+        width: 85%;
+        padding: 1.2rem;
+    }
+
+    .information-heading {
+        font-size: 1.7rem;
     }
 
     .information-paragraph {
         font-size: 0.9rem;
     }
 
-    .information-tagline-container {
-        position: relative;
-        bottom: auto;
-        right: auto;
-        margin: 1rem 5% 0;
-        text-align: left;
-        max-width: 90%;
+    .information-main-tagline {
+        font-size: 2.2rem;
     }
 
-    .information-main-tagline {
+    .information-tagline-item {
+        font-size: 1.1rem;
+    }
+}
+
+/* Tablettes (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .information-split-container {
+        flex-direction: column;
+    }
+
+    .information-left-section,
+    .information-right-section {
+        min-height: 80vh;
+        padding: 1rem;
+    }
+
+    .information-text-overlay {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 1rem;
+    }
+
+    .information-heading {
         font-size: 1.5rem;
     }
 
-    .information-sub-tagline {
-        font-size: 1.1rem;
+    .information-paragraph {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    .information-tagline-container {
+        padding: 0rem;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .information-main-tagline {
+        font-size: 4rem;
+
+    }
+
+    .information-tagline-item {
+        font-size: 1rem;
+    }
+}
+
+
+/* Écrans moyens (1200px - 1439px) */
+@media (min-width: 1200px) and (max-width: 1439px) {
+    .information-text-overlay {
+        max-width: 600px;
+        padding: 2rem;
+    }
+
+    .information-main-tagline {
+        font-size: 3.2rem;
+    }
+}
+
+/* Grands écrans (1440px - 1919px) */
+@media (min-width: 1440px) and (max-width: 1919px) {
+    .information-text-overlay {
+        max-width: 650px;
+        padding: 1.5rem;
+    }
+
+    .information-main-tagline {
+        font-size: 3.5rem;
+    }
+
+    .information-tagline-item {
+        font-size: 1.2rem;
+    }
+}
+
+/* Écrans très larges (1920px - 2560px) */
+@media (min-width: 1920px) {
+    .information-split-container {
+        max-width: 2560px;
+        margin: 0 auto;
+    }
+
+    .information-text-overlay {
+        max-width: 800px;
+        padding: 3rem;
+    }
+
+    .information-heading {
+        font-size: 2.5rem;
+    }
+
+    .information-heading::after {
+        width: 100px;
+        height: 4px;
+    }
+
+    .information-paragraph {
+        font-size: 1.3rem;
+        line-height: 1.8;
+    }
+
+    .information-main-tagline {
+        font-size: 4.5rem;
+    }
+
+    .information-tagline-item {
+        font-size: 2rem;
+        line-height: 1.8;
+    }
+
+    .information-left-section,
+    .information-right-section {
+        padding: 3rem;
+    }
+}
+
+/* Ajustements spécifiques pour les très grands écrans (2560px et plus) */
+@media (min-width: 2560px) {
+    .information-text-overlay {
+        max-width: 900px;
+    }
+
+    .information-main-tagline {
+        font-size: 5rem;
+    }
+
+    .information-tagline-item {
+        font-size: 2.2rem;
+    }
+}
+
+/* Correction pour l'orientation paysage sur mobile */
+@media (max-height: 480px) and (orientation: landscape) {
+
+    .information-left-section,
+    .information-right-section {
+        min-height: 100vh;
+    }
+
+    .information-text-overlay {
+        padding: 0.8rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .information-heading {
+        font-size: 1.3rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .information-paragraph {
+        font-size: 0.8rem;
+        margin-bottom: 0.8rem;
     }
 }

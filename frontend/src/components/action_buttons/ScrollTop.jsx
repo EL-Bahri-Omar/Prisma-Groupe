@@ -9,7 +9,7 @@ const ScrollTop = () => {
   };
 
   return (
-    <button className="information-scroll-to-top-button" onClick={scrollToTop}>
+    <button className="scroll-to-top-button" onClick={scrollToTop}>
         <FontAwesomeIcon icon={faArrowUp} className="information-arrow-icon" />
     </button>
   );

@@ -490,8 +490,9 @@
     }
 
     .references-grid-section {
-        width: 75%;
-        margin-left: 25%;
+        width: 100%;
+        margin-left: 32.5%;
+        height: auto;
     }
 
     .references-grid {
@@ -511,8 +512,9 @@
     }
 
     .references-grid-section {
-        width: 78%;
-        margin-left: 22%;
+        width: 100%;
+        margin-left: 0;
+        height: auto;
     }
 
     .references-grid {
@@ -529,7 +531,6 @@
 
     .references-grid-section {
         width: 80%;
-        margin-left: 20%;
     }
 
     .references-grid {

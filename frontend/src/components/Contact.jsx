@@ -111,16 +111,16 @@ const ContactPage = () => {
                 <a href="https://whatsapp.com" className="social-icon" target="_blank" rel="noopener noreferrer">
                   <div style={{ marginRight: "80px"}}><i className="fab fa-whatsapp"></i></div>
                 </a>
-                <a href="https://facebook.com" className="social-icon" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.facebook.com/profile.php?id=61573906960120" className="social-icon" target="_blank" rel="noopener noreferrer">
                   <i className="fab fa-facebook-f"></i>
                 </a>
-                <a href="https://linkedin.com" className="social-icon" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/prisma-groupe-a40591364/overlay/about-this-profile/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BrOjzKXuwRv6pxifZuMXEQA%3D%3D" className="social-icon" target="_blank" rel="noopener noreferrer">
                   <i className="fab fa-linkedin-in"></i>
                 </a>
-                <a href="https://tiktok.com" className="social-icon" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.tiktok.com/@prisma_groupe" className="social-icon" target="_blank" rel="noopener noreferrer">
                   <i className="fab fa-tiktok"></i>
                 </a>
-                <a href="https://instagram.com" className="social-icon" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.instagram.com/prisma_groupe/#" className="social-icon" target="_blank" rel="noopener noreferrer">
                   <i className="fab fa-instagram"></i>
                 </a>
               </div>

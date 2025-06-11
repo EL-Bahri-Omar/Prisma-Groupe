@@ -173,8 +173,7 @@ const LeftColumn = () => {
   return (
     <div className="col col-l">
       
-      <div id="page1" className="full-page left-page" style={{ 
-        backgroundImage: 'url("/src/assets/home/groupe1.png")',
+      <div id="page1" className="full-page left-page groupe-back" style={{
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
@@ -187,7 +186,9 @@ const LeftColumn = () => {
 
           <p></p>
           <p></p>
-          <p></p>
+          {/* Ajout du logo au-dessus du bouton */}
+          
+          
           <Link to="/Prisma-Groupe" className="cta-button" style={{ backgroundColor: '#dfe3e8'}}>Découvrir</Link>
 
           <div id="bottom-navigation-arrow" className="bottom-nav-arrow page-bottom-nav-arrow">
@@ -207,8 +208,7 @@ const LeftColumn = () => {
           </div>
         </div>
       </div>
-      <div id="page3" className="full-page left-page" style={{ 
-        backgroundImage: 'url("/src/assets/home/live1.png")',
+      <div id="page3" className="full-page left-page live-back" style={{ 
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
@@ -244,8 +244,7 @@ const LeftColumn = () => {
           </div>
         </div>
       </div>
-      <div id="page5" className="full-page left-page" style={{ 
-        backgroundImage: 'url("/src/assets/home/venue1.png")',
+      <div id="page5" className="full-page left-page venue-back" style={{
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
@@ -284,8 +283,7 @@ const LeftColumn = () => {
      
 
 
-      <div id="page7" className="full-page left-page" style={{ 
-        backgroundImage: 'url("/src/assets/home/spazio1.png")',
+      <div id="page7" className="full-page left-page spazio-back" style={{ 
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
@@ -322,8 +320,7 @@ const LeftColumn = () => {
 </div>
 
 
-      <div id="page9" className="full-page left-page" style={{ 
-        backgroundImage: 'url("/src/assets/home/digital1.png")',
+      <div id="page9" className="full-page left-page digital-back" style={{
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
@@ -359,8 +356,7 @@ const LeftColumn = () => {
           </div>
         </div>
       </div>
-      <div id="page11" className="full-page left-page" style={{ 
-        backgroundImage: 'url("/src/assets/home/distribution1.png")',
+      <div id="page11" className="full-page left-page distribution-back" style={{
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
@@ -392,8 +388,7 @@ const LeftColumn = () => {
           </div>
         </div>
       </div>
-      <div id="page13" className="full-page left-page" style={{ 
-        backgroundImage: 'url("/src/assets/home/audio1.png")',
+      <div id="page13" className="full-page left-page audio-back" style={{
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'

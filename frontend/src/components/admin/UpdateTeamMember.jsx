@@ -151,7 +151,6 @@ const UpdateTeamMember = () => {
                                             className="custom-file-input"
                                             id="customFile"
                                             onChange={onChangeImage}
-                                            required
                                         />
                                         <label className="custom-file-label" htmlFor="customFile">
                                             Choisir Photo

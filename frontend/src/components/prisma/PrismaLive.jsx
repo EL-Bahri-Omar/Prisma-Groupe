@@ -4,6 +4,7 @@ import Sidebar from "../sidebar/Sidebar";
 import GoBack from "../action_buttons/GoBack";
 import Footer from "../Footer";
 import "../../styles/PrismaStyles/Live.css";
+import ScrollTop from "../action_buttons/ScrollTop";
 
 const PrismaLive = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -179,9 +180,12 @@ const PrismaLive = () => {
           </div>
           
         </div>
-      </div>
-      <Footer sidebarOpen={sidebarOpen} />
+
+        <Footer sidebarOpen={sidebarOpen} />
+        <ScrollTop/>
       <GoBack />
+      </div>
+      
     </div>
   );
 };

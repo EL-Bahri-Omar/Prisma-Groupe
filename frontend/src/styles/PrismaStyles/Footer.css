@@ -5,7 +5,6 @@
   color: #333;
   width: 100%;
   box-sizing: border-box;
-  margin-left: 30px;
 }
 
 .FooterContent {
@@ -74,32 +73,23 @@
   max-width: 1200px;
   margin: 20px auto;
   padding: 0 10px;
+  gap: 15px
+}
+.SocialIcons a{
+  font-size: 25px; 
 }
 
-.SocialIcon {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 5px;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
 
 .Facebook {
-  background-color: #3b5998;
+  color: #3b5998;
 }
 
 .Instagram {
-  background: #e1306c url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>') no-repeat center center;
-  background-size: 60%;
+  color: #E4405F;
 }
 
 .Linkedin {
-  background-color: #0077b5;
+  color: #0A66C2;
 }
 
 .Copyright {
